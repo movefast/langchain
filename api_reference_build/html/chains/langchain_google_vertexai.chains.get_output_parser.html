@@ -172,12 +172,15 @@
 <dd><p>Get the appropriate function output parser given the user functions.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>functions</strong> – Sequence where element is a dictionary, a pydantic.BaseModel class,
+<dd class="field-odd"><p><strong>functions</strong> (<em>Sequence</em><em>[</em><em>Type</em><em>[</em><em>BaseModel</em><em>]</em><em>]</em>) – Sequence where element is a dictionary, a pydantic.BaseModel class,
 or a Python function. If a dictionary is passed in, it is assumed to
 already be a valid OpenAI function.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>A PydanticFunctionsOutputParser</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><em>Union</em>[<em>BaseOutputParser</em>, <em>BaseGenerationOutputParser</em>]</p>
 </dd>
 </dl>
 </dd></dl>

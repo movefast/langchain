@@ -173,17 +173,20 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>function</strong> – Either a single pydantic.BaseModel class or a sequence
+<li><p><strong>function</strong> (<em>Union</em><em>[</em><em>Type</em><em>[</em><em>BaseModel</em><em>]</em><em>, </em><em>Sequence</em><em>[</em><em>Type</em><em>[</em><em>BaseModel</em><em>]</em><em>]</em><em>]</em>) – Either a single pydantic.BaseModel class or a sequence
 of pydantic.BaseModels classes.
 For best results, pydantic.BaseModels
 should have descriptions of the parameters.</p></li>
-<li><p><strong>llm</strong> – Language model to use,
+<li><p><strong>llm</strong> (<em>Runnable</em>) – Language model to use,
 assumed to support the Google Vertex function-calling API.</p></li>
-<li><p><strong>prompt</strong> – BasePromptTemplate to pass to the model.</p></li>
+<li><p><strong>prompt</strong> (<em>Optional</em><em>[</em><em>BasePromptTemplate</em><em>]</em>) – BasePromptTemplate to pass to the model.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>A runnable sequence that will pass in the given functions to the model when run.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><em>Runnable</em></p>
 </dd>
 </dl>
 <p class="rubric">Example</p>
