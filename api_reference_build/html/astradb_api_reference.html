@@ -153,13 +153,18 @@
             <div class="sk-sidebar-toc">
               <ul>
 <li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">langchain_astradb</span></code> 0.0.1</a><ul>
+<li><a class="reference internal" href="#module-langchain_astradb.storage"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_astradb.storage</span></code></a><ul>
+<li><a class="reference internal" href="#classes">Classes</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#module-langchain_astradb.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_astradb.utils</span></code></a><ul>
+<li><a class="reference internal" href="#id1">Classes</a></li>
 <li><a class="reference internal" href="#functions">Functions</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#module-langchain_astradb.vectorstores"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_astradb.vectorstores</span></code></a><ul>
-<li><a class="reference internal" href="#classes">Classes</a></li>
-<li><a class="reference internal" href="#id1">Functions</a></li>
+<li><a class="reference internal" href="#id2">Classes</a></li>
+<li><a class="reference internal" href="#id3">Functions</a></li>
 </ul>
 </li>
 </ul>
@@ -174,8 +179,45 @@
         
   <section id="langchain-astradb-0-0-1">
 <h1><code class="docutils literal notranslate"><span class="pre">langchain_astradb</span></code> 0.0.1<a class="headerlink" href="#langchain-astradb-0-0-1" title="Permalink to this heading">¶</a></h1>
+<section id="module-langchain_astradb.storage">
+<span id="langchain-astradb-storage"></span><h2><a class="reference internal" href="#module-langchain_astradb.storage" title="langchain_astradb.storage"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_astradb.storage</span></code></a><a class="headerlink" href="#module-langchain_astradb.storage" title="Permalink to this heading">¶</a></h2>
+<section id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this heading">¶</a></h3>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="storage/langchain_astradb.storage.AstraDBBaseStore.html#langchain_astradb.storage.AstraDBBaseStore" title="langchain_astradb.storage.AstraDBBaseStore"><code class="xref py py-obj docutils literal notranslate"><span class="pre">storage.AstraDBBaseStore</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Base class for the DataStax AstraDB data store.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="storage/langchain_astradb.storage.AstraDBByteStore.html#langchain_astradb.storage.AstraDBByteStore" title="langchain_astradb.storage.AstraDBByteStore"><code class="xref py py-obj docutils literal notranslate"><span class="pre">storage.AstraDBByteStore</span></code></a>(*, collection_name)</p></td>
+<td><p>ByteStore implementation using DataStax AstraDB as the underlying store.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="storage/langchain_astradb.storage.AstraDBStore.html#langchain_astradb.storage.AstraDBStore" title="langchain_astradb.storage.AstraDBStore"><code class="xref py py-obj docutils literal notranslate"><span class="pre">storage.AstraDBStore</span></code></a>(collection_name, *[, ...])</p></td>
+<td><p>BaseStore implementation using DataStax AstraDB as the underlying store.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
 <section id="module-langchain_astradb.utils">
 <span id="langchain-astradb-utils"></span><h2><a class="reference internal" href="#module-langchain_astradb.utils" title="langchain_astradb.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_astradb.utils</span></code></a><a class="headerlink" href="#module-langchain_astradb.utils" title="Permalink to this heading">¶</a></h2>
+<section id="id1">
+<h3>Classes<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="utils/langchain_astradb.utils.astradb.SetupMode.html#langchain_astradb.utils.astradb.SetupMode" title="langchain_astradb.utils.astradb.SetupMode"><code class="xref py py-obj docutils literal notranslate"><span class="pre">utils.astradb.SetupMode</span></code></a>(value)</p></td>
+<td><p>An enumeration.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
 <section id="functions">
 <h3>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
@@ -196,8 +238,8 @@
 </section>
 <section id="module-langchain_astradb.vectorstores">
 <span id="langchain-astradb-vectorstores"></span><h2><a class="reference internal" href="#module-langchain_astradb.vectorstores" title="langchain_astradb.vectorstores"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_astradb.vectorstores</span></code></a><a class="headerlink" href="#module-langchain_astradb.vectorstores" title="Permalink to this heading">¶</a></h2>
-<section id="classes">
-<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this heading">¶</a></h3>
+<section id="id2">
+<h3>Classes<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -210,8 +252,8 @@
 </tbody>
 </table>
 </section>
-<section id="id1">
-<h3>Functions<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
+<section id="id3">
+<h3>Functions<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -229,7 +271,7 @@
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 20, 2024.
+          Last updated on Feb 21, 2024.
           <a href="_sources/astradb_api_reference.rst.txt" rel="nofollow">Show this page source</a>
       </footer>
     </div>

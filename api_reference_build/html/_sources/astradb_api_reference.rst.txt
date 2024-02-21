@@ -4,6 +4,31 @@
 ``langchain_astradb`` 0.0.1
 =======================
 
+:mod:`langchain_astradb.storage`
+=================================
+
+.. automodule:: langchain_astradb.storage
+    :no-members:
+    :no-inherited-members:
+
+Classes
+--------------
+.. currentmodule:: langchain_astradb
+
+.. autosummary::
+    :toctree: storage
+    :template: class.rst
+    
+    storage.AstraDBBaseStore
+    
+    :template: class.rst
+    
+    storage.AstraDBByteStore
+    
+    :template: class.rst
+    
+    storage.AstraDBStore
+    
 :mod:`langchain_astradb.utils`
 ===============================
 
@@ -11,6 +36,16 @@
     :no-members:
     :no-inherited-members:
 
+Classes
+--------------
+.. currentmodule:: langchain_astradb
+
+.. autosummary::
+    :toctree: utils
+    :template: enum.rst
+    
+    utils.astradb.SetupMode
+    
 Functions
 --------------
 .. currentmodule:: langchain_astradb

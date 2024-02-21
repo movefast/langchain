@@ -1,0 +1,18 @@
+﻿:mod:`langchain_astradb.utils.astradb`.SetupMode
+=======================================================
+
+.. currentmodule:: langchain_astradb.utils.astradb
+
+.. autoclass:: SetupMode
+
+    
+    
+    .. autoattribute:: SYNC
+    
+    .. autoattribute:: ASYNC
+    
+    .. autoattribute:: OFF
+    
+    
+
+.. example_links:: SetupMode

@@ -196,7 +196,11 @@
 
 <span class="kn">from</span> <span class="nn">langchain_core._api</span> <span class="kn">import</span> <span class="n">beta_decorator</span>
 <span class="kn">from</span> <span class="nn">langchain_core.load.dump</span> <span class="kn">import</span> <span class="n">dumpd</span>
-<span class="kn">from</span> <span class="nn">langchain_core.load.serializable</span> <span class="kn">import</span> <span class="n">Serializable</span>
+<span class="kn">from</span> <span class="nn">langchain_core.load.serializable</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">Serializable</span><span class="p">,</span>
+    <span class="n">SerializedConstructor</span><span class="p">,</span>
+    <span class="n">SerializedNotImplemented</span><span class="p">,</span>
+<span class="p">)</span>
 <span class="kn">from</span> <span class="nn">langchain_core.pydantic_v1</span> <span class="kn">import</span> <span class="n">BaseModel</span><span class="p">,</span> <span class="n">Field</span>
 <span class="kn">from</span> <span class="nn">langchain_core.runnables.config</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">RunnableConfig</span><span class="p">,</span>
@@ -1788,6 +1792,16 @@
 
     <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;The name of the runnable. Used for debugging and tracing.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">SerializedConstructor</span><span class="p">,</span> <span class="n">SerializedNotImplemented</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Serialize the runnable to JSON.&quot;&quot;&quot;</span>
+        <span class="n">dumped</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">to_json</span><span class="p">()</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">dumped</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_name</span><span class="p">()</span>
+            <span class="n">dumped</span><span class="p">[</span><span class="s2">&quot;graph&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_graph</span><span class="p">()</span><span class="o">.</span><span class="n">to_json</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="k">return</span> <span class="n">dumped</span>
 
     <span class="k">def</span> <span class="nf">configurable_fields</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">AnyConfigurableField</span>
@@ -4584,7 +4598,7 @@
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 20, 2024.
+          Last updated on Feb 21, 2024.
       </footer>
     </div>
   </div>
