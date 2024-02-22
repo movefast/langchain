@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>langchain_community.vectorstores.elasticsearch.ApproxRetrievalStrategy &mdash; 🦜🔗 LangChain 0.1.7</title>
+  <title>langchain_community.vectorstores.elasticsearch.ApproxRetrievalStrategy &mdash; 🦜🔗 LangChain 0.1.8</title>
   
   <link rel="canonical" href="https://api.python.langchain.com/en/latest/vectorstores/langchain_community.vectorstores.elasticsearch.ApproxRetrievalStrategy.html" />
 
@@ -61,7 +61,13 @@
           <a class="sk-nav-link nav-link" href="../experimental_api_reference.html">Experimental</a>
         </li>
         <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ai21_api_reference.html">ai21</a>
+        </li>
+        <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../anthropic_api_reference.html">anthropic</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../astradb_api_reference.html">astradb</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../exa_api_reference.html">exa</a>
@@ -71,6 +77,9 @@
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../google_vertexai_api_reference.html">google-vertexai</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ibm_api_reference.html">ibm</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../mistralai_api_reference.html">mistralai</a>
@@ -99,10 +108,13 @@
         <li class="nav-item dropdown nav-more-item-dropdown">
           <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Partner libs</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ai21_api_reference.html">ai21</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../anthropic_api_reference.html">anthropic</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../astradb_api_reference.html">astradb</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../exa_api_reference.html">exa</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_genai_api_reference.html">google-genai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ibm_api_reference.html">ibm</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../mistralai_api_reference.html">mistralai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nomic_api_reference.html">nomic</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nvidia_ai_endpoints_api_reference.html">nvidia-ai-endpoints</a>
@@ -189,10 +201,28 @@
 </tr>
 </tbody>
 </table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>query_model_id</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – </p></li>
+<li><p><strong>hybrid</strong> (<em>Optional</em><em>[</em><em>bool</em><em>]</em>) – </p></li>
+<li><p><strong>rrf</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>dict</em><em>, </em><em>bool</em><em>]</em><em>]</em>) – </p></li>
+</ul>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.vectorstores.elasticsearch.ApproxRetrievalStrategy.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_model_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hybrid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rrf</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/langchain_community/vectorstores/elasticsearch.html#ApproxRetrievalStrategy.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.vectorstores.elasticsearch.ApproxRetrievalStrategy.__init__" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>query_model_id</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – </p></li>
+<li><p><strong>hybrid</strong> (<em>Optional</em><em>[</em><em>bool</em><em>]</em>) – </p></li>
+<li><p><strong>rrf</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>dict</em><em>, </em><em>bool</em><em>]</em><em>]</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.vectorstores.elasticsearch.ApproxRetrievalStrategy.before_index_setup">
@@ -202,11 +232,14 @@ any required Elasticsearch resources like a pipeline.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>client</strong> – The Elasticsearch client.</p></li>
-<li><p><strong>text_field</strong> – The field containing the text data in the index.</p></li>
-<li><p><strong>vector_query_field</strong> – The field containing the vector
+<li><p><strong>client</strong> (<em>Elasticsearch</em>) – The Elasticsearch client.</p></li>
+<li><p><strong>text_field</strong> (<em>str</em>) – The field containing the text data in the index.</p></li>
+<li><p><strong>vector_query_field</strong> (<em>str</em>) – The field containing the vector
 representations in the index.</p></li>
 </ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -215,6 +248,18 @@ representations in the index.</p></li>
 <dt class="sig sig-object py" id="langchain_community.vectorstores.elasticsearch.ApproxRetrievalStrategy.index">
 <span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dims_length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vector_query_field</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">similarity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="langchain_community.vectorstores.utils.DistanceStrategy.html#langchain_community.vectorstores.utils.DistanceStrategy" title="langchain_community.vectorstores.utils.DistanceStrategy"><span class="pre">DistanceStrategy</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span></span></span><a class="reference internal" href="../_modules/langchain_community/vectorstores/elasticsearch.html#ApproxRetrievalStrategy.index"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.vectorstores.elasticsearch.ApproxRetrievalStrategy.index" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create the mapping for the Elasticsearch index.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dims_length</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – </p></li>
+<li><p><strong>vector_query_field</strong> (<em>str</em>) – </p></li>
+<li><p><strong>similarity</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="langchain_community.vectorstores.utils.DistanceStrategy.html#langchain_community.vectorstores.utils.DistanceStrategy" title="langchain_community.vectorstores.utils.DistanceStrategy"><em>DistanceStrategy</em></a><em>]</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><em>Dict</em></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -224,16 +269,16 @@ representations in the index.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>query_vector</strong> – The query vector,
+<li><p><strong>query_vector</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>float</em><em>]</em><em>]</em>) – The query vector,
 or None if not using vector-based query.</p></li>
-<li><p><strong>query</strong> – The text query, or None if not using text-based query.</p></li>
-<li><p><strong>k</strong> – The total number of results to retrieve.</p></li>
-<li><p><strong>fetch_k</strong> – The number of results to fetch initially.</p></li>
-<li><p><strong>vector_query_field</strong> – The field containing the vector
+<li><p><strong>query</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – The text query, or None if not using text-based query.</p></li>
+<li><p><strong>k</strong> (<em>int</em>) – The total number of results to retrieve.</p></li>
+<li><p><strong>fetch_k</strong> (<em>int</em>) – The number of results to fetch initially.</p></li>
+<li><p><strong>vector_query_field</strong> (<em>str</em>) – The field containing the vector
 representations in the index.</p></li>
-<li><p><strong>text_field</strong> – The field containing the text data in the index.</p></li>
-<li><p><strong>filter</strong> – List of filter clauses to apply to the query.</p></li>
-<li><p><strong>similarity</strong> – The similarity strategy to use, or None if not using one.</p></li>
+<li><p><strong>text_field</strong> (<em>str</em>) – The field containing the text data in the index.</p></li>
+<li><p><strong>filter</strong> (<em>List</em><em>[</em><em>dict</em><em>]</em>) – List of filter clauses to apply to the query.</p></li>
+<li><p><strong>similarity</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="langchain_community.vectorstores.utils.DistanceStrategy.html#langchain_community.vectorstores.utils.DistanceStrategy" title="langchain_community.vectorstores.utils.DistanceStrategy"><em>DistanceStrategy</em></a><em>]</em>) – The similarity strategy to use, or None if not using one.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -272,7 +317,7 @@ to be performed on the text before it is added to the index.</p>
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 14, 2024.
+          Last updated on Feb 22, 2024.
           <a href="../_sources/vectorstores/langchain_community.vectorstores.elasticsearch.ApproxRetrievalStrategy.rst.txt" rel="nofollow">Show this page source</a>
       </footer>
     </div>

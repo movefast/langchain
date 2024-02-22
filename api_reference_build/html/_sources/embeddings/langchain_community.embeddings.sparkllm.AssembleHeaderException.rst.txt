@@ -1,0 +1,17 @@
+﻿:mod:`langchain_community.embeddings.sparkllm`.AssembleHeaderException
+=============================================================================
+
+.. currentmodule:: langchain_community.embeddings.sparkllm
+
+.. autoclass:: AssembleHeaderException
+
+   
+   
+   
+
+   
+   
+   
+
+
+.. example_links:: AssembleHeaderException

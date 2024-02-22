@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>langchain_community.document_loaders.directory.DirectoryLoader &mdash; 🦜🔗 LangChain 0.1.7</title>
+  <title>langchain_community.document_loaders.directory.DirectoryLoader &mdash; 🦜🔗 LangChain 0.1.8</title>
   
   <link rel="canonical" href="https://api.python.langchain.com/en/latest/document_loaders/langchain_community.document_loaders.directory.DirectoryLoader.html" />
 
@@ -61,7 +61,13 @@
           <a class="sk-nav-link nav-link" href="../experimental_api_reference.html">Experimental</a>
         </li>
         <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ai21_api_reference.html">ai21</a>
+        </li>
+        <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../anthropic_api_reference.html">anthropic</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../astradb_api_reference.html">astradb</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../exa_api_reference.html">exa</a>
@@ -71,6 +77,9 @@
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../google_vertexai_api_reference.html">google-vertexai</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ibm_api_reference.html">ibm</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../mistralai_api_reference.html">mistralai</a>
@@ -99,10 +108,13 @@
         <li class="nav-item dropdown nav-more-item-dropdown">
           <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Partner libs</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ai21_api_reference.html">ai21</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../anthropic_api_reference.html">anthropic</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../astradb_api_reference.html">astradb</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../exa_api_reference.html">exa</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_genai_api_reference.html">google-genai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ibm_api_reference.html">ibm</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../mistralai_api_reference.html">mistralai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nomic_api_reference.html">nomic</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nvidia_ai_endpoints_api_reference.html">nvidia-ai-endpoints</a>
@@ -164,31 +176,34 @@
 <h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_community.document_loaders.directory</span></code>.DirectoryLoader<a class="headerlink" href="#langchain-community-document-loaders-directory-directoryloader" title="Permalink to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="langchain_community.document_loaders.directory.DirectoryLoader">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">langchain_community.document_loaders.directory.</span></span><span class="sig-name descname"><span class="pre">DirectoryLoader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">path:</span> <span class="pre">str,</span> <span class="pre">glob:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'**/[!.]*',</span> <span class="pre">silent_errors:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False,</span> <span class="pre">load_hidden:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False,</span> <span class="pre">loader_cls:</span> <span class="pre">~typing.Union[~typing.Type[~langchain_community.document_loaders.unstructured.UnstructuredFileLoader],</span> <span class="pre">~typing.Type[~langchain_community.document_loaders.text.TextLoader],</span> <span class="pre">~typing.Type[~langchain_community.document_loaders.html_bs.BSHTMLLoader]]</span> <span class="pre">=</span> <span class="pre">&lt;class</span> <span class="pre">'langchain_community.document_loaders.unstructured.UnstructuredFileLoader'&gt;,</span> <span class="pre">loader_kwargs:</span> <span class="pre">~typing.Optional[dict]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">recursive:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False,</span> <span class="pre">show_progress:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False,</span> <span class="pre">use_multithreading:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False,</span> <span class="pre">max_concurrency:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">4,</span> <span class="pre">*,</span> <span class="pre">sample_size:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">0,</span> <span class="pre">randomize_sample:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False,</span> <span class="pre">sample_seed:</span> <span class="pre">~typing.Optional[int]</span> <span class="pre">=</span> <span class="pre">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/langchain_community/document_loaders/directory.html#DirectoryLoader"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.document_loaders.directory.DirectoryLoader" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">langchain_community.document_loaders.directory.</span></span><span class="sig-name descname"><span class="pre">DirectoryLoader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">path:</span> <span class="pre">str,</span> <span class="pre">glob:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'**/[!.]*',</span> <span class="pre">silent_errors:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False,</span> <span class="pre">load_hidden:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False,</span> <span class="pre">loader_cls:</span> <span class="pre">~typing.Union[~typing.Type[~langchain_community.document_loaders.unstructured.UnstructuredFileLoader],</span> <span class="pre">~typing.Type[~langchain_community.document_loaders.text.TextLoader],</span> <span class="pre">~typing.Type[~langchain_community.document_loaders.html_bs.BSHTMLLoader]]</span> <span class="pre">=</span> <span class="pre">&lt;class</span> <span class="pre">'langchain_community.document_loaders.unstructured.UnstructuredFileLoader'&gt;,</span> <span class="pre">loader_kwargs:</span> <span class="pre">~typing.Optional[dict]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">recursive:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False,</span> <span class="pre">show_progress:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False,</span> <span class="pre">use_multithreading:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False,</span> <span class="pre">max_concurrency:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">4,</span> <span class="pre">*,</span> <span class="pre">exclude:</span> <span class="pre">~typing.Union[~typing.Sequence[str],</span> <span class="pre">str]</span> <span class="pre">=</span> <span class="pre">(),</span> <span class="pre">sample_size:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">0,</span> <span class="pre">randomize_sample:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False,</span> <span class="pre">sample_seed:</span> <span class="pre">~typing.Optional[int]</span> <span class="pre">=</span> <span class="pre">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/langchain_community/document_loaders/directory.html#DirectoryLoader"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.document_loaders.directory.DirectoryLoader" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load from a directory.</p>
 <p>Initialize with a path to directory and how to glob over it.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>path</strong> – Path to directory.</p></li>
-<li><p><strong>glob</strong> – Glob pattern to use to find files. Defaults to “<a href="#id1"><span class="problematic" id="id2">**</span></a>/[!.]*”
+<li><p><strong>path</strong> (<em>str</em>) – Path to directory.</p></li>
+<li><p><strong>glob</strong> (<em>str</em>) – Glob pattern to use to find files. Defaults to “<a href="#id1"><span class="problematic" id="id2">**</span></a>/[!.]*”
 (all files except hidden).</p></li>
-<li><p><strong>silent_errors</strong> – Whether to silently ignore errors. Defaults to False.</p></li>
-<li><p><strong>load_hidden</strong> – Whether to load hidden files. Defaults to False.</p></li>
-<li><p><strong>loader_cls</strong> – Loader class to use for loading files.
+<li><p><strong>exclude</strong> (<em>Union</em><em>[</em><em>Sequence</em><em>[</em><em>str</em><em>]</em><em>, </em><em>str</em><em>]</em>) – A pattern or list of patterns to exclude from results.
+Use glob syntax.</p></li>
+<li><p><strong>silent_errors</strong> (<em>bool</em>) – Whether to silently ignore errors. Defaults to False.</p></li>
+<li><p><strong>load_hidden</strong> (<em>bool</em>) – Whether to load hidden files. Defaults to False.</p></li>
+<li><p><strong>loader_cls</strong> (<em>Union</em><em>[</em><em>Type</em><em>[</em><a class="reference internal" href="langchain_community.document_loaders.unstructured.UnstructuredFileLoader.html#langchain_community.document_loaders.unstructured.UnstructuredFileLoader" title="langchain_community.document_loaders.unstructured.UnstructuredFileLoader"><em>UnstructuredFileLoader</em></a><em>]</em><em>, </em><em>Type</em><em>[</em><a class="reference internal" href="langchain_community.document_loaders.text.TextLoader.html#langchain_community.document_loaders.text.TextLoader" title="langchain_community.document_loaders.text.TextLoader"><em>TextLoader</em></a><em>]</em><em>, </em><em>Type</em><em>[</em><a class="reference internal" href="langchain_community.document_loaders.html_bs.BSHTMLLoader.html#langchain_community.document_loaders.html_bs.BSHTMLLoader" title="langchain_community.document_loaders.html_bs.BSHTMLLoader"><em>BSHTMLLoader</em></a><em>]</em><em>]</em>) – Loader class to use for loading files.
 Defaults to UnstructuredFileLoader.</p></li>
-<li><p><strong>loader_kwargs</strong> – Keyword arguments to pass to loader_cls. Defaults to None.</p></li>
-<li><p><strong>recursive</strong> – Whether to recursively search for files. Defaults to False.</p></li>
-<li><p><strong>show_progress</strong> – Whether to show a progress bar. Defaults to False.</p></li>
-<li><p><strong>use_multithreading</strong> – Whether to use multithreading. Defaults to False.</p></li>
-<li><p><strong>max_concurrency</strong> – The maximum number of threads to use. Defaults to 4.</p></li>
-<li><p><strong>sample_size</strong> – The maximum number of files you would like to load from the
+<li><p><strong>loader_kwargs</strong> (<em>Optional</em><em>[</em><em>dict</em><em>]</em>) – Keyword arguments to pass to loader_cls. Defaults to None.</p></li>
+<li><p><strong>recursive</strong> (<em>bool</em>) – Whether to recursively search for files. Defaults to False.</p></li>
+<li><p><strong>show_progress</strong> (<em>bool</em>) – Whether to show a progress bar. Defaults to False.</p></li>
+<li><p><strong>use_multithreading</strong> (<em>bool</em>) – Whether to use multithreading. Defaults to False.</p></li>
+<li><p><strong>max_concurrency</strong> (<em>int</em>) – The maximum number of threads to use. Defaults to 4.</p></li>
+<li><p><strong>sample_size</strong> (<em>int</em>) – The maximum number of files you would like to load from the
 directory.</p></li>
-<li><p><strong>randomize_sample</strong> – Shuffle the files to get a random sample.</p></li>
-<li><p><strong>sample_seed</strong> – set the seed of the random shuffle for reproducibility.</p></li>
+<li><p><strong>randomize_sample</strong> (<em>bool</em>) – Shuffle the files to get a random sample.</p></li>
+<li><p><strong>sample_seed</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – set the seed of the random shuffle for reproducibility.</p></li>
 </ul>
 </dd>
 </dl>
+<p class="rubric">Examples</p>
 <p class="rubric">Methods</p>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
@@ -218,48 +233,66 @@ directory.</p></li>
 </table>
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.document_loaders.directory.DirectoryLoader.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">path:</span> <span class="pre">str,</span> <span class="pre">glob:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'**/[!.]*',</span> <span class="pre">silent_errors:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False,</span> <span class="pre">load_hidden:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False,</span> <span class="pre">loader_cls:</span> <span class="pre">~typing.Union[~typing.Type[~langchain_community.document_loaders.unstructured.UnstructuredFileLoader],</span> <span class="pre">~typing.Type[~langchain_community.document_loaders.text.TextLoader],</span> <span class="pre">~typing.Type[~langchain_community.document_loaders.html_bs.BSHTMLLoader]]</span> <span class="pre">=</span> <span class="pre">&lt;class</span> <span class="pre">'langchain_community.document_loaders.unstructured.UnstructuredFileLoader'&gt;,</span> <span class="pre">loader_kwargs:</span> <span class="pre">~typing.Optional[dict]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">recursive:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False,</span> <span class="pre">show_progress:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False,</span> <span class="pre">use_multithreading:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False,</span> <span class="pre">max_concurrency:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">4,</span> <span class="pre">*,</span> <span class="pre">sample_size:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">0,</span> <span class="pre">randomize_sample:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False,</span> <span class="pre">sample_seed:</span> <span class="pre">~typing.Optional[int]</span> <span class="pre">=</span> <span class="pre">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/langchain_community/document_loaders/directory.html#DirectoryLoader.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.document_loaders.directory.DirectoryLoader.__init__" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">path:</span> <span class="pre">str,</span> <span class="pre">glob:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'**/[!.]*',</span> <span class="pre">silent_errors:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False,</span> <span class="pre">load_hidden:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False,</span> <span class="pre">loader_cls:</span> <span class="pre">~typing.Union[~typing.Type[~langchain_community.document_loaders.unstructured.UnstructuredFileLoader],</span> <span class="pre">~typing.Type[~langchain_community.document_loaders.text.TextLoader],</span> <span class="pre">~typing.Type[~langchain_community.document_loaders.html_bs.BSHTMLLoader]]</span> <span class="pre">=</span> <span class="pre">&lt;class</span> <span class="pre">'langchain_community.document_loaders.unstructured.UnstructuredFileLoader'&gt;,</span> <span class="pre">loader_kwargs:</span> <span class="pre">~typing.Optional[dict]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">recursive:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False,</span> <span class="pre">show_progress:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False,</span> <span class="pre">use_multithreading:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False,</span> <span class="pre">max_concurrency:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">4,</span> <span class="pre">*,</span> <span class="pre">exclude:</span> <span class="pre">~typing.Union[~typing.Sequence[str],</span> <span class="pre">str]</span> <span class="pre">=</span> <span class="pre">(),</span> <span class="pre">sample_size:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">0,</span> <span class="pre">randomize_sample:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False,</span> <span class="pre">sample_seed:</span> <span class="pre">~typing.Optional[int]</span> <span class="pre">=</span> <span class="pre">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/langchain_community/document_loaders/directory.html#DirectoryLoader.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.document_loaders.directory.DirectoryLoader.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize with a path to directory and how to glob over it.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>path</strong> – Path to directory.</p></li>
-<li><p><strong>glob</strong> – Glob pattern to use to find files. Defaults to “<a href="#id3"><span class="problematic" id="id4">**</span></a>/[!.]*”
+<li><p><strong>path</strong> (<em>str</em>) – Path to directory.</p></li>
+<li><p><strong>glob</strong> (<em>str</em>) – Glob pattern to use to find files. Defaults to “<a href="#id3"><span class="problematic" id="id4">**</span></a>/[!.]*”
 (all files except hidden).</p></li>
-<li><p><strong>silent_errors</strong> – Whether to silently ignore errors. Defaults to False.</p></li>
-<li><p><strong>load_hidden</strong> – Whether to load hidden files. Defaults to False.</p></li>
-<li><p><strong>loader_cls</strong> – Loader class to use for loading files.
+<li><p><strong>exclude</strong> (<em>Union</em><em>[</em><em>Sequence</em><em>[</em><em>str</em><em>]</em><em>, </em><em>str</em><em>]</em>) – A pattern or list of patterns to exclude from results.
+Use glob syntax.</p></li>
+<li><p><strong>silent_errors</strong> (<em>bool</em>) – Whether to silently ignore errors. Defaults to False.</p></li>
+<li><p><strong>load_hidden</strong> (<em>bool</em>) – Whether to load hidden files. Defaults to False.</p></li>
+<li><p><strong>loader_cls</strong> (<em>Union</em><em>[</em><em>Type</em><em>[</em><a class="reference internal" href="langchain_community.document_loaders.unstructured.UnstructuredFileLoader.html#langchain_community.document_loaders.unstructured.UnstructuredFileLoader" title="langchain_community.document_loaders.unstructured.UnstructuredFileLoader"><em>UnstructuredFileLoader</em></a><em>]</em><em>, </em><em>Type</em><em>[</em><a class="reference internal" href="langchain_community.document_loaders.text.TextLoader.html#langchain_community.document_loaders.text.TextLoader" title="langchain_community.document_loaders.text.TextLoader"><em>TextLoader</em></a><em>]</em><em>, </em><em>Type</em><em>[</em><a class="reference internal" href="langchain_community.document_loaders.html_bs.BSHTMLLoader.html#langchain_community.document_loaders.html_bs.BSHTMLLoader" title="langchain_community.document_loaders.html_bs.BSHTMLLoader"><em>BSHTMLLoader</em></a><em>]</em><em>]</em>) – Loader class to use for loading files.
 Defaults to UnstructuredFileLoader.</p></li>
-<li><p><strong>loader_kwargs</strong> – Keyword arguments to pass to loader_cls. Defaults to None.</p></li>
-<li><p><strong>recursive</strong> – Whether to recursively search for files. Defaults to False.</p></li>
-<li><p><strong>show_progress</strong> – Whether to show a progress bar. Defaults to False.</p></li>
-<li><p><strong>use_multithreading</strong> – Whether to use multithreading. Defaults to False.</p></li>
-<li><p><strong>max_concurrency</strong> – The maximum number of threads to use. Defaults to 4.</p></li>
-<li><p><strong>sample_size</strong> – The maximum number of files you would like to load from the
+<li><p><strong>loader_kwargs</strong> (<em>Optional</em><em>[</em><em>dict</em><em>]</em>) – Keyword arguments to pass to loader_cls. Defaults to None.</p></li>
+<li><p><strong>recursive</strong> (<em>bool</em>) – Whether to recursively search for files. Defaults to False.</p></li>
+<li><p><strong>show_progress</strong> (<em>bool</em>) – Whether to show a progress bar. Defaults to False.</p></li>
+<li><p><strong>use_multithreading</strong> (<em>bool</em>) – Whether to use multithreading. Defaults to False.</p></li>
+<li><p><strong>max_concurrency</strong> (<em>int</em>) – The maximum number of threads to use. Defaults to 4.</p></li>
+<li><p><strong>sample_size</strong> (<em>int</em>) – The maximum number of files you would like to load from the
 directory.</p></li>
-<li><p><strong>randomize_sample</strong> – Shuffle the files to get a random sample.</p></li>
-<li><p><strong>sample_seed</strong> – set the seed of the random shuffle for reproducibility.</p></li>
+<li><p><strong>randomize_sample</strong> (<em>bool</em>) – Shuffle the files to get a random sample.</p></li>
+<li><p><strong>sample_seed</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – set the seed of the random shuffle for reproducibility.</p></li>
 </ul>
 </dd>
 </dl>
+<p class="rubric">Examples</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.document_loaders.directory.DirectoryLoader.alazy_load">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">alazy_load</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">AsyncIterator</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><span class="pre">Document</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#langchain_community.document_loaders.directory.DirectoryLoader.alazy_load" title="Permalink to this definition">¶</a></dt>
 <dd><p>A lazy loader for Documents.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><em>AsyncIterator</em>[<a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><em>Document</em></a>]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.document_loaders.directory.DirectoryLoader.lazy_load">
 <span class="sig-name descname"><span class="pre">lazy_load</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><span class="pre">Document</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#langchain_community.document_loaders.directory.DirectoryLoader.lazy_load" title="Permalink to this definition">¶</a></dt>
 <dd><p>A lazy loader for Documents.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><em>Iterator</em>[<a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><em>Document</em></a>]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.document_loaders.directory.DirectoryLoader.load">
 <span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><span class="pre">Document</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/langchain_community/document_loaders/directory.html#DirectoryLoader.load"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.document_loaders.directory.DirectoryLoader.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load documents.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><em>List</em>[<a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><em>Document</em></a>]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -268,11 +301,14 @@ directory.</p></li>
 <dd><p>Load Documents and split into chunks. Chunks are returned as Documents.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>text_splitter</strong> – TextSplitter instance to use for splitting documents.
+<dd class="field-odd"><p><strong>text_splitter</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="../text_splitter/langchain.text_splitter.TextSplitter.html#langchain.text_splitter.TextSplitter" title="langchain.text_splitter.TextSplitter"><em>TextSplitter</em></a><em>]</em>) – TextSplitter instance to use for splitting documents.
 Defaults to RecursiveCharacterTextSplitter.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>List of Documents.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List[<a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document">Document</a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -284,11 +320,14 @@ Defaults to RecursiveCharacterTextSplitter.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>item</strong> – File path.</p></li>
-<li><p><strong>path</strong> – Directory path.</p></li>
-<li><p><strong>docs</strong> – List of documents to append to.</p></li>
-<li><p><strong>pbar</strong> – Progress bar. Defaults to None.</p></li>
+<li><p><strong>item</strong> (<em>Path</em>) – File path.</p></li>
+<li><p><strong>path</strong> (<em>Path</em>) – Directory path.</p></li>
+<li><p><strong>docs</strong> (<em>List</em><em>[</em><a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><em>Document</em></a><em>]</em>) – List of documents to append to.</p></li>
+<li><p><strong>pbar</strong> (<em>Optional</em><em>[</em><em>Any</em><em>]</em>) – Progress bar. Defaults to None.</p></li>
 </ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -306,7 +345,7 @@ Defaults to RecursiveCharacterTextSplitter.</p>
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 14, 2024.
+          Last updated on Feb 22, 2024.
           <a href="../_sources/document_loaders/langchain_community.document_loaders.directory.DirectoryLoader.rst.txt" rel="nofollow">Show this page source</a>
       </footer>
     </div>

@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>langchain.text_splitter.HTMLHeaderTextSplitter &mdash; 🦜🔗 LangChain 0.1.7</title>
+  <title>langchain.text_splitter.HTMLHeaderTextSplitter &mdash; 🦜🔗 LangChain 0.1.8</title>
   
   <link rel="canonical" href="https://api.python.langchain.com/en/latest/text_splitter/langchain.text_splitter.HTMLHeaderTextSplitter.html" />
 
@@ -61,7 +61,13 @@
           <a class="sk-nav-link nav-link" href="../experimental_api_reference.html">Experimental</a>
         </li>
         <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ai21_api_reference.html">ai21</a>
+        </li>
+        <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../anthropic_api_reference.html">anthropic</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../astradb_api_reference.html">astradb</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../exa_api_reference.html">exa</a>
@@ -71,6 +77,9 @@
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../google_vertexai_api_reference.html">google-vertexai</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ibm_api_reference.html">ibm</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../mistralai_api_reference.html">mistralai</a>
@@ -99,10 +108,13 @@
         <li class="nav-item dropdown nav-more-item-dropdown">
           <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Partner libs</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ai21_api_reference.html">ai21</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../anthropic_api_reference.html">anthropic</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../astradb_api_reference.html">astradb</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../exa_api_reference.html">exa</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_genai_api_reference.html">google-genai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ibm_api_reference.html">ibm</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../mistralai_api_reference.html">mistralai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nomic_api_reference.html">nomic</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nvidia_ai_endpoints_api_reference.html">nvidia-ai-endpoints</a>
@@ -170,10 +182,10 @@ Requires lxml package.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>headers_to_split_on</strong> – list of tuples of headers we want to track mapped to
+<li><p><strong>headers_to_split_on</strong> (<em>List</em><em>[</em><em>Tuple</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em><em>]</em>) – list of tuples of headers we want to track mapped to
 (arbitrary) keys for metadata. Allowed header values: h1, h2, h3, h4,
 h5, h6 e.g. [(“h1”, “Header 1”), (“h2”, “Header 2)].</p></li>
-<li><p><strong>return_each_element</strong> – Return each element w/ associated headers.</p></li>
+<li><p><strong>return_each_element</strong> (<em>bool</em>) – Return each element w/ associated headers.</p></li>
 </ul>
 </dd>
 </dl>
@@ -208,10 +220,10 @@ h5, h6 e.g. [(“h1”, “Header 1”), (“h2”, “Header 2)].</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>headers_to_split_on</strong> – list of tuples of headers we want to track mapped to
+<li><p><strong>headers_to_split_on</strong> (<em>List</em><em>[</em><em>Tuple</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em><em>]</em>) – list of tuples of headers we want to track mapped to
 (arbitrary) keys for metadata. Allowed header values: h1, h2, h3, h4,
 h5, h6 e.g. [(“h1”, “Header 1”), (“h2”, “Header 2)].</p></li>
-<li><p><strong>return_each_element</strong> – Return each element w/ associated headers.</p></li>
+<li><p><strong>return_each_element</strong> (<em>bool</em>) – Return each element w/ associated headers.</p></li>
 </ul>
 </dd>
 </dl>
@@ -223,7 +235,10 @@ h5, h6 e.g. [(“h1”, “Header 1”), (“h2”, “Header 2)].</p></li>
 <dd><p>Combine elements with common metadata into chunks</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>elements</strong> – HTML element content with associated identifying info and metadata</p>
+<dd class="field-odd"><p><strong>elements</strong> (<em>List</em><em>[</em><a class="reference internal" href="langchain.text_splitter.ElementType.html#langchain.text_splitter.ElementType" title="langchain.text_splitter.ElementType"><em>ElementType</em></a><em>]</em>) – HTML element content with associated identifying info and metadata</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><em>List</em>[<a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><em>Document</em></a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -234,7 +249,10 @@ h5, h6 e.g. [(“h1”, “Header 1”), (“h2”, “Header 2)].</p></li>
 <dd><p>Split HTML text string</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>text</strong> – HTML text</p>
+<dd class="field-odd"><p><strong>text</strong> (<em>str</em>) – HTML text</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><em>List</em>[<a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><em>Document</em></a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -245,7 +263,10 @@ h5, h6 e.g. [(“h1”, “Header 1”), (“h2”, “Header 2)].</p></li>
 <dd><p>Split HTML file</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>file</strong> – HTML file</p>
+<dd class="field-odd"><p><strong>file</strong> (<em>Any</em>) – HTML file</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><em>List</em>[<a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><em>Document</em></a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -256,7 +277,10 @@ h5, h6 e.g. [(“h1”, “Header 1”), (“h2”, “Header 2)].</p></li>
 <dd><p>Split HTML from web URL</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>url</strong> – web URL</p>
+<dd class="field-odd"><p><strong>url</strong> (<em>str</em>) – web URL</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><em>List</em>[<a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><em>Document</em></a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -272,7 +296,7 @@ h5, h6 e.g. [(“h1”, “Header 1”), (“h2”, “Header 2)].</p></li>
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 14, 2024.
+          Last updated on Feb 22, 2024.
           <a href="../_sources/text_splitter/langchain.text_splitter.HTMLHeaderTextSplitter.rst.txt" rel="nofollow">Show this page source</a>
       </footer>
     </div>

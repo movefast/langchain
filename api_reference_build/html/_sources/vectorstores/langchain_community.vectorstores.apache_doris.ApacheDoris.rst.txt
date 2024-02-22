@@ -1,0 +1,88 @@
+﻿:mod:`langchain_community.vectorstores.apache_doris`.ApacheDoris
+=======================================================================
+
+.. currentmodule:: langchain_community.vectorstores.apache_doris
+
+.. autoclass:: ApacheDoris
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~ApacheDoris.embeddings
+      ~ApacheDoris.metadata_column
+   
+   
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ApacheDoris.__init__
+      ~ApacheDoris.aadd_documents
+      ~ApacheDoris.aadd_texts
+      ~ApacheDoris.add_documents
+      ~ApacheDoris.add_texts
+      ~ApacheDoris.adelete
+      ~ApacheDoris.afrom_documents
+      ~ApacheDoris.afrom_texts
+      ~ApacheDoris.amax_marginal_relevance_search
+      ~ApacheDoris.amax_marginal_relevance_search_by_vector
+      ~ApacheDoris.as_retriever
+      ~ApacheDoris.asearch
+      ~ApacheDoris.asimilarity_search
+      ~ApacheDoris.asimilarity_search_by_vector
+      ~ApacheDoris.asimilarity_search_with_relevance_scores
+      ~ApacheDoris.asimilarity_search_with_score
+      ~ApacheDoris.delete
+      ~ApacheDoris.drop
+      ~ApacheDoris.escape_str
+      ~ApacheDoris.from_documents
+      ~ApacheDoris.from_texts
+      ~ApacheDoris.max_marginal_relevance_search
+      ~ApacheDoris.max_marginal_relevance_search_by_vector
+      ~ApacheDoris.search
+      ~ApacheDoris.similarity_search
+      ~ApacheDoris.similarity_search_by_vector
+      ~ApacheDoris.similarity_search_with_relevance_scores
+      ~ApacheDoris.similarity_search_with_score
+
+   
+   .. automethod:: ApacheDoris.__init__
+   .. automethod:: ApacheDoris.aadd_documents
+   .. automethod:: ApacheDoris.aadd_texts
+   .. automethod:: ApacheDoris.add_documents
+   .. automethod:: ApacheDoris.add_texts
+   .. automethod:: ApacheDoris.adelete
+   .. automethod:: ApacheDoris.afrom_documents
+   .. automethod:: ApacheDoris.afrom_texts
+   .. automethod:: ApacheDoris.amax_marginal_relevance_search
+   .. automethod:: ApacheDoris.amax_marginal_relevance_search_by_vector
+   .. automethod:: ApacheDoris.as_retriever
+   .. automethod:: ApacheDoris.asearch
+   .. automethod:: ApacheDoris.asimilarity_search
+   .. automethod:: ApacheDoris.asimilarity_search_by_vector
+   .. automethod:: ApacheDoris.asimilarity_search_with_relevance_scores
+   .. automethod:: ApacheDoris.asimilarity_search_with_score
+   .. automethod:: ApacheDoris.delete
+   .. automethod:: ApacheDoris.drop
+   .. automethod:: ApacheDoris.escape_str
+   .. automethod:: ApacheDoris.from_documents
+   .. automethod:: ApacheDoris.from_texts
+   .. automethod:: ApacheDoris.max_marginal_relevance_search
+   .. automethod:: ApacheDoris.max_marginal_relevance_search_by_vector
+   .. automethod:: ApacheDoris.search
+   .. automethod:: ApacheDoris.similarity_search
+   .. automethod:: ApacheDoris.similarity_search_by_vector
+   .. automethod:: ApacheDoris.similarity_search_with_relevance_scores
+   .. automethod:: ApacheDoris.similarity_search_with_score
+
+   
+   
+
+
+.. example_links:: ApacheDoris

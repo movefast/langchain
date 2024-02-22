@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>langchain_community.document_loaders.sitemap.SitemapLoader &mdash; 🦜🔗 LangChain 0.1.7</title>
+  <title>langchain_community.document_loaders.sitemap.SitemapLoader &mdash; 🦜🔗 LangChain 0.1.8</title>
   
   <link rel="canonical" href="https://api.python.langchain.com/en/latest/document_loaders/langchain_community.document_loaders.sitemap.SitemapLoader.html" />
 
@@ -61,7 +61,13 @@
           <a class="sk-nav-link nav-link" href="../experimental_api_reference.html">Experimental</a>
         </li>
         <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ai21_api_reference.html">ai21</a>
+        </li>
+        <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../anthropic_api_reference.html">anthropic</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../astradb_api_reference.html">astradb</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../exa_api_reference.html">exa</a>
@@ -71,6 +77,9 @@
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../google_vertexai_api_reference.html">google-vertexai</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ibm_api_reference.html">ibm</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../mistralai_api_reference.html">mistralai</a>
@@ -99,10 +108,13 @@
         <li class="nav-item dropdown nav-more-item-dropdown">
           <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Partner libs</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ai21_api_reference.html">ai21</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../anthropic_api_reference.html">anthropic</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../astradb_api_reference.html">astradb</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../exa_api_reference.html">exa</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_genai_api_reference.html">google-genai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ibm_api_reference.html">ibm</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../mistralai_api_reference.html">mistralai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nomic_api_reference.html">nomic</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nvidia_ai_endpoints_api_reference.html">nvidia-ai-endpoints</a>
@@ -194,8 +206,8 @@ restrict_to_same_domain to False (not recommended).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>web_path</strong> – url of the sitemap. can also be a local path</p></li>
-<li><p><strong>filter_urls</strong> – a list of regexes. If specified, only
+<li><p><strong>web_path</strong> (<em>str</em>) – url of the sitemap. can also be a local path</p></li>
+<li><p><strong>filter_urls</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em>) – a list of regexes. If specified, only
 URLS that match one of the filter URLs will be loaded.
 <em>WARNING</em> The filter URLs are interpreted as regular expressions.
 Remember to escape special characters if you do not want them to be
@@ -204,21 +216,22 @@ frequently in URLs and should be escaped if you want to match a literal
 <cite>.</cite> rather than any character.
 restrict_to_same_domain takes precedence over filter_urls when
 restrict_to_same_domain is True and the sitemap is not a local file.</p></li>
-<li><p><strong>parsing_function</strong> – Function to parse bs4.Soup output</p></li>
-<li><p><strong>blocksize</strong> – number of sitemap locations per block</p></li>
-<li><p><strong>blocknum</strong> – the number of the block that should be loaded - zero indexed.
+<li><p><strong>parsing_function</strong> (<em>Optional</em><em>[</em><em>Callable</em><em>]</em>) – Function to parse bs4.Soup output</p></li>
+<li><p><strong>blocksize</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – number of sitemap locations per block</p></li>
+<li><p><strong>blocknum</strong> (<em>int</em>) – the number of the block that should be loaded - zero indexed.
 Default: 0</p></li>
-<li><p><strong>meta_function</strong> – Function to parse bs4.Soup output for metadata
+<li><p><strong>meta_function</strong> (<em>Optional</em><em>[</em><em>Callable</em><em>]</em>) – Function to parse bs4.Soup output for metadata
 remember when setting this method to also copy metadata[“loc”]
 to metadata[“source”] if you are using this field</p></li>
-<li><p><strong>is_local</strong> – whether the sitemap is a local file. Default: False</p></li>
-<li><p><strong>continue_on_failure</strong> – whether to continue loading the sitemap if an error
+<li><p><strong>is_local</strong> (<em>bool</em>) – whether the sitemap is a local file. Default: False</p></li>
+<li><p><strong>continue_on_failure</strong> (<em>bool</em>) – whether to continue loading the sitemap if an error
 occurs loading a url, emitting a warning instead of raising an
 exception. Setting this to True makes the loader more robust, but also
 may result in missing data. Default: False</p></li>
-<li><p><strong>restrict_to_same_domain</strong> – whether to restrict loading to URLs to the same
+<li><p><strong>restrict_to_same_domain</strong> (<em>bool</em>) – whether to restrict loading to URLs to the same
 domain as the sitemap. Attention: This is only applied if the sitemap
 is not a local file!</p></li>
+<li><p><strong>kwargs</strong> (<em>Any</em>) – </p></li>
 </ul>
 </dd>
 </dl>
@@ -280,8 +293,8 @@ is not a local file!</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>web_path</strong> – url of the sitemap. can also be a local path</p></li>
-<li><p><strong>filter_urls</strong> – a list of regexes. If specified, only
+<li><p><strong>web_path</strong> (<em>str</em>) – url of the sitemap. can also be a local path</p></li>
+<li><p><strong>filter_urls</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em>) – a list of regexes. If specified, only
 URLS that match one of the filter URLs will be loaded.
 <em>WARNING</em> The filter URLs are interpreted as regular expressions.
 Remember to escape special characters if you do not want them to be
@@ -290,21 +303,22 @@ frequently in URLs and should be escaped if you want to match a literal
 <cite>.</cite> rather than any character.
 restrict_to_same_domain takes precedence over filter_urls when
 restrict_to_same_domain is True and the sitemap is not a local file.</p></li>
-<li><p><strong>parsing_function</strong> – Function to parse bs4.Soup output</p></li>
-<li><p><strong>blocksize</strong> – number of sitemap locations per block</p></li>
-<li><p><strong>blocknum</strong> – the number of the block that should be loaded - zero indexed.
+<li><p><strong>parsing_function</strong> (<em>Optional</em><em>[</em><em>Callable</em><em>]</em>) – Function to parse bs4.Soup output</p></li>
+<li><p><strong>blocksize</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – number of sitemap locations per block</p></li>
+<li><p><strong>blocknum</strong> (<em>int</em>) – the number of the block that should be loaded - zero indexed.
 Default: 0</p></li>
-<li><p><strong>meta_function</strong> – Function to parse bs4.Soup output for metadata
+<li><p><strong>meta_function</strong> (<em>Optional</em><em>[</em><em>Callable</em><em>]</em>) – Function to parse bs4.Soup output for metadata
 remember when setting this method to also copy metadata[“loc”]
 to metadata[“source”] if you are using this field</p></li>
-<li><p><strong>is_local</strong> – whether the sitemap is a local file. Default: False</p></li>
-<li><p><strong>continue_on_failure</strong> – whether to continue loading the sitemap if an error
+<li><p><strong>is_local</strong> (<em>bool</em>) – whether the sitemap is a local file. Default: False</p></li>
+<li><p><strong>continue_on_failure</strong> (<em>bool</em>) – whether to continue loading the sitemap if an error
 occurs loading a url, emitting a warning instead of raising an
 exception. Setting this to True makes the loader more robust, but also
 may result in missing data. Default: False</p></li>
-<li><p><strong>restrict_to_same_domain</strong> – whether to restrict loading to URLs to the same
+<li><p><strong>restrict_to_same_domain</strong> (<em>bool</em>) – whether to restrict loading to URLs to the same
 domain as the sitemap. Attention: This is only applied if the sitemap
 is not a local file!</p></li>
+<li><p><strong>kwargs</strong> (<em>Any</em>) – </p></li>
 </ul>
 </dd>
 </dl>
@@ -314,30 +328,58 @@ is not a local file!</p></li>
 <dt class="sig sig-object py" id="langchain_community.document_loaders.sitemap.SitemapLoader.alazy_load">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">alazy_load</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">AsyncIterator</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><span class="pre">Document</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#langchain_community.document_loaders.sitemap.SitemapLoader.alazy_load" title="Permalink to this definition">¶</a></dt>
 <dd><p>A lazy loader for Documents.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><em>AsyncIterator</em>[<a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><em>Document</em></a>]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.document_loaders.sitemap.SitemapLoader.aload">
 <span class="sig-name descname"><span class="pre">aload</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><span class="pre">Document</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#langchain_community.document_loaders.sitemap.SitemapLoader.aload" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load text from the urls in web_path async into Documents.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><em>List</em>[<a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><em>Document</em></a>]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.document_loaders.sitemap.SitemapLoader.fetch_all">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fetch_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">urls</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#langchain_community.document_loaders.sitemap.SitemapLoader.fetch_all" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fetch all urls concurrently with rate limiting.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>urls</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><em>Any</em></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.document_loaders.sitemap.SitemapLoader.lazy_load">
 <span class="sig-name descname"><span class="pre">lazy_load</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><span class="pre">Document</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#langchain_community.document_loaders.sitemap.SitemapLoader.lazy_load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Lazy load text from the url(s) in web_path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><em>Iterator</em>[<a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><em>Document</em></a>]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.document_loaders.sitemap.SitemapLoader.load">
 <span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><span class="pre">Document</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/langchain_community/document_loaders/sitemap.html#SitemapLoader.load"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.document_loaders.sitemap.SitemapLoader.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load sitemap.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><em>List</em>[<a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><em>Document</em></a>]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -346,11 +388,14 @@ is not a local file!</p></li>
 <dd><p>Load Documents and split into chunks. Chunks are returned as Documents.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>text_splitter</strong> – TextSplitter instance to use for splitting documents.
+<dd class="field-odd"><p><strong>text_splitter</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="../text_splitter/langchain.text_splitter.TextSplitter.html#langchain.text_splitter.TextSplitter" title="langchain.text_splitter.TextSplitter"><em>TextSplitter</em></a><em>]</em>) – TextSplitter instance to use for splitting documents.
 Defaults to RecursiveCharacterTextSplitter.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>List of Documents.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List[<a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document">Document</a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -361,10 +406,13 @@ Defaults to RecursiveCharacterTextSplitter.</p>
 <dd><p>Parse sitemap xml and load into a list of dicts.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>soup</strong> – BeautifulSoup object.</p>
+<dd class="field-odd"><p><strong>soup</strong> (<em>Any</em>) – BeautifulSoup object.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>List of dicts.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><em>List</em>[dict]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -373,12 +421,31 @@ Defaults to RecursiveCharacterTextSplitter.</p>
 <dt class="sig sig-object py" id="langchain_community.document_loaders.sitemap.SitemapLoader.scrape">
 <span class="sig-name descname"><span class="pre">scrape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parser</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#langchain_community.document_loaders.sitemap.SitemapLoader.scrape" title="Permalink to this definition">¶</a></dt>
 <dd><p>Scrape data from webpage and return it in BeautifulSoup format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>parser</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><em>Any</em></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.document_loaders.sitemap.SitemapLoader.scrape_all">
 <span class="sig-name descname"><span class="pre">scrape_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">urls</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parser</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#langchain_community.document_loaders.sitemap.SitemapLoader.scrape_all" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fetch all urls, then return soups for all results.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>urls</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – </p></li>
+<li><p><strong>parser</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><em>List</em>[<em>Any</em>]</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -394,7 +461,7 @@ Defaults to RecursiveCharacterTextSplitter.</p>
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 14, 2024.
+          Last updated on Feb 22, 2024.
           <a href="../_sources/document_loaders/langchain_community.document_loaders.sitemap.SitemapLoader.rst.txt" rel="nofollow">Show this page source</a>
       </footer>
     </div>

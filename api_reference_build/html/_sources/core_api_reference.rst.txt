@@ -1,7 +1,7 @@
 .. core_api_reference:
 
 =======================
-``langchain_core`` 0.1.23
+``langchain_core`` 0.1.25
 =======================
 
 :mod:`langchain_core.agents`
@@ -33,16 +33,6 @@ Classes
     
     agents.AgentStep
     
-Functions
---------------
-.. currentmodule:: langchain_core
-
-.. autosummary::
-    :toctree: agents
-    :template: function.rst
-
-    
-
 :mod:`langchain_core.beta`
 ===========================
 
@@ -1062,6 +1052,9 @@ Functions
     runnables.config.run_in_executor
     runnables.configurable.make_options_spec
     runnables.configurable.prefix_config_spec
+    runnables.graph.is_uuid
+    runnables.graph.node_data_json
+    runnables.graph.node_data_str
     runnables.graph_draw.draw
     runnables.passthrough.aidentity
     runnables.passthrough.identity
@@ -1070,6 +1063,7 @@ Functions
     runnables.utils.accepts_context
     runnables.utils.accepts_run_manager
     runnables.utils.add
+    runnables.utils.create_model
     runnables.utils.gated_coro
     runnables.utils.gather_with_concurrency
     runnables.utils.get_function_first_arg_dict_keys

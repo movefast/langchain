@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>langchain_core 0.1.23 &mdash; 🦜🔗 LangChain 0.1.7</title>
+  <title>langchain_core 0.1.25 &mdash; 🦜🔗 LangChain 0.1.8</title>
   
   <link rel="canonical" href="https://api.python.langchain.com/en/latest/core_api_reference.html" />
 
@@ -61,7 +61,13 @@
           <a class="sk-nav-link nav-link" href="experimental_api_reference.html">Experimental</a>
         </li>
         <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="ai21_api_reference.html">ai21</a>
+        </li>
+        <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="anthropic_api_reference.html">anthropic</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="astradb_api_reference.html">astradb</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="exa_api_reference.html">exa</a>
@@ -71,6 +77,9 @@
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="google_vertexai_api_reference.html">google-vertexai</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="ibm_api_reference.html">ibm</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="mistralai_api_reference.html">mistralai</a>
@@ -99,10 +108,13 @@
         <li class="nav-item dropdown nav-more-item-dropdown">
           <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Partner libs</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="sk-nav-dropdown-item dropdown-item" href="ai21_api_reference.html">ai21</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="anthropic_api_reference.html">anthropic</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="astradb_api_reference.html">astradb</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="exa_api_reference.html">exa</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="google_genai_api_reference.html">google-genai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="ibm_api_reference.html">ibm</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="mistralai_api_reference.html">mistralai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="nomic_api_reference.html">nomic</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="nvidia_ai_endpoints_api_reference.html">nvidia-ai-endpoints</a>
@@ -140,122 +152,121 @@
         </div>
             <div class="sk-sidebar-toc">
               <ul>
-<li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">langchain_core</span></code> 0.1.23</a><ul>
+<li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">langchain_core</span></code> 0.1.25</a><ul>
 <li><a class="reference internal" href="#module-langchain_core.agents"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.agents</span></code></a><ul>
 <li><a class="reference internal" href="#classes">Classes</a></li>
-<li><a class="reference internal" href="#functions">Functions</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#module-langchain_core.beta"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.beta</span></code></a><ul>
 <li><a class="reference internal" href="#id1">Classes</a></li>
-<li><a class="reference internal" href="#id2">Functions</a></li>
+<li><a class="reference internal" href="#functions">Functions</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#module-langchain_core.caches"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.caches</span></code></a><ul>
-<li><a class="reference internal" href="#id3">Classes</a></li>
+<li><a class="reference internal" href="#id2">Classes</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#module-langchain_core.callbacks"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.callbacks</span></code></a><ul>
-<li><a class="reference internal" href="#id4">Classes</a></li>
-<li><a class="reference internal" href="#id5">Functions</a></li>
+<li><a class="reference internal" href="#id3">Classes</a></li>
+<li><a class="reference internal" href="#id4">Functions</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#module-langchain_core.chat_history"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.chat_history</span></code></a><ul>
-<li><a class="reference internal" href="#id6">Classes</a></li>
+<li><a class="reference internal" href="#id5">Classes</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#module-langchain_core.chat_sessions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.chat_sessions</span></code></a><ul>
-<li><a class="reference internal" href="#id7">Classes</a></li>
+<li><a class="reference internal" href="#id6">Classes</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#module-langchain_core.documents"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.documents</span></code></a><ul>
-<li><a class="reference internal" href="#id8">Classes</a></li>
+<li><a class="reference internal" href="#id7">Classes</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#module-langchain_core.embeddings"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.embeddings</span></code></a><ul>
-<li><a class="reference internal" href="#id9">Classes</a></li>
+<li><a class="reference internal" href="#id8">Classes</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#module-langchain_core.example_selectors"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.example_selectors</span></code></a><ul>
-<li><a class="reference internal" href="#id10">Classes</a></li>
-<li><a class="reference internal" href="#id11">Functions</a></li>
+<li><a class="reference internal" href="#id9">Classes</a></li>
+<li><a class="reference internal" href="#id10">Functions</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#module-langchain_core.exceptions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.exceptions</span></code></a><ul>
-<li><a class="reference internal" href="#id12">Classes</a></li>
+<li><a class="reference internal" href="#id11">Classes</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#module-langchain_core.language_models"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.language_models</span></code></a><ul>
-<li><a class="reference internal" href="#id13">Classes</a></li>
-<li><a class="reference internal" href="#id14">Functions</a></li>
+<li><a class="reference internal" href="#id12">Classes</a></li>
+<li><a class="reference internal" href="#id13">Functions</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#module-langchain_core.load"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.load</span></code></a><ul>
-<li><a class="reference internal" href="#id15">Classes</a></li>
-<li><a class="reference internal" href="#id16">Functions</a></li>
+<li><a class="reference internal" href="#id14">Classes</a></li>
+<li><a class="reference internal" href="#id15">Functions</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#module-langchain_core.memory"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.memory</span></code></a><ul>
-<li><a class="reference internal" href="#id17">Classes</a></li>
+<li><a class="reference internal" href="#id16">Classes</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#module-langchain_core.messages"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.messages</span></code></a><ul>
-<li><a class="reference internal" href="#id18">Classes</a></li>
-<li><a class="reference internal" href="#id19">Functions</a></li>
+<li><a class="reference internal" href="#id17">Classes</a></li>
+<li><a class="reference internal" href="#id18">Functions</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#module-langchain_core.output_parsers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.output_parsers</span></code></a><ul>
-<li><a class="reference internal" href="#id20">Classes</a></li>
-<li><a class="reference internal" href="#id21">Functions</a></li>
+<li><a class="reference internal" href="#id19">Classes</a></li>
+<li><a class="reference internal" href="#id20">Functions</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#module-langchain_core.outputs"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.outputs</span></code></a><ul>
-<li><a class="reference internal" href="#id22">Classes</a></li>
+<li><a class="reference internal" href="#id21">Classes</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#module-langchain_core.prompt_values"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.prompt_values</span></code></a><ul>
-<li><a class="reference internal" href="#id23">Classes</a></li>
+<li><a class="reference internal" href="#id22">Classes</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#module-langchain_core.prompts"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.prompts</span></code></a><ul>
-<li><a class="reference internal" href="#id24">Classes</a></li>
-<li><a class="reference internal" href="#id25">Functions</a></li>
+<li><a class="reference internal" href="#id23">Classes</a></li>
+<li><a class="reference internal" href="#id24">Functions</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#module-langchain_core.retrievers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.retrievers</span></code></a><ul>
-<li><a class="reference internal" href="#id26">Classes</a></li>
+<li><a class="reference internal" href="#id25">Classes</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#module-langchain_core.runnables"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.runnables</span></code></a><ul>
-<li><a class="reference internal" href="#id27">Classes</a></li>
-<li><a class="reference internal" href="#id28">Functions</a></li>
+<li><a class="reference internal" href="#id26">Classes</a></li>
+<li><a class="reference internal" href="#id27">Functions</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#module-langchain_core.stores"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.stores</span></code></a><ul>
-<li><a class="reference internal" href="#id29">Classes</a></li>
+<li><a class="reference internal" href="#id28">Classes</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#module-langchain_core.sys_info"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.sys_info</span></code></a><ul>
-<li><a class="reference internal" href="#id30">Functions</a></li>
+<li><a class="reference internal" href="#id29">Functions</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#module-langchain_core.tools"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.tools</span></code></a><ul>
-<li><a class="reference internal" href="#id31">Classes</a></li>
-<li><a class="reference internal" href="#id32">Functions</a></li>
+<li><a class="reference internal" href="#id30">Classes</a></li>
+<li><a class="reference internal" href="#id31">Functions</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#module-langchain_core.tracers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.tracers</span></code></a><ul>
-<li><a class="reference internal" href="#id33">Classes</a></li>
-<li><a class="reference internal" href="#id34">Functions</a></li>
+<li><a class="reference internal" href="#id32">Classes</a></li>
+<li><a class="reference internal" href="#id33">Functions</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#module-langchain_core.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.utils</span></code></a><ul>
-<li><a class="reference internal" href="#id35">Classes</a></li>
-<li><a class="reference internal" href="#id36">Functions</a></li>
+<li><a class="reference internal" href="#id34">Classes</a></li>
+<li><a class="reference internal" href="#id35">Functions</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#module-langchain_core.vectorstores"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.vectorstores</span></code></a><ul>
-<li><a class="reference internal" href="#id37">Classes</a></li>
+<li><a class="reference internal" href="#id36">Classes</a></li>
 </ul>
 </li>
 </ul>
@@ -268,10 +279,30 @@
     <div id="sk-page-content-wrapper">
       <div class="sk-page-content container-fluid body px-md-3" role="main">
         
-  <section id="langchain-core-0-1-23">
-<h1><code class="docutils literal notranslate"><span class="pre">langchain_core</span></code> 0.1.23<a class="headerlink" href="#langchain-core-0-1-23" title="Permalink to this heading">¶</a></h1>
+  <section id="langchain-core-0-1-25">
+<h1><code class="docutils literal notranslate"><span class="pre">langchain_core</span></code> 0.1.25<a class="headerlink" href="#langchain-core-0-1-25" title="Permalink to this heading">¶</a></h1>
 <section id="module-langchain_core.agents">
 <span id="langchain-core-agents"></span><h2><a class="reference internal" href="#module-langchain_core.agents" title="langchain_core.agents"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.agents</span></code></a><a class="headerlink" href="#module-langchain_core.agents" title="Permalink to this heading">¶</a></h2>
+<p><strong>Agent</strong> is a class that uses an LLM to choose a sequence of actions to take.</p>
+<p>In Chains, a sequence of actions is hardcoded. In Agents,
+a language model is used as a reasoning engine to determine which actions
+to take and in which order.</p>
+<p>Agents select and use <strong>Tools</strong> and <strong>Toolkits</strong> for actions.</p>
+<p><strong>Class hierarchy:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">BaseSingleActionAgent</span> <span class="o">--&gt;</span> <span class="n">LLMSingleActionAgent</span>
+                          <span class="n">OpenAIFunctionsAgent</span>
+                          <span class="n">XMLAgent</span>
+                          <span class="n">Agent</span> <span class="o">--&gt;</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span><span class="n">Agent</span>  <span class="c1"># Examples: ZeroShotAgent, ChatAgent</span>
+
+
+<span class="n">BaseMultiActionAgent</span>  <span class="o">--&gt;</span> <span class="n">OpenAIMultiFunctionsAgent</span>
+</pre></div>
+</div>
+<p><strong>Main helpers:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AgentType</span><span class="p">,</span> <span class="n">AgentExecutor</span><span class="p">,</span> <span class="n">AgentOutputParser</span><span class="p">,</span> <span class="n">AgentExecutorIterator</span><span class="p">,</span>
+<span class="n">AgentAction</span><span class="p">,</span> <span class="n">AgentFinish</span><span class="p">,</span> <span class="n">AgentStep</span>
+</pre></div>
+</div>
 <section id="classes">
 <h3>Classes<a class="headerlink" href="#classes" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
@@ -295,20 +326,10 @@
 </tbody>
 </table>
 </section>
-<section id="functions">
-<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">¶</a></h3>
-<table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-</tbody>
-</table>
-</section>
 </section>
 <section id="module-langchain_core.beta">
 <span id="langchain-core-beta"></span><h2><a class="reference internal" href="#module-langchain_core.beta" title="langchain_core.beta"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.beta</span></code></a><a class="headerlink" href="#module-langchain_core.beta" title="Permalink to this heading">¶</a></h2>
+<p>Some <strong>beta</strong> features that are not yet ready for production.</p>
 <section id="id1">
 <h3>Classes<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
@@ -321,10 +342,10 @@
 <td><p>Context for a runnable.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="beta/langchain_core.beta.runnables.context.ContextGet.html#langchain_core.beta.runnables.context.ContextGet" title="langchain_core.beta.runnables.context.ContextGet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">beta.runnables.context.ContextGet</span></code></a></p></td>
-<td><p>[<em>Beta</em>]  Get a context value.[<em>Beta</em>] Get a context value.</p></td>
+<td><p>[<em>Beta</em>] Get a context value.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="beta/langchain_core.beta.runnables.context.ContextSet.html#langchain_core.beta.runnables.context.ContextSet" title="langchain_core.beta.runnables.context.ContextSet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">beta.runnables.context.ContextSet</span></code></a></p></td>
-<td><p>[<em>Beta</em>]  Set a context value.[<em>Beta</em>] Set a context value.</p></td>
+<td><p>[<em>Beta</em>] Set a context value.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="beta/langchain_core.beta.runnables.context.PrefixContext.html#langchain_core.beta.runnables.context.PrefixContext" title="langchain_core.beta.runnables.context.PrefixContext"><code class="xref py py-obj docutils literal notranslate"><span class="pre">beta.runnables.context.PrefixContext</span></code></a>([prefix])</p></td>
 <td><p>Context for a runnable with a prefix.</p></td>
@@ -332,8 +353,8 @@
 </tbody>
 </table>
 </section>
-<section id="id2">
-<h3>Functions<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h3>
+<section id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -352,8 +373,25 @@
 </section>
 <section id="module-langchain_core.caches">
 <span id="langchain-core-caches"></span><h2><a class="reference internal" href="#module-langchain_core.caches" title="langchain_core.caches"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.caches</span></code></a><a class="headerlink" href="#module-langchain_core.caches" title="Permalink to this heading">¶</a></h2>
-<section id="id3">
-<h3>Classes<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Beta Feature!</p>
+</div>
+<p><strong>Cache</strong> provides an optional caching layer for LLMs.</p>
+<p>Cache is useful for two reasons:</p>
+<ul class="simple">
+<li><p>It can save you money by reducing the number of API calls you make to the LLM
+provider if you’re often requesting the same completion multiple times.</p></li>
+<li><p>It can speed up your application by reducing the number of API calls you make
+to the LLM provider.</p></li>
+</ul>
+<p>Cache directly competes with Memory. See documentation for Pros and Cons.</p>
+<p><strong>Class hierarchy:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">BaseCache</span> <span class="o">--&gt;</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span><span class="n">Cache</span>  <span class="c1"># Examples: InMemoryCache, RedisCache, GPTCache</span>
+</pre></div>
+</div>
+<section id="id2">
+<h3>Classes<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -369,8 +407,13 @@
 </section>
 <section id="module-langchain_core.callbacks">
 <span id="langchain-core-callbacks"></span><h2><a class="reference internal" href="#module-langchain_core.callbacks" title="langchain_core.callbacks"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.callbacks</span></code></a><a class="headerlink" href="#module-langchain_core.callbacks" title="Permalink to this heading">¶</a></h2>
-<section id="id4">
-<h3>Classes<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h3>
+<p><strong>Callback handlers</strong> allow listening to events in LangChain.</p>
+<p><strong>Class hierarchy:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">BaseCallbackHandler</span> <span class="o">--&gt;</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span><span class="n">CallbackHandler</span>  <span class="c1"># Example: AimCallbackHandler</span>
+</pre></div>
+</div>
+<section id="id3">
+<h3>Classes<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -464,8 +507,8 @@
 </tbody>
 </table>
 </section>
-<section id="id5">
-<h3>Functions<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h3>
+<section id="id4">
+<h3>Functions<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -493,8 +536,17 @@
 </section>
 <section id="module-langchain_core.chat_history">
 <span id="langchain-core-chat-history"></span><h2><a class="reference internal" href="#module-langchain_core.chat_history" title="langchain_core.chat_history"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.chat_history</span></code></a><a class="headerlink" href="#module-langchain_core.chat_history" title="Permalink to this heading">¶</a></h2>
-<section id="id6">
-<h3>Classes<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h3>
+<p><strong>Chat message history</strong> stores a history of the message interactions in a chat.</p>
+<p><strong>Class hierarchy:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">BaseChatMessageHistory</span> <span class="o">--&gt;</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span><span class="n">ChatMessageHistory</span>  <span class="c1"># Examples: FileChatMessageHistory, PostgresChatMessageHistory</span>
+</pre></div>
+</div>
+<p><strong>Main helpers:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AIMessage</span><span class="p">,</span> <span class="n">HumanMessage</span><span class="p">,</span> <span class="n">BaseMessage</span>
+</pre></div>
+</div>
+<section id="id5">
+<h3>Classes<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -510,8 +562,9 @@
 </section>
 <section id="module-langchain_core.chat_sessions">
 <span id="langchain-core-chat-sessions"></span><h2><a class="reference internal" href="#module-langchain_core.chat_sessions" title="langchain_core.chat_sessions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.chat_sessions</span></code></a><a class="headerlink" href="#module-langchain_core.chat_sessions" title="Permalink to this heading">¶</a></h2>
-<section id="id7">
-<h3>Classes<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h3>
+<p><strong>Chat Sessions</strong> are a collection of messages and function calls.</p>
+<section id="id6">
+<h3>Classes<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -527,8 +580,10 @@
 </section>
 <section id="module-langchain_core.documents">
 <span id="langchain-core-documents"></span><h2><a class="reference internal" href="#module-langchain_core.documents" title="langchain_core.documents"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.documents</span></code></a><a class="headerlink" href="#module-langchain_core.documents" title="Permalink to this heading">¶</a></h2>
-<section id="id8">
-<h3>Classes<a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h3>
+<p><strong>Document</strong> module is a collection of classes that handle documents
+and their transformations.</p>
+<section id="id7">
+<h3>Classes<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -547,8 +602,9 @@
 </section>
 <section id="module-langchain_core.embeddings">
 <span id="langchain-core-embeddings"></span><h2><a class="reference internal" href="#module-langchain_core.embeddings" title="langchain_core.embeddings"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.embeddings</span></code></a><a class="headerlink" href="#module-langchain_core.embeddings" title="Permalink to this heading">¶</a></h2>
-<section id="id9">
-<h3>Classes<a class="headerlink" href="#id9" title="Permalink to this heading">¶</a></h3>
+<p><strong>Embeddings</strong> interface.</p>
+<section id="id8">
+<h3>Classes<a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -564,9 +620,11 @@
 </section>
 <section id="module-langchain_core.example_selectors">
 <span id="langchain-core-example-selectors"></span><h2><a class="reference internal" href="#module-langchain_core.example_selectors" title="langchain_core.example_selectors"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.example_selectors</span></code></a><a class="headerlink" href="#module-langchain_core.example_selectors" title="Permalink to this heading">¶</a></h2>
-<p>Logic for selecting examples to include in prompts.</p>
-<section id="id10">
-<h3>Classes<a class="headerlink" href="#id10" title="Permalink to this heading">¶</a></h3>
+<p><strong>Example selector</strong> implements logic for selecting examples to include them
+in prompts.
+This allows us to select examples that are most relevant to the input.</p>
+<section id="id9">
+<h3>Classes<a class="headerlink" href="#id9" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -588,8 +646,8 @@
 </tbody>
 </table>
 </section>
-<section id="id11">
-<h3>Functions<a class="headerlink" href="#id11" title="Permalink to this heading">¶</a></h3>
+<section id="id10">
+<h3>Functions<a class="headerlink" href="#id10" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -605,8 +663,9 @@
 </section>
 <section id="module-langchain_core.exceptions">
 <span id="langchain-core-exceptions"></span><h2><a class="reference internal" href="#module-langchain_core.exceptions" title="langchain_core.exceptions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.exceptions</span></code></a><a class="headerlink" href="#module-langchain_core.exceptions" title="Permalink to this heading">¶</a></h2>
-<section id="id12">
-<h3>Classes<a class="headerlink" href="#id12" title="Permalink to this heading">¶</a></h3>
+<p>Custom <strong>exceptions</strong> for LangChain.</p>
+<section id="id11">
+<h3>Classes<a class="headerlink" href="#id11" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -628,8 +687,25 @@
 </section>
 <section id="module-langchain_core.language_models">
 <span id="langchain-core-language-models"></span><h2><a class="reference internal" href="#module-langchain_core.language_models" title="langchain_core.language_models"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.language_models</span></code></a><a class="headerlink" href="#module-langchain_core.language_models" title="Permalink to this heading">¶</a></h2>
-<section id="id13">
-<h3>Classes<a class="headerlink" href="#id13" title="Permalink to this heading">¶</a></h3>
+<p><strong>Language Model</strong> is a type of model that can generate text or complete
+text prompts.</p>
+<p>LangChain has two main classes to work with language models:
+- <strong>LLM</strong> classes provide access to the large language model (<strong>LLM</strong>) APIs and services.
+- <strong>Chat Models</strong> are a variation on language models.</p>
+<p><strong>Class hierarchy:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">BaseLanguageModel</span> <span class="o">--&gt;</span> <span class="n">BaseLLM</span> <span class="o">--&gt;</span> <span class="n">LLM</span> <span class="o">--&gt;</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span>  <span class="c1"># Examples: AI21, HuggingFaceHub, OpenAI</span>
+                  <span class="o">--&gt;</span> <span class="n">BaseChatModel</span> <span class="o">--&gt;</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span>    <span class="c1"># Examples: ChatOpenAI, ChatGooglePalm</span>
+</pre></div>
+</div>
+<p><strong>Main helpers:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LLMResult</span><span class="p">,</span> <span class="n">PromptValue</span><span class="p">,</span>
+<span class="n">CallbackManagerForLLMRun</span><span class="p">,</span> <span class="n">AsyncCallbackManagerForLLMRun</span><span class="p">,</span>
+<span class="n">CallbackManager</span><span class="p">,</span> <span class="n">AsyncCallbackManager</span><span class="p">,</span>
+<span class="n">AIMessage</span><span class="p">,</span> <span class="n">BaseMessage</span><span class="p">,</span> <span class="n">HumanMessage</span>
+</pre></div>
+</div>
+<section id="id12">
+<h3>Classes<a class="headerlink" href="#id12" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -643,7 +719,7 @@
 <td><p>Base class for Chat models.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="language_models/langchain_core.language_models.chat_models.SimpleChatModel.html#langchain_core.language_models.chat_models.SimpleChatModel" title="langchain_core.language_models.chat_models.SimpleChatModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">language_models.chat_models.SimpleChatModel</span></code></a></p></td>
-<td><p>Simple Chat Model.</p></td>
+<td><p>A simplified implementation for a chat model to inherit from.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="language_models/langchain_core.language_models.llms.BaseLLM.html#langchain_core.language_models.llms.BaseLLM" title="langchain_core.language_models.llms.BaseLLM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">language_models.llms.BaseLLM</span></code></a></p></td>
 <td><p>Base LLM abstract interface.</p></td>
@@ -654,8 +730,8 @@
 </tbody>
 </table>
 </section>
-<section id="id14">
-<h3>Functions<a class="headerlink" href="#id14" title="Permalink to this heading">¶</a></h3>
+<section id="id13">
+<h3>Functions<a class="headerlink" href="#id13" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -689,9 +765,9 @@
 </section>
 <section id="module-langchain_core.load">
 <span id="langchain-core-load"></span><h2><a class="reference internal" href="#module-langchain_core.load" title="langchain_core.load"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.load</span></code></a><a class="headerlink" href="#module-langchain_core.load" title="Permalink to this heading">¶</a></h2>
-<p>Serialization and deserialization.</p>
-<section id="id15">
-<h3>Classes<a class="headerlink" href="#id15" title="Permalink to this heading">¶</a></h3>
+<p><strong>Load</strong> module helps with serialization and deserialization.</p>
+<section id="id14">
+<h3>Classes<a class="headerlink" href="#id14" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -719,8 +795,8 @@
 </tbody>
 </table>
 </section>
-<section id="id16">
-<h3>Functions<a class="headerlink" href="#id16" title="Permalink to this heading">¶</a></h3>
+<section id="id15">
+<h3>Functions<a class="headerlink" href="#id15" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -737,10 +813,10 @@
 <td><p>Return a json string representation of an object.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="load/langchain_core.load.load.load.html#langchain_core.load.load.load" title="langchain_core.load.load.load"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load.load.load</span></code></a>(obj, *[, secrets_map, ...])</p></td>
-<td><p>[<em>Beta</em>]  Revive a LangChain class from a JSON object.</p></td>
+<td><p>[<em>Beta</em>] Revive a LangChain class from a JSON object.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="load/langchain_core.load.load.loads.html#langchain_core.load.load.loads" title="langchain_core.load.load.loads"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load.load.loads</span></code></a>(text, *[, secrets_map, ...])</p></td>
-<td><p>[<em>Beta</em>]  Revive a LangChain class from a JSON string.</p></td>
+<td><p>[<em>Beta</em>] Revive a LangChain class from a JSON string.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="load/langchain_core.load.serializable.to_json_not_implemented.html#langchain_core.load.serializable.to_json_not_implemented" title="langchain_core.load.serializable.to_json_not_implemented"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load.serializable.to_json_not_implemented</span></code></a>(obj)</p></td>
 <td><p>Serialize a &quot;not implemented&quot; object.</p></td>
@@ -754,8 +830,13 @@
 </section>
 <section id="module-langchain_core.memory">
 <span id="langchain-core-memory"></span><h2><a class="reference internal" href="#module-langchain_core.memory" title="langchain_core.memory"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.memory</span></code></a><a class="headerlink" href="#module-langchain_core.memory" title="Permalink to this heading">¶</a></h2>
-<section id="id17">
-<h3>Classes<a class="headerlink" href="#id17" title="Permalink to this heading">¶</a></h3>
+<p><strong>Memory</strong> maintains Chain state, incorporating context from past runs.</p>
+<p><strong>Class hierarchy for Memory:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">BaseMemory</span> <span class="o">--&gt;</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span><span class="n">Memory</span> <span class="o">--&gt;</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span><span class="n">Memory</span>  <span class="c1"># Examples: BaseChatMemory -&gt; MotorheadMemory</span>
+</pre></div>
+</div>
+<section id="id16">
+<h3>Classes<a class="headerlink" href="#id16" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -771,8 +852,18 @@
 </section>
 <section id="module-langchain_core.messages">
 <span id="langchain-core-messages"></span><h2><a class="reference internal" href="#module-langchain_core.messages" title="langchain_core.messages"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.messages</span></code></a><a class="headerlink" href="#module-langchain_core.messages" title="Permalink to this heading">¶</a></h2>
-<section id="id18">
-<h3>Classes<a class="headerlink" href="#id18" title="Permalink to this heading">¶</a></h3>
+<p><strong>Messages</strong> are objects used in prompts and chat conversations.</p>
+<p><strong>Class hierarchy:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">BaseMessage</span> <span class="o">--&gt;</span> <span class="n">SystemMessage</span><span class="p">,</span> <span class="n">AIMessage</span><span class="p">,</span> <span class="n">HumanMessage</span><span class="p">,</span> <span class="n">ChatMessage</span><span class="p">,</span> <span class="n">FunctionMessage</span><span class="p">,</span> <span class="n">ToolMessage</span>
+            <span class="o">--&gt;</span> <span class="n">BaseMessageChunk</span> <span class="o">--&gt;</span> <span class="n">SystemMessageChunk</span><span class="p">,</span> <span class="n">AIMessageChunk</span><span class="p">,</span> <span class="n">HumanMessageChunk</span><span class="p">,</span> <span class="n">ChatMessageChunk</span><span class="p">,</span> <span class="n">FunctionMessageChunk</span><span class="p">,</span> <span class="n">ToolMessageChunk</span>
+</pre></div>
+</div>
+<p><strong>Main helpers:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ChatPromptTemplate</span>
+</pre></div>
+</div>
+<section id="id17">
+<h3>Classes<a class="headerlink" href="#id17" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -824,8 +915,8 @@
 </tbody>
 </table>
 </section>
-<section id="id19">
-<h3>Functions<a class="headerlink" href="#id19" title="Permalink to this heading">¶</a></h3>
+<section id="id18">
+<h3>Functions<a class="headerlink" href="#id18" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -850,8 +941,17 @@
 </section>
 <section id="module-langchain_core.output_parsers">
 <span id="langchain-core-output-parsers"></span><h2><a class="reference internal" href="#module-langchain_core.output_parsers" title="langchain_core.output_parsers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.output_parsers</span></code></a><a class="headerlink" href="#module-langchain_core.output_parsers" title="Permalink to this heading">¶</a></h2>
-<section id="id20">
-<h3>Classes<a class="headerlink" href="#id20" title="Permalink to this heading">¶</a></h3>
+<p><strong>OutputParser</strong> classes parse the output of an LLM call.</p>
+<p><strong>Class hierarchy:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">BaseLLMOutputParser</span> <span class="o">--&gt;</span> <span class="n">BaseOutputParser</span> <span class="o">--&gt;</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span><span class="n">OutputParser</span>  <span class="c1"># ListOutputParser, PydanticOutputParser</span>
+</pre></div>
+</div>
+<p><strong>Main helpers:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Serializable</span><span class="p">,</span> <span class="n">Generation</span><span class="p">,</span> <span class="n">PromptValue</span>
+</pre></div>
+</div>
+<section id="id19">
+<h3>Classes<a class="headerlink" href="#id19" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -900,8 +1000,8 @@
 </tbody>
 </table>
 </section>
-<section id="id21">
-<h3>Functions<a class="headerlink" href="#id21" title="Permalink to this heading">¶</a></h3>
+<section id="id20">
+<h3>Functions<a class="headerlink" href="#id20" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -929,8 +1029,10 @@
 </section>
 <section id="module-langchain_core.outputs">
 <span id="langchain-core-outputs"></span><h2><a class="reference internal" href="#module-langchain_core.outputs" title="langchain_core.outputs"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.outputs</span></code></a><a class="headerlink" href="#module-langchain_core.outputs" title="Permalink to this heading">¶</a></h2>
-<section id="id22">
-<h3>Classes<a class="headerlink" href="#id22" title="Permalink to this heading">¶</a></h3>
+<p><strong>Output</strong> classes are used to represent the output of a language model call
+and the output of a chat.</p>
+<section id="id21">
+<h3>Classes<a class="headerlink" href="#id21" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -964,8 +1066,11 @@
 </section>
 <section id="module-langchain_core.prompt_values">
 <span id="langchain-core-prompt-values"></span><h2><a class="reference internal" href="#module-langchain_core.prompt_values" title="langchain_core.prompt_values"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.prompt_values</span></code></a><a class="headerlink" href="#module-langchain_core.prompt_values" title="Permalink to this heading">¶</a></h2>
-<section id="id23">
-<h3>Classes<a class="headerlink" href="#id23" title="Permalink to this heading">¶</a></h3>
+<p><strong>Prompt values</strong> for language model prompts.</p>
+<p>Prompt values are used to represent different pieces of prompts.
+They can be used to represent text, images, or chat message pieces.</p>
+<section id="id22">
+<h3>Classes<a class="headerlink" href="#id22" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -998,7 +1103,7 @@
 <span id="langchain-core-prompts"></span><h2><a class="reference internal" href="#module-langchain_core.prompts" title="langchain_core.prompts"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.prompts</span></code></a><a class="headerlink" href="#module-langchain_core.prompts" title="Permalink to this heading">¶</a></h2>
 <p><strong>Prompt</strong> is the input to the model.</p>
 <p>Prompt is often constructed
-from multiple components. Prompt classes and functions make constructing</p>
+from multiple components and prompt values. Prompt classes and functions make constructing</p>
 <blockquote>
 <div><p>and working with prompts easy.</p>
 </div></blockquote>
@@ -1019,8 +1124,8 @@ from multiple components. Prompt classes and functions make constructing</p>
                                                                   <span class="n">SystemMessagePromptTemplate</span>
 </pre></div>
 </div>
-<section id="id24">
-<h3>Classes<a class="headerlink" href="#id24" title="Permalink to this heading">¶</a></h3>
+<section id="id23">
+<h3>Classes<a class="headerlink" href="#id23" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -1081,8 +1186,8 @@ from multiple components. Prompt classes and functions make constructing</p>
 </tbody>
 </table>
 </section>
-<section id="id25">
-<h3>Functions<a class="headerlink" href="#id25" title="Permalink to this heading">¶</a></h3>
+<section id="id24">
+<h3>Functions<a class="headerlink" href="#id24" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -1116,8 +1221,22 @@ from multiple components. Prompt classes and functions make constructing</p>
 </section>
 <section id="module-langchain_core.retrievers">
 <span id="langchain-core-retrievers"></span><h2><a class="reference internal" href="#module-langchain_core.retrievers" title="langchain_core.retrievers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.retrievers</span></code></a><a class="headerlink" href="#module-langchain_core.retrievers" title="Permalink to this heading">¶</a></h2>
-<section id="id26">
-<h3>Classes<a class="headerlink" href="#id26" title="Permalink to this heading">¶</a></h3>
+<p><strong>Retriever</strong> class returns Documents given a text <strong>query</strong>.</p>
+<p>It is more general than a vector store. A retriever does not need to be able to
+store documents, only to return (or retrieve) it. Vector stores can be used as
+the backbone of a retriever, but there are other types of retrievers as well.</p>
+<p><strong>Class hierarchy:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">BaseRetriever</span> <span class="o">--&gt;</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span><span class="n">Retriever</span>  <span class="c1"># Examples: ArxivRetriever, MergerRetriever</span>
+</pre></div>
+</div>
+<p><strong>Main helpers:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">RetrieverInput</span><span class="p">,</span> <span class="n">RetrieverOutput</span><span class="p">,</span> <span class="n">RetrieverLike</span><span class="p">,</span> <span class="n">RetrieverOutputLike</span><span class="p">,</span>
+<span class="n">Document</span><span class="p">,</span> <span class="n">Serializable</span><span class="p">,</span> <span class="n">Callbacks</span><span class="p">,</span>
+<span class="n">CallbackManagerForRetrieverRun</span><span class="p">,</span> <span class="n">AsyncCallbackManagerForRetrieverRun</span>
+</pre></div>
+</div>
+<section id="id25">
+<h3>Classes<a class="headerlink" href="#id25" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -1143,8 +1262,8 @@ for higher concurrent loads.</p>
 <p><strong>Streaming</strong> of intermediate outputs as they’re being generated allows for
 creating more responsive UX.</p>
 <p>This module contains schema and implementation of LangChain Runnables primitives.</p>
-<section id="id27">
-<h3>Classes<a class="headerlink" href="#id27" title="Permalink to this heading">¶</a></h3>
+<section id="id26">
+<h3>Classes<a class="headerlink" href="#id26" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -1211,7 +1330,7 @@ creating more responsive UX.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="runnables/langchain_core.runnables.fallbacks.RunnableWithFallbacks.html#langchain_core.runnables.fallbacks.RunnableWithFallbacks" title="langchain_core.runnables.fallbacks.RunnableWithFallbacks"><code class="xref py py-obj docutils literal notranslate"><span class="pre">runnables.fallbacks.RunnableWithFallbacks</span></code></a></p></td>
 <td><p>Runnable that can fallback to other Runnables if it fails.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="runnables/langchain_core.runnables.graph.Edge.html#langchain_core.runnables.graph.Edge" title="langchain_core.runnables.graph.Edge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">runnables.graph.Edge</span></code></a>(source, target)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="runnables/langchain_core.runnables.graph.Edge.html#langchain_core.runnables.graph.Edge" title="langchain_core.runnables.graph.Edge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">runnables.graph.Edge</span></code></a>(source, target[, data])</p></td>
 <td><p>Edge in a graph.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="runnables/langchain_core.runnables.graph.Graph.html#langchain_core.runnables.graph.Graph" title="langchain_core.runnables.graph.Graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">runnables.graph.Graph</span></code></a>(nodes, ...)</p></td>
@@ -1289,8 +1408,8 @@ creating more responsive UX.</p>
 </tbody>
 </table>
 </section>
-<section id="id28">
-<h3>Functions<a class="headerlink" href="#id28" title="Permalink to this heading">¶</a></h3>
+<section id="id27">
+<h3>Functions<a class="headerlink" href="#id27" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -1339,29 +1458,41 @@ creating more responsive UX.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="runnables/langchain_core.runnables.configurable.prefix_config_spec.html#langchain_core.runnables.configurable.prefix_config_spec" title="langchain_core.runnables.configurable.prefix_config_spec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">runnables.configurable.prefix_config_spec</span></code></a>(...)</p></td>
 <td><p>Prefix the id of a ConfigurableFieldSpec.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="runnables/langchain_core.runnables.graph_draw.draw.html#langchain_core.runnables.graph_draw.draw" title="langchain_core.runnables.graph_draw.draw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">runnables.graph_draw.draw</span></code></a>(vertices, edges)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="runnables/langchain_core.runnables.graph.is_uuid.html#langchain_core.runnables.graph.is_uuid" title="langchain_core.runnables.graph.is_uuid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">runnables.graph.is_uuid</span></code></a>(value)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="runnables/langchain_core.runnables.graph.node_data_json.html#langchain_core.runnables.graph.node_data_json" title="langchain_core.runnables.graph.node_data_json"><code class="xref py py-obj docutils literal notranslate"><span class="pre">runnables.graph.node_data_json</span></code></a>(node)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="runnables/langchain_core.runnables.graph.node_data_str.html#langchain_core.runnables.graph.node_data_str" title="langchain_core.runnables.graph.node_data_str"><code class="xref py py-obj docutils literal notranslate"><span class="pre">runnables.graph.node_data_str</span></code></a>(node)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="runnables/langchain_core.runnables.graph_draw.draw.html#langchain_core.runnables.graph_draw.draw" title="langchain_core.runnables.graph_draw.draw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">runnables.graph_draw.draw</span></code></a>(vertices, edges)</p></td>
 <td><p>Build a DAG and draw it in ASCII.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="runnables/langchain_core.runnables.passthrough.aidentity.html#langchain_core.runnables.passthrough.aidentity" title="langchain_core.runnables.passthrough.aidentity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">runnables.passthrough.aidentity</span></code></a>(x)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="runnables/langchain_core.runnables.passthrough.aidentity.html#langchain_core.runnables.passthrough.aidentity" title="langchain_core.runnables.passthrough.aidentity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">runnables.passthrough.aidentity</span></code></a>(x)</p></td>
 <td><p>Async identity function</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="runnables/langchain_core.runnables.passthrough.identity.html#langchain_core.runnables.passthrough.identity" title="langchain_core.runnables.passthrough.identity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">runnables.passthrough.identity</span></code></a>(x)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="runnables/langchain_core.runnables.passthrough.identity.html#langchain_core.runnables.passthrough.identity" title="langchain_core.runnables.passthrough.identity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">runnables.passthrough.identity</span></code></a>(x)</p></td>
 <td><p>Identity function</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="runnables/langchain_core.runnables.utils.aadd.html#langchain_core.runnables.utils.aadd" title="langchain_core.runnables.utils.aadd"><code class="xref py py-obj docutils literal notranslate"><span class="pre">runnables.utils.aadd</span></code></a>(addables)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="runnables/langchain_core.runnables.utils.aadd.html#langchain_core.runnables.utils.aadd" title="langchain_core.runnables.utils.aadd"><code class="xref py py-obj docutils literal notranslate"><span class="pre">runnables.utils.aadd</span></code></a>(addables)</p></td>
 <td><p>Asynchronously add a sequence of addable objects together.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="runnables/langchain_core.runnables.utils.accepts_config.html#langchain_core.runnables.utils.accepts_config" title="langchain_core.runnables.utils.accepts_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">runnables.utils.accepts_config</span></code></a>(callable)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="runnables/langchain_core.runnables.utils.accepts_config.html#langchain_core.runnables.utils.accepts_config" title="langchain_core.runnables.utils.accepts_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">runnables.utils.accepts_config</span></code></a>(callable)</p></td>
 <td><p>Check if a callable accepts a config argument.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="runnables/langchain_core.runnables.utils.accepts_context.html#langchain_core.runnables.utils.accepts_context" title="langchain_core.runnables.utils.accepts_context"><code class="xref py py-obj docutils literal notranslate"><span class="pre">runnables.utils.accepts_context</span></code></a>(callable)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="runnables/langchain_core.runnables.utils.accepts_context.html#langchain_core.runnables.utils.accepts_context" title="langchain_core.runnables.utils.accepts_context"><code class="xref py py-obj docutils literal notranslate"><span class="pre">runnables.utils.accepts_context</span></code></a>(callable)</p></td>
 <td><p>Check if a callable accepts a context argument.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="runnables/langchain_core.runnables.utils.accepts_run_manager.html#langchain_core.runnables.utils.accepts_run_manager" title="langchain_core.runnables.utils.accepts_run_manager"><code class="xref py py-obj docutils literal notranslate"><span class="pre">runnables.utils.accepts_run_manager</span></code></a>(callable)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="runnables/langchain_core.runnables.utils.accepts_run_manager.html#langchain_core.runnables.utils.accepts_run_manager" title="langchain_core.runnables.utils.accepts_run_manager"><code class="xref py py-obj docutils literal notranslate"><span class="pre">runnables.utils.accepts_run_manager</span></code></a>(callable)</p></td>
 <td><p>Check if a callable accepts a run_manager argument.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="runnables/langchain_core.runnables.utils.add.html#langchain_core.runnables.utils.add" title="langchain_core.runnables.utils.add"><code class="xref py py-obj docutils literal notranslate"><span class="pre">runnables.utils.add</span></code></a>(addables)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="runnables/langchain_core.runnables.utils.add.html#langchain_core.runnables.utils.add" title="langchain_core.runnables.utils.add"><code class="xref py py-obj docutils literal notranslate"><span class="pre">runnables.utils.add</span></code></a>(addables)</p></td>
 <td><p>Add a sequence of addable objects together.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="runnables/langchain_core.runnables.utils.create_model.html#langchain_core.runnables.utils.create_model" title="langchain_core.runnables.utils.create_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">runnables.utils.create_model</span></code></a>(__model_name, ...)</p></td>
+<td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="runnables/langchain_core.runnables.utils.gated_coro.html#langchain_core.runnables.utils.gated_coro" title="langchain_core.runnables.utils.gated_coro"><code class="xref py py-obj docutils literal notranslate"><span class="pre">runnables.utils.gated_coro</span></code></a>(semaphore, coro)</p></td>
 <td><p>Run a coroutine with a semaphore.</p></td>
@@ -1390,8 +1521,12 @@ creating more responsive UX.</p>
 </section>
 <section id="module-langchain_core.stores">
 <span id="langchain-core-stores"></span><h2><a class="reference internal" href="#module-langchain_core.stores" title="langchain_core.stores"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.stores</span></code></a><a class="headerlink" href="#module-langchain_core.stores" title="Permalink to this heading">¶</a></h2>
-<section id="id29">
-<h3>Classes<a class="headerlink" href="#id29" title="Permalink to this heading">¶</a></h3>
+<p><strong>Store</strong> implements the key-value stores and storage helpers.</p>
+<p>Module provides implementations of various key-value stores that conform
+to a simple key-value interface.</p>
+<p>The primary goal of these storages is to support implementation of caching.</p>
+<section id="id28">
+<h3>Classes<a class="headerlink" href="#id28" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -1407,9 +1542,10 @@ creating more responsive UX.</p>
 </section>
 <section id="module-langchain_core.sys_info">
 <span id="langchain-core-sys-info"></span><h2><a class="reference internal" href="#module-langchain_core.sys_info" title="langchain_core.sys_info"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.sys_info</span></code></a><a class="headerlink" href="#module-langchain_core.sys_info" title="Permalink to this heading">¶</a></h2>
-<p>Print information about the system and langchain packages for debugging purposes.</p>
-<section id="id30">
-<h3>Functions<a class="headerlink" href="#id30" title="Permalink to this heading">¶</a></h3>
+<p><strong>sys_info</strong> prints information about the system and langchain packages
+for debugging purposes.</p>
+<section id="id29">
+<h3>Functions<a class="headerlink" href="#id29" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -1425,9 +1561,20 @@ creating more responsive UX.</p>
 </section>
 <section id="module-langchain_core.tools">
 <span id="langchain-core-tools"></span><h2><a class="reference internal" href="#module-langchain_core.tools" title="langchain_core.tools"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.tools</span></code></a><a class="headerlink" href="#module-langchain_core.tools" title="Permalink to this heading">¶</a></h2>
-<p>Base implementation for tools or skills.</p>
-<section id="id31">
-<h3>Classes<a class="headerlink" href="#id31" title="Permalink to this heading">¶</a></h3>
+<p><strong>Tools</strong> are classes that an Agent uses to interact with the world.</p>
+<p>Each tool has a <strong>description</strong>. Agent uses the description to choose the right
+tool for the job.</p>
+<p><strong>Class hierarchy:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">RunnableSerializable</span> <span class="o">--&gt;</span> <span class="n">BaseTool</span> <span class="o">--&gt;</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span><span class="n">Tool</span>  <span class="c1"># Examples: AIPluginTool, BaseGraphQLTool</span>
+                                      <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span>      <span class="c1"># Examples: BraveSearch, HumanInputRun</span>
+</pre></div>
+</div>
+<p><strong>Main helpers:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CallbackManagerForToolRun</span><span class="p">,</span> <span class="n">AsyncCallbackManagerForToolRun</span>
+</pre></div>
+</div>
+<section id="id30">
+<h3>Classes<a class="headerlink" href="#id30" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -1452,8 +1599,8 @@ creating more responsive UX.</p>
 </tbody>
 </table>
 </section>
-<section id="id32">
-<h3>Functions<a class="headerlink" href="#id32" title="Permalink to this heading">¶</a></h3>
+<section id="id31">
+<h3>Functions<a class="headerlink" href="#id31" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -1472,8 +1619,14 @@ creating more responsive UX.</p>
 </section>
 <section id="module-langchain_core.tracers">
 <span id="langchain-core-tracers"></span><h2><a class="reference internal" href="#module-langchain_core.tracers" title="langchain_core.tracers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.tracers</span></code></a><a class="headerlink" href="#module-langchain_core.tracers" title="Permalink to this heading">¶</a></h2>
-<section id="id33">
-<h3>Classes<a class="headerlink" href="#id33" title="Permalink to this heading">¶</a></h3>
+<p><strong>Tracers</strong> are classes for tracing runs.</p>
+<p><strong>Class hierarchy:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">BaseCallbackHandler</span> <span class="o">--&gt;</span> <span class="n">BaseTracer</span> <span class="o">--&gt;</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span><span class="n">Tracer</span>  <span class="c1"># Examples: LangChainTracer, RootListenersTracer</span>
+                                   <span class="o">--&gt;</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span>  <span class="c1"># Examples: LogStreamCallbackHandler</span>
+</pre></div>
+</div>
+<section id="id32">
+<h3>Classes<a class="headerlink" href="#id32" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -1490,7 +1643,7 @@ creating more responsive UX.</p>
 <td><p>Implementation of the SharedTracer that POSTS to the LangChain endpoint.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="tracers/langchain_core.tracers.langchain_v1.LangChainTracerV1.html#langchain_core.tracers.langchain_v1.LangChainTracerV1" title="langchain_core.tracers.langchain_v1.LangChainTracerV1"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tracers.langchain_v1.LangChainTracerV1</span></code></a>(**kwargs)</p></td>
-<td><p>[<em>Deprecated</em>]  Implementation of the SharedTracer that POSTS to the langchain endpoint.[<em>Deprecated</em>] Implementation of the SharedTracer that POSTS to the langchain endpoint.</p></td>
+<td><p>[<em>Deprecated</em>] Implementation of the SharedTracer that POSTS to the langchain endpoint.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="tracers/langchain_core.tracers.log_stream.LogEntry.html#langchain_core.tracers.log_stream.LogEntry" title="langchain_core.tracers.log_stream.LogEntry"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tracers.log_stream.LogEntry</span></code></a></p></td>
 <td><p>A single entry in the run log.</p></td>
@@ -1514,34 +1667,34 @@ creating more responsive UX.</p>
 <td><p>Tracer that collects all nested runs in a list.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="tracers/langchain_core.tracers.schemas.BaseRun.html#langchain_core.tracers.schemas.BaseRun" title="langchain_core.tracers.schemas.BaseRun"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tracers.schemas.BaseRun</span></code></a></p></td>
-<td><p>[<em>Deprecated</em>]  Base class for Run.[<em>Deprecated</em>] Base class for Run.</p></td>
+<td><p>[<em>Deprecated</em>] Base class for Run.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="tracers/langchain_core.tracers.schemas.ChainRun.html#langchain_core.tracers.schemas.ChainRun" title="langchain_core.tracers.schemas.ChainRun"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tracers.schemas.ChainRun</span></code></a></p></td>
-<td><p>[<em>Deprecated</em>]  Class for ChainRun.[<em>Deprecated</em>] Class for ChainRun.</p></td>
+<td><p>[<em>Deprecated</em>] Class for ChainRun.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="tracers/langchain_core.tracers.schemas.LLMRun.html#langchain_core.tracers.schemas.LLMRun" title="langchain_core.tracers.schemas.LLMRun"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tracers.schemas.LLMRun</span></code></a></p></td>
-<td><p>[<em>Deprecated</em>]  Class for LLMRun.[<em>Deprecated</em>] Class for LLMRun.</p></td>
+<td><p>[<em>Deprecated</em>] Class for LLMRun.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="tracers/langchain_core.tracers.schemas.Run.html#langchain_core.tracers.schemas.Run" title="langchain_core.tracers.schemas.Run"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tracers.schemas.Run</span></code></a></p></td>
 <td><p>Run schema for the V2 API in the Tracer.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="tracers/langchain_core.tracers.schemas.ToolRun.html#langchain_core.tracers.schemas.ToolRun" title="langchain_core.tracers.schemas.ToolRun"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tracers.schemas.ToolRun</span></code></a></p></td>
-<td><p>[<em>Deprecated</em>]  Class for ToolRun.[<em>Deprecated</em>] Class for ToolRun.</p></td>
+<td><p>[<em>Deprecated</em>] Class for ToolRun.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="tracers/langchain_core.tracers.schemas.TracerSession.html#langchain_core.tracers.schemas.TracerSession" title="langchain_core.tracers.schemas.TracerSession"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tracers.schemas.TracerSession</span></code></a></p></td>
-<td><p>[<em>Deprecated</em>]  TracerSessionV1 schema for the V2 API.[<em>Deprecated</em>] TracerSessionV1 schema for the V2 API.</p></td>
+<td><p>[<em>Deprecated</em>] TracerSessionV1 schema for the V2 API.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="tracers/langchain_core.tracers.schemas.TracerSessionBase.html#langchain_core.tracers.schemas.TracerSessionBase" title="langchain_core.tracers.schemas.TracerSessionBase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tracers.schemas.TracerSessionBase</span></code></a></p></td>
-<td><p>[<em>Deprecated</em>]  Base class for TracerSession.[<em>Deprecated</em>] Base class for TracerSession.</p></td>
+<td><p>[<em>Deprecated</em>] Base class for TracerSession.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="tracers/langchain_core.tracers.schemas.TracerSessionV1.html#langchain_core.tracers.schemas.TracerSessionV1" title="langchain_core.tracers.schemas.TracerSessionV1"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tracers.schemas.TracerSessionV1</span></code></a></p></td>
-<td><p>[<em>Deprecated</em>]  TracerSessionV1 schema.[<em>Deprecated</em>] TracerSessionV1 schema.</p></td>
+<td><p>[<em>Deprecated</em>] TracerSessionV1 schema.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="tracers/langchain_core.tracers.schemas.TracerSessionV1Base.html#langchain_core.tracers.schemas.TracerSessionV1Base" title="langchain_core.tracers.schemas.TracerSessionV1Base"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tracers.schemas.TracerSessionV1Base</span></code></a></p></td>
-<td><p>[<em>Deprecated</em>]  Base class for TracerSessionV1.[<em>Deprecated</em>] Base class for TracerSessionV1.</p></td>
+<td><p>[<em>Deprecated</em>] Base class for TracerSessionV1.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="tracers/langchain_core.tracers.schemas.TracerSessionV1Create.html#langchain_core.tracers.schemas.TracerSessionV1Create" title="langchain_core.tracers.schemas.TracerSessionV1Create"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tracers.schemas.TracerSessionV1Create</span></code></a></p></td>
-<td><p>[<em>Deprecated</em>]  Create class for TracerSessionV1.[<em>Deprecated</em>] Create class for TracerSessionV1.</p></td>
+<td><p>[<em>Deprecated</em>] Create class for TracerSessionV1.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="tracers/langchain_core.tracers.stdout.ConsoleCallbackHandler.html#langchain_core.tracers.stdout.ConsoleCallbackHandler" title="langchain_core.tracers.stdout.ConsoleCallbackHandler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tracers.stdout.ConsoleCallbackHandler</span></code></a>(**kwargs)</p></td>
 <td><p>Tracer that prints to the console.</p></td>
@@ -1552,8 +1705,8 @@ creating more responsive UX.</p>
 </tbody>
 </table>
 </section>
-<section id="id34">
-<h3>Functions<a class="headerlink" href="#id34" title="Permalink to this heading">¶</a></h3>
+<section id="id33">
+<h3>Functions<a class="headerlink" href="#id33" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -1567,7 +1720,7 @@ creating more responsive UX.</p>
 <td><p>Register a configure hook.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="tracers/langchain_core.tracers.context.tracing_enabled.html#langchain_core.tracers.context.tracing_enabled" title="langchain_core.tracers.context.tracing_enabled"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tracers.context.tracing_enabled</span></code></a>([session_name])</p></td>
-<td><p>[<em>Deprecated</em>]  Get the Deprecated LangChainTracer in a context manager.</p></td>
+<td><p>[<em>Deprecated</em>] Get the Deprecated LangChainTracer in a context manager.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="tracers/langchain_core.tracers.context.tracing_v2_enabled.html#langchain_core.tracers.context.tracing_v2_enabled" title="langchain_core.tracers.context.tracing_v2_enabled"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tracers.context.tracing_v2_enabled</span></code></a>([...])</p></td>
 <td><p>Instruct LangChain to log all runs in context to LangSmith.</p></td>
@@ -1588,7 +1741,7 @@ creating more responsive UX.</p>
 <td><p>Get the headers for the LangChain API.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="tracers/langchain_core.tracers.schemas.RunTypeEnum.html#langchain_core.tracers.schemas.RunTypeEnum" title="langchain_core.tracers.schemas.RunTypeEnum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tracers.schemas.RunTypeEnum</span></code></a>()</p></td>
-<td><p>[<em>Deprecated</em>]  RunTypeEnum.[<em>Deprecated</em>] RunTypeEnum.</p></td>
+<td><p>[<em>Deprecated</em>] RunTypeEnum.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="tracers/langchain_core.tracers.stdout.elapsed.html#langchain_core.tracers.stdout.elapsed" title="langchain_core.tracers.stdout.elapsed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tracers.stdout.elapsed</span></code></a>(run)</p></td>
 <td><p>Get the elapsed time of a run.</p></td>
@@ -1604,8 +1757,8 @@ creating more responsive UX.</p>
 <span id="langchain-core-utils"></span><h2><a class="reference internal" href="#module-langchain_core.utils" title="langchain_core.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.utils</span></code></a><a class="headerlink" href="#module-langchain_core.utils" title="Permalink to this heading">¶</a></h2>
 <p><strong>Utility functions</strong> for LangChain.</p>
 <p>These functions do not depend on any other LangChain module.</p>
-<section id="id35">
-<h3>Classes<a class="headerlink" href="#id35" title="Permalink to this heading">¶</a></h3>
+<section id="id34">
+<h3>Classes<a class="headerlink" href="#id34" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -1642,8 +1795,8 @@ creating more responsive UX.</p>
 </tbody>
 </table>
 </section>
-<section id="id36">
-<h3>Functions<a class="headerlink" href="#id36" title="Permalink to this heading">¶</a></h3>
+<section id="id35">
+<h3>Functions<a class="headerlink" href="#id35" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -1666,13 +1819,13 @@ creating more responsive UX.</p>
 <td><p>Get a value from a dictionary or an environment variable.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="utils/langchain_core.utils.function_calling.convert_pydantic_to_openai_function.html#langchain_core.utils.function_calling.convert_pydantic_to_openai_function" title="langchain_core.utils.function_calling.convert_pydantic_to_openai_function"><code class="xref py py-obj docutils literal notranslate"><span class="pre">utils.function_calling.convert_pydantic_to_openai_function</span></code></a>(...)</p></td>
-<td><p>[<em>Deprecated</em>]  Converts a Pydantic model to a function description for the OpenAI API.[<em>Deprecated</em>] Converts a Pydantic model to a function description for the OpenAI API.</p></td>
+<td><p>[<em>Deprecated</em>] Converts a Pydantic model to a function description for the OpenAI API.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="utils/langchain_core.utils.function_calling.convert_pydantic_to_openai_tool.html#langchain_core.utils.function_calling.convert_pydantic_to_openai_tool" title="langchain_core.utils.function_calling.convert_pydantic_to_openai_tool"><code class="xref py py-obj docutils literal notranslate"><span class="pre">utils.function_calling.convert_pydantic_to_openai_tool</span></code></a>(...)</p></td>
-<td><p>[<em>Deprecated</em>]  Converts a Pydantic model to a function description for the OpenAI API.[<em>Deprecated</em>] Converts a Pydantic model to a function description for the OpenAI API.</p></td>
+<td><p>[<em>Deprecated</em>] Converts a Pydantic model to a function description for the OpenAI API.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="utils/langchain_core.utils.function_calling.convert_python_function_to_openai_function.html#langchain_core.utils.function_calling.convert_python_function_to_openai_function" title="langchain_core.utils.function_calling.convert_python_function_to_openai_function"><code class="xref py py-obj docutils literal notranslate"><span class="pre">utils.function_calling.convert_python_function_to_openai_function</span></code></a>(...)</p></td>
-<td><p>[<em>Deprecated</em>]  Convert a Python function to an OpenAI function-calling API compatible dict.</p></td>
+<td><p>[<em>Deprecated</em>] Convert a Python function to an OpenAI function-calling API compatible dict.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="utils/langchain_core.utils.function_calling.convert_to_openai_function.html#langchain_core.utils.function_calling.convert_to_openai_function" title="langchain_core.utils.function_calling.convert_to_openai_function"><code class="xref py py-obj docutils literal notranslate"><span class="pre">utils.function_calling.convert_to_openai_function</span></code></a>(...)</p></td>
 <td><p>Convert a raw function/class to an OpenAI function.</p></td>
@@ -1681,10 +1834,10 @@ creating more responsive UX.</p>
 <td><p>Convert a raw function/class to an OpenAI tool.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="utils/langchain_core.utils.function_calling.format_tool_to_openai_function.html#langchain_core.utils.function_calling.format_tool_to_openai_function" title="langchain_core.utils.function_calling.format_tool_to_openai_function"><code class="xref py py-obj docutils literal notranslate"><span class="pre">utils.function_calling.format_tool_to_openai_function</span></code></a>(tool)</p></td>
-<td><p>[<em>Deprecated</em>]  Format tool into the OpenAI function API.[<em>Deprecated</em>] Format tool into the OpenAI function API.</p></td>
+<td><p>[<em>Deprecated</em>] Format tool into the OpenAI function API.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="utils/langchain_core.utils.function_calling.format_tool_to_openai_tool.html#langchain_core.utils.function_calling.format_tool_to_openai_tool" title="langchain_core.utils.function_calling.format_tool_to_openai_tool"><code class="xref py py-obj docutils literal notranslate"><span class="pre">utils.function_calling.format_tool_to_openai_tool</span></code></a>(tool)</p></td>
-<td><p>[<em>Deprecated</em>]  Format tool into the OpenAI function API.[<em>Deprecated</em>] Format tool into the OpenAI function API.</p></td>
+<td><p>[<em>Deprecated</em>] Format tool into the OpenAI function API.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="utils/langchain_core.utils.html.extract_sub_links.html#langchain_core.utils.html.extract_sub_links" title="langchain_core.utils.html.extract_sub_links"><code class="xref py py-obj docutils literal notranslate"><span class="pre">utils.html.extract_sub_links</span></code></a>(raw_html, url, *)</p></td>
 <td><p>Extract all links from a raw html string and convert into absolute paths.</p></td>
@@ -1767,8 +1920,22 @@ creating more responsive UX.</p>
 </section>
 <section id="module-langchain_core.vectorstores">
 <span id="langchain-core-vectorstores"></span><h2><a class="reference internal" href="#module-langchain_core.vectorstores" title="langchain_core.vectorstores"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.vectorstores</span></code></a><a class="headerlink" href="#module-langchain_core.vectorstores" title="Permalink to this heading">¶</a></h2>
-<section id="id37">
-<h3>Classes<a class="headerlink" href="#id37" title="Permalink to this heading">¶</a></h3>
+<p><strong>Vector store</strong> stores embedded data and performs vector search.</p>
+<p>One of the most common ways to store and search over unstructured data is to
+embed it and store the resulting embedding vectors, and then query the store
+and retrieve the data that are ‘most similar’ to the embedded query.</p>
+<p><strong>Class hierarchy:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">VectorStore</span> <span class="o">--&gt;</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span>  <span class="c1"># Examples: Annoy, FAISS, Milvus</span>
+
+<span class="n">BaseRetriever</span> <span class="o">--&gt;</span> <span class="n">VectorStoreRetriever</span> <span class="o">--&gt;</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span><span class="n">Retriever</span>  <span class="c1"># Example: VespaRetriever</span>
+</pre></div>
+</div>
+<p><strong>Main helpers:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Embeddings</span><span class="p">,</span> <span class="n">Document</span>
+</pre></div>
+</div>
+<section id="id36">
+<h3>Classes<a class="headerlink" href="#id36" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -1792,7 +1959,7 @@ creating more responsive UX.</p>
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 14, 2024.
+          Last updated on Feb 22, 2024.
           <a href="_sources/core_api_reference.rst.txt" rel="nofollow">Show this page source</a>
       </footer>
     </div>

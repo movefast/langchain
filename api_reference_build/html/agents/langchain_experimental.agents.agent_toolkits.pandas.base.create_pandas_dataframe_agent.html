@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>langchain_experimental.agents.agent_toolkits.pandas.base.create_pandas_dataframe_agent &mdash; 🦜🔗 LangChain 0.1.7</title>
+  <title>langchain_experimental.agents.agent_toolkits.pandas.base.create_pandas_dataframe_agent &mdash; 🦜🔗 LangChain 0.1.8</title>
   
   <link rel="canonical" href="https://api.python.langchain.com/en/latest/agents/langchain_experimental.agents.agent_toolkits.pandas.base.create_pandas_dataframe_agent.html" />
 
@@ -61,7 +61,13 @@
           <a class="sk-nav-link nav-link" href="../experimental_api_reference.html">Experimental</a>
         </li>
         <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ai21_api_reference.html">ai21</a>
+        </li>
+        <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../anthropic_api_reference.html">anthropic</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../astradb_api_reference.html">astradb</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../exa_api_reference.html">exa</a>
@@ -71,6 +77,9 @@
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../google_vertexai_api_reference.html">google-vertexai</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ibm_api_reference.html">ibm</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../mistralai_api_reference.html">mistralai</a>
@@ -99,10 +108,13 @@
         <li class="nav-item dropdown nav-more-item-dropdown">
           <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Partner libs</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ai21_api_reference.html">ai21</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../anthropic_api_reference.html">anthropic</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../astradb_api_reference.html">astradb</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../exa_api_reference.html">exa</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_genai_api_reference.html">google-genai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ibm_api_reference.html">ibm</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../mistralai_api_reference.html">mistralai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nomic_api_reference.html">nomic</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nvidia_ai_endpoints_api_reference.html">nvidia-ai-endpoints</a>
@@ -161,34 +173,37 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>llm</strong> – Language model to use for the agent.</p></li>
-<li><p><strong>df</strong> – Pandas dataframe or list of Pandas dataframes.</p></li>
-<li><p><strong>agent_type</strong> – One of “openai-tools”, “openai-functions”, or
+<li><p><strong>llm</strong> (<a class="reference internal" href="../runnables/langchain_core.runnables.base.Runnable.html#langchain_core.runnables.base.Runnable" title="langchain_core.runnables.base.Runnable"><em>Runnable</em></a><em>[</em><em>Union</em><em>[</em><a class="reference internal" href="../prompt_values/langchain_core.prompt_values.PromptValue.html#langchain_core.prompt_values.PromptValue" title="langchain_core.prompt_values.PromptValue"><em>PromptValue</em></a><em>, </em><em>str</em><em>, </em><em>Sequence</em><em>[</em><em>Union</em><em>[</em><a class="reference internal" href="../messages/langchain_core.messages.base.BaseMessage.html#langchain_core.messages.base.BaseMessage" title="langchain_core.messages.base.BaseMessage"><em>BaseMessage</em></a><em>, </em><em>Tuple</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em><em>, </em><em>str</em><em>, </em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em><em>]</em><em>]</em><em>, </em><em>Union</em><em>[</em><a class="reference internal" href="../messages/langchain_core.messages.base.BaseMessage.html#langchain_core.messages.base.BaseMessage" title="langchain_core.messages.base.BaseMessage"><em>BaseMessage</em></a><em>, </em><em>str</em><em>]</em><em>]</em>) – Language model to use for the agent.</p></li>
+<li><p><strong>df</strong> (<em>Any</em>) – Pandas dataframe or list of Pandas dataframes.</p></li>
+<li><p><strong>agent_type</strong> (<em>Union</em><em>[</em><a class="reference internal" href="langchain.agents.agent_types.AgentType.html#langchain.agents.agent_types.AgentType" title="langchain.agents.agent_types.AgentType"><em>AgentType</em></a><em>, </em><em>Literal</em><em>[</em><em>'openai-tools'</em><em>]</em><em>]</em>) – One of “openai-tools”, “openai-functions”, or
 “zero-shot-react-description”. Defaults to “zero-shot-react-description”.
 “openai-tools” is recommended over “openai-functions”.</p></li>
-<li><p><strong>callback_manager</strong> – DEPRECATED. Pass “callbacks” key into ‘agent_executor_kwargs’
+<li><p><strong>callback_manager</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="../callbacks/langchain_core.callbacks.base.BaseCallbackManager.html#langchain_core.callbacks.base.BaseCallbackManager" title="langchain_core.callbacks.base.BaseCallbackManager"><em>BaseCallbackManager</em></a><em>]</em>) – DEPRECATED. Pass “callbacks” key into ‘agent_executor_kwargs’
 instead to pass constructor callbacks to AgentExecutor.</p></li>
-<li><p><strong>prefix</strong> – Prompt prefix string.</p></li>
-<li><p><strong>suffix</strong> – Prompt suffix string.</p></li>
-<li><p><strong>input_variables</strong> – DEPRECATED. Input variables automatically inferred from
+<li><p><strong>prefix</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Prompt prefix string.</p></li>
+<li><p><strong>suffix</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Prompt suffix string.</p></li>
+<li><p><strong>input_variables</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em>) – DEPRECATED. Input variables automatically inferred from
 constructed prompt.</p></li>
-<li><p><strong>verbose</strong> – AgentExecutor verbosity.</p></li>
-<li><p><strong>return_intermediate_steps</strong> – Passed to AgentExecutor init.</p></li>
-<li><p><strong>max_iterations</strong> – Passed to AgentExecutor init.</p></li>
-<li><p><strong>max_execution_time</strong> – Passed to AgentExecutor init.</p></li>
-<li><p><strong>early_stopping_method</strong> – Passed to AgentExecutor init.</p></li>
-<li><p><strong>agent_executor_kwargs</strong> – Arbitrary additional AgentExecutor args.</p></li>
-<li><p><strong>include_df_in_prompt</strong> – Whether to include the first number_of_head_rows in the
+<li><p><strong>verbose</strong> (<em>bool</em>) – AgentExecutor verbosity.</p></li>
+<li><p><strong>return_intermediate_steps</strong> (<em>bool</em>) – Passed to AgentExecutor init.</p></li>
+<li><p><strong>max_iterations</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – Passed to AgentExecutor init.</p></li>
+<li><p><strong>max_execution_time</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em>) – Passed to AgentExecutor init.</p></li>
+<li><p><strong>early_stopping_method</strong> (<em>str</em>) – Passed to AgentExecutor init.</p></li>
+<li><p><strong>agent_executor_kwargs</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – Arbitrary additional AgentExecutor args.</p></li>
+<li><p><strong>include_df_in_prompt</strong> (<em>Optional</em><em>[</em><em>bool</em><em>]</em>) – Whether to include the first number_of_head_rows in the
 prompt. Must be None if suffix is not None.</p></li>
-<li><p><strong>number_of_head_rows</strong> – Number of initial rows to include in prompt if
+<li><p><strong>number_of_head_rows</strong> (<em>int</em>) – Number of initial rows to include in prompt if
 include_df_in_prompt is True.</p></li>
-<li><p><strong>extra_tools</strong> – Additional tools to give to agent on top of a PythonAstREPLTool.</p></li>
-<li><p><strong>**kwargs</strong> – DEPRECATED. Not used, kept for backwards compatibility.</p></li>
+<li><p><strong>extra_tools</strong> (<em>Sequence</em><em>[</em><a class="reference internal" href="../tools/langchain_core.tools.BaseTool.html#langchain_core.tools.BaseTool" title="langchain_core.tools.BaseTool"><em>BaseTool</em></a><em>]</em>) – Additional tools to give to agent on top of a PythonAstREPLTool.</p></li>
+<li><p><strong>**kwargs</strong> (<em>Any</em>) – DEPRECATED. Not used, kept for backwards compatibility.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>An AgentExecutor with the specified agent_type agent and access to
 a PythonAstREPLTool with the DataFrame(s) and any user-provided extra_tools.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="langchain.agents.agent.AgentExecutor.html#langchain.agents.agent.AgentExecutor" title="langchain.agents.agent.AgentExecutor"><em>AgentExecutor</em></a></p>
 </dd>
 </dl>
 <p class="rubric">Example</p>
@@ -221,7 +236,7 @@ a PythonAstREPLTool with the DataFrame(s) and any user-provided extra_tools.</p>
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 14, 2024.
+          Last updated on Feb 22, 2024.
           <a href="../_sources/agents/langchain_experimental.agents.agent_toolkits.pandas.base.create_pandas_dataframe_agent.rst.txt" rel="nofollow">Show this page source</a>
       </footer>
     </div>

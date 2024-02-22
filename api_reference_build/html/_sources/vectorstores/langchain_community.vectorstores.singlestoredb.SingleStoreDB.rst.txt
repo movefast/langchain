@@ -25,6 +25,7 @@
       ~SingleStoreDB.aadd_documents
       ~SingleStoreDB.aadd_texts
       ~SingleStoreDB.add_documents
+      ~SingleStoreDB.add_images
       ~SingleStoreDB.add_texts
       ~SingleStoreDB.adelete
       ~SingleStoreDB.afrom_documents
@@ -53,6 +54,7 @@
    .. automethod:: SingleStoreDB.aadd_documents
    .. automethod:: SingleStoreDB.aadd_texts
    .. automethod:: SingleStoreDB.add_documents
+   .. automethod:: SingleStoreDB.add_images
    .. automethod:: SingleStoreDB.add_texts
    .. automethod:: SingleStoreDB.adelete
    .. automethod:: SingleStoreDB.afrom_documents

@@ -39,16 +39,6 @@ Classes
     
     chat_models.ChatVertexAI
     
-Functions
---------------
-.. currentmodule:: langchain_google_vertexai
-
-.. autosummary::
-    :toctree: chat_models
-    :template: function.rst
-
-    
-
 :mod:`langchain_google_vertexai.embeddings`
 ============================================
 
@@ -83,16 +73,6 @@ Classes
     
     functions_utils.PydanticFunctionsOutputParser
     
-Functions
---------------
-.. currentmodule:: langchain_google_vertexai
-
-.. autosummary::
-    :toctree: functions_utils
-    :template: function.rst
-
-    
-
 :mod:`langchain_google_vertexai.llms`
 ======================================
 
@@ -114,13 +94,3 @@ Classes
     
     llms.VertexAIModelGarden
     
-Functions
---------------
-.. currentmodule:: langchain_google_vertexai
-
-.. autosummary::
-    :toctree: llms
-    :template: function.rst
-
-    
-

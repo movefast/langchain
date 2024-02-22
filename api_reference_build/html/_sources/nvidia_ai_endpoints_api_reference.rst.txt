@@ -21,16 +21,6 @@ Classes
     
     chat_models.ChatNVIDIA
     
-Functions
---------------
-.. currentmodule:: langchain_nvidia_ai_endpoints
-
-.. autosummary::
-    :toctree: chat_models
-    :template: function.rst
-
-    
-
 :mod:`langchain_nvidia_ai_endpoints.embeddings`
 ================================================
 

@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>langchain_community.document_loaders.readthedocs.ReadTheDocsLoader &mdash; 🦜🔗 LangChain 0.1.7</title>
+  <title>langchain_community.document_loaders.readthedocs.ReadTheDocsLoader &mdash; 🦜🔗 LangChain 0.1.8</title>
   
   <link rel="canonical" href="https://api.python.langchain.com/en/latest/document_loaders/langchain_community.document_loaders.readthedocs.ReadTheDocsLoader.html" />
 
@@ -61,7 +61,13 @@
           <a class="sk-nav-link nav-link" href="../experimental_api_reference.html">Experimental</a>
         </li>
         <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ai21_api_reference.html">ai21</a>
+        </li>
+        <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../anthropic_api_reference.html">anthropic</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../astradb_api_reference.html">astradb</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../exa_api_reference.html">exa</a>
@@ -71,6 +77,9 @@
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../google_vertexai_api_reference.html">google-vertexai</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ibm_api_reference.html">ibm</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../mistralai_api_reference.html">mistralai</a>
@@ -99,10 +108,13 @@
         <li class="nav-item dropdown nav-more-item-dropdown">
           <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Partner libs</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ai21_api_reference.html">ai21</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../anthropic_api_reference.html">anthropic</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../astradb_api_reference.html">astradb</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../exa_api_reference.html">exa</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_genai_api_reference.html">google-genai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ibm_api_reference.html">ibm</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../mistralai_api_reference.html">mistralai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nomic_api_reference.html">nomic</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nvidia_ai_endpoints_api_reference.html">nvidia-ai-endpoints</a>
@@ -176,17 +188,17 @@ empty, the loop will break and retrieve the content out of that tag.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>path</strong> – The location of pulled readthedocs folder.</p></li>
-<li><p><strong>encoding</strong> – The encoding with which to open the documents.</p></li>
-<li><p><strong>errors</strong> – Specify how encoding and decoding errors are to be handled—this
+<li><p><strong>path</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>Path</em><em>]</em>) – The location of pulled readthedocs folder.</p></li>
+<li><p><strong>encoding</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – The encoding with which to open the documents.</p></li>
+<li><p><strong>errors</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Specify how encoding and decoding errors are to be handled—this
 cannot be used in binary mode.</p></li>
-<li><p><strong>custom_html_tag</strong> – Optional custom html tag to retrieve the content from
+<li><p><strong>custom_html_tag</strong> (<em>Optional</em><em>[</em><em>Tuple</em><em>[</em><em>str</em><em>, </em><em>dict</em><em>]</em><em>]</em>) – Optional custom html tag to retrieve the content from
 files.</p></li>
-<li><p><strong>patterns</strong> – The file patterns to load, passed to <cite>glob.rglob</cite>.</p></li>
-<li><p><strong>exclude_links_ratio</strong> – The ratio of links:content to exclude pages from.
+<li><p><strong>patterns</strong> (<em>Sequence</em><em>[</em><em>str</em><em>]</em>) – The file patterns to load, passed to <cite>glob.rglob</cite>.</p></li>
+<li><p><strong>exclude_links_ratio</strong> (<em>float</em>) – The ratio of links:content to exclude pages from.
 This is to reduce the frequency at which index pages make their
 way into retrieved results. Recommended: 0.5</p></li>
-<li><p><strong>kwargs</strong> – named arguments passed to <cite>bs4.BeautifulSoup</cite>.</p></li>
+<li><p><strong>kwargs</strong> (<em>Optional</em><em>[</em><em>Any</em><em>]</em>) – named arguments passed to <cite>bs4.BeautifulSoup</cite>.</p></li>
 </ul>
 </dd>
 </dl>
@@ -228,17 +240,17 @@ empty, the loop will break and retrieve the content out of that tag.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>path</strong> – The location of pulled readthedocs folder.</p></li>
-<li><p><strong>encoding</strong> – The encoding with which to open the documents.</p></li>
-<li><p><strong>errors</strong> – Specify how encoding and decoding errors are to be handled—this
+<li><p><strong>path</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>Path</em><em>]</em>) – The location of pulled readthedocs folder.</p></li>
+<li><p><strong>encoding</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – The encoding with which to open the documents.</p></li>
+<li><p><strong>errors</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Specify how encoding and decoding errors are to be handled—this
 cannot be used in binary mode.</p></li>
-<li><p><strong>custom_html_tag</strong> – Optional custom html tag to retrieve the content from
+<li><p><strong>custom_html_tag</strong> (<em>Optional</em><em>[</em><em>Tuple</em><em>[</em><em>str</em><em>, </em><em>dict</em><em>]</em><em>]</em>) – Optional custom html tag to retrieve the content from
 files.</p></li>
-<li><p><strong>patterns</strong> – The file patterns to load, passed to <cite>glob.rglob</cite>.</p></li>
-<li><p><strong>exclude_links_ratio</strong> – The ratio of links:content to exclude pages from.
+<li><p><strong>patterns</strong> (<em>Sequence</em><em>[</em><em>str</em><em>]</em>) – The file patterns to load, passed to <cite>glob.rglob</cite>.</p></li>
+<li><p><strong>exclude_links_ratio</strong> (<em>float</em>) – The ratio of links:content to exclude pages from.
 This is to reduce the frequency at which index pages make their
 way into retrieved results. Recommended: 0.5</p></li>
-<li><p><strong>kwargs</strong> – named arguments passed to <cite>bs4.BeautifulSoup</cite>.</p></li>
+<li><p><strong>kwargs</strong> (<em>Optional</em><em>[</em><em>Any</em><em>]</em>) – named arguments passed to <cite>bs4.BeautifulSoup</cite>.</p></li>
 </ul>
 </dd>
 </dl>
@@ -248,18 +260,33 @@ way into retrieved results. Recommended: 0.5</p></li>
 <dt class="sig sig-object py" id="langchain_community.document_loaders.readthedocs.ReadTheDocsLoader.alazy_load">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">alazy_load</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">AsyncIterator</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><span class="pre">Document</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#langchain_community.document_loaders.readthedocs.ReadTheDocsLoader.alazy_load" title="Permalink to this definition">¶</a></dt>
 <dd><p>A lazy loader for Documents.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><em>AsyncIterator</em>[<a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><em>Document</em></a>]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.document_loaders.readthedocs.ReadTheDocsLoader.lazy_load">
 <span class="sig-name descname"><span class="pre">lazy_load</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><span class="pre">Document</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/langchain_community/document_loaders/readthedocs.html#ReadTheDocsLoader.lazy_load"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.document_loaders.readthedocs.ReadTheDocsLoader.lazy_load" title="Permalink to this definition">¶</a></dt>
 <dd><p>A lazy loader for Documents.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><em>Iterator</em>[<a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><em>Document</em></a>]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.document_loaders.readthedocs.ReadTheDocsLoader.load">
 <span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><span class="pre">Document</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/langchain_community/document_loaders/readthedocs.html#ReadTheDocsLoader.load"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.document_loaders.readthedocs.ReadTheDocsLoader.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load documents.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><em>List</em>[<a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><em>Document</em></a>]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -268,11 +295,14 @@ way into retrieved results. Recommended: 0.5</p></li>
 <dd><p>Load Documents and split into chunks. Chunks are returned as Documents.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>text_splitter</strong> – TextSplitter instance to use for splitting documents.
+<dd class="field-odd"><p><strong>text_splitter</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="../text_splitter/langchain.text_splitter.TextSplitter.html#langchain.text_splitter.TextSplitter" title="langchain.text_splitter.TextSplitter"><em>TextSplitter</em></a><em>]</em>) – TextSplitter instance to use for splitting documents.
 Defaults to RecursiveCharacterTextSplitter.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>List of Documents.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List[<a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document">Document</a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -290,7 +320,7 @@ Defaults to RecursiveCharacterTextSplitter.</p>
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 14, 2024.
+          Last updated on Feb 22, 2024.
           <a href="../_sources/document_loaders/langchain_community.document_loaders.readthedocs.ReadTheDocsLoader.rst.txt" rel="nofollow">Show this page source</a>
       </footer>
     </div>

@@ -38,16 +38,6 @@ Classes
     
     chat_models.ChatAI21
     
-Functions
---------------
-.. currentmodule:: langchain_ai21
-
-.. autosummary::
-    :toctree: chat_models
-    :template: function.rst
-
-    
-
 :mod:`langchain_ai21.embeddings`
 =================================
 

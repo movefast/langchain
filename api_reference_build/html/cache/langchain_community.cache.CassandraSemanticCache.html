@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>langchain_community.cache.CassandraSemanticCache &mdash; 🦜🔗 LangChain 0.1.7</title>
+  <title>langchain_community.cache.CassandraSemanticCache &mdash; 🦜🔗 LangChain 0.1.8</title>
   
   <link rel="canonical" href="https://api.python.langchain.com/en/latest/cache/langchain_community.cache.CassandraSemanticCache.html" />
 
@@ -61,7 +61,13 @@
           <a class="sk-nav-link nav-link" href="../experimental_api_reference.html">Experimental</a>
         </li>
         <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ai21_api_reference.html">ai21</a>
+        </li>
+        <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../anthropic_api_reference.html">anthropic</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../astradb_api_reference.html">astradb</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../exa_api_reference.html">exa</a>
@@ -71,6 +77,9 @@
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../google_vertexai_api_reference.html">google-vertexai</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ibm_api_reference.html">ibm</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../mistralai_api_reference.html">mistralai</a>
@@ -99,10 +108,13 @@
         <li class="nav-item dropdown nav-more-item-dropdown">
           <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Partner libs</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ai21_api_reference.html">ai21</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../anthropic_api_reference.html">anthropic</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../astradb_api_reference.html">astradb</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../exa_api_reference.html">exa</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_genai_api_reference.html">google-genai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ibm_api_reference.html">ibm</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../mistralai_api_reference.html">mistralai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nomic_api_reference.html">nomic</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nvidia_ai_endpoints_api_reference.html">nvidia-ai-endpoints</a>
@@ -196,6 +208,10 @@ similarity searches</p></li>
 cutoff for the similarity searches</p></li>
 <li><p><strong>ttl_seconds</strong> (<em>optional int</em>) – time-to-live for cache entries
 (default: None, i.e. forever)</p></li>
+<li><p><strong>session</strong> (<em>Optional</em><em>[</em><em>CassandraSession</em><em>]</em>) – </p></li>
+<li><p><strong>keyspace</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – </p></li>
+<li><p><strong>embedding</strong> (<em>Embedding</em>) – </p></li>
+<li><p><strong>skip_provisioning</strong> (<em>bool</em>) – </p></li>
 </ul>
 </dd>
 </dl>
@@ -263,6 +279,10 @@ similarity searches</p></li>
 cutoff for the similarity searches</p></li>
 <li><p><strong>ttl_seconds</strong> (<em>optional int</em>) – time-to-live for cache entries
 (default: None, i.e. forever)</p></li>
+<li><p><strong>session</strong> (<em>Optional</em><em>[</em><em>CassandraSession</em><em>]</em>) – </p></li>
+<li><p><strong>keyspace</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – </p></li>
+<li><p><strong>embedding</strong> (<em>Embedding</em>) – </p></li>
+<li><p><strong>skip_provisioning</strong> (<em>bool</em>) – </p></li>
 </ul>
 </dd>
 </dl>
@@ -274,24 +294,63 @@ Tune it carefully yourself if switching to another distance metric.</p>
 <dt class="sig sig-object py" id="langchain_community.cache.CassandraSemanticCache.aclear">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">aclear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#langchain_community.cache.CassandraSemanticCache.aclear" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clear cache that can take additional keyword arguments.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>kwargs</strong> (<em>Any</em>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.cache.CassandraSemanticCache.alookup">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">alookup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prompt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">llm_string</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../outputs/langchain_core.outputs.generation.Generation.html#langchain_core.outputs.generation.Generation" title="langchain_core.outputs.generation.Generation"><span class="pre">Generation</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#langchain_community.cache.CassandraSemanticCache.alookup" title="Permalink to this definition">¶</a></dt>
 <dd><p>Look up based on prompt and llm_string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>prompt</strong> (<em>str</em>) – </p></li>
+<li><p><strong>llm_string</strong> (<em>str</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><em>Optional</em>[<em>Sequence</em>[<a class="reference internal" href="../outputs/langchain_core.outputs.generation.Generation.html#langchain_core.outputs.generation.Generation" title="langchain_core.outputs.generation.Generation"><em>Generation</em></a>]]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.cache.CassandraSemanticCache.aupdate">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">aupdate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prompt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">llm_string</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../outputs/langchain_core.outputs.generation.Generation.html#langchain_core.outputs.generation.Generation" title="langchain_core.outputs.generation.Generation"><span class="pre">Generation</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#langchain_community.cache.CassandraSemanticCache.aupdate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Update cache based on prompt and llm_string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>prompt</strong> (<em>str</em>) – </p></li>
+<li><p><strong>llm_string</strong> (<em>str</em>) – </p></li>
+<li><p><strong>return_val</strong> (<em>Sequence</em><em>[</em><a class="reference internal" href="../outputs/langchain_core.outputs.generation.Generation.html#langchain_core.outputs.generation.Generation" title="langchain_core.outputs.generation.Generation"><em>Generation</em></a><em>]</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.cache.CassandraSemanticCache.clear">
 <span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/langchain_community/cache.html#CassandraSemanticCache.clear"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.cache.CassandraSemanticCache.clear" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clear the <em>whole</em> semantic cache.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>kwargs</strong> (<em>Any</em>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -300,12 +359,31 @@ Tune it carefully yourself if switching to another distance metric.</p>
 <dd><p>Given this is a “similarity search” cache, an invalidation pattern
 that makes sense is first a lookup to get an ID, and then deleting
 with that ID. This is for the second step.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>document_id</strong> (<em>str</em>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.cache.CassandraSemanticCache.lookup">
 <span class="sig-name descname"><span class="pre">lookup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prompt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">llm_string</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../outputs/langchain_core.outputs.generation.Generation.html#langchain_core.outputs.generation.Generation" title="langchain_core.outputs.generation.Generation"><span class="pre">Generation</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/langchain_community/cache.html#CassandraSemanticCache.lookup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.cache.CassandraSemanticCache.lookup" title="Permalink to this definition">¶</a></dt>
 <dd><p>Look up based on prompt and llm_string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>prompt</strong> (<em>str</em>) – </p></li>
+<li><p><strong>llm_string</strong> (<em>str</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><em>Optional</em>[<em>Sequence</em>[<a class="reference internal" href="../outputs/langchain_core.outputs.generation.Generation.html#langchain_core.outputs.generation.Generation" title="langchain_core.outputs.generation.Generation"><em>Generation</em></a>]]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -313,17 +391,52 @@ with that ID. This is for the second step.</p>
 <span class="sig-name descname"><span class="pre">lookup_with_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prompt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">llm_string</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../outputs/langchain_core.outputs.generation.Generation.html#langchain_core.outputs.generation.Generation" title="langchain_core.outputs.generation.Generation"><span class="pre">Generation</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/langchain_community/cache.html#CassandraSemanticCache.lookup_with_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.cache.CassandraSemanticCache.lookup_with_id" title="Permalink to this definition">¶</a></dt>
 <dd><p>Look up based on prompt and llm_string.
 If there are hits, return (document_id, cached_entry)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>prompt</strong> (<em>str</em>) – </p></li>
+<li><p><strong>llm_string</strong> (<em>str</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><em>Optional</em>[<em>Tuple</em>[str, <em>Sequence</em>[<a class="reference internal" href="../outputs/langchain_core.outputs.generation.Generation.html#langchain_core.outputs.generation.Generation" title="langchain_core.outputs.generation.Generation"><em>Generation</em></a>]]]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.cache.CassandraSemanticCache.lookup_with_id_through_llm">
 <span class="sig-name descname"><span class="pre">lookup_with_id_through_llm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prompt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">llm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../language_models/langchain_core.language_models.llms.LLM.html#langchain_core.language_models.llms.LLM" title="langchain_core.language_models.llms.LLM"><span class="pre">LLM</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../outputs/langchain_core.outputs.generation.Generation.html#langchain_core.outputs.generation.Generation" title="langchain_core.outputs.generation.Generation"><span class="pre">Generation</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/langchain_community/cache.html#CassandraSemanticCache.lookup_with_id_through_llm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.cache.CassandraSemanticCache.lookup_with_id_through_llm" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>prompt</strong> (<em>str</em>) – </p></li>
+<li><p><strong>llm</strong> (<a class="reference internal" href="../language_models/langchain_core.language_models.llms.LLM.html#langchain_core.language_models.llms.LLM" title="langchain_core.language_models.llms.LLM"><em>LLM</em></a>) – </p></li>
+<li><p><strong>stop</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><em>Optional</em>[<em>Tuple</em>[str, <em>Sequence</em>[<a class="reference internal" href="../outputs/langchain_core.outputs.generation.Generation.html#langchain_core.outputs.generation.Generation" title="langchain_core.outputs.generation.Generation"><em>Generation</em></a>]]]</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.cache.CassandraSemanticCache.update">
 <span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prompt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">llm_string</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_val</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../outputs/langchain_core.outputs.generation.Generation.html#langchain_core.outputs.generation.Generation" title="langchain_core.outputs.generation.Generation"><span class="pre">Generation</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/langchain_community/cache.html#CassandraSemanticCache.update"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.cache.CassandraSemanticCache.update" title="Permalink to this definition">¶</a></dt>
 <dd><p>Update cache based on prompt and llm_string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>prompt</strong> (<em>str</em>) – </p></li>
+<li><p><strong>llm_string</strong> (<em>str</em>) – </p></li>
+<li><p><strong>return_val</strong> (<em>Sequence</em><em>[</em><a class="reference internal" href="../outputs/langchain_core.outputs.generation.Generation.html#langchain_core.outputs.generation.Generation" title="langchain_core.outputs.generation.Generation"><em>Generation</em></a><em>]</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -337,7 +450,7 @@ If there are hits, return (document_id, cached_entry)</p>
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 14, 2024.
+          Last updated on Feb 22, 2024.
           <a href="../_sources/cache/langchain_community.cache.CassandraSemanticCache.rst.txt" rel="nofollow">Show this page source</a>
       </footer>
     </div>

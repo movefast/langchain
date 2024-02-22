@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>langchain_community.graphs.neo4j_graph &mdash; 🦜🔗 LangChain 0.1.7</title>
+  <title>langchain_community.graphs.neo4j_graph &mdash; 🦜🔗 LangChain 0.1.8</title>
   
   <link rel="canonical" href="https://api.python.langchain.com/en/latest/_modules/langchain_community/graphs/neo4j_graph.html" />
 
@@ -60,7 +60,13 @@
           <a class="sk-nav-link nav-link" href="../../../experimental_api_reference.html">Experimental</a>
         </li>
         <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../ai21_api_reference.html">ai21</a>
+        </li>
+        <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../anthropic_api_reference.html">anthropic</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../astradb_api_reference.html">astradb</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../exa_api_reference.html">exa</a>
@@ -70,6 +76,9 @@
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../google_vertexai_api_reference.html">google-vertexai</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../ibm_api_reference.html">ibm</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../mistralai_api_reference.html">mistralai</a>
@@ -98,10 +107,13 @@
         <li class="nav-item dropdown nav-more-item-dropdown">
           <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Partner libs</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../ai21_api_reference.html">ai21</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../anthropic_api_reference.html">anthropic</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../astradb_api_reference.html">astradb</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../exa_api_reference.html">exa</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../google_genai_api_reference.html">google-genai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../ibm_api_reference.html">ibm</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../mistralai_api_reference.html">mistralai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../nomic_api_reference.html">nomic</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../nvidia_ai_endpoints_api_reference.html">nvidia-ai-endpoints</a>
@@ -178,7 +190,7 @@
 <span class="s2">&quot;&quot;&quot;</span>
 
 
-<div class="viewcode-block" id="value_sanitize"><a class="viewcode-back" href="../../../graphs/langchain_community.graphs.neo4j_graph.value_sanitize.html#langchain_community.graphs.memgraph_graph.value_sanitize">[docs]</a><span class="k">def</span> <span class="nf">value_sanitize</span><span class="p">(</span><span class="n">d</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<div class="viewcode-block" id="value_sanitize"><a class="viewcode-back" href="../../../graphs/langchain_community.graphs.neo4j_graph.value_sanitize.html#langchain_community.graphs.neo4j_graph.value_sanitize">[docs]</a><span class="k">def</span> <span class="nf">value_sanitize</span><span class="p">(</span><span class="n">d</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Sanitize the input dictionary.</span>
 
 <span class="sd">    Sanitizes the input dictionary by removing embedding-like values,</span>
@@ -210,7 +222,7 @@
     <span class="k">return</span> <span class="n">new_dict</span></div>
 
 
-<div class="viewcode-block" id="Neo4jGraph"><a class="viewcode-back" href="../../../graphs/langchain_community.graphs.neo4j_graph.Neo4jGraph.html#langchain_community.graphs.memgraph_graph.Neo4jGraph">[docs]</a><span class="k">class</span> <span class="nc">Neo4jGraph</span><span class="p">(</span><span class="n">GraphStore</span><span class="p">):</span>
+<div class="viewcode-block" id="Neo4jGraph"><a class="viewcode-back" href="../../../graphs/langchain_community.graphs.neo4j_graph.Neo4jGraph.html#langchain_community.graphs.neo4j_graph.Neo4jGraph">[docs]</a><span class="k">class</span> <span class="nc">Neo4jGraph</span><span class="p">(</span><span class="n">GraphStore</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Neo4j database wrapper for various graph operations.</span>
 
 <span class="sd">    Parameters:</span>
@@ -237,7 +249,7 @@
 <span class="sd">        See https://python.langchain.com/docs/security for more information.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="Neo4jGraph.__init__"><a class="viewcode-back" href="../../../graphs/langchain_community.graphs.neo4j_graph.Neo4jGraph.html#langchain_community.graphs.memgraph_graph.Neo4jGraph.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<div class="viewcode-block" id="Neo4jGraph.__init__"><a class="viewcode-back" href="../../../graphs/langchain_community.graphs.neo4j_graph.Neo4jGraph.html#langchain_community.graphs.neo4j_graph.Neo4jGraph.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">url</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">username</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -301,7 +313,7 @@
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the structured schema of the Graph&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">structured_schema</span>
 
-<div class="viewcode-block" id="Neo4jGraph.query"><a class="viewcode-back" href="../../../graphs/langchain_community.graphs.neo4j_graph.Neo4jGraph.html#langchain_community.graphs.memgraph_graph.Neo4jGraph.query">[docs]</a>    <span class="k">def</span> <span class="nf">query</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">params</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{})</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+<div class="viewcode-block" id="Neo4jGraph.query"><a class="viewcode-back" href="../../../graphs/langchain_community.graphs.neo4j_graph.Neo4jGraph.html#langchain_community.graphs.neo4j_graph.Neo4jGraph.query">[docs]</a>    <span class="k">def</span> <span class="nf">query</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">params</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{})</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Query Neo4j database.&quot;&quot;&quot;</span>
         <span class="kn">from</span> <span class="nn">neo4j</span> <span class="kn">import</span> <span class="n">Query</span>
         <span class="kn">from</span> <span class="nn">neo4j.exceptions</span> <span class="kn">import</span> <span class="n">CypherSyntaxError</span>
@@ -316,7 +328,7 @@
             <span class="k">except</span> <span class="n">CypherSyntaxError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Generated Cypher Statement is not valid</span><span class="se">\n</span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Neo4jGraph.refresh_schema"><a class="viewcode-back" href="../../../graphs/langchain_community.graphs.neo4j_graph.Neo4jGraph.html#langchain_community.graphs.memgraph_graph.Neo4jGraph.refresh_schema">[docs]</a>    <span class="k">def</span> <span class="nf">refresh_schema</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="Neo4jGraph.refresh_schema"><a class="viewcode-back" href="../../../graphs/langchain_community.graphs.neo4j_graph.Neo4jGraph.html#langchain_community.graphs.neo4j_graph.Neo4jGraph.refresh_schema">[docs]</a>    <span class="k">def</span> <span class="nf">refresh_schema</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Refreshes the Neo4j graph schema information.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -362,7 +374,7 @@
             <span class="p">]</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="Neo4jGraph.add_graph_documents"><a class="viewcode-back" href="../../../graphs/langchain_community.graphs.neo4j_graph.Neo4jGraph.html#langchain_community.graphs.memgraph_graph.Neo4jGraph.add_graph_documents">[docs]</a>    <span class="k">def</span> <span class="nf">add_graph_documents</span><span class="p">(</span>
+<div class="viewcode-block" id="Neo4jGraph.add_graph_documents"><a class="viewcode-back" href="../../../graphs/langchain_community.graphs.neo4j_graph.Neo4jGraph.html#langchain_community.graphs.neo4j_graph.Neo4jGraph.add_graph_documents">[docs]</a>    <span class="k">def</span> <span class="nf">add_graph_documents</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">graph_documents</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">GraphDocument</span><span class="p">],</span> <span class="n">include_source</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -420,7 +432,7 @@
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 14, 2024.
+          Last updated on Feb 22, 2024.
       </footer>
     </div>
   </div>

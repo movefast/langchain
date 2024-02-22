@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>langchain_experimental.tot.memory.ToTDFSMemory &mdash; 🦜🔗 LangChain 0.1.7</title>
+  <title>langchain_experimental.tot.memory.ToTDFSMemory &mdash; 🦜🔗 LangChain 0.1.8</title>
   
   <link rel="canonical" href="https://api.python.langchain.com/en/latest/tot/langchain_experimental.tot.memory.ToTDFSMemory.html" />
 
@@ -61,7 +61,13 @@
           <a class="sk-nav-link nav-link" href="../experimental_api_reference.html">Experimental</a>
         </li>
         <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ai21_api_reference.html">ai21</a>
+        </li>
+        <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../anthropic_api_reference.html">anthropic</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../astradb_api_reference.html">astradb</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../exa_api_reference.html">exa</a>
@@ -71,6 +77,9 @@
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../google_vertexai_api_reference.html">google-vertexai</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ibm_api_reference.html">ibm</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../mistralai_api_reference.html">mistralai</a>
@@ -99,10 +108,13 @@
         <li class="nav-item dropdown nav-more-item-dropdown">
           <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Partner libs</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ai21_api_reference.html">ai21</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../anthropic_api_reference.html">anthropic</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../astradb_api_reference.html">astradb</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../exa_api_reference.html">exa</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_genai_api_reference.html">google-genai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ibm_api_reference.html">ibm</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../mistralai_api_reference.html">mistralai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nomic_api_reference.html">nomic</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nvidia_ai_endpoints_api_reference.html">nvidia-ai-endpoints</a>
@@ -206,39 +218,80 @@ thoughts. This allows for a depth first search (DFS) of the ToT.</p>
 </tr>
 </tbody>
 </table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>stack</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><a class="reference internal" href="langchain_experimental.tot.thought.Thought.html#langchain_experimental.tot.thought.Thought" title="langchain_experimental.tot.thought.Thought"><em>Thought</em></a><em>]</em><em>]</em>) – </p>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_experimental.tot.memory.ToTDFSMemory.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stack</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="langchain_experimental.tot.thought.Thought.html#langchain_experimental.tot.thought.Thought" title="langchain_experimental.tot.thought.Thought"><span class="pre">Thought</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/langchain_experimental/tot/memory.html#ToTDFSMemory.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_experimental.tot.memory.ToTDFSMemory.__init__" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>stack</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><a class="reference internal" href="langchain_experimental.tot.thought.Thought.html#langchain_experimental.tot.thought.Thought" title="langchain_experimental.tot.thought.Thought"><em>Thought</em></a><em>]</em><em>]</em>) – </p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_experimental.tot.memory.ToTDFSMemory.current_path">
 <span class="sig-name descname"><span class="pre">current_path</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="langchain_experimental.tot.thought.Thought.html#langchain_experimental.tot.thought.Thought" title="langchain_experimental.tot.thought.Thought"><span class="pre">Thought</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/langchain_experimental/tot/memory.html#ToTDFSMemory.current_path"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_experimental.tot.memory.ToTDFSMemory.current_path" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the thoughts path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><em>List</em>[<a class="reference internal" href="langchain_experimental.tot.thought.Thought.html#langchain_experimental.tot.thought.Thought" title="langchain_experimental.tot.thought.Thought"><em>Thought</em></a>]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_experimental.tot.memory.ToTDFSMemory.pop">
 <span class="sig-name descname"><span class="pre">pop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="langchain_experimental.tot.thought.Thought.html#langchain_experimental.tot.thought.Thought" title="langchain_experimental.tot.thought.Thought"><span class="pre">Thought</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/langchain_experimental/tot/memory.html#ToTDFSMemory.pop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_experimental.tot.memory.ToTDFSMemory.pop" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pop the top n elements of the stack and return the last one.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>n</strong> (<em>int</em>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><em>Optional</em>[<a class="reference internal" href="langchain_experimental.tot.thought.Thought.html#langchain_experimental.tot.thought.Thought" title="langchain_experimental.tot.thought.Thought"><em>Thought</em></a>]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_experimental.tot.memory.ToTDFSMemory.store">
 <span class="sig-name descname"><span class="pre">store</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="langchain_experimental.tot.thought.Thought.html#langchain_experimental.tot.thought.Thought" title="langchain_experimental.tot.thought.Thought"><span class="pre">Thought</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/langchain_experimental/tot/memory.html#ToTDFSMemory.store"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_experimental.tot.memory.ToTDFSMemory.store" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a node on the top of the stack.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>node</strong> (<a class="reference internal" href="langchain_experimental.tot.thought.Thought.html#langchain_experimental.tot.thought.Thought" title="langchain_experimental.tot.thought.Thought"><em>Thought</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_experimental.tot.memory.ToTDFSMemory.top">
 <span class="sig-name descname"><span class="pre">top</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="langchain_experimental.tot.thought.Thought.html#langchain_experimental.tot.thought.Thought" title="langchain_experimental.tot.thought.Thought"><span class="pre">Thought</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/langchain_experimental/tot/memory.html#ToTDFSMemory.top"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_experimental.tot.memory.ToTDFSMemory.top" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the top of the stack without popping it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><em>Optional</em>[<a class="reference internal" href="langchain_experimental.tot.thought.Thought.html#langchain_experimental.tot.thought.Thought" title="langchain_experimental.tot.thought.Thought"><em>Thought</em></a>]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_experimental.tot.memory.ToTDFSMemory.top_parent">
 <span class="sig-name descname"><span class="pre">top_parent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="langchain_experimental.tot.thought.Thought.html#langchain_experimental.tot.thought.Thought" title="langchain_experimental.tot.thought.Thought"><span class="pre">Thought</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/langchain_experimental/tot/memory.html#ToTDFSMemory.top_parent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_experimental.tot.memory.ToTDFSMemory.top_parent" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the parent of the top of the stack without popping it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><em>Optional</em>[<a class="reference internal" href="langchain_experimental.tot.thought.Thought.html#langchain_experimental.tot.thought.Thought" title="langchain_experimental.tot.thought.Thought"><em>Thought</em></a>]</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -252,7 +305,7 @@ thoughts. This allows for a depth first search (DFS) of the ToT.</p>
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 14, 2024.
+          Last updated on Feb 22, 2024.
           <a href="../_sources/tot/langchain_experimental.tot.memory.ToTDFSMemory.rst.txt" rel="nofollow">Show this page source</a>
       </footer>
     </div>

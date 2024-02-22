@@ -74,13 +74,3 @@ Classes
     
     vectorstores.astradb.AstraDBVectorStore
     
-Functions
---------------
-.. currentmodule:: langchain_astradb
-
-.. autosummary::
-    :toctree: vectorstores
-    :template: function.rst
-
-    
-

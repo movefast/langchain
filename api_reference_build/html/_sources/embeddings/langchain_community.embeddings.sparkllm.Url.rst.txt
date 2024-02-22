@@ -1,0 +1,27 @@
+﻿:mod:`langchain_community.embeddings.sparkllm`.Url
+=========================================================
+
+.. currentmodule:: langchain_community.embeddings.sparkllm
+
+.. autoclass:: Url
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Url.__init__
+
+   
+   .. automethod:: Url.__init__
+
+   
+   
+
+
+.. example_links:: Url

@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>langchain_community.vectorstores.elasticsearch.ElasticsearchStore &mdash; 🦜🔗 LangChain 0.1.7</title>
+  <title>langchain_community.vectorstores.elasticsearch.ElasticsearchStore &mdash; 🦜🔗 LangChain 0.1.8</title>
   
   <link rel="canonical" href="https://api.python.langchain.com/en/latest/vectorstores/langchain_community.vectorstores.elasticsearch.ElasticsearchStore.html" />
 
@@ -61,7 +61,13 @@
           <a class="sk-nav-link nav-link" href="../experimental_api_reference.html">Experimental</a>
         </li>
         <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ai21_api_reference.html">ai21</a>
+        </li>
+        <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../anthropic_api_reference.html">anthropic</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../astradb_api_reference.html">astradb</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../exa_api_reference.html">exa</a>
@@ -71,6 +77,9 @@
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../google_vertexai_api_reference.html">google-vertexai</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ibm_api_reference.html">ibm</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../mistralai_api_reference.html">mistralai</a>
@@ -99,10 +108,13 @@
         <li class="nav-item dropdown nav-more-item-dropdown">
           <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Partner libs</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ai21_api_reference.html">ai21</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../anthropic_api_reference.html">anthropic</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../astradb_api_reference.html">astradb</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../exa_api_reference.html">exa</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_genai_api_reference.html">google-genai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ibm_api_reference.html">ibm</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../mistralai_api_reference.html">mistralai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nomic_api_reference.html">nomic</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nvidia_ai_endpoints_api_reference.html">nvidia-ai-endpoints</a>
@@ -207,24 +219,27 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>index_name</strong> – Name of the Elasticsearch index to create.</p></li>
-<li><p><strong>es_url</strong> – URL of the Elasticsearch instance to connect to.</p></li>
+<li><p><strong>index_name</strong> (<em>str</em>) – Name of the Elasticsearch index to create.</p></li>
+<li><p><strong>es_url</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – URL of the Elasticsearch instance to connect to.</p></li>
 <li><p><strong>cloud_id</strong> – Cloud ID of the Elasticsearch instance to connect to.</p></li>
-<li><p><strong>es_user</strong> – Username to use when connecting to Elasticsearch.</p></li>
-<li><p><strong>es_password</strong> – Password to use when connecting to Elasticsearch.</p></li>
-<li><p><strong>es_api_key</strong> – API key to use when connecting to Elasticsearch.</p></li>
-<li><p><strong>es_connection</strong> – Optional pre-existing Elasticsearch connection.</p></li>
-<li><p><strong>vector_query_field</strong> – Optional. Name of the field to store
+<li><p><strong>es_user</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Username to use when connecting to Elasticsearch.</p></li>
+<li><p><strong>es_password</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Password to use when connecting to Elasticsearch.</p></li>
+<li><p><strong>es_api_key</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – API key to use when connecting to Elasticsearch.</p></li>
+<li><p><strong>es_connection</strong> (<em>Optional</em><em>[</em><em>Elasticsearch</em><em>]</em>) – Optional pre-existing Elasticsearch connection.</p></li>
+<li><p><strong>vector_query_field</strong> (<em>str</em>) – Optional. Name of the field to store
 the embedding vectors in.</p></li>
-<li><p><strong>query_field</strong> – Optional. Name of the field to store the texts in.</p></li>
-<li><p><strong>strategy</strong> – Optional. Retrieval strategy to use when searching the index.
+<li><p><strong>query_field</strong> (<em>str</em>) – Optional. Name of the field to store the texts in.</p></li>
+<li><p><strong>strategy</strong> (<a class="reference internal" href="langchain_community.vectorstores.elasticsearch.BaseRetrievalStrategy.html#langchain_community.vectorstores.elasticsearch.BaseRetrievalStrategy" title="langchain_community.vectorstores.elasticsearch.BaseRetrievalStrategy"><em>BaseRetrievalStrategy</em></a>) – Optional. Retrieval strategy to use when searching the index.
 Defaults to ApproxRetrievalStrategy. Can be one of
 ExactRetrievalStrategy, ApproxRetrievalStrategy,
 or SparseRetrievalStrategy.</p></li>
-<li><p><strong>distance_strategy</strong> – Optional. Distance strategy to use when
+<li><p><strong>distance_strategy</strong> (<em>Optional</em><em>[</em><em>Literal</em><em>[</em><em>&lt;DistanceStrategy.COSINE: 'COSINE'&gt;</em><em>, </em><em>&lt;DistanceStrategy.DOT_PRODUCT: 'DOT_PRODUCT'&gt;</em><em>, </em><em>&lt;DistanceStrategy.EUCLIDEAN_DISTANCE: 'EUCLIDEAN_DISTANCE'&gt;</em><em>, </em><em>&lt;DistanceStrategy.MAX_INNER_PRODUCT: 'MAX_INNER_PRODUCT'&gt;</em><em>]</em><em>]</em>) – Optional. Distance strategy to use when
 searching the index.
 Defaults to COSINE. Can be one of COSINE,
 EUCLIDEAN_DISTANCE, MAX_INNER_PRODUCT or DOT_PRODUCT.</p></li>
+<li><p><strong>embedding</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="../embeddings/langchain_core.embeddings.Embeddings.html#langchain_core.embeddings.Embeddings" title="langchain_core.embeddings.Embeddings"><em>Embeddings</em></a><em>]</em>) – </p></li>
+<li><p><strong>es_cloud_id</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – </p></li>
+<li><p><strong>es_params</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – </p></li>
 </ul>
 </dd>
 </dl>
@@ -429,13 +444,13 @@ deployed to Elasticsearch.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>query_model_id</strong> – Optional. ID of the model to use to
+<li><p><strong>query_model_id</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Optional. ID of the model to use to
 embed the query text within the stack. Requires
 embedding model to be deployed to Elasticsearch.</p></li>
-<li><p><strong>hybrid</strong> – Optional. If True, will perform a hybrid search
+<li><p><strong>hybrid</strong> (<em>Optional</em><em>[</em><em>bool</em><em>]</em>) – Optional. If True, will perform a hybrid search
 using both the knn query and a text query.
 Defaults to False.</p></li>
-<li><p><strong>rrf</strong> – <p>Optional. rrf is Reciprocal Rank Fusion.
+<li><p><strong>rrf</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>dict</em><em>, </em><em>bool</em><em>]</em><em>]</em>) – <p>Optional. rrf is Reciprocal Rank Fusion.
 When <cite>hybrid</cite> is True,</p>
 <blockquote>
 <div><p>and <cite>rrf</cite> is True, then rrf: {}.
@@ -446,6 +461,9 @@ and isinstance(rrf, dict) is True, then pass in the dict values.</p>
 </p></li>
 </ul>
 </dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="langchain_community.vectorstores.elasticsearch.ApproxRetrievalStrategy.html#langchain_community.vectorstores.elasticsearch.ApproxRetrievalStrategy" title="langchain_community.vectorstores.elasticsearch.ApproxRetrievalStrategy"><em>ApproxRetrievalStrategy</em></a></p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -454,6 +472,11 @@ and isinstance(rrf, dict) is True, then pass in the dict values.</p>
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ExactRetrievalStrategy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="langchain_community.vectorstores.elasticsearch.ExactRetrievalStrategy.html#langchain_community.vectorstores.elasticsearch.ExactRetrievalStrategy" title="langchain_community.vectorstores.elasticsearch.ExactRetrievalStrategy"><span class="pre">ExactRetrievalStrategy</span></a></span></span><a class="reference internal" href="../_modules/langchain_community/vectorstores/elasticsearch.html#ElasticsearchStore.ExactRetrievalStrategy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.vectorstores.elasticsearch.ElasticsearchStore.ExactRetrievalStrategy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Used to perform brute force / exact
 nearest neighbor search via script_score.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="langchain_community.vectorstores.elasticsearch.ExactRetrievalStrategy.html#langchain_community.vectorstores.elasticsearch.ExactRetrievalStrategy" title="langchain_community.vectorstores.elasticsearch.ExactRetrievalStrategy"><em>ExactRetrievalStrategy</em></a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -469,10 +492,13 @@ model and the resulting tokens will be used to
 perform a text_expansion query.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>model_id</strong> – Optional. Default is “.elser_model_1”.
+<dd class="field-odd"><p><strong>model_id</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Optional. Default is “.elser_model_1”.
 ID of the model to use to embed the query text
 within the stack. Requires embedding model to be
 deployed to Elasticsearch.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="langchain_community.vectorstores.elasticsearch.SparseRetrievalStrategy.html#langchain_community.vectorstores.elasticsearch.SparseRetrievalStrategy" title="langchain_community.vectorstores.elasticsearch.SparseRetrievalStrategy"><em>SparseRetrievalStrategy</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -480,7 +506,26 @@ deployed to Elasticsearch.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.vectorstores.elasticsearch.ElasticsearchStore.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index_name:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">embedding:</span> <span class="pre">~typing.Optional[~langchain_core.embeddings.Embeddings]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">es_connection:</span> <span class="pre">~typing.Optional[Elasticsearch]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">es_url:</span> <span class="pre">~typing.Optional[str]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">es_cloud_id:</span> <span class="pre">~typing.Optional[str]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">es_user:</span> <span class="pre">~typing.Optional[str]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">es_api_key:</span> <span class="pre">~typing.Optional[str]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">es_password:</span> <span class="pre">~typing.Optional[str]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vector_query_field:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'vector'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_field:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'text'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_strategy:</span> <span class="pre">~typing.Optional[~typing.Literal[&lt;DistanceStrategy.COSINE:</span> <span class="pre">'COSINE'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;DistanceStrategy.DOT_PRODUCT:</span> <span class="pre">'DOT_PRODUCT'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;DistanceStrategy.EUCLIDEAN_DISTANCE:</span> <span class="pre">'EUCLIDEAN_DISTANCE'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;DistanceStrategy.MAX_INNER_PRODUCT:</span> <span class="pre">'MAX_INNER_PRODUCT'&gt;]]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strategy:</span> <span class="pre">~langchain_community.vectorstores.elasticsearch.BaseRetrievalStrategy</span> <span class="pre">=</span> <span class="pre">&lt;langchain_community.vectorstores.elasticsearch.ApproxRetrievalStrategy</span> <span class="pre">object&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">es_params:</span> <span class="pre">~typing.Optional[~typing.Dict[str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">~typing.Any]]</span> <span class="pre">=</span> <span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/langchain_community/vectorstores/elasticsearch.html#ElasticsearchStore.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.vectorstores.elasticsearch.ElasticsearchStore.__init__" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>index_name</strong> (<em>str</em>) – </p></li>
+<li><p><strong>embedding</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="../embeddings/langchain_core.embeddings.Embeddings.html#langchain_core.embeddings.Embeddings" title="langchain_core.embeddings.Embeddings"><em>Embeddings</em></a><em>]</em>) – </p></li>
+<li><p><strong>es_connection</strong> (<em>Optional</em><em>[</em><em>Elasticsearch</em><em>]</em>) – </p></li>
+<li><p><strong>es_url</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – </p></li>
+<li><p><strong>es_cloud_id</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – </p></li>
+<li><p><strong>es_user</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – </p></li>
+<li><p><strong>es_api_key</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – </p></li>
+<li><p><strong>es_password</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – </p></li>
+<li><p><strong>vector_query_field</strong> (<em>str</em>) – </p></li>
+<li><p><strong>query_field</strong> (<em>str</em>) – </p></li>
+<li><p><strong>distance_strategy</strong> (<em>Optional</em><em>[</em><em>Literal</em><em>[</em><em>&lt;DistanceStrategy.COSINE: 'COSINE'&gt;</em><em>, </em><em>&lt;DistanceStrategy.DOT_PRODUCT: 'DOT_PRODUCT'&gt;</em><em>, </em><em>&lt;DistanceStrategy.EUCLIDEAN_DISTANCE: 'EUCLIDEAN_DISTANCE'&gt;</em><em>, </em><em>&lt;DistanceStrategy.MAX_INNER_PRODUCT: 'MAX_INNER_PRODUCT'&gt;</em><em>]</em><em>]</em>) – </p></li>
+<li><p><strong>strategy</strong> (<a class="reference internal" href="langchain_community.vectorstores.elasticsearch.BaseRetrievalStrategy.html#langchain_community.vectorstores.elasticsearch.BaseRetrievalStrategy" title="langchain_community.vectorstores.elasticsearch.BaseRetrievalStrategy"><em>BaseRetrievalStrategy</em></a>) – </p></li>
+<li><p><strong>es_params</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.vectorstores.elasticsearch.ElasticsearchStore.aadd_documents">
@@ -488,7 +533,11 @@ deployed to Elasticsearch.</p>
 <dd><p>Run more documents through the embeddings and add to the vectorstore.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>(</strong><strong>List</strong><strong>[</strong><strong>Document</strong><strong>]</strong> (<em>documents</em>) – Documents to add to the vectorstore.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>(</strong><strong>List</strong><strong>[</strong><strong>Document</strong><strong>]</strong> (<em>documents</em>) – Documents to add to the vectorstore.</p></li>
+<li><p><strong>documents</strong> (<em>List</em><em>[</em><a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><em>Document</em></a><em>]</em>) – </p></li>
+<li><p><strong>kwargs</strong> (<em>Any</em>) – </p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>List of IDs of the added texts.</p>
@@ -503,6 +552,18 @@ deployed to Elasticsearch.</p>
 <dt class="sig sig-object py" id="langchain_community.vectorstores.elasticsearch.ElasticsearchStore.aadd_texts">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">aadd_texts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">texts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadatas</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#langchain_community.vectorstores.elasticsearch.ElasticsearchStore.aadd_texts" title="Permalink to this definition">¶</a></dt>
 <dd><p>Run more texts through the embeddings and add to the vectorstore.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>texts</strong> (<em>Iterable</em><em>[</em><em>str</em><em>]</em>) – </p></li>
+<li><p><strong>metadatas</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>dict</em><em>]</em><em>]</em>) – </p></li>
+<li><p><strong>kwargs</strong> (<em>Any</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><em>List</em>[str]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -511,7 +572,11 @@ deployed to Elasticsearch.</p>
 <dd><p>Run more documents through the embeddings and add to the vectorstore.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>(</strong><strong>List</strong><strong>[</strong><strong>Document</strong><strong>]</strong> (<em>documents</em>) – Documents to add to the vectorstore.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>(</strong><strong>List</strong><strong>[</strong><strong>Document</strong><strong>]</strong> (<em>documents</em>) – Documents to add to the vectorstore.</p></li>
+<li><p><strong>documents</strong> (<em>List</em><em>[</em><a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><em>Document</em></a><em>]</em>) – </p></li>
+<li><p><strong>kwargs</strong> (<em>Any</em>) – </p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>List of IDs of the added texts.</p>
@@ -529,24 +594,28 @@ deployed to Elasticsearch.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>text_embeddings</strong> – Iterable pairs of string and embedding to
+<li><p><strong>text_embeddings</strong> (<em>Iterable</em><em>[</em><em>Tuple</em><em>[</em><em>str</em><em>, </em><em>List</em><em>[</em><em>float</em><em>]</em><em>]</em><em>]</em>) – Iterable pairs of string and embedding to
 add to the vectorstore.</p></li>
-<li><p><strong>metadatas</strong> – Optional list of metadatas associated with the texts.</p></li>
-<li><p><strong>ids</strong> – Optional list of unique IDs.</p></li>
-<li><p><strong>refresh_indices</strong> – Whether to refresh the Elasticsearch indices
+<li><p><strong>metadatas</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>dict</em><em>]</em><em>]</em>) – Optional list of metadatas associated with the texts.</p></li>
+<li><p><strong>ids</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em>) – Optional list of unique IDs.</p></li>
+<li><p><strong>refresh_indices</strong> (<em>bool</em>) – Whether to refresh the Elasticsearch indices
 after adding the texts.</p></li>
-<li><p><strong>create_index_if_not_exists</strong> – Whether to create the Elasticsearch
+<li><p><strong>create_index_if_not_exists</strong> (<em>bool</em>) – Whether to create the Elasticsearch
 index if it doesn’t already exist.</p></li>
-<li><p><strong>*bulk_kwargs</strong> – <p>Additional arguments to pass to Elasticsearch bulk.
+<li><p><strong>*bulk_kwargs</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>]</em>) – <p>Additional arguments to pass to Elasticsearch bulk.
 - chunk_size: Optional. Number of texts to add to the</p>
 <blockquote>
 <div><p>index at a time. Defaults to 500.</p>
 </div></blockquote>
 </p></li>
+<li><p><strong>kwargs</strong> (<em>Any</em>) – </p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>List of ids from adding the texts into the vectorstore.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><em>List</em>[str]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -558,23 +627,27 @@ index if it doesn’t already exist.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>texts</strong> – Iterable of strings to add to the vectorstore.</p></li>
-<li><p><strong>metadatas</strong> – Optional list of metadatas associated with the texts.</p></li>
-<li><p><strong>ids</strong> – Optional list of ids to associate with the texts.</p></li>
-<li><p><strong>refresh_indices</strong> – Whether to refresh the Elasticsearch indices
+<li><p><strong>texts</strong> (<em>Iterable</em><em>[</em><em>str</em><em>]</em>) – Iterable of strings to add to the vectorstore.</p></li>
+<li><p><strong>metadatas</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>Dict</em><em>[</em><em>Any</em><em>, </em><em>Any</em><em>]</em><em>]</em><em>]</em>) – Optional list of metadatas associated with the texts.</p></li>
+<li><p><strong>ids</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em>) – Optional list of ids to associate with the texts.</p></li>
+<li><p><strong>refresh_indices</strong> (<em>bool</em>) – Whether to refresh the Elasticsearch indices
 after adding the texts.</p></li>
-<li><p><strong>create_index_if_not_exists</strong> – Whether to create the Elasticsearch
+<li><p><strong>create_index_if_not_exists</strong> (<em>bool</em>) – Whether to create the Elasticsearch
 index if it doesn’t already exist.</p></li>
-<li><p><strong>*bulk_kwargs</strong> – <p>Additional arguments to pass to Elasticsearch bulk.
+<li><p><strong>*bulk_kwargs</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>]</em>) – <p>Additional arguments to pass to Elasticsearch bulk.
 - chunk_size: Optional. Number of texts to add to the</p>
 <blockquote>
 <div><p>index at a time. Defaults to 500.</p>
 </div></blockquote>
 </p></li>
+<li><p><strong>kwargs</strong> (<em>Any</em>) – </p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>List of ids from adding the texts into the vectorstore.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><em>List</em>[str]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -586,8 +659,8 @@ index if it doesn’t already exist.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ids</strong> – List of ids to delete.</p></li>
-<li><p><strong>**kwargs</strong> – Other keyword arguments that subclasses might use.</p></li>
+<li><p><strong>ids</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em>) – List of ids to delete.</p></li>
+<li><p><strong>**kwargs</strong> (<em>Any</em>) – Other keyword arguments that subclasses might use.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -604,24 +677,77 @@ False otherwise, None if not implemented.</p>
 <dt class="sig sig-object py" id="langchain_community.vectorstores.elasticsearch.ElasticsearchStore.afrom_documents">
 <em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">afrom_documents</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">documents</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><span class="pre">Document</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">embedding</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../embeddings/langchain_core.embeddings.Embeddings.html#langchain_core.embeddings.Embeddings" title="langchain_core.embeddings.Embeddings"><span class="pre">Embeddings</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">VST</span></span></span><a class="headerlink" href="#langchain_community.vectorstores.elasticsearch.ElasticsearchStore.afrom_documents" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return VectorStore initialized from documents and embeddings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>documents</strong> (<em>List</em><em>[</em><a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><em>Document</em></a><em>]</em>) – </p></li>
+<li><p><strong>embedding</strong> (<a class="reference internal" href="../embeddings/langchain_core.embeddings.Embeddings.html#langchain_core.embeddings.Embeddings" title="langchain_core.embeddings.Embeddings"><em>Embeddings</em></a>) – </p></li>
+<li><p><strong>kwargs</strong> (<em>Any</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>VST</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.vectorstores.elasticsearch.ElasticsearchStore.afrom_texts">
 <em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">afrom_texts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">texts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">embedding</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../embeddings/langchain_core.embeddings.Embeddings.html#langchain_core.embeddings.Embeddings" title="langchain_core.embeddings.Embeddings"><span class="pre">Embeddings</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadatas</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">VST</span></span></span><a class="headerlink" href="#langchain_community.vectorstores.elasticsearch.ElasticsearchStore.afrom_texts" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return VectorStore initialized from texts and embeddings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>texts</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – </p></li>
+<li><p><strong>embedding</strong> (<a class="reference internal" href="../embeddings/langchain_core.embeddings.Embeddings.html#langchain_core.embeddings.Embeddings" title="langchain_core.embeddings.Embeddings"><em>Embeddings</em></a>) – </p></li>
+<li><p><strong>metadatas</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>dict</em><em>]</em><em>]</em>) – </p></li>
+<li><p><strong>kwargs</strong> (<em>Any</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><em>VST</em></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.vectorstores.elasticsearch.ElasticsearchStore.amax_marginal_relevance_search">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">amax_marginal_relevance_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fetch_k</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda_mult</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><span class="pre">Document</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#langchain_community.vectorstores.elasticsearch.ElasticsearchStore.amax_marginal_relevance_search" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return docs selected using the maximal marginal relevance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>query</strong> (<em>str</em>) – </p></li>
+<li><p><strong>k</strong> (<em>int</em>) – </p></li>
+<li><p><strong>fetch_k</strong> (<em>int</em>) – </p></li>
+<li><p><strong>lambda_mult</strong> (<em>float</em>) – </p></li>
+<li><p><strong>kwargs</strong> (<em>Any</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>List[<a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document">Document</a>]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.vectorstores.elasticsearch.ElasticsearchStore.amax_marginal_relevance_search_by_vector">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">amax_marginal_relevance_search_by_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">embedding</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fetch_k</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda_mult</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><span class="pre">Document</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#langchain_community.vectorstores.elasticsearch.ElasticsearchStore.amax_marginal_relevance_search_by_vector" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return docs selected using the maximal marginal relevance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>embedding</strong> (<em>List</em><em>[</em><em>float</em><em>]</em>) – </p></li>
+<li><p><strong>k</strong> (<em>int</em>) – </p></li>
+<li><p><strong>fetch_k</strong> (<em>int</em>) – </p></li>
+<li><p><strong>lambda_mult</strong> (<em>float</em>) – </p></li>
+<li><p><strong>kwargs</strong> (<em>Any</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>List[<a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document">Document</a>]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -651,6 +777,7 @@ lambda_mult: Diversity of results returned by MMR;</p>
 <p>filter: Filter by document metadata</p>
 </div></blockquote>
 </p></li>
+<li><p><strong>kwargs</strong> (<em>Any</em>) – </p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -697,18 +824,54 @@ lambda_mult: Diversity of results returned by MMR;</p>
 <dt class="sig sig-object py" id="langchain_community.vectorstores.elasticsearch.ElasticsearchStore.asearch">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">asearch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><span class="pre">Document</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#langchain_community.vectorstores.elasticsearch.ElasticsearchStore.asearch" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return docs most similar to query using specified search type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>query</strong> (<em>str</em>) – </p></li>
+<li><p><strong>search_type</strong> (<em>str</em>) – </p></li>
+<li><p><strong>kwargs</strong> (<em>Any</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>List[<a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document">Document</a>]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.vectorstores.elasticsearch.ElasticsearchStore.asimilarity_search">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">asimilarity_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><span class="pre">Document</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#langchain_community.vectorstores.elasticsearch.ElasticsearchStore.asimilarity_search" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return docs most similar to query.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>query</strong> (<em>str</em>) – </p></li>
+<li><p><strong>k</strong> (<em>int</em>) – </p></li>
+<li><p><strong>kwargs</strong> (<em>Any</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>List[<a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document">Document</a>]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.vectorstores.elasticsearch.ElasticsearchStore.asimilarity_search_by_vector">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">asimilarity_search_by_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">embedding</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><span class="pre">Document</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#langchain_community.vectorstores.elasticsearch.ElasticsearchStore.asimilarity_search_by_vector" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return docs most similar to embedding vector.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>embedding</strong> (<em>List</em><em>[</em><em>float</em><em>]</em>) – </p></li>
+<li><p><strong>k</strong> (<em>int</em>) – </p></li>
+<li><p><strong>kwargs</strong> (<em>Any</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>List[<a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document">Document</a>]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -719,9 +882,9 @@ lambda_mult: Diversity of results returned by MMR;</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>query</strong> – input text</p></li>
-<li><p><strong>k</strong> – Number of Documents to return. Defaults to 4.</p></li>
-<li><p><strong>**kwargs</strong> – <p>kwargs to be passed to similarity search. Should include:
+<li><p><strong>query</strong> (<em>str</em>) – input text</p></li>
+<li><p><strong>k</strong> (<em>int</em>) – Number of Documents to return. Defaults to 4.</p></li>
+<li><p><strong>**kwargs</strong> (<em>Any</em>) – <p>kwargs to be passed to similarity search. Should include:
 score_threshold: Optional, a floating point value between 0 to 1 to</p>
 <blockquote>
 <div><p>filter the resulting set of retrieved docs</p>
@@ -732,6 +895,9 @@ score_threshold: Optional, a floating point value between 0 to 1 to</p>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>List of Tuples of (doc, similarity_score)</p>
 </dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List[Tuple[<a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document">Document</a>, float]]</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -739,12 +905,38 @@ score_threshold: Optional, a floating point value between 0 to 1 to</p>
 <dt class="sig sig-object py" id="langchain_community.vectorstores.elasticsearch.ElasticsearchStore.asimilarity_search_with_score">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">asimilarity_search_with_score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><span class="pre">Document</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#langchain_community.vectorstores.elasticsearch.ElasticsearchStore.asimilarity_search_with_score" title="Permalink to this definition">¶</a></dt>
 <dd><p>Run similarity search with distance asynchronously.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> (<em>Any</em>) – </p></li>
+<li><p><strong>kwargs</strong> (<em>Any</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>List[Tuple[<a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document">Document</a>, float]]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.vectorstores.elasticsearch.ElasticsearchStore.connect_to_elasticsearch">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">connect_to_elasticsearch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">es_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cloud_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">es_params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Elasticsearch</span></span></span><a class="reference internal" href="../_modules/langchain_community/vectorstores/elasticsearch.html#ElasticsearchStore.connect_to_elasticsearch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.vectorstores.elasticsearch.ElasticsearchStore.connect_to_elasticsearch" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>es_url</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – </p></li>
+<li><p><strong>cloud_id</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – </p></li>
+<li><p><strong>api_key</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – </p></li>
+<li><p><strong>username</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – </p></li>
+<li><p><strong>password</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – </p></li>
+<li><p><strong>es_params</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Elasticsearch</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.vectorstores.elasticsearch.ElasticsearchStore.delete">
@@ -753,10 +945,14 @@ score_threshold: Optional, a floating point value between 0 to 1 to</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ids</strong> – List of ids of documents to delete.</p></li>
-<li><p><strong>refresh_indices</strong> – Whether to refresh the index
+<li><p><strong>ids</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em>) – List of ids of documents to delete.</p></li>
+<li><p><strong>refresh_indices</strong> (<em>Optional</em><em>[</em><em>bool</em><em>]</em>) – Whether to refresh the index
 after deleting documents. Defaults to True.</p></li>
+<li><p><strong>kwargs</strong> (<em>Any</em>) – </p></li>
 </ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><em>Optional</em>[bool]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -781,7 +977,7 @@ after deleting documents. Defaults to True.</p></li>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>texts</strong> – List of texts to add to the Elasticsearch index.</p></li>
-<li><p><strong>embedding</strong> – Embedding function to use to embed the texts.
+<li><p><strong>embedding</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="../embeddings/langchain_core.embeddings.Embeddings.html#langchain_core.embeddings.Embeddings" title="langchain_core.embeddings.Embeddings"><em>Embeddings</em></a><em>]</em>) – Embedding function to use to embed the texts.
 Do not provide if using a strategy
 that doesn’t require inference.</p></li>
 <li><p><strong>metadatas</strong> – Optional list of metadatas associated with the texts.</p></li>
@@ -795,9 +991,14 @@ that doesn’t require inference.</p></li>
 <li><p><strong>vector_query_field</strong> – Optional. Name of the field
 to store the embedding vectors in.</p></li>
 <li><p><strong>query_field</strong> – Optional. Name of the field to store the texts in.</p></li>
-<li><p><strong>bulk_kwargs</strong> – Optional. Additional arguments to pass to
+<li><p><strong>bulk_kwargs</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>]</em>) – Optional. Additional arguments to pass to
 Elasticsearch bulk.</p></li>
+<li><p><strong>documents</strong> (<em>List</em><em>[</em><a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><em>Document</em></a><em>]</em>) – </p></li>
+<li><p><strong>kwargs</strong> (<em>Any</em>) – </p></li>
 </ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#langchain_community.vectorstores.elasticsearch.ElasticsearchStore" title="langchain_community.vectorstores.elasticsearch.ElasticsearchStore"><em>ElasticsearchStore</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -823,9 +1024,9 @@ Elasticsearch bulk.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>texts</strong> – List of texts to add to the Elasticsearch index.</p></li>
-<li><p><strong>embedding</strong> – Embedding function to use to embed the texts.</p></li>
-<li><p><strong>metadatas</strong> – Optional list of metadatas associated with the texts.</p></li>
+<li><p><strong>texts</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – List of texts to add to the Elasticsearch index.</p></li>
+<li><p><strong>embedding</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="../embeddings/langchain_core.embeddings.Embeddings.html#langchain_core.embeddings.Embeddings" title="langchain_core.embeddings.Embeddings"><em>Embeddings</em></a><em>]</em>) – Embedding function to use to embed the texts.</p></li>
+<li><p><strong>metadatas</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em><em>]</em>) – Optional list of metadatas associated with the texts.</p></li>
 <li><p><strong>index_name</strong> – Name of the Elasticsearch index to create.</p></li>
 <li><p><strong>es_url</strong> – URL of the Elasticsearch instance to connect to.</p></li>
 <li><p><strong>cloud_id</strong> – Cloud ID of the Elasticsearch instance to connect to.</p></li>
@@ -841,9 +1042,13 @@ strategy to use. Defaults to “COSINE”.
 can be one of “COSINE”,
 “EUCLIDEAN_DISTANCE”, “DOT_PRODUCT”,
 “MAX_INNER_PRODUCT”.</p></li>
-<li><p><strong>bulk_kwargs</strong> – Optional. Additional arguments to pass to
+<li><p><strong>bulk_kwargs</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>]</em>) – Optional. Additional arguments to pass to
 Elasticsearch bulk.</p></li>
+<li><p><strong>kwargs</strong> (<em>Any</em>) – </p></li>
 </ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#langchain_community.vectorstores.elasticsearch.ElasticsearchStore" title="langchain_community.vectorstores.elasticsearch.ElasticsearchStore"><em>ElasticsearchStore</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -851,7 +1056,12 @@ Elasticsearch bulk.</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.vectorstores.elasticsearch.ElasticsearchStore.get_user_agent">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_user_agent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="../_modules/langchain_community/vectorstores/elasticsearch.html#ElasticsearchStore.get_user_agent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.vectorstores.elasticsearch.ElasticsearchStore.get_user_agent" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.vectorstores.elasticsearch.ElasticsearchStore.max_marginal_relevance_search">
@@ -871,8 +1081,9 @@ Elasticsearch bulk.</p></li>
 of diversity among the results with 0 corresponding
 to maximum diversity and 1 to minimum diversity.
 Defaults to 0.5.</p></li>
-<li><p><strong>fields</strong> – Other fields to get from elasticsearch source. These fields
+<li><p><strong>fields</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em>) – Other fields to get from elasticsearch source. These fields
 will be added to the document metadata.</p></li>
+<li><p><strong>kwargs</strong> (<em>Any</em>) – </p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -893,17 +1104,21 @@ among selected documents.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>embedding</strong> – Embedding to look up documents similar to.</p></li>
-<li><p><strong>k</strong> – Number of Documents to return. Defaults to 4.</p></li>
-<li><p><strong>fetch_k</strong> – Number of Documents to fetch to pass to MMR algorithm.</p></li>
-<li><p><strong>lambda_mult</strong> – Number between 0 and 1 that determines the degree
+<li><p><strong>embedding</strong> (<em>List</em><em>[</em><em>float</em><em>]</em>) – Embedding to look up documents similar to.</p></li>
+<li><p><strong>k</strong> (<em>int</em>) – Number of Documents to return. Defaults to 4.</p></li>
+<li><p><strong>fetch_k</strong> (<em>int</em>) – Number of Documents to fetch to pass to MMR algorithm.</p></li>
+<li><p><strong>lambda_mult</strong> (<em>float</em>) – Number between 0 and 1 that determines the degree
 of diversity among the results with 0 corresponding
 to maximum diversity and 1 to minimum diversity.
 Defaults to 0.5.</p></li>
+<li><p><strong>kwargs</strong> (<em>Any</em>) – </p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>List of Documents selected by maximal marginal relevance.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List[<a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document">Document</a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -912,6 +1127,18 @@ Defaults to 0.5.</p></li>
 <dt class="sig sig-object py" id="langchain_community.vectorstores.elasticsearch.ElasticsearchStore.search">
 <span class="sig-name descname"><span class="pre">search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><span class="pre">Document</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#langchain_community.vectorstores.elasticsearch.ElasticsearchStore.search" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return docs most similar to query using specified search type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>query</strong> (<em>str</em>) – </p></li>
+<li><p><strong>search_type</strong> (<em>str</em>) – </p></li>
+<li><p><strong>kwargs</strong> (<em>Any</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>List[<a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document">Document</a>]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -921,15 +1148,19 @@ Defaults to 0.5.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>query</strong> – Text to look up documents similar to.</p></li>
-<li><p><strong>k</strong> – Number of Documents to return. Defaults to 4.</p></li>
+<li><p><strong>query</strong> (<em>str</em>) – Text to look up documents similar to.</p></li>
+<li><p><strong>k</strong> (<em>int</em>) – Number of Documents to return. Defaults to 4.</p></li>
 <li><p><strong>fetch_k</strong> (<em>int</em>) – Number of Documents to fetch to pass to knn num_candidates.</p></li>
-<li><p><strong>filter</strong> – Array of Elasticsearch filter clauses to apply to the query.</p></li>
+<li><p><strong>filter</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>dict</em><em>]</em><em>]</em>) – Array of Elasticsearch filter clauses to apply to the query.</p></li>
+<li><p><strong>kwargs</strong> (<em>Any</em>) – </p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>List of Documents most similar to the query,
 in descending order of similarity.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><em>List</em>[<a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><em>Document</em></a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -941,12 +1172,16 @@ in descending order of similarity.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>embedding</strong> – Embedding to look up documents similar to.</p></li>
-<li><p><strong>k</strong> – Number of Documents to return. Defaults to 4.</p></li>
+<li><p><strong>embedding</strong> (<em>List</em><em>[</em><em>float</em><em>]</em>) – Embedding to look up documents similar to.</p></li>
+<li><p><strong>k</strong> (<em>int</em>) – Number of Documents to return. Defaults to 4.</p></li>
+<li><p><strong>kwargs</strong> (<em>Any</em>) – </p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>List of Documents most similar to the query vector.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List[<a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document">Document</a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -958,13 +1193,17 @@ in descending order of similarity.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>embedding</strong> – Embedding to look up documents similar to.</p></li>
-<li><p><strong>k</strong> – Number of Documents to return. Defaults to 4.</p></li>
-<li><p><strong>filter</strong> – Array of Elasticsearch filter clauses to apply to the query.</p></li>
+<li><p><strong>embedding</strong> (<em>List</em><em>[</em><em>float</em><em>]</em>) – Embedding to look up documents similar to.</p></li>
+<li><p><strong>k</strong> (<em>int</em>) – Number of Documents to return. Defaults to 4.</p></li>
+<li><p><strong>filter</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>Dict</em><em>]</em><em>]</em>) – Array of Elasticsearch filter clauses to apply to the query.</p></li>
+<li><p><strong>kwargs</strong> (<em>Any</em>) – </p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>List of Documents most similar to the embedding and score for each</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><em>List</em>[<em>Tuple</em>[<a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><em>Document</em></a>, float]]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -977,9 +1216,9 @@ in descending order of similarity.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>query</strong> – input text</p></li>
-<li><p><strong>k</strong> – Number of Documents to return. Defaults to 4.</p></li>
-<li><p><strong>**kwargs</strong> – <p>kwargs to be passed to similarity search. Should include:
+<li><p><strong>query</strong> (<em>str</em>) – input text</p></li>
+<li><p><strong>k</strong> (<em>int</em>) – Number of Documents to return. Defaults to 4.</p></li>
+<li><p><strong>**kwargs</strong> (<em>Any</em>) – <p>kwargs to be passed to similarity search. Should include:
 score_threshold: Optional, a floating point value between 0 to 1 to</p>
 <blockquote>
 <div><p>filter the resulting set of retrieved docs</p>
@@ -989,6 +1228,9 @@ score_threshold: Optional, a floating point value between 0 to 1 to</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>List of Tuples of (doc, similarity_score)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List[Tuple[<a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document">Document</a>, float]]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1000,13 +1242,17 @@ score_threshold: Optional, a floating point value between 0 to 1 to</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>query</strong> – Text to look up documents similar to.</p></li>
-<li><p><strong>k</strong> – Number of Documents to return. Defaults to 4.</p></li>
-<li><p><strong>filter</strong> – Array of Elasticsearch filter clauses to apply to the query.</p></li>
+<li><p><strong>query</strong> (<em>str</em>) – Text to look up documents similar to.</p></li>
+<li><p><strong>k</strong> (<em>int</em>) – Number of Documents to return. Defaults to 4.</p></li>
+<li><p><strong>filter</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>dict</em><em>]</em><em>]</em>) – Array of Elasticsearch filter clauses to apply to the query.</p></li>
+<li><p><strong>kwargs</strong> (<em>Any</em>) – </p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>List of Documents most similar to the query and score for each</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><em>List</em>[<em>Tuple</em>[<a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><em>Document</em></a>, float]]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1025,7 +1271,7 @@ score_threshold: Optional, a floating point value between 0 to 1 to</p>
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 14, 2024.
+          Last updated on Feb 22, 2024.
           <a href="../_sources/vectorstores/langchain_community.vectorstores.elasticsearch.ElasticsearchStore.rst.txt" rel="nofollow">Show this page source</a>
       </footer>
     </div>

@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>langchain_community.chat_loaders.langsmith.LangSmithRunChatLoader &mdash; 🦜🔗 LangChain 0.1.7</title>
+  <title>langchain_community.chat_loaders.langsmith.LangSmithRunChatLoader &mdash; 🦜🔗 LangChain 0.1.8</title>
   
   <link rel="canonical" href="https://api.python.langchain.com/en/latest/chat_loaders/langchain_community.chat_loaders.langsmith.LangSmithRunChatLoader.html" />
 
@@ -61,7 +61,13 @@
           <a class="sk-nav-link nav-link" href="../experimental_api_reference.html">Experimental</a>
         </li>
         <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ai21_api_reference.html">ai21</a>
+        </li>
+        <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../anthropic_api_reference.html">anthropic</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../astradb_api_reference.html">astradb</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../exa_api_reference.html">exa</a>
@@ -71,6 +77,9 @@
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../google_vertexai_api_reference.html">google-vertexai</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ibm_api_reference.html">ibm</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../mistralai_api_reference.html">mistralai</a>
@@ -99,10 +108,13 @@
         <li class="nav-item dropdown nav-more-item-dropdown">
           <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Partner libs</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ai21_api_reference.html">ai21</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../anthropic_api_reference.html">anthropic</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../astradb_api_reference.html">astradb</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../exa_api_reference.html">exa</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_genai_api_reference.html">google-genai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ibm_api_reference.html">ibm</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../mistralai_api_reference.html">mistralai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nomic_api_reference.html">nomic</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nvidia_ai_endpoints_api_reference.html">nvidia-ai-endpoints</a>
@@ -191,8 +203,8 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>runs</strong> – List of LLM run IDs or run objects.</p></li>
-<li><p><strong>client</strong> – An instance of LangSmith client, if not provided,
+<li><p><strong>runs</strong> (<em>Iterable</em><em>[</em><em>Union</em><em>[</em><em>str</em><em>, </em><a class="reference internal" href="../tracers/langchain_core.tracers.schemas.Run.html#langchain_core.tracers.schemas.Run" title="langchain_core.tracers.schemas.Run"><em>Run</em></a><em>]</em><em>]</em>) – List of LLM run IDs or run objects.</p></li>
+<li><p><strong>client</strong> (<em>Optional</em><em>[</em><em>'Client'</em><em>]</em>) – An instance of LangSmith client, if not provided,
 a new client instance will be created.</p></li>
 </ul>
 </dd>
@@ -222,8 +234,8 @@ a new client instance will be created.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>runs</strong> – List of LLM run IDs or run objects.</p></li>
-<li><p><strong>client</strong> – An instance of LangSmith client, if not provided,
+<li><p><strong>runs</strong> (<em>Iterable</em><em>[</em><em>Union</em><em>[</em><em>str</em><em>, </em><a class="reference internal" href="../tracers/langchain_core.tracers.schemas.Run.html#langchain_core.tracers.schemas.Run" title="langchain_core.tracers.schemas.Run"><em>Run</em></a><em>]</em><em>]</em>) – List of LLM run IDs or run objects.</p></li>
+<li><p><strong>client</strong> (<em>Optional</em><em>[</em><em>'Client'</em><em>]</em>) – An instance of LangSmith client, if not provided,
 a new client instance will be created.</p></li>
 </ul>
 </dd>
@@ -240,6 +252,9 @@ yielding one session at a time.</p>
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Iterator of chat sessions containing messages.</p>
 </dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><em>Iterator</em>[<a class="reference internal" href="../chat_sessions/langchain_core.chat_sessions.ChatSession.html#langchain_core.chat_sessions.ChatSession" title="langchain_core.chat_sessions.ChatSession"><em>ChatSession</em></a>]</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -247,6 +262,11 @@ yielding one session at a time.</p>
 <dt class="sig sig-object py" id="langchain_community.chat_loaders.langsmith.LangSmithRunChatLoader.load">
 <span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../chat_sessions/langchain_core.chat_sessions.ChatSession.html#langchain_core.chat_sessions.ChatSession" title="langchain_core.chat_sessions.ChatSession"><span class="pre">ChatSession</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#langchain_community.chat_loaders.langsmith.LangSmithRunChatLoader.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Eagerly load the chat sessions into memory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><em>List</em>[<a class="reference internal" href="../chat_sessions/langchain_core.chat_sessions.ChatSession.html#langchain_core.chat_sessions.ChatSession" title="langchain_core.chat_sessions.ChatSession"><em>ChatSession</em></a>]</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -260,7 +280,7 @@ yielding one session at a time.</p>
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 14, 2024.
+          Last updated on Feb 22, 2024.
           <a href="../_sources/chat_loaders/langchain_community.chat_loaders.langsmith.LangSmithRunChatLoader.rst.txt" rel="nofollow">Show this page source</a>
       </footer>
     </div>

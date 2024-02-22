@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>langchain_experimental 0.0.51 &mdash; 🦜🔗 LangChain 0.1.7</title>
+  <title>langchain_experimental 0.0.52 &mdash; 🦜🔗 LangChain 0.1.8</title>
   
   <link rel="canonical" href="https://api.python.langchain.com/en/latest/experimental_api_reference.html" />
 
@@ -61,7 +61,13 @@
           <a class="sk-nav-link nav-link" href="#">Experimental</a>
         </li>
         <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="ai21_api_reference.html">ai21</a>
+        </li>
+        <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="anthropic_api_reference.html">anthropic</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="astradb_api_reference.html">astradb</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="exa_api_reference.html">exa</a>
@@ -71,6 +77,9 @@
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="google_vertexai_api_reference.html">google-vertexai</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="ibm_api_reference.html">ibm</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="mistralai_api_reference.html">mistralai</a>
@@ -99,10 +108,13 @@
         <li class="nav-item dropdown nav-more-item-dropdown">
           <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Partner libs</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="sk-nav-dropdown-item dropdown-item" href="ai21_api_reference.html">ai21</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="anthropic_api_reference.html">anthropic</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="astradb_api_reference.html">astradb</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="exa_api_reference.html">exa</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="google_genai_api_reference.html">google-genai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="ibm_api_reference.html">ibm</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="mistralai_api_reference.html">mistralai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="nomic_api_reference.html">nomic</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="nvidia_ai_endpoints_api_reference.html">nvidia-ai-endpoints</a>
@@ -140,7 +152,7 @@
         </div>
             <div class="sk-sidebar-toc">
               <ul>
-<li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">langchain_experimental</span></code> 0.0.51</a><ul>
+<li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">langchain_experimental</span></code> 0.0.52</a><ul>
 <li><a class="reference internal" href="#module-langchain_experimental.agents"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_experimental.agents</span></code></a><ul>
 <li><a class="reference internal" href="#functions">Functions</a></li>
 </ul>
@@ -208,11 +220,14 @@
 </li>
 <li><a class="reference internal" href="#module-langchain_experimental.prompt_injection_identifier"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_experimental.prompt_injection_identifier</span></code></a><ul>
 <li><a class="reference internal" href="#id19">Classes</a></li>
-<li><a class="reference internal" href="#id20">Functions</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#module-langchain_experimental.prompts"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_experimental.prompts</span></code></a><ul>
-<li><a class="reference internal" href="#id21">Functions</a></li>
+<li><a class="reference internal" href="#id20">Functions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-langchain_experimental.recommenders"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_experimental.recommenders</span></code></a><ul>
+<li><a class="reference internal" href="#id21">Classes</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#module-langchain_experimental.retrievers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_experimental.retrievers</span></code></a><ul>
@@ -267,8 +282,8 @@
     <div id="sk-page-content-wrapper">
       <div class="sk-page-content container-fluid body px-md-3" role="main">
         
-  <section id="langchain-experimental-0-0-51">
-<h1><code class="docutils literal notranslate"><span class="pre">langchain_experimental</span></code> 0.0.51<a class="headerlink" href="#langchain-experimental-0-0-51" title="Permalink to this heading">¶</a></h1>
+  <section id="langchain-experimental-0-0-52">
+<h1><code class="docutils literal notranslate"><span class="pre">langchain_experimental</span></code> 0.0.52<a class="headerlink" href="#langchain-experimental-0-0-52" title="Permalink to this heading">¶</a></h1>
 <section id="module-langchain_experimental.agents">
 <span id="langchain-experimental-agents"></span><h2><a class="reference internal" href="#module-langchain_experimental.agents" title="langchain_experimental.agents"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_experimental.agents</span></code></a><a class="headerlink" href="#module-langchain_experimental.agents" title="Permalink to this heading">¶</a></h2>
 <section id="functions">
@@ -940,6 +955,9 @@ an interface where “chat messages” are the inputs and outputs.</p>
 </tbody>
 </table>
 </section>
+</section>
+<section id="module-langchain_experimental.prompts">
+<span id="langchain-experimental-prompts"></span><h2><a class="reference internal" href="#module-langchain_experimental.prompts" title="langchain_experimental.prompts"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_experimental.prompts</span></code></a><a class="headerlink" href="#module-langchain_experimental.prompts" title="Permalink to this heading">¶</a></h2>
 <section id="id20">
 <h3>Functions<a class="headerlink" href="#id20" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
@@ -948,22 +966,29 @@ an interface where “chat messages” are the inputs and outputs.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="prompts/langchain_experimental.prompts.load.load_prompt.html#langchain_experimental.prompts.load.load_prompt" title="langchain_experimental.prompts.load.load_prompt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">prompts.load.load_prompt</span></code></a>(path)</p></td>
+<td><p>Unified method for loading a prompt from LangChainHub or local fs.</p></td>
+</tr>
 </tbody>
 </table>
 </section>
 </section>
-<section id="module-langchain_experimental.prompts">
-<span id="langchain-experimental-prompts"></span><h2><a class="reference internal" href="#module-langchain_experimental.prompts" title="langchain_experimental.prompts"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_experimental.prompts</span></code></a><a class="headerlink" href="#module-langchain_experimental.prompts" title="Permalink to this heading">¶</a></h2>
+<section id="module-langchain_experimental.recommenders">
+<span id="langchain-experimental-recommenders"></span><h2><a class="reference internal" href="#module-langchain_experimental.recommenders" title="langchain_experimental.recommenders"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_experimental.recommenders</span></code></a><a class="headerlink" href="#module-langchain_experimental.recommenders" title="Permalink to this heading">¶</a></h2>
+<p>Amazon Personalize primitives.</p>
 <section id="id21">
-<h3>Functions<a class="headerlink" href="#id21" title="Permalink to this heading">¶</a></h3>
+<h3>Classes<a class="headerlink" href="#id21" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="prompts/langchain_experimental.prompts.load.load_prompt.html#langchain_experimental.prompts.load.load_prompt" title="langchain_experimental.prompts.load.load_prompt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">prompts.load.load_prompt</span></code></a>(path)</p></td>
-<td><p>Unified method for loading a prompt from LangChainHub or local fs.</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="recommenders/langchain_experimental.recommenders.amazon_personalize.AmazonPersonalize.html#langchain_experimental.recommenders.amazon_personalize.AmazonPersonalize" title="langchain_experimental.recommenders.amazon_personalize.AmazonPersonalize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">recommenders.amazon_personalize.AmazonPersonalize</span></code></a>([...])</p></td>
+<td><p>Amazon Personalize Runtime wrapper for executing real-time operations: <a class="reference external" href="https://docs.aws.amazon.com/personalize/latest/dg/API_Operations_Amazon_Personalize_Runtime.html">https://docs.aws.amazon.com/personalize/latest/dg/API_Operations_Amazon_Personalize_Runtime.html</a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="recommenders/langchain_experimental.recommenders.amazon_personalize_chain.AmazonPersonalizeChain.html#langchain_experimental.recommenders.amazon_personalize_chain.AmazonPersonalizeChain" title="langchain_experimental.recommenders.amazon_personalize_chain.AmazonPersonalizeChain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">recommenders.amazon_personalize_chain.AmazonPersonalizeChain</span></code></a></p></td>
+<td><p>Amazon Personalize Chain for retrieving recommendations</p></td>
 </tr>
 </tbody>
 </table>
@@ -1357,7 +1382,7 @@ an interface where “chat messages” are the inputs and outputs.</p>
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 14, 2024.
+          Last updated on Feb 22, 2024.
           <a href="_sources/experimental_api_reference.rst.txt" rel="nofollow">Show this page source</a>
       </footer>
     </div>

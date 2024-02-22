@@ -1,7 +1,7 @@
 .. experimental_api_reference:
 
 =======================
-``langchain_experimental`` 0.0.51
+``langchain_experimental`` 0.0.52
 =======================
 
 :mod:`langchain_experimental.agents`
@@ -663,16 +663,6 @@ Classes
     
     prompt_injection_identifier.hugging_face_identifier.PromptInjectionException
     
-Functions
---------------
-.. currentmodule:: langchain_experimental
-
-.. autosummary::
-    :toctree: prompt_injection_identifier
-    :template: function.rst
-
-    
-
 :mod:`langchain_experimental.prompts`
 ======================================
 
@@ -690,6 +680,27 @@ Functions
 
     prompts.load.load_prompt
 
+:mod:`langchain_experimental.recommenders`
+===========================================
+
+.. automodule:: langchain_experimental.recommenders
+    :no-members:
+    :no-inherited-members:
+
+Classes
+--------------
+.. currentmodule:: langchain_experimental
+
+.. autosummary::
+    :toctree: recommenders
+    :template: class.rst
+    
+    recommenders.amazon_personalize.AmazonPersonalize
+    
+    :template: pydantic.rst
+    
+    recommenders.amazon_personalize_chain.AmazonPersonalizeChain
+    
 :mod:`langchain_experimental.retrievers`
 =========================================
 

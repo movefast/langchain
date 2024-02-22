@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>langchain_community.document_loaders.cassandra.CassandraLoader &mdash; 🦜🔗 LangChain 0.1.7</title>
+  <title>langchain_community.document_loaders.cassandra.CassandraLoader &mdash; 🦜🔗 LangChain 0.1.8</title>
   
   <link rel="canonical" href="https://api.python.langchain.com/en/latest/document_loaders/langchain_community.document_loaders.cassandra.CassandraLoader.html" />
 
@@ -61,7 +61,13 @@
           <a class="sk-nav-link nav-link" href="../experimental_api_reference.html">Experimental</a>
         </li>
         <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ai21_api_reference.html">ai21</a>
+        </li>
+        <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../anthropic_api_reference.html">anthropic</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../astradb_api_reference.html">astradb</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../exa_api_reference.html">exa</a>
@@ -71,6 +77,9 @@
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../google_vertexai_api_reference.html">google-vertexai</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ibm_api_reference.html">ibm</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../mistralai_api_reference.html">mistralai</a>
@@ -99,10 +108,13 @@
         <li class="nav-item dropdown nav-more-item-dropdown">
           <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Partner libs</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ai21_api_reference.html">ai21</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../anthropic_api_reference.html">anthropic</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../astradb_api_reference.html">astradb</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../exa_api_reference.html">exa</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_genai_api_reference.html">google-genai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ibm_api_reference.html">ibm</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../mistralai_api_reference.html">mistralai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nomic_api_reference.html">nomic</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nvidia_ai_endpoints_api_reference.html">nvidia-ai-endpoints</a>
@@ -163,29 +175,32 @@
 <h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_community.document_loaders.cassandra</span></code>.CassandraLoader<a class="headerlink" href="#langchain-community-document-loaders-cassandra-cassandraloader" title="Permalink to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="langchain_community.document_loaders.cassandra.CassandraLoader">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">langchain_community.document_loaders.cassandra.</span></span><span class="sig-name descname"><span class="pre">CassandraLoader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">table:</span> <span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">session:</span> <span class="pre">Optional[Session]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">keyspace:</span> <span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">query:</span> <span class="pre">Optional[Union[str,</span> <span class="pre">Statement]]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">page_content_mapper:</span> <span class="pre">Callable[[Any],</span> <span class="pre">str]</span> <span class="pre">=</span> <span class="pre">&lt;class</span> <span class="pre">'str'&gt;,</span> <span class="pre">metadata_mapper:</span> <span class="pre">Callable[[Any],</span> <span class="pre">dict]</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">CassandraLoader.&lt;lambda&gt;&gt;,</span> <span class="pre">*,</span> <span class="pre">query_parameters:</span> <span class="pre">Union[dict,</span> <span class="pre">Sequence]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">query_timeout:</span> <span class="pre">Optional[float]</span> <span class="pre">=</span> <span class="pre">&lt;object</span> <span class="pre">object&gt;,</span> <span class="pre">query_trace:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False,</span> <span class="pre">query_custom_payload:</span> <span class="pre">dict</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">query_execution_profile:</span> <span class="pre">Any</span> <span class="pre">=</span> <span class="pre">&lt;object</span> <span class="pre">object&gt;,</span> <span class="pre">query_paging_state:</span> <span class="pre">Any</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">query_host:</span> <span class="pre">Host</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">query_execute_as:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/langchain_community/document_loaders/cassandra.html#CassandraLoader"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.document_loaders.cassandra.CassandraLoader" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">langchain_community.document_loaders.cassandra.</span></span><span class="sig-name descname"><span class="pre">CassandraLoader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">table:</span> <span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">session:</span> <span class="pre">Optional[Session]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">keyspace:</span> <span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">query:</span> <span class="pre">Union[str,</span> <span class="pre">Statement,</span> <span class="pre">None]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">page_content_mapper:</span> <span class="pre">Callable[[Any],</span> <span class="pre">str]</span> <span class="pre">=</span> <span class="pre">&lt;class</span> <span class="pre">'str'&gt;,</span> <span class="pre">metadata_mapper:</span> <span class="pre">Callable[[Any],</span> <span class="pre">dict]</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">CassandraLoader.&lt;lambda&gt;&gt;,</span> <span class="pre">*,</span> <span class="pre">query_parameters:</span> <span class="pre">Union[dict,</span> <span class="pre">Sequence,</span> <span class="pre">None]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">query_timeout:</span> <span class="pre">Optional[float]</span> <span class="pre">=</span> <span class="pre">&lt;object</span> <span class="pre">object&gt;,</span> <span class="pre">query_trace:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False,</span> <span class="pre">query_custom_payload:</span> <span class="pre">Optional[dict]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">query_execution_profile:</span> <span class="pre">Any</span> <span class="pre">=</span> <span class="pre">&lt;object</span> <span class="pre">object&gt;,</span> <span class="pre">query_paging_state:</span> <span class="pre">Any</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">query_host:</span> <span class="pre">Optional[Host]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">query_execute_as:</span> <span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/langchain_community/document_loaders/cassandra.html#CassandraLoader"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.document_loaders.cassandra.CassandraLoader" title="Permalink to this definition">¶</a></dt>
 <dd><p>Document Loader for Apache Cassandra.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>table</strong> – The table to load the data from.
+<li><p><strong>table</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – The table to load the data from.
 (do not use together with the query parameter)</p></li>
-<li><p><strong>session</strong> – The cassandra driver session.
+<li><p><strong>session</strong> (<em>Optional</em><em>[</em><em>Session</em><em>]</em>) – The cassandra driver session.
 If not provided, the cassio resolved session will be used.</p></li>
-<li><p><strong>keyspace</strong> – The keyspace of the table.
+<li><p><strong>keyspace</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – The keyspace of the table.
 If not provided, the cassio resolved keyspace will be used.</p></li>
-<li><p><strong>query</strong> – The query used to load the data.
+<li><p><strong>query</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>Statement</em><em>, </em><em>None</em><em>]</em>) – The query used to load the data.
 (do not use together with the table parameter)</p></li>
-<li><p><strong>page_content_mapper</strong> – a function to convert a row to string page content.
+<li><p><strong>page_content_mapper</strong> (<em>Callable</em><em>[</em><em>[</em><em>Any</em><em>]</em><em>, </em><em>str</em><em>]</em>) – a function to convert a row to string page content.
 Defaults to the str representation of the row.</p></li>
-<li><p><strong>query_parameters</strong> – The query parameters used when calling session.execute .</p></li>
-<li><p><strong>query_timeout</strong> – The query timeout used when calling session.execute .</p></li>
-<li><p><strong>query_custom_payload</strong> – The query custom_payload used when calling
+<li><p><strong>query_parameters</strong> (<em>Union</em><em>[</em><em>dict</em><em>, </em><em>Sequence</em><em>, </em><em>None</em><em>]</em>) – The query parameters used when calling session.execute .</p></li>
+<li><p><strong>query_timeout</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em>) – The query timeout used when calling session.execute .</p></li>
+<li><p><strong>query_custom_payload</strong> (<em>Optional</em><em>[</em><em>dict</em><em>]</em>) – The query custom_payload used when calling
 session.execute .</p></li>
-<li><p><strong>query_execution_profile</strong> – The query execution_profile used when calling
+<li><p><strong>query_execution_profile</strong> (<em>Any</em>) – The query execution_profile used when calling
 session.execute .</p></li>
-<li><p><strong>query_host</strong> – The query host used when calling session.execute .</p></li>
-<li><p><strong>query_execute_as</strong> – The query execute_as used when calling session.execute .</p></li>
+<li><p><strong>query_host</strong> (<em>Optional</em><em>[</em><em>Host</em><em>]</em>) – The query host used when calling session.execute .</p></li>
+<li><p><strong>query_execute_as</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – The query execute_as used when calling session.execute .</p></li>
+<li><p><strong>metadata_mapper</strong> (<em>Callable</em><em>[</em><em>[</em><em>Any</em><em>]</em><em>, </em><em>dict</em><em>]</em>) – </p></li>
+<li><p><strong>query_trace</strong> (<em>bool</em>) – </p></li>
+<li><p><strong>query_paging_state</strong> (<em>Any</em>) – </p></li>
 </ul>
 </dd>
 </dl>
@@ -215,30 +230,36 @@ session.execute .</p></li>
 </table>
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.document_loaders.cassandra.CassandraLoader.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">table:</span> <span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">session:</span> <span class="pre">Optional[Session]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">keyspace:</span> <span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">query:</span> <span class="pre">Optional[Union[str,</span> <span class="pre">Statement]]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">page_content_mapper:</span> <span class="pre">Callable[[Any],</span> <span class="pre">str]</span> <span class="pre">=</span> <span class="pre">&lt;class</span> <span class="pre">'str'&gt;,</span> <span class="pre">metadata_mapper:</span> <span class="pre">Callable[[Any],</span> <span class="pre">dict]</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">CassandraLoader.&lt;lambda&gt;&gt;,</span> <span class="pre">*,</span> <span class="pre">query_parameters:</span> <span class="pre">Union[dict,</span> <span class="pre">Sequence]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">query_timeout:</span> <span class="pre">Optional[float]</span> <span class="pre">=</span> <span class="pre">&lt;object</span> <span class="pre">object&gt;,</span> <span class="pre">query_trace:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False,</span> <span class="pre">query_custom_payload:</span> <span class="pre">dict</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">query_execution_profile:</span> <span class="pre">Any</span> <span class="pre">=</span> <span class="pre">&lt;object</span> <span class="pre">object&gt;,</span> <span class="pre">query_paging_state:</span> <span class="pre">Any</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">query_host:</span> <span class="pre">Host</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">query_execute_as:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/langchain_community/document_loaders/cassandra.html#CassandraLoader.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.document_loaders.cassandra.CassandraLoader.__init__" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">table:</span> <span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">session:</span> <span class="pre">Optional[Session]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">keyspace:</span> <span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">query:</span> <span class="pre">Union[str,</span> <span class="pre">Statement,</span> <span class="pre">None]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">page_content_mapper:</span> <span class="pre">Callable[[Any],</span> <span class="pre">str]</span> <span class="pre">=</span> <span class="pre">&lt;class</span> <span class="pre">'str'&gt;,</span> <span class="pre">metadata_mapper:</span> <span class="pre">Callable[[Any],</span> <span class="pre">dict]</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">CassandraLoader.&lt;lambda&gt;&gt;,</span> <span class="pre">*,</span> <span class="pre">query_parameters:</span> <span class="pre">Union[dict,</span> <span class="pre">Sequence,</span> <span class="pre">None]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">query_timeout:</span> <span class="pre">Optional[float]</span> <span class="pre">=</span> <span class="pre">&lt;object</span> <span class="pre">object&gt;,</span> <span class="pre">query_trace:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False,</span> <span class="pre">query_custom_payload:</span> <span class="pre">Optional[dict]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">query_execution_profile:</span> <span class="pre">Any</span> <span class="pre">=</span> <span class="pre">&lt;object</span> <span class="pre">object&gt;,</span> <span class="pre">query_paging_state:</span> <span class="pre">Any</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">query_host:</span> <span class="pre">Optional[Host]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">query_execute_as:</span> <span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/langchain_community/document_loaders/cassandra.html#CassandraLoader.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.document_loaders.cassandra.CassandraLoader.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Document Loader for Apache Cassandra.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>table</strong> – The table to load the data from.
+<li><p><strong>table</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – The table to load the data from.
 (do not use together with the query parameter)</p></li>
-<li><p><strong>session</strong> – The cassandra driver session.
+<li><p><strong>session</strong> (<em>Optional</em><em>[</em><em>Session</em><em>]</em>) – The cassandra driver session.
 If not provided, the cassio resolved session will be used.</p></li>
-<li><p><strong>keyspace</strong> – The keyspace of the table.
+<li><p><strong>keyspace</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – The keyspace of the table.
 If not provided, the cassio resolved keyspace will be used.</p></li>
-<li><p><strong>query</strong> – The query used to load the data.
+<li><p><strong>query</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>Statement</em><em>, </em><em>None</em><em>]</em>) – The query used to load the data.
 (do not use together with the table parameter)</p></li>
-<li><p><strong>page_content_mapper</strong> – a function to convert a row to string page content.
+<li><p><strong>page_content_mapper</strong> (<em>Callable</em><em>[</em><em>[</em><em>Any</em><em>]</em><em>, </em><em>str</em><em>]</em>) – a function to convert a row to string page content.
 Defaults to the str representation of the row.</p></li>
-<li><p><strong>query_parameters</strong> – The query parameters used when calling session.execute .</p></li>
-<li><p><strong>query_timeout</strong> – The query timeout used when calling session.execute .</p></li>
-<li><p><strong>query_custom_payload</strong> – The query custom_payload used when calling
+<li><p><strong>query_parameters</strong> (<em>Union</em><em>[</em><em>dict</em><em>, </em><em>Sequence</em><em>, </em><em>None</em><em>]</em>) – The query parameters used when calling session.execute .</p></li>
+<li><p><strong>query_timeout</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em>) – The query timeout used when calling session.execute .</p></li>
+<li><p><strong>query_custom_payload</strong> (<em>Optional</em><em>[</em><em>dict</em><em>]</em>) – The query custom_payload used when calling
 session.execute .</p></li>
-<li><p><strong>query_execution_profile</strong> – The query execution_profile used when calling
+<li><p><strong>query_execution_profile</strong> (<em>Any</em>) – The query execution_profile used when calling
 session.execute .</p></li>
-<li><p><strong>query_host</strong> – The query host used when calling session.execute .</p></li>
-<li><p><strong>query_execute_as</strong> – The query execute_as used when calling session.execute .</p></li>
+<li><p><strong>query_host</strong> (<em>Optional</em><em>[</em><em>Host</em><em>]</em>) – The query host used when calling session.execute .</p></li>
+<li><p><strong>query_execute_as</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – The query execute_as used when calling session.execute .</p></li>
+<li><p><strong>metadata_mapper</strong> (<em>Callable</em><em>[</em><em>[</em><em>Any</em><em>]</em><em>, </em><em>dict</em><em>]</em>) – </p></li>
+<li><p><strong>query_trace</strong> (<em>bool</em>) – </p></li>
+<li><p><strong>query_paging_state</strong> (<em>Any</em>) – </p></li>
 </ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -247,18 +268,33 @@ session.execute .</p></li>
 <dt class="sig sig-object py" id="langchain_community.document_loaders.cassandra.CassandraLoader.alazy_load">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">alazy_load</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">AsyncIterator</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><span class="pre">Document</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#langchain_community.document_loaders.cassandra.CassandraLoader.alazy_load" title="Permalink to this definition">¶</a></dt>
 <dd><p>A lazy loader for Documents.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><em>AsyncIterator</em>[<a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><em>Document</em></a>]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.document_loaders.cassandra.CassandraLoader.lazy_load">
 <span class="sig-name descname"><span class="pre">lazy_load</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><span class="pre">Document</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/langchain_community/document_loaders/cassandra.html#CassandraLoader.lazy_load"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.document_loaders.cassandra.CassandraLoader.lazy_load" title="Permalink to this definition">¶</a></dt>
 <dd><p>A lazy loader for Documents.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><em>Iterator</em>[<a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><em>Document</em></a>]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.document_loaders.cassandra.CassandraLoader.load">
 <span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><span class="pre">Document</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/langchain_community/document_loaders/cassandra.html#CassandraLoader.load"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.document_loaders.cassandra.CassandraLoader.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load data into Document objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><em>List</em>[<a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><em>Document</em></a>]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -267,11 +303,14 @@ session.execute .</p></li>
 <dd><p>Load Documents and split into chunks. Chunks are returned as Documents.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>text_splitter</strong> – TextSplitter instance to use for splitting documents.
+<dd class="field-odd"><p><strong>text_splitter</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="../text_splitter/langchain.text_splitter.TextSplitter.html#langchain.text_splitter.TextSplitter" title="langchain.text_splitter.TextSplitter"><em>TextSplitter</em></a><em>]</em>) – TextSplitter instance to use for splitting documents.
 Defaults to RecursiveCharacterTextSplitter.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>List of Documents.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List[<a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document">Document</a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -287,7 +326,7 @@ Defaults to RecursiveCharacterTextSplitter.</p>
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 14, 2024.
+          Last updated on Feb 22, 2024.
           <a href="../_sources/document_loaders/langchain_community.document_loaders.cassandra.CassandraLoader.rst.txt" rel="nofollow">Show this page source</a>
       </footer>
     </div>

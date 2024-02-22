@@ -1,0 +1,31 @@
+﻿:mod:`langchain_experimental.recommenders.amazon_personalize`.AmazonPersonalize
+======================================================================================
+
+.. currentmodule:: langchain_experimental.recommenders.amazon_personalize
+
+.. autoclass:: AmazonPersonalize
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~AmazonPersonalize.__init__
+      ~AmazonPersonalize.get_personalized_ranking
+      ~AmazonPersonalize.get_recommendations
+
+   
+   .. automethod:: AmazonPersonalize.__init__
+   .. automethod:: AmazonPersonalize.get_personalized_ranking
+   .. automethod:: AmazonPersonalize.get_recommendations
+
+   
+   
+
+
+.. example_links:: AmazonPersonalize

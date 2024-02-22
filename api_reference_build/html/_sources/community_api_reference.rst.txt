@@ -1,7 +1,7 @@
 .. community_api_reference:
 
 =======================
-``langchain_community`` 0.0.20
+``langchain_community`` 0.0.21
 =======================
 
 :mod:`langchain_community.adapters`
@@ -95,6 +95,10 @@ Classes
     :template: pydantic.rst
     
     agent_toolkits.clickup.toolkit.ClickupToolkit
+    
+    :template: pydantic.rst
+    
+    agent_toolkits.cogniswitch.toolkit.CogniswitchToolkit
     
     :template: pydantic.rst
     
@@ -358,16 +362,6 @@ Classes
     
     cache.UpstashRedisCache
     
-Functions
---------------
-.. currentmodule:: langchain_community
-
-.. autosummary::
-    :toctree: cache
-    :template: function.rst
-
-    
-
 :mod:`langchain_community.callbacks`
 =====================================
 
@@ -2271,6 +2265,10 @@ Classes
     
     :template: pydantic.rst
     
+    embeddings.infinity_local.InfinityEmbeddingsLocal
+    
+    :template: pydantic.rst
+    
     embeddings.javelin_ai_gateway.JavelinAIGatewayEmbeddings
     
     :template: pydantic.rst
@@ -2319,6 +2317,10 @@ Classes
     
     :template: pydantic.rst
     
+    embeddings.nemo.NeMoEmbeddings
+    
+    :template: pydantic.rst
+    
     embeddings.nlpcloud.NLPCloudEmbeddings
     
     :template: enum.rst
@@ -2340,6 +2342,10 @@ Classes
     :template: pydantic.rst
     
     embeddings.openai.OpenAIEmbeddings
+    
+    :template: pydantic.rst
+    
+    embeddings.optimum_intel.QuantizedBiEncoderEmbeddings
     
     :template: class.rst
     
@@ -2364,6 +2370,18 @@ Classes
     :template: pydantic.rst
     
     embeddings.spacy_embeddings.SpacyEmbeddings
+    
+    :template: class.rst
+    
+    embeddings.sparkllm.AssembleHeaderException
+    
+    :template: pydantic.rst
+    
+    embeddings.sparkllm.SparkLLMTextEmbeddings
+    
+    :template: class.rst
+    
+    embeddings.sparkllm.Url
     
     :template: pydantic.rst
     
@@ -2402,6 +2420,7 @@ Functions
     embeddings.localai.async_embed_with_retry
     embeddings.localai.embed_with_retry
     embeddings.minimax.embed_with_retry
+    embeddings.nemo.is_endpoint_live
     embeddings.openai.async_embed_with_retry
     embeddings.openai.embed_with_retry
     embeddings.self_hosted_hugging_face.load_embedding_model
@@ -2820,6 +2839,10 @@ Classes
     
     :template: pydantic.rst
     
+    llms.llamafile.Llamafile
+    
+    :template: pydantic.rst
+    
     llms.manifest.ManifestWrapper
     
     :template: pydantic.rst
@@ -2984,6 +3007,10 @@ Classes
     
     :template: pydantic.rst
     
+    llms.sparkllm.SparkLLM
+    
+    :template: pydantic.rst
+    
     llms.stochasticai.StochasticAI
     
     :template: pydantic.rst
@@ -3049,6 +3076,10 @@ Classes
     :template: pydantic.rst
     
     llms.yandex.YandexGPT
+    
+    :template: pydantic.rst
+    
+    llms.yuan2.Yuan2
     
 Functions
 --------------
@@ -3570,6 +3601,22 @@ Classes
     
     :template: pydantic.rst
     
+    tools.cogniswitch.tool.CogniswitchKnowledgeRequest
+    
+    :template: pydantic.rst
+    
+    tools.cogniswitch.tool.CogniswitchKnowledgeSourceFile
+    
+    :template: pydantic.rst
+    
+    tools.cogniswitch.tool.CogniswitchKnowledgeSourceURL
+    
+    :template: pydantic.rst
+    
+    tools.cogniswitch.tool.CogniswitchKnowledgeStatus
+    
+    :template: pydantic.rst
+    
     tools.connery.models.Action
     
     :template: pydantic.rst
@@ -4066,6 +4113,14 @@ Classes
     
     :template: pydantic.rst
     
+    tools.polygon.ticker_news.Inputs
+    
+    :template: pydantic.rst
+    
+    tools.polygon.ticker_news.PolygonTickerNews
+    
+    :template: pydantic.rst
+    
     tools.powerbi.tool.InfoPowerBITool
     
     :template: pydantic.rst
@@ -4393,9 +4448,9 @@ Classes
     
     utilities.arxiv.ArxivAPIWrapper
     
-    :template: class.rst
+    :template: enum.rst
     
-    utilities.astradb.AstraDBEnvironment
+    utilities.astradb.SetupMode
     
     :template: pydantic.rst
     
@@ -4826,6 +4881,14 @@ Classes
     :template: class.rst
     
     vectorstores.annoy.Annoy
+    
+    :template: class.rst
+    
+    vectorstores.apache_doris.ApacheDoris
+    
+    :template: pydantic.rst
+    
+    vectorstores.apache_doris.ApacheDorisSettings
     
     :template: class.rst
     

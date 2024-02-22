@@ -49,6 +49,7 @@
       ~OpenSearchVectorSearch.similarity_search_by_vector
       ~OpenSearchVectorSearch.similarity_search_with_relevance_scores
       ~OpenSearchVectorSearch.similarity_search_with_score
+      ~OpenSearchVectorSearch.similarity_search_with_score_by_vector
 
    
    .. automethod:: OpenSearchVectorSearch.__init__
@@ -79,6 +80,7 @@
    .. automethod:: OpenSearchVectorSearch.similarity_search_by_vector
    .. automethod:: OpenSearchVectorSearch.similarity_search_with_relevance_scores
    .. automethod:: OpenSearchVectorSearch.similarity_search_with_score
+   .. automethod:: OpenSearchVectorSearch.similarity_search_with_score_by_vector
 
    
    

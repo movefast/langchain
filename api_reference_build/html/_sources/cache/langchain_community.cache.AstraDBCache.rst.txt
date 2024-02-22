@@ -17,6 +17,8 @@
    
       ~AstraDBCache.__init__
       ~AstraDBCache.aclear
+      ~AstraDBCache.adelete
+      ~AstraDBCache.adelete_through_llm
       ~AstraDBCache.alookup
       ~AstraDBCache.aupdate
       ~AstraDBCache.clear
@@ -28,6 +30,8 @@
    
    .. automethod:: AstraDBCache.__init__
    .. automethod:: AstraDBCache.aclear
+   .. automethod:: AstraDBCache.adelete
+   .. automethod:: AstraDBCache.adelete_through_llm
    .. automethod:: AstraDBCache.alookup
    .. automethod:: AstraDBCache.aupdate
    .. automethod:: AstraDBCache.clear

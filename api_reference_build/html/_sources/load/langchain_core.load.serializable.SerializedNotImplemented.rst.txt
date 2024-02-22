@@ -11,6 +11,10 @@
    
   .. autoattribute:: id
    
+  .. autoattribute:: name
+   
+  .. autoattribute:: graph
+   
   .. autoattribute:: type
    
   .. autoattribute:: repr

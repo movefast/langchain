@@ -1,0 +1,8 @@
+﻿:mod:`langchain_core.runnables.utils`.create_model
+=========================================================
+
+.. currentmodule:: langchain_core.runnables.utils
+
+.. autofunction:: create_model
+
+.. example_links:: create_model

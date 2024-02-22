@@ -1,7 +1,7 @@
 .. langchain_api_reference:
 
 =======================
-``langchain`` 0.1.7
+``langchain`` 0.1.8
 =======================
 
 :mod:`langchain.agents`
@@ -740,16 +740,6 @@ Classes
     
     embeddings.cache.CacheBackedEmbeddings
     
-Functions
---------------
-.. currentmodule:: langchain
-
-.. autosummary::
-    :toctree: embeddings
-    :template: function.rst
-
-    
-
 :mod:`langchain.evaluation`
 ============================
 
@@ -961,16 +951,6 @@ Classes
     
     indexes.vectorstore.VectorstoreIndexCreator
     
-Functions
---------------
-.. currentmodule:: langchain
-
-.. autosummary::
-    :toctree: indexes
-    :template: function.rst
-
-    
-
 :mod:`langchain.memory`
 ========================
 

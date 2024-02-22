@@ -1,0 +1,8 @@
+﻿:mod:`langchain_core.runnables.graph`.node_data_json
+===========================================================
+
+.. currentmodule:: langchain_core.runnables.graph
+
+.. autofunction:: node_data_json
+
+.. example_links:: node_data_json

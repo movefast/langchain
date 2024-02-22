@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>langchain.chains.graph_qa.cypher_utils.CypherQueryCorrector &mdash; 🦜🔗 LangChain 0.1.7</title>
+  <title>langchain.chains.graph_qa.cypher_utils.CypherQueryCorrector &mdash; 🦜🔗 LangChain 0.1.8</title>
   
   <link rel="canonical" href="https://api.python.langchain.com/en/latest/chains/langchain.chains.graph_qa.cypher_utils.CypherQueryCorrector.html" />
 
@@ -61,7 +61,13 @@
           <a class="sk-nav-link nav-link" href="../experimental_api_reference.html">Experimental</a>
         </li>
         <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ai21_api_reference.html">ai21</a>
+        </li>
+        <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../anthropic_api_reference.html">anthropic</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../astradb_api_reference.html">astradb</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../exa_api_reference.html">exa</a>
@@ -71,6 +77,9 @@
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../google_vertexai_api_reference.html">google-vertexai</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ibm_api_reference.html">ibm</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../mistralai_api_reference.html">mistralai</a>
@@ -99,10 +108,13 @@
         <li class="nav-item dropdown nav-more-item-dropdown">
           <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Partner libs</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ai21_api_reference.html">ai21</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../anthropic_api_reference.html">anthropic</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../astradb_api_reference.html">astradb</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../exa_api_reference.html">exa</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_genai_api_reference.html">google-genai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ibm_api_reference.html">ibm</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../mistralai_api_reference.html">mistralai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nomic_api_reference.html">nomic</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nvidia_ai_endpoints_api_reference.html">nvidia-ai-endpoints</a>
@@ -174,7 +186,7 @@ This code is copied from the winner’s submission to the Cypher competition:
 <a class="reference external" href="https://github.com/sakusaku-rich/cypher-direction-competition">https://github.com/sakusaku-rich/cypher-direction-competition</a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>schemas</strong> – list of schemas</p>
+<dd class="field-odd"><p><strong>schemas</strong> (<em>List</em><em>[</em><a class="reference internal" href="langchain.chains.graph_qa.cypher_utils.Schema.html#langchain.chains.graph_qa.cypher_utils.Schema" title="langchain.chains.graph_qa.cypher_utils.Schema"><em>Schema</em></a><em>]</em>) – list of schemas</p>
 </dd>
 </dl>
 <p class="rubric">Attributes</p>
@@ -295,7 +307,7 @@ This code is copied from the winner’s submission to the Cypher competition:
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">schemas</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="langchain.chains.graph_qa.cypher_utils.Schema.html#langchain.chains.graph_qa.cypher_utils.Schema" title="langchain.chains.graph_qa.cypher_utils.Schema"><span class="pre">Schema</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/langchain/chains/graph_qa/cypher_utils.html#CypherQueryCorrector.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain.chains.graph_qa.cypher_utils.CypherQueryCorrector.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>schemas</strong> – list of schemas</p>
+<dd class="field-odd"><p><strong>schemas</strong> (<em>List</em><em>[</em><a class="reference internal" href="langchain.chains.graph_qa.cypher_utils.Schema.html#langchain.chains.graph_qa.cypher_utils.Schema" title="langchain.chains.graph_qa.cypher_utils.Schema"><em>Schema</em></a><em>]</em>) – list of schemas</p>
 </dd>
 </dl>
 </dd></dl>
@@ -305,7 +317,10 @@ This code is copied from the winner’s submission to the Cypher competition:
 <span class="sig-name descname"><span class="pre">clean_node</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="../_modules/langchain/chains/graph_qa/cypher_utils.html#CypherQueryCorrector.clean_node"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain.chains.graph_qa.cypher_utils.CypherQueryCorrector.clean_node" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>node</strong> – node in string format</p>
+<dd class="field-odd"><p><strong>node</strong> (<em>str</em>) – node in string format</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
 </dd>
 </dl>
 </dd></dl>
@@ -315,7 +330,10 @@ This code is copied from the winner’s submission to the Cypher competition:
 <span class="sig-name descname"><span class="pre">correct_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="../_modules/langchain/chains/graph_qa/cypher_utils.html#CypherQueryCorrector.correct_query"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain.chains.graph_qa.cypher_utils.CypherQueryCorrector.correct_query" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>query</strong> – cypher query</p>
+<dd class="field-odd"><p><strong>query</strong> (<em>str</em>) – cypher query</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
 </dd>
 </dl>
 </dd></dl>
@@ -326,9 +344,12 @@ This code is copied from the winner’s submission to the Cypher competition:
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>str_node</strong> – node in string format</p></li>
-<li><p><strong>node_variable_dict</strong> – dictionary of node variables</p></li>
+<li><p><strong>str_node</strong> (<em>str</em>) – node in string format</p></li>
+<li><p><strong>node_variable_dict</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em>) – dictionary of node variables</p></li>
 </ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><em>List</em>[str]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -338,7 +359,10 @@ This code is copied from the winner’s submission to the Cypher competition:
 <span class="sig-name descname"><span class="pre">detect_node_variables</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/langchain/chains/graph_qa/cypher_utils.html#CypherQueryCorrector.detect_node_variables"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain.chains.graph_qa.cypher_utils.CypherQueryCorrector.detect_node_variables" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>query</strong> – cypher query</p>
+<dd class="field-odd"><p><strong>query</strong> (<em>str</em>) – cypher query</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><em>Dict</em>[str, <em>List</em>[str]]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -348,7 +372,10 @@ This code is copied from the winner’s submission to the Cypher competition:
 <span class="sig-name descname"><span class="pre">detect_relation_types</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">str_relation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/langchain/chains/graph_qa/cypher_utils.html#CypherQueryCorrector.detect_relation_types"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain.chains.graph_qa.cypher_utils.CypherQueryCorrector.detect_relation_types" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>str_relation</strong> – relation in string format</p>
+<dd class="field-odd"><p><strong>str_relation</strong> (<em>str</em>) – relation in string format</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><em>Tuple</em>[str, <em>List</em>[str]]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -358,7 +385,10 @@ This code is copied from the winner’s submission to the Cypher competition:
 <span class="sig-name descname"><span class="pre">extract_node_variable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">part</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/langchain/chains/graph_qa/cypher_utils.html#CypherQueryCorrector.extract_node_variable"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain.chains.graph_qa.cypher_utils.CypherQueryCorrector.extract_node_variable" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>part</strong> – node in string format</p>
+<dd class="field-odd"><p><strong>part</strong> (<em>str</em>) – node in string format</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><em>Optional</em>[str]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -368,7 +398,10 @@ This code is copied from the winner’s submission to the Cypher competition:
 <span class="sig-name descname"><span class="pre">extract_paths</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/langchain/chains/graph_qa/cypher_utils.html#CypherQueryCorrector.extract_paths"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain.chains.graph_qa.cypher_utils.CypherQueryCorrector.extract_paths" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>query</strong> – cypher query</p>
+<dd class="field-odd"><p><strong>query</strong> (<em>str</em>) – cypher query</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><em>List</em>[str]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -378,7 +411,10 @@ This code is copied from the winner’s submission to the Cypher competition:
 <span class="sig-name descname"><span class="pre">judge_direction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">relation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="../_modules/langchain/chains/graph_qa/cypher_utils.html#CypherQueryCorrector.judge_direction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain.chains.graph_qa.cypher_utils.CypherQueryCorrector.judge_direction" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>relation</strong> – relation in string format</p>
+<dd class="field-odd"><p><strong>relation</strong> (<em>str</em>) – relation in string format</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
 </dd>
 </dl>
 </dd></dl>
@@ -389,10 +425,14 @@ This code is copied from the winner’s submission to the Cypher competition:
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>from_node_labels</strong> – labels of the from node</p></li>
+<li><p><strong>from_node_labels</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – labels of the from node</p></li>
 <li><p><strong>relation_type</strong> – type of the relation</p></li>
-<li><p><strong>to_node_labels</strong> – labels of the to node</p></li>
+<li><p><strong>to_node_labels</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – labels of the to node</p></li>
+<li><p><strong>relation_types</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – </p></li>
 </ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
 </dd>
 </dl>
 </dd></dl>
@@ -408,7 +448,7 @@ This code is copied from the winner’s submission to the Cypher competition:
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 14, 2024.
+          Last updated on Feb 22, 2024.
           <a href="../_sources/chains/langchain.chains.graph_qa.cypher_utils.CypherQueryCorrector.rst.txt" rel="nofollow">Show this page source</a>
       </footer>
     </div>

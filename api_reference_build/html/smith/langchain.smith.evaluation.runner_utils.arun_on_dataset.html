@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>langchain.smith.evaluation.runner_utils.arun_on_dataset &mdash; 🦜🔗 LangChain 0.1.7</title>
+  <title>langchain.smith.evaluation.runner_utils.arun_on_dataset &mdash; 🦜🔗 LangChain 0.1.8</title>
   
   <link rel="canonical" href="https://api.python.langchain.com/en/latest/smith/langchain.smith.evaluation.runner_utils.arun_on_dataset.html" />
 
@@ -61,7 +61,13 @@
           <a class="sk-nav-link nav-link" href="../experimental_api_reference.html">Experimental</a>
         </li>
         <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ai21_api_reference.html">ai21</a>
+        </li>
+        <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../anthropic_api_reference.html">anthropic</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../astradb_api_reference.html">astradb</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../exa_api_reference.html">exa</a>
@@ -71,6 +77,9 @@
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../google_vertexai_api_reference.html">google-vertexai</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ibm_api_reference.html">ibm</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../mistralai_api_reference.html">mistralai</a>
@@ -99,10 +108,13 @@
         <li class="nav-item dropdown nav-more-item-dropdown">
           <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Partner libs</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ai21_api_reference.html">ai21</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../anthropic_api_reference.html">anthropic</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../astradb_api_reference.html">astradb</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../exa_api_reference.html">exa</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_genai_api_reference.html">google-genai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ibm_api_reference.html">ibm</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../mistralai_api_reference.html">mistralai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nomic_api_reference.html">nomic</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nvidia_ai_endpoints_api_reference.html">nvidia-ai-endpoints</a>
@@ -162,28 +174,32 @@ to the specified project name.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dataset_name</strong> – Name of the dataset to run the chain on.</p></li>
-<li><p><strong>llm_or_chain_factory</strong> – Language model or Chain constructor to run
+<li><p><strong>dataset_name</strong> (<em>str</em>) – Name of the dataset to run the chain on.</p></li>
+<li><p><strong>llm_or_chain_factory</strong> (<em>Union</em><em>[</em><em>Callable</em><em>[</em><em>[</em><em>]</em><em>, </em><em>Union</em><em>[</em><a class="reference internal" href="../chains/langchain.chains.base.Chain.html#langchain.chains.base.Chain" title="langchain.chains.base.Chain"><em>Chain</em></a><em>, </em><a class="reference internal" href="../runnables/langchain_core.runnables.base.Runnable.html#langchain_core.runnables.base.Runnable" title="langchain_core.runnables.base.Runnable"><em>Runnable</em></a><em>]</em><em>]</em><em>, </em><a class="reference internal" href="../language_models/langchain_core.language_models.base.BaseLanguageModel.html#langchain_core.language_models.base.BaseLanguageModel" title="langchain_core.language_models.base.BaseLanguageModel"><em>BaseLanguageModel</em></a><em>, </em><em>Callable</em><em>[</em><em>[</em><em>dict</em><em>]</em><em>, </em><em>Any</em><em>]</em><em>, </em><a class="reference internal" href="../runnables/langchain_core.runnables.base.Runnable.html#langchain_core.runnables.base.Runnable" title="langchain_core.runnables.base.Runnable"><em>Runnable</em></a><em>, </em><a class="reference internal" href="../chains/langchain.chains.base.Chain.html#langchain.chains.base.Chain" title="langchain.chains.base.Chain"><em>Chain</em></a><em>]</em>) – Language model or Chain constructor to run
 over the dataset. The Chain constructor is used to permit
 independent calls on each example without carrying over state.</p></li>
-<li><p><strong>evaluation</strong> – Configuration for evaluators to run on the
+<li><p><strong>evaluation</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="langchain.smith.evaluation.config.RunEvalConfig.html#langchain.smith.evaluation.config.RunEvalConfig" title="langchain.smith.evaluation.config.RunEvalConfig"><em>RunEvalConfig</em></a><em>]</em>) – Configuration for evaluators to run on the
 results of the chain</p></li>
-<li><p><strong>concurrency_level</strong> – The number of async tasks to run concurrently.</p></li>
-<li><p><strong>project_name</strong> – Name of the project to store the traces in.
+<li><p><strong>concurrency_level</strong> (<em>int</em>) – The number of async tasks to run concurrently.</p></li>
+<li><p><strong>project_name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Name of the project to store the traces in.
 Defaults to {dataset_name}-{chain class name}-{datetime}.</p></li>
-<li><p><strong>project_metadata</strong> – Optional metadata to add to the project.
+<li><p><strong>project_metadata</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – Optional metadata to add to the project.
 Useful for storing information the test variant.
 (prompt version, model version, etc.)</p></li>
-<li><p><strong>client</strong> – LangSmith client to use to access the dataset and to
+<li><p><strong>client</strong> (<em>Optional</em><em>[</em><em>Client</em><em>]</em>) – LangSmith client to use to access the dataset and to
 log feedback and run traces.</p></li>
-<li><p><strong>verbose</strong> – Whether to print progress.</p></li>
-<li><p><strong>tags</strong> – Tags to add to each run in the project.</p></li>
-<li><p><strong>revision_id</strong> – Optional revision identifier to assign this test run to
+<li><p><strong>verbose</strong> (<em>bool</em>) – Whether to print progress.</p></li>
+<li><p><strong>tags</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em>) – Tags to add to each run in the project.</p></li>
+<li><p><strong>revision_id</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Optional revision identifier to assign this test run to
 track the performance of different versions of your system.</p></li>
+<li><p><strong>kwargs</strong> (<em>Any</em>) – </p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>A dictionary containing the run’s project name and the resulting model outputs.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><em>Dict</em>[str, <em>Any</em>]</p>
 </dd>
 </dl>
 <p>For the (usually faster) async version of this function, see <a class="reference internal" href="#langchain.smith.evaluation.runner_utils.arun_on_dataset" title="langchain.smith.evaluation.runner_utils.arun_on_dataset"><code class="xref py py-func docutils literal notranslate"><span class="pre">arun_on_dataset()</span></code></a>.</p>
@@ -272,7 +288,7 @@ or LangSmith’s <cite>RunEvaluator</cite> classes.</p>
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 14, 2024.
+          Last updated on Feb 22, 2024.
           <a href="../_sources/smith/langchain.smith.evaluation.runner_utils.arun_on_dataset.rst.txt" rel="nofollow">Show this page source</a>
       </footer>
     </div>

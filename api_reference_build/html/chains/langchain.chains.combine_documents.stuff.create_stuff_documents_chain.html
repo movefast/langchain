@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>langchain.chains.combine_documents.stuff.create_stuff_documents_chain &mdash; 🦜🔗 LangChain 0.1.7</title>
+  <title>langchain.chains.combine_documents.stuff.create_stuff_documents_chain &mdash; 🦜🔗 LangChain 0.1.8</title>
   
   <link rel="canonical" href="https://api.python.langchain.com/en/latest/chains/langchain.chains.combine_documents.stuff.create_stuff_documents_chain.html" />
 
@@ -61,7 +61,13 @@
           <a class="sk-nav-link nav-link" href="../experimental_api_reference.html">Experimental</a>
         </li>
         <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ai21_api_reference.html">ai21</a>
+        </li>
+        <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../anthropic_api_reference.html">anthropic</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../astradb_api_reference.html">astradb</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../exa_api_reference.html">exa</a>
@@ -71,6 +77,9 @@
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../google_vertexai_api_reference.html">google-vertexai</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ibm_api_reference.html">ibm</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../mistralai_api_reference.html">mistralai</a>
@@ -99,10 +108,13 @@
         <li class="nav-item dropdown nav-more-item-dropdown">
           <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Partner libs</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ai21_api_reference.html">ai21</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../anthropic_api_reference.html">anthropic</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../astradb_api_reference.html">astradb</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../exa_api_reference.html">exa</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_genai_api_reference.html">google-genai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ibm_api_reference.html">ibm</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../mistralai_api_reference.html">mistralai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nomic_api_reference.html">nomic</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nvidia_ai_endpoints_api_reference.html">nvidia-ai-endpoints</a>
@@ -161,23 +173,26 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>llm</strong> – Language model.</p></li>
-<li><p><strong>prompt</strong> – Prompt template. Must contain input variable “context”, which will be
+<li><p><strong>llm</strong> (<a class="reference internal" href="../runnables/langchain_core.runnables.base.Runnable.html#langchain_core.runnables.base.Runnable" title="langchain_core.runnables.base.Runnable"><em>Runnable</em></a><em>[</em><em>Union</em><em>[</em><a class="reference internal" href="../prompt_values/langchain_core.prompt_values.PromptValue.html#langchain_core.prompt_values.PromptValue" title="langchain_core.prompt_values.PromptValue"><em>PromptValue</em></a><em>, </em><em>str</em><em>, </em><em>Sequence</em><em>[</em><em>Union</em><em>[</em><a class="reference internal" href="../messages/langchain_core.messages.base.BaseMessage.html#langchain_core.messages.base.BaseMessage" title="langchain_core.messages.base.BaseMessage"><em>BaseMessage</em></a><em>, </em><em>Tuple</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em><em>, </em><em>str</em><em>, </em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em><em>]</em><em>]</em><em>, </em><em>Union</em><em>[</em><a class="reference internal" href="../messages/langchain_core.messages.base.BaseMessage.html#langchain_core.messages.base.BaseMessage" title="langchain_core.messages.base.BaseMessage"><em>BaseMessage</em></a><em>, </em><em>str</em><em>]</em><em>]</em>) – Language model.</p></li>
+<li><p><strong>prompt</strong> (<a class="reference internal" href="../prompts/langchain_core.prompts.base.BasePromptTemplate.html#langchain_core.prompts.base.BasePromptTemplate" title="langchain_core.prompts.base.BasePromptTemplate"><em>BasePromptTemplate</em></a>) – Prompt template. Must contain input variable “context”, which will be
 used for passing in the formatted documents.</p></li>
-<li><p><strong>output_parser</strong> – Output parser. Defaults to StrOutputParser.</p></li>
-<li><p><strong>document_prompt</strong> – Prompt used for formatting each document into a string. Input
+<li><p><strong>output_parser</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="../output_parsers/langchain_core.output_parsers.base.BaseOutputParser.html#langchain_core.output_parsers.base.BaseOutputParser" title="langchain_core.output_parsers.base.BaseOutputParser"><em>BaseOutputParser</em></a><em>]</em>) – Output parser. Defaults to StrOutputParser.</p></li>
+<li><p><strong>document_prompt</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="../prompts/langchain_core.prompts.base.BasePromptTemplate.html#langchain_core.prompts.base.BasePromptTemplate" title="langchain_core.prompts.base.BasePromptTemplate"><em>BasePromptTemplate</em></a><em>]</em>) – Prompt used for formatting each document into a string. Input
 variables can be “page_content” or any metadata keys that are in all
 documents. “page_content” will automatically retrieve the
 <cite>Document.page_content</cite>, and all other inputs variables will be
 automatically retrieved from the <cite>Document.metadata</cite> dictionary. Default to
 a prompt that only contains <cite>Document.page_content</cite>.</p></li>
-<li><p><strong>document_separator</strong> – String separator to use between formatted document strings.</p></li>
+<li><p><strong>document_separator</strong> (<em>str</em>) – String separator to use between formatted document strings.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>An LCEL Runnable. The input is a dictionary that must have a “context” key that
 maps to a List[Document], and any other input variables expected in the prompt.
 The Runnable return type depends on output_parser used.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../runnables/langchain_core.runnables.base.Runnable.html#langchain_core.runnables.base.Runnable" title="langchain_core.runnables.base.Runnable"><em>Runnable</em></a>[<em>Dict</em>[str, <em>Any</em>], <em>Any</em>]</p>
 </dd>
 </dl>
 <p class="rubric">Example</p>
@@ -213,7 +228,7 @@ The Runnable return type depends on output_parser used.</p>
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 14, 2024.
+          Last updated on Feb 22, 2024.
           <a href="../_sources/chains/langchain.chains.combine_documents.stuff.create_stuff_documents_chain.rst.txt" rel="nofollow">Show this page source</a>
       </footer>
     </div>

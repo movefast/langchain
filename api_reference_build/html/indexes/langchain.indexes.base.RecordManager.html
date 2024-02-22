@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>langchain.indexes.base.RecordManager &mdash; 🦜🔗 LangChain 0.1.7</title>
+  <title>langchain.indexes.base.RecordManager &mdash; 🦜🔗 LangChain 0.1.8</title>
   
   <link rel="canonical" href="https://api.python.langchain.com/en/latest/indexes/langchain.indexes.base.RecordManager.html" />
 
@@ -61,7 +61,13 @@
           <a class="sk-nav-link nav-link" href="../experimental_api_reference.html">Experimental</a>
         </li>
         <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ai21_api_reference.html">ai21</a>
+        </li>
+        <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../anthropic_api_reference.html">anthropic</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../astradb_api_reference.html">astradb</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../exa_api_reference.html">exa</a>
@@ -71,6 +77,9 @@
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../google_vertexai_api_reference.html">google-vertexai</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ibm_api_reference.html">ibm</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../mistralai_api_reference.html">mistralai</a>
@@ -99,10 +108,13 @@
         <li class="nav-item dropdown nav-more-item-dropdown">
           <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Partner libs</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ai21_api_reference.html">ai21</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../anthropic_api_reference.html">anthropic</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../astradb_api_reference.html">astradb</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../exa_api_reference.html">exa</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_genai_api_reference.html">google-genai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ibm_api_reference.html">ibm</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../mistralai_api_reference.html">mistralai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nomic_api_reference.html">nomic</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nvidia_ai_endpoints_api_reference.html">nvidia-ai-endpoints</a>
@@ -235,6 +247,9 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>namespace</strong> (<em>str</em>) – The namespace for the record manager.</p>
 </dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -242,6 +257,11 @@
 <dt class="sig sig-object py" id="langchain.indexes.base.RecordManager.acreate_schema">
 <em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">acreate_schema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/langchain/indexes/base.html#RecordManager.acreate_schema"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain.indexes.base.RecordManager.acreate_schema" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create the database schema for the record manager.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -250,7 +270,10 @@
 <dd><p>Delete specified records from the database.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>keys</strong> – A list of keys to delete.</p>
+<dd class="field-odd"><p><strong>keys</strong> (<em>Sequence</em><em>[</em><em>str</em><em>]</em>) – A list of keys to delete.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -261,10 +284,13 @@
 <dd><p>Check if the provided keys exist in the database.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>keys</strong> – A list of keys to check.</p>
+<dd class="field-odd"><p><strong>keys</strong> (<em>Sequence</em><em>[</em><em>str</em><em>]</em>) – A list of keys to check.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>A list of boolean values indicating the existence of each key.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><em>List</em>[bool]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -279,6 +305,9 @@ otherwise there may be data loss when cleaning up old documents!</p>
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>The current server time as a float timestamp.</p>
 </dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -289,14 +318,17 @@ otherwise there may be data loss when cleaning up old documents!</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>before</strong> – Filter to list records updated before this time.</p></li>
-<li><p><strong>after</strong> – Filter to list records updated after this time.</p></li>
-<li><p><strong>group_ids</strong> – Filter to list records with specific group IDs.</p></li>
-<li><p><strong>limit</strong> – optional limit on the number of records to return.</p></li>
+<li><p><strong>before</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em>) – Filter to list records updated before this time.</p></li>
+<li><p><strong>after</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em>) – Filter to list records updated after this time.</p></li>
+<li><p><strong>group_ids</strong> (<em>Optional</em><em>[</em><em>Sequence</em><em>[</em><em>str</em><em>]</em><em>]</em>) – Filter to list records with specific group IDs.</p></li>
+<li><p><strong>limit</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – optional limit on the number of records to return.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>A list of keys for the matching records.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><em>List</em>[str]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -308,14 +340,17 @@ otherwise there may be data loss when cleaning up old documents!</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>keys</strong> – A list of record keys to upsert.</p></li>
-<li><p><strong>group_ids</strong> – A list of group IDs corresponding to the keys.</p></li>
-<li><p><strong>time_at_least</strong> – if provided, updates should only happen if the
+<li><p><strong>keys</strong> (<em>Sequence</em><em>[</em><em>str</em><em>]</em>) – A list of record keys to upsert.</p></li>
+<li><p><strong>group_ids</strong> (<em>Optional</em><em>[</em><em>Sequence</em><em>[</em><em>Optional</em><em>[</em><em>str</em><em>]</em><em>]</em><em>]</em>) – A list of group IDs corresponding to the keys.</p></li>
+<li><p><strong>time_at_least</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em>) – if provided, updates should only happen if the
 updated_at field is at least this time.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><p><strong>ValueError</strong> – If the length of keys doesn’t match the length of group_ids.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -324,6 +359,11 @@ updated_at field is at least this time.</p></li>
 <dt class="sig sig-object py" id="langchain.indexes.base.RecordManager.create_schema">
 <em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_schema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/langchain/indexes/base.html#RecordManager.create_schema"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain.indexes.base.RecordManager.create_schema" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create the database schema for the record manager.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -332,7 +372,10 @@ updated_at field is at least this time.</p></li>
 <dd><p>Delete specified records from the database.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>keys</strong> – A list of keys to delete.</p>
+<dd class="field-odd"><p><strong>keys</strong> (<em>Sequence</em><em>[</em><em>str</em><em>]</em>) – A list of keys to delete.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -343,10 +386,13 @@ updated_at field is at least this time.</p></li>
 <dd><p>Check if the provided keys exist in the database.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>keys</strong> – A list of keys to check.</p>
+<dd class="field-odd"><p><strong>keys</strong> (<em>Sequence</em><em>[</em><em>str</em><em>]</em>) – A list of keys to check.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>A list of boolean values indicating the existence of each key.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><em>List</em>[bool]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -361,6 +407,9 @@ otherwise there may be data loss when cleaning up old documents!</p>
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>The current server time as a float timestamp.</p>
 </dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -371,14 +420,17 @@ otherwise there may be data loss when cleaning up old documents!</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>before</strong> – Filter to list records updated before this time.</p></li>
-<li><p><strong>after</strong> – Filter to list records updated after this time.</p></li>
-<li><p><strong>group_ids</strong> – Filter to list records with specific group IDs.</p></li>
-<li><p><strong>limit</strong> – optional limit on the number of records to return.</p></li>
+<li><p><strong>before</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em>) – Filter to list records updated before this time.</p></li>
+<li><p><strong>after</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em>) – Filter to list records updated after this time.</p></li>
+<li><p><strong>group_ids</strong> (<em>Optional</em><em>[</em><em>Sequence</em><em>[</em><em>str</em><em>]</em><em>]</em>) – Filter to list records with specific group IDs.</p></li>
+<li><p><strong>limit</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – optional limit on the number of records to return.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>A list of keys for the matching records.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><em>List</em>[str]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -390,14 +442,17 @@ otherwise there may be data loss when cleaning up old documents!</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>keys</strong> – A list of record keys to upsert.</p></li>
-<li><p><strong>group_ids</strong> – A list of group IDs corresponding to the keys.</p></li>
-<li><p><strong>time_at_least</strong> – if provided, updates should only happen if the
+<li><p><strong>keys</strong> (<em>Sequence</em><em>[</em><em>str</em><em>]</em>) – A list of record keys to upsert.</p></li>
+<li><p><strong>group_ids</strong> (<em>Optional</em><em>[</em><em>Sequence</em><em>[</em><em>Optional</em><em>[</em><em>str</em><em>]</em><em>]</em><em>]</em>) – A list of group IDs corresponding to the keys.</p></li>
+<li><p><strong>time_at_least</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em>) – if provided, updates should only happen if the
 updated_at field is at least this time.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><p><strong>ValueError</strong> – If the length of keys doesn’t match the length of group_ids.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -413,7 +468,7 @@ updated_at field is at least this time.</p></li>
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 14, 2024.
+          Last updated on Feb 22, 2024.
           <a href="../_sources/indexes/langchain.indexes.base.RecordManager.rst.txt" rel="nofollow">Show this page source</a>
       </footer>
     </div>

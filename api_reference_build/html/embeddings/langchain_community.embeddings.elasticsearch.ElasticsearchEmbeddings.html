@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>langchain_community.embeddings.elasticsearch.ElasticsearchEmbeddings &mdash; 🦜🔗 LangChain 0.1.7</title>
+  <title>langchain_community.embeddings.elasticsearch.ElasticsearchEmbeddings &mdash; 🦜🔗 LangChain 0.1.8</title>
   
   <link rel="canonical" href="https://api.python.langchain.com/en/latest/embeddings/langchain_community.embeddings.elasticsearch.ElasticsearchEmbeddings.html" />
 
@@ -61,7 +61,13 @@
           <a class="sk-nav-link nav-link" href="../experimental_api_reference.html">Experimental</a>
         </li>
         <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ai21_api_reference.html">ai21</a>
+        </li>
+        <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../anthropic_api_reference.html">anthropic</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../astradb_api_reference.html">astradb</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../exa_api_reference.html">exa</a>
@@ -71,6 +77,9 @@
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../google_vertexai_api_reference.html">google-vertexai</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ibm_api_reference.html">ibm</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../mistralai_api_reference.html">mistralai</a>
@@ -99,10 +108,13 @@
         <li class="nav-item dropdown nav-more-item-dropdown">
           <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Partner libs</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ai21_api_reference.html">ai21</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../anthropic_api_reference.html">anthropic</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../astradb_api_reference.html">astradb</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../exa_api_reference.html">exa</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_genai_api_reference.html">google-genai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ibm_api_reference.html">ibm</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../mistralai_api_reference.html">mistralai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nomic_api_reference.html">nomic</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nvidia_ai_endpoints_api_reference.html">nvidia-ai-endpoints</a>
@@ -236,12 +248,28 @@ document. Defaults to ‘text_field’.</p></li>
 <dt class="sig sig-object py" id="langchain_community.embeddings.elasticsearch.ElasticsearchEmbeddings.aembed_documents">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">aembed_documents</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">texts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#langchain_community.embeddings.elasticsearch.ElasticsearchEmbeddings.aembed_documents" title="Permalink to this definition">¶</a></dt>
 <dd><p>Asynchronous Embed search docs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>texts</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><em>List</em>[<em>List</em>[float]]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.embeddings.elasticsearch.ElasticsearchEmbeddings.aembed_query">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">aembed_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#langchain_community.embeddings.elasticsearch.ElasticsearchEmbeddings.aembed_query" title="Permalink to this definition">¶</a></dt>
 <dd><p>Asynchronous Embed query text.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>text</strong> (<em>str</em>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><em>List</em>[float]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -294,10 +322,13 @@ for.</p>
 cluster.</p></li>
 <li><p><strong>input_field</strong> (<em>str</em>) – The name of the key for the input text field in the
 document. Defaults to ‘text_field’.</p></li>
-<li><p><strong>es_cloud_id</strong> – (str, optional): The Elasticsearch cloud ID to connect to.</p></li>
-<li><p><strong>es_user</strong> – (str, optional): Elasticsearch username.</p></li>
-<li><p><strong>es_password</strong> – (str, optional): Elasticsearch password.</p></li>
+<li><p><strong>es_cloud_id</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – (str, optional): The Elasticsearch cloud ID to connect to.</p></li>
+<li><p><strong>es_user</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – (str, optional): Elasticsearch username.</p></li>
+<li><p><strong>es_password</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – (str, optional): Elasticsearch password.</p></li>
 </ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#langchain_community.embeddings.elasticsearch.ElasticsearchEmbeddings" title="langchain_community.embeddings.elasticsearch.ElasticsearchEmbeddings"><em>ElasticsearchEmbeddings</em></a></p>
 </dd>
 </dl>
 <p class="rubric">Example</p>
@@ -372,6 +403,18 @@ ElasticsearchEmbeddings: An instance of the ElasticsearchEmbeddings class.</p>
 <span class="n">embeddings_generator</span><span class="o">.</span><span class="n">embed_documents</span><span class="p">(</span><span class="n">documents</span><span class="p">)</span>
 </pre></div>
 </div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model_id</strong> (<em>str</em>) – </p></li>
+<li><p><strong>es_connection</strong> (<em>Elasticsearch</em>) – </p></li>
+<li><p><strong>input_field</strong> (<em>str</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#langchain_community.embeddings.elasticsearch.ElasticsearchEmbeddings" title="langchain_community.embeddings.elasticsearch.ElasticsearchEmbeddings">ElasticsearchEmbeddings</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -387,7 +430,7 @@ ElasticsearchEmbeddings: An instance of the ElasticsearchEmbeddings class.</p>
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 14, 2024.
+          Last updated on Feb 22, 2024.
           <a href="../_sources/embeddings/langchain_community.embeddings.elasticsearch.ElasticsearchEmbeddings.rst.txt" rel="nofollow">Show this page source</a>
       </footer>
     </div>

@@ -21,16 +21,6 @@ Classes
     
     retrievers.ExaSearchRetriever
     
-Functions
---------------
-.. currentmodule:: langchain_exa
-
-.. autosummary::
-    :toctree: retrievers
-    :template: function.rst
-
-    
-
 :mod:`langchain_exa.tools`
 ===========================
 

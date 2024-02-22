@@ -47,6 +47,12 @@
     
     .. autoattribute:: COBOL
     
+    .. autoattribute:: C
+    
+    .. autoattribute:: LUA
+    
+    .. autoattribute:: PERL
+    
     
 
 .. example_links:: Language

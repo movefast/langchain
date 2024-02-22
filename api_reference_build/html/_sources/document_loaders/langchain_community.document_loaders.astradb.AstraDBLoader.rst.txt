@@ -18,8 +18,6 @@
       ~AstraDBLoader.__init__
       ~AstraDBLoader.alazy_load
       ~AstraDBLoader.aload
-      ~AstraDBLoader.fetch_page_result
-      ~AstraDBLoader.fetch_results
       ~AstraDBLoader.lazy_load
       ~AstraDBLoader.load
       ~AstraDBLoader.load_and_split
@@ -28,8 +26,6 @@
    .. automethod:: AstraDBLoader.__init__
    .. automethod:: AstraDBLoader.alazy_load
    .. automethod:: AstraDBLoader.aload
-   .. automethod:: AstraDBLoader.fetch_page_result
-   .. automethod:: AstraDBLoader.fetch_results
    .. automethod:: AstraDBLoader.lazy_load
    .. automethod:: AstraDBLoader.load
    .. automethod:: AstraDBLoader.load_and_split

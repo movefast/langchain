@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>langchain_community.chat_message_histories.cosmos_db.CosmosDBChatMessageHistory &mdash; 🦜🔗 LangChain 0.1.7</title>
+  <title>langchain_community.chat_message_histories.cosmos_db.CosmosDBChatMessageHistory &mdash; 🦜🔗 LangChain 0.1.8</title>
   
   <link rel="canonical" href="https://api.python.langchain.com/en/latest/chat_message_histories/langchain_community.chat_message_histories.cosmos_db.CosmosDBChatMessageHistory.html" />
 
@@ -61,7 +61,13 @@
           <a class="sk-nav-link nav-link" href="../experimental_api_reference.html">Experimental</a>
         </li>
         <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ai21_api_reference.html">ai21</a>
+        </li>
+        <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../anthropic_api_reference.html">anthropic</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../astradb_api_reference.html">astradb</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../exa_api_reference.html">exa</a>
@@ -71,6 +77,9 @@
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../google_vertexai_api_reference.html">google-vertexai</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ibm_api_reference.html">ibm</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../mistralai_api_reference.html">mistralai</a>
@@ -99,10 +108,13 @@
         <li class="nav-item dropdown nav-more-item-dropdown">
           <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Partner libs</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ai21_api_reference.html">ai21</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../anthropic_api_reference.html">anthropic</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../astradb_api_reference.html">astradb</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../exa_api_reference.html">exa</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_genai_api_reference.html">google-genai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ibm_api_reference.html">ibm</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../mistralai_api_reference.html">mistralai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nomic_api_reference.html">nomic</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nvidia_ai_endpoints_api_reference.html">nvidia-ai-endpoints</a>
@@ -179,15 +191,15 @@ sure your database is ready.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>cosmos_endpoint</strong> – The connection endpoint for the Azure Cosmos DB account.</p></li>
-<li><p><strong>cosmos_database</strong> – The name of the database to use.</p></li>
-<li><p><strong>cosmos_container</strong> – The name of the container to use.</p></li>
-<li><p><strong>session_id</strong> – The session ID to use, can be overwritten while loading.</p></li>
-<li><p><strong>user_id</strong> – The user ID to use, can be overwritten while loading.</p></li>
-<li><p><strong>credential</strong> – The credential to use to authenticate to Azure Cosmos DB.</p></li>
-<li><p><strong>connection_string</strong> – The connection string to use to authenticate.</p></li>
-<li><p><strong>ttl</strong> – The time to live (in seconds) to use for documents in the container.</p></li>
-<li><p><strong>cosmos_client_kwargs</strong> – Additional kwargs to pass to the CosmosClient.</p></li>
+<li><p><strong>cosmos_endpoint</strong> (<em>str</em>) – The connection endpoint for the Azure Cosmos DB account.</p></li>
+<li><p><strong>cosmos_database</strong> (<em>str</em>) – The name of the database to use.</p></li>
+<li><p><strong>cosmos_container</strong> (<em>str</em>) – The name of the container to use.</p></li>
+<li><p><strong>session_id</strong> (<em>str</em>) – The session ID to use, can be overwritten while loading.</p></li>
+<li><p><strong>user_id</strong> (<em>str</em>) – The user ID to use, can be overwritten while loading.</p></li>
+<li><p><strong>credential</strong> (<em>Any</em>) – The credential to use to authenticate to Azure Cosmos DB.</p></li>
+<li><p><strong>connection_string</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – The connection string to use to authenticate.</p></li>
+<li><p><strong>ttl</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – The time to live (in seconds) to use for documents in the container.</p></li>
+<li><p><strong>cosmos_client_kwargs</strong> (<em>Optional</em><em>[</em><em>dict</em><em>]</em>) – Additional kwargs to pass to the CosmosClient.</p></li>
 </ul>
 </dd>
 </dl>
@@ -258,15 +270,15 @@ sure your database is ready.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>cosmos_endpoint</strong> – The connection endpoint for the Azure Cosmos DB account.</p></li>
-<li><p><strong>cosmos_database</strong> – The name of the database to use.</p></li>
-<li><p><strong>cosmos_container</strong> – The name of the container to use.</p></li>
-<li><p><strong>session_id</strong> – The session ID to use, can be overwritten while loading.</p></li>
-<li><p><strong>user_id</strong> – The user ID to use, can be overwritten while loading.</p></li>
-<li><p><strong>credential</strong> – The credential to use to authenticate to Azure Cosmos DB.</p></li>
-<li><p><strong>connection_string</strong> – The connection string to use to authenticate.</p></li>
-<li><p><strong>ttl</strong> – The time to live (in seconds) to use for documents in the container.</p></li>
-<li><p><strong>cosmos_client_kwargs</strong> – Additional kwargs to pass to the CosmosClient.</p></li>
+<li><p><strong>cosmos_endpoint</strong> (<em>str</em>) – The connection endpoint for the Azure Cosmos DB account.</p></li>
+<li><p><strong>cosmos_database</strong> (<em>str</em>) – The name of the database to use.</p></li>
+<li><p><strong>cosmos_container</strong> (<em>str</em>) – The name of the container to use.</p></li>
+<li><p><strong>session_id</strong> (<em>str</em>) – The session ID to use, can be overwritten while loading.</p></li>
+<li><p><strong>user_id</strong> (<em>str</em>) – The user ID to use, can be overwritten while loading.</p></li>
+<li><p><strong>credential</strong> (<em>Optional</em><em>[</em><em>Any</em><em>]</em>) – The credential to use to authenticate to Azure Cosmos DB.</p></li>
+<li><p><strong>connection_string</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – The connection string to use to authenticate.</p></li>
+<li><p><strong>ttl</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – The time to live (in seconds) to use for documents in the container.</p></li>
+<li><p><strong>cosmos_client_kwargs</strong> (<em>Optional</em><em>[</em><em>dict</em><em>]</em>) – Additional kwargs to pass to the CosmosClient.</p></li>
 </ul>
 </dd>
 </dl>
@@ -278,7 +290,10 @@ sure your database is ready.</p>
 <dd><p>Add a list of messages.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>messages</strong> – A list of BaseMessage objects to store.</p>
+<dd class="field-odd"><p><strong>messages</strong> (<em>Sequence</em><em>[</em><a class="reference internal" href="../messages/langchain_core.messages.base.BaseMessage.html#langchain_core.messages.base.BaseMessage" title="langchain_core.messages.base.BaseMessage"><em>BaseMessage</em></a><em>]</em>) – A list of BaseMessage objects to store.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -287,6 +302,11 @@ sure your database is ready.</p>
 <dt class="sig sig-object py" id="langchain_community.chat_message_histories.cosmos_db.CosmosDBChatMessageHistory.aclear">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">aclear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#langchain_community.chat_message_histories.cosmos_db.CosmosDBChatMessageHistory.aclear" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove all messages from the store</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -299,7 +319,10 @@ persistence layer.</p>
 <p>This method may be deprecated in a future release.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>message</strong> – The AI message to add.</p>
+<dd class="field-odd"><p><strong>message</strong> (<em>Union</em><em>[</em><a class="reference internal" href="../messages/langchain_core.messages.ai.AIMessage.html#langchain_core.messages.ai.AIMessage" title="langchain_core.messages.ai.AIMessage"><em>AIMessage</em></a><em>, </em><em>str</em><em>]</em>) – The AI message to add.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -308,6 +331,14 @@ persistence layer.</p>
 <dt class="sig sig-object py" id="langchain_community.chat_message_histories.cosmos_db.CosmosDBChatMessageHistory.add_message">
 <span class="sig-name descname"><span class="pre">add_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../messages/langchain_core.messages.base.BaseMessage.html#langchain_core.messages.base.BaseMessage" title="langchain_core.messages.base.BaseMessage"><span class="pre">BaseMessage</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/langchain_community/chat_message_histories/cosmos_db.html#CosmosDBChatMessageHistory.add_message"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.chat_message_histories.cosmos_db.CosmosDBChatMessageHistory.add_message" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a self-created message to the store</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>message</strong> (<a class="reference internal" href="../messages/langchain_core.messages.base.BaseMessage.html#langchain_core.messages.base.BaseMessage" title="langchain_core.messages.base.BaseMessage"><em>BaseMessage</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -318,7 +349,10 @@ persistence layer.</p>
 in an efficient manner to avoid unnecessary round-trips to the underlying store.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>messages</strong> – A list of BaseMessage objects to store.</p>
+<dd class="field-odd"><p><strong>messages</strong> (<em>Sequence</em><em>[</em><a class="reference internal" href="../messages/langchain_core.messages.base.BaseMessage.html#langchain_core.messages.base.BaseMessage" title="langchain_core.messages.base.BaseMessage"><em>BaseMessage</em></a><em>]</em>) – A list of BaseMessage objects to store.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -333,7 +367,10 @@ persistence layer.</p>
 <p>This method may be deprecated in a future release.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>message</strong> – The human message to add</p>
+<dd class="field-odd"><p><strong>message</strong> (<em>Union</em><em>[</em><a class="reference internal" href="../messages/langchain_core.messages.human.HumanMessage.html#langchain_core.messages.human.HumanMessage" title="langchain_core.messages.human.HumanMessage"><em>HumanMessage</em></a><em>, </em><em>str</em><em>]</em>) – The human message to add</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -345,18 +382,33 @@ persistence layer.</p>
 <p>Can over-ride this method to provide an efficient async implementation.</p>
 <p>In general, fetching messages may involve IO to the underlying
 persistence layer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><em>List</em>[<a class="reference internal" href="../messages/langchain_core.messages.base.BaseMessage.html#langchain_core.messages.base.BaseMessage" title="langchain_core.messages.base.BaseMessage"><em>BaseMessage</em></a>]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.chat_message_histories.cosmos_db.CosmosDBChatMessageHistory.clear">
 <span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/langchain_community/chat_message_histories/cosmos_db.html#CosmosDBChatMessageHistory.clear"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.chat_message_histories.cosmos_db.CosmosDBChatMessageHistory.clear" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clear session memory from this memory and cosmos.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.chat_message_histories.cosmos_db.CosmosDBChatMessageHistory.load_messages">
 <span class="sig-name descname"><span class="pre">load_messages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/langchain_community/chat_message_histories/cosmos_db.html#CosmosDBChatMessageHistory.load_messages"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.chat_message_histories.cosmos_db.CosmosDBChatMessageHistory.load_messages" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retrieve the messages from Cosmos</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -364,12 +416,22 @@ persistence layer.</p>
 <span class="sig-name descname"><span class="pre">prepare_cosmos</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/langchain_community/chat_message_histories/cosmos_db.html#CosmosDBChatMessageHistory.prepare_cosmos"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.chat_message_histories.cosmos_db.CosmosDBChatMessageHistory.prepare_cosmos" title="Permalink to this definition">¶</a></dt>
 <dd><p>Prepare the CosmosDB client.</p>
 <p>Use this function or the context manager to make sure your database is ready.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.chat_message_histories.cosmos_db.CosmosDBChatMessageHistory.upsert_messages">
 <span class="sig-name descname"><span class="pre">upsert_messages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/langchain_community/chat_message_histories/cosmos_db.html#CosmosDBChatMessageHistory.upsert_messages"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.chat_message_histories.cosmos_db.CosmosDBChatMessageHistory.upsert_messages" title="Permalink to this definition">¶</a></dt>
 <dd><p>Update the cosmosdb item.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -383,7 +445,7 @@ persistence layer.</p>
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 14, 2024.
+          Last updated on Feb 22, 2024.
           <a href="../_sources/chat_message_histories/langchain_community.chat_message_histories.cosmos_db.CosmosDBChatMessageHistory.rst.txt" rel="nofollow">Show this page source</a>
       </footer>
     </div>

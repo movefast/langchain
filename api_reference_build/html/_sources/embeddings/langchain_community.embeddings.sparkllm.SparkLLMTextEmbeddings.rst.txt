@@ -1,0 +1,22 @@
+﻿:mod:`langchain_community.embeddings.sparkllm`.SparkLLMTextEmbeddings
+============================================================================
+
+.. currentmodule:: langchain_community.embeddings.sparkllm
+
+.. autopydantic_model:: SparkLLMTextEmbeddings
+    :model-show-json: False
+    :model-show-config-summary: False
+    :model-show-validator-members: False
+    :model-show-field-summary: False
+    :field-signature-prefix: param
+    :members:
+    :undoc-members:
+    :inherited-members:
+    :member-order: groupwise
+    :show-inheritance: True
+    :special-members: __call__
+
+    
+    
+
+.. example_links:: SparkLLMTextEmbeddings

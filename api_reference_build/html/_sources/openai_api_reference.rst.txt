@@ -25,16 +25,6 @@ Classes
     
     chat_models.base.ChatOpenAI
     
-Functions
---------------
-.. currentmodule:: langchain_openai
-
-.. autosummary::
-    :toctree: chat_models
-    :template: function.rst
-
-    
-
 :mod:`langchain_openai.embeddings`
 ===================================
 
@@ -81,13 +71,3 @@ Classes
     
     llms.base.OpenAI
     
-Functions
---------------
-.. currentmodule:: langchain_openai
-
-.. autosummary::
-    :toctree: llms
-    :template: function.rst
-
-    
-

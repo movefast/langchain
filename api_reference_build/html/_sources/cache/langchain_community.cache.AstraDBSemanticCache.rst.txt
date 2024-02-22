@@ -17,7 +17,10 @@
    
       ~AstraDBSemanticCache.__init__
       ~AstraDBSemanticCache.aclear
+      ~AstraDBSemanticCache.adelete_by_document_id
       ~AstraDBSemanticCache.alookup
+      ~AstraDBSemanticCache.alookup_with_id
+      ~AstraDBSemanticCache.alookup_with_id_through_llm
       ~AstraDBSemanticCache.aupdate
       ~AstraDBSemanticCache.clear
       ~AstraDBSemanticCache.delete_by_document_id
@@ -29,7 +32,10 @@
    
    .. automethod:: AstraDBSemanticCache.__init__
    .. automethod:: AstraDBSemanticCache.aclear
+   .. automethod:: AstraDBSemanticCache.adelete_by_document_id
    .. automethod:: AstraDBSemanticCache.alookup
+   .. automethod:: AstraDBSemanticCache.alookup_with_id
+   .. automethod:: AstraDBSemanticCache.alookup_with_id_through_llm
    .. automethod:: AstraDBSemanticCache.aupdate
    .. automethod:: AstraDBSemanticCache.clear
    .. automethod:: AstraDBSemanticCache.delete_by_document_id

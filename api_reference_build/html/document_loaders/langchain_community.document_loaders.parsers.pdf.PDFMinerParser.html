@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>langchain_community.document_loaders.parsers.pdf.PDFMinerParser &mdash; 🦜🔗 LangChain 0.1.7</title>
+  <title>langchain_community.document_loaders.parsers.pdf.PDFMinerParser &mdash; 🦜🔗 LangChain 0.1.8</title>
   
   <link rel="canonical" href="https://api.python.langchain.com/en/latest/document_loaders/langchain_community.document_loaders.parsers.pdf.PDFMinerParser.html" />
 
@@ -61,7 +61,13 @@
           <a class="sk-nav-link nav-link" href="../experimental_api_reference.html">Experimental</a>
         </li>
         <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ai21_api_reference.html">ai21</a>
+        </li>
+        <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../anthropic_api_reference.html">anthropic</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../astradb_api_reference.html">astradb</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../exa_api_reference.html">exa</a>
@@ -71,6 +77,9 @@
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../google_vertexai_api_reference.html">google-vertexai</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ibm_api_reference.html">ibm</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../mistralai_api_reference.html">mistralai</a>
@@ -99,10 +108,13 @@
         <li class="nav-item dropdown nav-more-item-dropdown">
           <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Partner libs</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ai21_api_reference.html">ai21</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../anthropic_api_reference.html">anthropic</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../astradb_api_reference.html">astradb</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../exa_api_reference.html">exa</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_genai_api_reference.html">google-genai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ibm_api_reference.html">ibm</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../mistralai_api_reference.html">mistralai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nomic_api_reference.html">nomic</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nvidia_ai_endpoints_api_reference.html">nvidia-ai-endpoints</a>
@@ -167,8 +179,8 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>extract_images</strong> – Whether to extract images from PDF.</p></li>
-<li><p><strong>concatenate_pages</strong> – If True, concatenate all PDF pages into one a single
+<li><p><strong>extract_images</strong> (<em>bool</em>) – Whether to extract images from PDF.</p></li>
+<li><p><strong>concatenate_pages</strong> (<em>bool</em>) – If True, concatenate all PDF pages into one a single
 document. Otherwise, return one document per page.</p></li>
 </ul>
 </dd>
@@ -198,8 +210,8 @@ document. Otherwise, return one document per page.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>extract_images</strong> – Whether to extract images from PDF.</p></li>
-<li><p><strong>concatenate_pages</strong> – If True, concatenate all PDF pages into one a single
+<li><p><strong>extract_images</strong> (<em>bool</em>) – Whether to extract images from PDF.</p></li>
+<li><p><strong>concatenate_pages</strong> (<em>bool</em>) – If True, concatenate all PDF pages into one a single
 document. Otherwise, return one document per page.</p></li>
 </ul>
 </dd>
@@ -210,6 +222,14 @@ document. Otherwise, return one document per page.</p></li>
 <dt class="sig sig-object py" id="langchain_community.document_loaders.parsers.pdf.PDFMinerParser.lazy_parse">
 <span class="sig-name descname"><span class="pre">lazy_parse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">blob</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="langchain_community.document_loaders.blob_loaders.schema.Blob.html#langchain_community.document_loaders.blob_loaders.schema.Blob" title="langchain_community.document_loaders.blob_loaders.schema.Blob"><span class="pre">Blob</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><span class="pre">Document</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/langchain_community/document_loaders/parsers/pdf.html#PDFMinerParser.lazy_parse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.document_loaders.parsers.pdf.PDFMinerParser.lazy_parse" title="Permalink to this definition">¶</a></dt>
 <dd><p>Lazily parse the blob.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>blob</strong> (<a class="reference internal" href="langchain_community.document_loaders.blob_loaders.schema.Blob.html#langchain_community.document_loaders.blob_loaders.schema.Blob" title="langchain_community.document_loaders.blob_loaders.schema.Blob"><em>Blob</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><em>Iterator</em>[<a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><em>Document</em></a>]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -221,10 +241,13 @@ document. Otherwise, return one document per page.</p></li>
 <p>Subclasses should generally not over-ride this parse method.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>blob</strong> – Blob instance</p>
+<dd class="field-odd"><p><strong>blob</strong> (<a class="reference internal" href="langchain_community.document_loaders.blob_loaders.schema.Blob.html#langchain_community.document_loaders.blob_loaders.schema.Blob" title="langchain_community.document_loaders.blob_loaders.schema.Blob"><em>Blob</em></a>) – Blob instance</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>List of documents</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><em>List</em>[<a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><em>Document</em></a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -240,7 +263,7 @@ document. Otherwise, return one document per page.</p></li>
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 14, 2024.
+          Last updated on Feb 22, 2024.
           <a href="../_sources/document_loaders/langchain_community.document_loaders.parsers.pdf.PDFMinerParser.rst.txt" rel="nofollow">Show this page source</a>
       </footer>
     </div>

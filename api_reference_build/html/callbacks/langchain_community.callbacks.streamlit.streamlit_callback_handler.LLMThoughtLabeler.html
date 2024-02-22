@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>langchain_community.callbacks.streamlit.streamlit_callback_handler.LLMThoughtLabeler &mdash; 🦜🔗 LangChain 0.1.7</title>
+  <title>langchain_community.callbacks.streamlit.streamlit_callback_handler.LLMThoughtLabeler &mdash; 🦜🔗 LangChain 0.1.8</title>
   
   <link rel="canonical" href="https://api.python.langchain.com/en/latest/callbacks/langchain_community.callbacks.streamlit.streamlit_callback_handler.LLMThoughtLabeler.html" />
 
@@ -61,7 +61,13 @@
           <a class="sk-nav-link nav-link" href="../experimental_api_reference.html">Experimental</a>
         </li>
         <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ai21_api_reference.html">ai21</a>
+        </li>
+        <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../anthropic_api_reference.html">anthropic</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../astradb_api_reference.html">astradb</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../exa_api_reference.html">exa</a>
@@ -71,6 +77,9 @@
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../google_vertexai_api_reference.html">google-vertexai</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ibm_api_reference.html">ibm</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../mistralai_api_reference.html">mistralai</a>
@@ -99,10 +108,13 @@
         <li class="nav-item dropdown nav-more-item-dropdown">
           <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Partner libs</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ai21_api_reference.html">ai21</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../anthropic_api_reference.html">anthropic</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../astradb_api_reference.html">astradb</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../exa_api_reference.html">exa</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_genai_api_reference.html">google-genai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ibm_api_reference.html">ibm</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../mistralai_api_reference.html">mistralai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nomic_api_reference.html">nomic</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nvidia_ai_endpoints_api_reference.html">nvidia-ai-endpoints</a>
@@ -202,6 +214,11 @@ labeling logic.</p>
 <dd><p>Return the markdown label for the agent’s final thought -
 the “Now I have the answer” thought, that doesn’t involve
 a tool.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -209,6 +226,11 @@ a tool.</p>
 <span class="sig-name descname"><span class="pre">get_history_label</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="../_modules/langchain_community/callbacks/streamlit/streamlit_callback_handler.html#LLMThoughtLabeler.get_history_label"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.callbacks.streamlit.streamlit_callback_handler.LLMThoughtLabeler.get_history_label" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a markdown label for the special ‘history’ container
 that contains overflow thoughts.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -216,6 +238,11 @@ that contains overflow thoughts.</p>
 <span class="sig-name descname"><span class="pre">get_initial_label</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="../_modules/langchain_community/callbacks/streamlit/streamlit_callback_handler.html#LLMThoughtLabeler.get_initial_label"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.callbacks.streamlit.streamlit_callback_handler.LLMThoughtLabeler.get_initial_label" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the markdown label for a new LLMThought that doesn’t have
 an associated tool yet.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -226,8 +253,8 @@ tool.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>tool</strong> – The tool’s ToolRecord</p></li>
-<li><p><strong>is_complete</strong> – True if the thought is complete; False if the thought
+<li><p><strong>tool</strong> (<a class="reference internal" href="langchain_community.callbacks.streamlit.streamlit_callback_handler.ToolRecord.html#langchain_community.callbacks.streamlit.streamlit_callback_handler.ToolRecord" title="langchain_community.callbacks.streamlit.streamlit_callback_handler.ToolRecord"><em>ToolRecord</em></a>) – The tool’s ToolRecord</p></li>
+<li><p><strong>is_complete</strong> (<em>bool</em>) – True if the thought is complete; False if the thought
 is still receiving input.</p></li>
 </ul>
 </dd>
@@ -248,7 +275,7 @@ is still receiving input.</p></li>
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 14, 2024.
+          Last updated on Feb 22, 2024.
           <a href="../_sources/callbacks/langchain_community.callbacks.streamlit.streamlit_callback_handler.LLMThoughtLabeler.rst.txt" rel="nofollow">Show this page source</a>
       </footer>
     </div>

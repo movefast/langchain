@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>langchain.agents.initialize.initialize_agent &mdash; 🦜🔗 LangChain 0.1.7</title>
+  <title>langchain.agents.initialize.initialize_agent &mdash; 🦜🔗 LangChain 0.1.8</title>
   
   <link rel="canonical" href="https://api.python.langchain.com/en/latest/agents/langchain.agents.initialize.initialize_agent.html" />
 
@@ -61,7 +61,13 @@
           <a class="sk-nav-link nav-link" href="../experimental_api_reference.html">Experimental</a>
         </li>
         <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ai21_api_reference.html">ai21</a>
+        </li>
+        <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../anthropic_api_reference.html">anthropic</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../astradb_api_reference.html">astradb</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../exa_api_reference.html">exa</a>
@@ -71,6 +77,9 @@
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../google_vertexai_api_reference.html">google-vertexai</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ibm_api_reference.html">ibm</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../mistralai_api_reference.html">mistralai</a>
@@ -99,10 +108,13 @@
         <li class="nav-item dropdown nav-more-item-dropdown">
           <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Partner libs</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ai21_api_reference.html">ai21</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../anthropic_api_reference.html">anthropic</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../astradb_api_reference.html">astradb</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../exa_api_reference.html">exa</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_genai_api_reference.html">google-genai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ibm_api_reference.html">ibm</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../mistralai_api_reference.html">mistralai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nomic_api_reference.html">nomic</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nvidia_ai_endpoints_api_reference.html">nvidia-ai-endpoints</a>
@@ -157,37 +169,27 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="langchain.agents.initialize.initialize_agent">
 <span class="sig-prename descclassname"><span class="pre">langchain.agents.initialize.</span></span><span class="sig-name descname"><span class="pre">initialize_agent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tools</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../tools/langchain_core.tools.BaseTool.html#langchain_core.tools.BaseTool" title="langchain_core.tools.BaseTool"><span class="pre">BaseTool</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">llm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../language_models/langchain_core.language_models.base.BaseLanguageModel.html#langchain_core.language_models.base.BaseLanguageModel" title="langchain_core.language_models.base.BaseLanguageModel"><span class="pre">BaseLanguageModel</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">agent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="langchain.agents.agent_types.AgentType.html#langchain.agents.agent_types.AgentType" title="langchain.agents.agent_types.AgentType"><span class="pre">AgentType</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback_manager</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../callbacks/langchain_core.callbacks.base.BaseCallbackManager.html#langchain_core.callbacks.base.BaseCallbackManager" title="langchain_core.callbacks.base.BaseCallbackManager"><span class="pre">BaseCallbackManager</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">agent_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">agent_kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="langchain.agents.agent.AgentExecutor.html#langchain.agents.agent.AgentExecutor" title="langchain.agents.agent.AgentExecutor"><span class="pre">AgentExecutor</span></a></span></span><a class="reference internal" href="../_modules/langchain/agents/initialize.html#initialize_agent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain.agents.initialize.initialize_agent" title="Permalink to this definition">¶</a></dt>
-<dd><p>[<em>Deprecated</em>]  Load an agent executor given tools and LLM.</p>
+<dd><p>[<em>Deprecated</em>] Load an agent executor given tools and LLM.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>tools</strong> – List of tools this agent has access to.</p></li>
-<li><p><strong>llm</strong> – Language model to use as the agent.</p></li>
-<li><p><strong>agent</strong> – Agent type to use. If None and agent_path is also None, will default to
+<li><p><strong>tools</strong> (<em>Sequence</em><em>[</em><a class="reference internal" href="../tools/langchain_core.tools.BaseTool.html#langchain_core.tools.BaseTool" title="langchain_core.tools.BaseTool"><em>BaseTool</em></a><em>]</em>) – List of tools this agent has access to.</p></li>
+<li><p><strong>llm</strong> (<a class="reference internal" href="../language_models/langchain_core.language_models.base.BaseLanguageModel.html#langchain_core.language_models.base.BaseLanguageModel" title="langchain_core.language_models.base.BaseLanguageModel"><em>BaseLanguageModel</em></a>) – Language model to use as the agent.</p></li>
+<li><p><strong>agent</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="langchain.agents.agent_types.AgentType.html#langchain.agents.agent_types.AgentType" title="langchain.agents.agent_types.AgentType"><em>AgentType</em></a><em>]</em>) – Agent type to use. If None and agent_path is also None, will default to
 AgentType.ZERO_SHOT_REACT_DESCRIPTION.</p></li>
-<li><p><strong>callback_manager</strong> – CallbackManager to use. Global callback manager is used if
+<li><p><strong>callback_manager</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="../callbacks/langchain_core.callbacks.base.BaseCallbackManager.html#langchain_core.callbacks.base.BaseCallbackManager" title="langchain_core.callbacks.base.BaseCallbackManager"><em>BaseCallbackManager</em></a><em>]</em>) – CallbackManager to use. Global callback manager is used if
 not provided. Defaults to None.</p></li>
-<li><p><strong>agent_path</strong> – Path to serialized agent to use.</p></li>
-<li><p><strong>agent_kwargs</strong> – Additional keyword arguments to pass to the underlying agent</p></li>
-<li><p><strong>tags</strong> – Tags to apply to the traced runs.</p></li>
-<li><p><strong>**kwargs</strong> – Additional keyword arguments passed to the agent executor</p></li>
-<li><p><strong>tools</strong> – List of tools this agent has access to.</p></li>
-<li><p><strong>llm</strong> – Language model to use as the agent.</p></li>
-<li><p><strong>agent</strong> – Agent type to use. If None and agent_path is also None, will default to
-AgentType.ZERO_SHOT_REACT_DESCRIPTION.</p></li>
-<li><p><strong>callback_manager</strong> – CallbackManager to use. Global callback manager is used if
-not provided. Defaults to None.</p></li>
-<li><p><strong>agent_path</strong> – Path to serialized agent to use.</p></li>
-<li><p><strong>agent_kwargs</strong> – Additional keyword arguments to pass to the underlying agent</p></li>
-<li><p><strong>tags</strong> – Tags to apply to the traced runs.</p></li>
-<li><p><strong>**kwargs</strong> – Additional keyword arguments passed to the agent executor</p></li>
+<li><p><strong>agent_path</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Path to serialized agent to use.</p></li>
+<li><p><strong>agent_kwargs</strong> (<em>Optional</em><em>[</em><em>dict</em><em>]</em>) – Additional keyword arguments to pass to the underlying agent</p></li>
+<li><p><strong>tags</strong> (<em>Optional</em><em>[</em><em>Sequence</em><em>[</em><em>str</em><em>]</em><em>]</em>) – Tags to apply to the traced runs.</p></li>
+<li><p><strong>**kwargs</strong> (<em>Any</em>) – Additional keyword arguments passed to the agent executor</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>An agent executor[<em>Deprecated</em>] Load an agent executor given tools and LLM.</p>
+<dd class="field-even"><p>An agent executor</p>
 </dd>
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>An agent executor</p>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="langchain.agents.agent.AgentExecutor.html#langchain.agents.agent.AgentExecutor" title="langchain.agents.agent.AgentExecutor"><em>AgentExecutor</em></a></p>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
@@ -286,7 +288,7 @@ not provided. Defaults to None.</p></li>
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 14, 2024.
+          Last updated on Feb 22, 2024.
           <a href="../_sources/agents/langchain.agents.initialize.initialize_agent.rst.txt" rel="nofollow">Show this page source</a>
       </footer>
     </div>

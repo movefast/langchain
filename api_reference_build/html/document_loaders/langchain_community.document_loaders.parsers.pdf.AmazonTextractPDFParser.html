@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>langchain_community.document_loaders.parsers.pdf.AmazonTextractPDFParser &mdash; 🦜🔗 LangChain 0.1.7</title>
+  <title>langchain_community.document_loaders.parsers.pdf.AmazonTextractPDFParser &mdash; 🦜🔗 LangChain 0.1.8</title>
   
   <link rel="canonical" href="https://api.python.langchain.com/en/latest/document_loaders/langchain_community.document_loaders.parsers.pdf.AmazonTextractPDFParser.html" />
 
@@ -61,7 +61,13 @@
           <a class="sk-nav-link nav-link" href="../experimental_api_reference.html">Experimental</a>
         </li>
         <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ai21_api_reference.html">ai21</a>
+        </li>
+        <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../anthropic_api_reference.html">anthropic</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../astradb_api_reference.html">astradb</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../exa_api_reference.html">exa</a>
@@ -71,6 +77,9 @@
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../google_vertexai_api_reference.html">google-vertexai</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ibm_api_reference.html">ibm</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../mistralai_api_reference.html">mistralai</a>
@@ -99,10 +108,13 @@
         <li class="nav-item dropdown nav-more-item-dropdown">
           <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Partner libs</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ai21_api_reference.html">ai21</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../anthropic_api_reference.html">anthropic</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../astradb_api_reference.html">astradb</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../exa_api_reference.html">exa</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_genai_api_reference.html">google-genai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ibm_api_reference.html">ibm</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../mistralai_api_reference.html">mistralai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nomic_api_reference.html">nomic</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nvidia_ai_endpoints_api_reference.html">nvidia-ai-endpoints</a>
@@ -202,10 +214,10 @@ processing these texts.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>textract_features</strong> – Features to be used for extraction, each feature
+<li><p><strong>textract_features</strong> (<em>Optional</em><em>[</em><em>Sequence</em><em>[</em><em>int</em><em>]</em><em>]</em>) – Features to be used for extraction, each feature
 should be passed as an int that conforms to the enum
 <cite>Textract_Features</cite>, see <cite>amazon-textract-caller</cite> pkg</p></li>
-<li><p><strong>client</strong> – boto3 textract client</p></li>
+<li><p><strong>client</strong> (<em>Optional</em><em>[</em><em>Any</em><em>]</em>) – boto3 textract client</p></li>
 </ul>
 </dd>
 </dl>
@@ -234,11 +246,14 @@ should be passed as an int that conforms to the enum
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>textract_features</strong> – Features to be used for extraction, each feature
+<li><p><strong>textract_features</strong> (<em>Optional</em><em>[</em><em>Sequence</em><em>[</em><em>int</em><em>]</em><em>]</em>) – Features to be used for extraction, each feature
 should be passed as an int that conforms to the enum
 <cite>Textract_Features</cite>, see <cite>amazon-textract-caller</cite> pkg</p></li>
-<li><p><strong>client</strong> – boto3 textract client</p></li>
+<li><p><strong>client</strong> (<em>Optional</em><em>[</em><em>Any</em><em>]</em>) – boto3 textract client</p></li>
 </ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -250,6 +265,14 @@ should be passed as an int that conforms to the enum
 for each page, like the other parsers If multi-page document, blob.path
 has to be set to the S3 URI and for single page docs
 the blob.data is taken</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>blob</strong> (<a class="reference internal" href="langchain_community.document_loaders.blob_loaders.schema.Blob.html#langchain_community.document_loaders.blob_loaders.schema.Blob" title="langchain_community.document_loaders.blob_loaders.schema.Blob"><em>Blob</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><em>Iterator</em>[<a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><em>Document</em></a>]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -261,10 +284,13 @@ the blob.data is taken</p>
 <p>Subclasses should generally not over-ride this parse method.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>blob</strong> – Blob instance</p>
+<dd class="field-odd"><p><strong>blob</strong> (<a class="reference internal" href="langchain_community.document_loaders.blob_loaders.schema.Blob.html#langchain_community.document_loaders.blob_loaders.schema.Blob" title="langchain_community.document_loaders.blob_loaders.schema.Blob"><em>Blob</em></a>) – Blob instance</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>List of documents</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><em>List</em>[<a class="reference internal" href="../documents/langchain_core.documents.base.Document.html#langchain_core.documents.base.Document" title="langchain_core.documents.base.Document"><em>Document</em></a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -280,7 +306,7 @@ the blob.data is taken</p>
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 14, 2024.
+          Last updated on Feb 22, 2024.
           <a href="../_sources/document_loaders/langchain_community.document_loaders.parsers.pdf.AmazonTextractPDFParser.rst.txt" rel="nofollow">Show this page source</a>
       </footer>
     </div>

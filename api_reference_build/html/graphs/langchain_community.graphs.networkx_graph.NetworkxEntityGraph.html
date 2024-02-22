@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>langchain_community.graphs.networkx_graph.NetworkxEntityGraph &mdash; 🦜🔗 LangChain 0.1.7</title>
+  <title>langchain_community.graphs.networkx_graph.NetworkxEntityGraph &mdash; 🦜🔗 LangChain 0.1.8</title>
   
   <link rel="canonical" href="https://api.python.langchain.com/en/latest/graphs/langchain_community.graphs.networkx_graph.NetworkxEntityGraph.html" />
 
@@ -61,7 +61,13 @@
           <a class="sk-nav-link nav-link" href="../experimental_api_reference.html">Experimental</a>
         </li>
         <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ai21_api_reference.html">ai21</a>
+        </li>
+        <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../anthropic_api_reference.html">anthropic</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../astradb_api_reference.html">astradb</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../exa_api_reference.html">exa</a>
@@ -71,6 +77,9 @@
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../google_vertexai_api_reference.html">google-vertexai</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ibm_api_reference.html">ibm</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../mistralai_api_reference.html">mistralai</a>
@@ -99,10 +108,13 @@
         <li class="nav-item dropdown nav-more-item-dropdown">
           <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Partner libs</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ai21_api_reference.html">ai21</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../anthropic_api_reference.html">anthropic</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../astradb_api_reference.html">astradb</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../exa_api_reference.html">exa</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_genai_api_reference.html">google-genai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ibm_api_reference.html">ibm</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../mistralai_api_reference.html">mistralai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nomic_api_reference.html">nomic</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nvidia_ai_endpoints_api_reference.html">nvidia-ai-endpoints</a>
@@ -145,10 +157,12 @@
 <li><a class="reference internal" href="#langchain_community.graphs.networkx_graph.NetworkxEntityGraph.__init__"><code class="docutils literal notranslate"><span class="pre">NetworkxEntityGraph.__init__()</span></code></a></li>
 <li><a class="reference internal" href="#langchain_community.graphs.networkx_graph.NetworkxEntityGraph.add_triple"><code class="docutils literal notranslate"><span class="pre">NetworkxEntityGraph.add_triple()</span></code></a></li>
 <li><a class="reference internal" href="#langchain_community.graphs.networkx_graph.NetworkxEntityGraph.clear"><code class="docutils literal notranslate"><span class="pre">NetworkxEntityGraph.clear()</span></code></a></li>
+<li><a class="reference internal" href="#langchain_community.graphs.networkx_graph.NetworkxEntityGraph.clear_edges"><code class="docutils literal notranslate"><span class="pre">NetworkxEntityGraph.clear_edges()</span></code></a></li>
 <li><a class="reference internal" href="#langchain_community.graphs.networkx_graph.NetworkxEntityGraph.delete_triple"><code class="docutils literal notranslate"><span class="pre">NetworkxEntityGraph.delete_triple()</span></code></a></li>
 <li><a class="reference internal" href="#langchain_community.graphs.networkx_graph.NetworkxEntityGraph.draw_graphviz"><code class="docutils literal notranslate"><span class="pre">NetworkxEntityGraph.draw_graphviz()</span></code></a></li>
 <li><a class="reference internal" href="#langchain_community.graphs.networkx_graph.NetworkxEntityGraph.from_gml"><code class="docutils literal notranslate"><span class="pre">NetworkxEntityGraph.from_gml()</span></code></a></li>
 <li><a class="reference internal" href="#langchain_community.graphs.networkx_graph.NetworkxEntityGraph.get_entity_knowledge"><code class="docutils literal notranslate"><span class="pre">NetworkxEntityGraph.get_entity_knowledge()</span></code></a></li>
+<li><a class="reference internal" href="#langchain_community.graphs.networkx_graph.NetworkxEntityGraph.get_number_of_nodes"><code class="docutils literal notranslate"><span class="pre">NetworkxEntityGraph.get_number_of_nodes()</span></code></a></li>
 <li><a class="reference internal" href="#langchain_community.graphs.networkx_graph.NetworkxEntityGraph.get_topological_sort"><code class="docutils literal notranslate"><span class="pre">NetworkxEntityGraph.get_topological_sort()</span></code></a></li>
 <li><a class="reference internal" href="#langchain_community.graphs.networkx_graph.NetworkxEntityGraph.get_triples"><code class="docutils literal notranslate"><span class="pre">NetworkxEntityGraph.get_triples()</span></code></a></li>
 <li><a class="reference internal" href="#langchain_community.graphs.networkx_graph.NetworkxEntityGraph.write_to_gml"><code class="docutils literal notranslate"><span class="pre">NetworkxEntityGraph.write_to_gml()</span></code></a></li>
@@ -198,17 +212,23 @@ limit the permissions granted to the credentials used with this tool.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#langchain_community.graphs.networkx_graph.NetworkxEntityGraph.clear" title="langchain_community.graphs.networkx_graph.NetworkxEntityGraph.clear"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear</span></code></a>()</p></td>
 <td><p>Clear the graph.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#langchain_community.graphs.networkx_graph.NetworkxEntityGraph.delete_triple" title="langchain_community.graphs.networkx_graph.NetworkxEntityGraph.delete_triple"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delete_triple</span></code></a>(knowledge_triple)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#langchain_community.graphs.networkx_graph.NetworkxEntityGraph.clear_edges" title="langchain_community.graphs.networkx_graph.NetworkxEntityGraph.clear_edges"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear_edges</span></code></a>()</p></td>
+<td><p>Clear the graph edges.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#langchain_community.graphs.networkx_graph.NetworkxEntityGraph.delete_triple" title="langchain_community.graphs.networkx_graph.NetworkxEntityGraph.delete_triple"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delete_triple</span></code></a>(knowledge_triple)</p></td>
 <td><p>Delete a triple from the graph.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#langchain_community.graphs.networkx_graph.NetworkxEntityGraph.draw_graphviz" title="langchain_community.graphs.networkx_graph.NetworkxEntityGraph.draw_graphviz"><code class="xref py py-obj docutils literal notranslate"><span class="pre">draw_graphviz</span></code></a>(**kwargs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#langchain_community.graphs.networkx_graph.NetworkxEntityGraph.draw_graphviz" title="langchain_community.graphs.networkx_graph.NetworkxEntityGraph.draw_graphviz"><code class="xref py py-obj docutils literal notranslate"><span class="pre">draw_graphviz</span></code></a>(**kwargs)</p></td>
 <td><p>Provides better drawing</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#langchain_community.graphs.networkx_graph.NetworkxEntityGraph.from_gml" title="langchain_community.graphs.networkx_graph.NetworkxEntityGraph.from_gml"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_gml</span></code></a>(gml_path)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#langchain_community.graphs.networkx_graph.NetworkxEntityGraph.from_gml" title="langchain_community.graphs.networkx_graph.NetworkxEntityGraph.from_gml"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_gml</span></code></a>(gml_path)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#langchain_community.graphs.networkx_graph.NetworkxEntityGraph.get_entity_knowledge" title="langchain_community.graphs.networkx_graph.NetworkxEntityGraph.get_entity_knowledge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_entity_knowledge</span></code></a>(entity[, depth])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#langchain_community.graphs.networkx_graph.NetworkxEntityGraph.get_entity_knowledge" title="langchain_community.graphs.networkx_graph.NetworkxEntityGraph.get_entity_knowledge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_entity_knowledge</span></code></a>(entity[, depth])</p></td>
 <td><p>Get information about an entity.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#langchain_community.graphs.networkx_graph.NetworkxEntityGraph.get_number_of_nodes" title="langchain_community.graphs.networkx_graph.NetworkxEntityGraph.get_number_of_nodes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_number_of_nodes</span></code></a>()</p></td>
+<td><p>Get number of nodes in the graph.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#langchain_community.graphs.networkx_graph.NetworkxEntityGraph.get_topological_sort" title="langchain_community.graphs.networkx_graph.NetworkxEntityGraph.get_topological_sort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_topological_sort</span></code></a>()</p></td>
 <td><p>Get a list of entity names in the graph sorted by causal dependence.</p></td>
@@ -221,28 +241,73 @@ limit the permissions granted to the credentials used with this tool.</p>
 </tr>
 </tbody>
 </table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>graph</strong> (<em>Optional</em><em>[</em><em>Any</em><em>]</em>) – </p>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.graphs.networkx_graph.NetworkxEntityGraph.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/langchain_community/graphs/networkx_graph.html#NetworkxEntityGraph.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.graphs.networkx_graph.NetworkxEntityGraph.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a new graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>graph</strong> (<em>Optional</em><em>[</em><em>Any</em><em>]</em>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.graphs.networkx_graph.NetworkxEntityGraph.add_triple">
 <span class="sig-name descname"><span class="pre">add_triple</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">knowledge_triple</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="langchain_community.graphs.networkx_graph.KnowledgeTriple.html#langchain_community.graphs.networkx_graph.KnowledgeTriple" title="langchain_community.graphs.networkx_graph.KnowledgeTriple"><span class="pre">KnowledgeTriple</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/langchain_community/graphs/networkx_graph.html#NetworkxEntityGraph.add_triple"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.graphs.networkx_graph.NetworkxEntityGraph.add_triple" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a triple to the graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>knowledge_triple</strong> (<a class="reference internal" href="langchain_community.graphs.networkx_graph.KnowledgeTriple.html#langchain_community.graphs.networkx_graph.KnowledgeTriple" title="langchain_community.graphs.networkx_graph.KnowledgeTriple"><em>KnowledgeTriple</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.graphs.networkx_graph.NetworkxEntityGraph.clear">
 <span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/langchain_community/graphs/networkx_graph.html#NetworkxEntityGraph.clear"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.graphs.networkx_graph.NetworkxEntityGraph.clear" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clear the graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="langchain_community.graphs.networkx_graph.NetworkxEntityGraph.clear_edges">
+<span class="sig-name descname"><span class="pre">clear_edges</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/langchain_community/graphs/networkx_graph.html#NetworkxEntityGraph.clear_edges"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.graphs.networkx_graph.NetworkxEntityGraph.clear_edges" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear the graph edges.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.graphs.networkx_graph.NetworkxEntityGraph.delete_triple">
 <span class="sig-name descname"><span class="pre">delete_triple</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">knowledge_triple</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="langchain_community.graphs.networkx_graph.KnowledgeTriple.html#langchain_community.graphs.networkx_graph.KnowledgeTriple" title="langchain_community.graphs.networkx_graph.KnowledgeTriple"><span class="pre">KnowledgeTriple</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/langchain_community/graphs/networkx_graph.html#NetworkxEntityGraph.delete_triple"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.graphs.networkx_graph.NetworkxEntityGraph.delete_triple" title="Permalink to this definition">¶</a></dt>
 <dd><p>Delete a triple from the graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>knowledge_triple</strong> (<a class="reference internal" href="langchain_community.graphs.networkx_graph.KnowledgeTriple.html#langchain_community.graphs.networkx_graph.KnowledgeTriple" title="langchain_community.graphs.networkx_graph.KnowledgeTriple"><em>KnowledgeTriple</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -255,35 +320,91 @@ limit the permissions granted to the credentials used with this tool.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">SVG</span><span class="p">(</span><span class="s1">&#39;web.svg&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>kwargs</strong> (<em>Any</em>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.graphs.networkx_graph.NetworkxEntityGraph.from_gml">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_gml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gml_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#langchain_community.graphs.networkx_graph.NetworkxEntityGraph" title="langchain_community.graphs.networkx_graph.NetworkxEntityGraph"><span class="pre">NetworkxEntityGraph</span></a></span></span><a class="reference internal" href="../_modules/langchain_community/graphs/networkx_graph.html#NetworkxEntityGraph.from_gml"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.graphs.networkx_graph.NetworkxEntityGraph.from_gml" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>gml_path</strong> (<em>str</em>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#langchain_community.graphs.networkx_graph.NetworkxEntityGraph" title="langchain_community.graphs.networkx_graph.NetworkxEntityGraph"><em>NetworkxEntityGraph</em></a></p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.graphs.networkx_graph.NetworkxEntityGraph.get_entity_knowledge">
 <span class="sig-name descname"><span class="pre">get_entity_knowledge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/langchain_community/graphs/networkx_graph.html#NetworkxEntityGraph.get_entity_knowledge"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.graphs.networkx_graph.NetworkxEntityGraph.get_entity_knowledge" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get information about an entity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>entity</strong> (<em>str</em>) – </p></li>
+<li><p><strong>depth</strong> (<em>int</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><em>List</em>[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="langchain_community.graphs.networkx_graph.NetworkxEntityGraph.get_number_of_nodes">
+<span class="sig-name descname"><span class="pre">get_number_of_nodes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="reference internal" href="../_modules/langchain_community/graphs/networkx_graph.html#NetworkxEntityGraph.get_number_of_nodes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.graphs.networkx_graph.NetworkxEntityGraph.get_number_of_nodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get number of nodes in the graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.graphs.networkx_graph.NetworkxEntityGraph.get_topological_sort">
 <span class="sig-name descname"><span class="pre">get_topological_sort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/langchain_community/graphs/networkx_graph.html#NetworkxEntityGraph.get_topological_sort"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.graphs.networkx_graph.NetworkxEntityGraph.get_topological_sort" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a list of entity names in the graph sorted by causal dependence.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><em>List</em>[str]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.graphs.networkx_graph.NetworkxEntityGraph.get_triples">
 <span class="sig-name descname"><span class="pre">get_triples</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/langchain_community/graphs/networkx_graph.html#NetworkxEntityGraph.get_triples"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.graphs.networkx_graph.NetworkxEntityGraph.get_triples" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get all triples in the graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><em>List</em>[<em>Tuple</em>[str, str, str]]</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.graphs.networkx_graph.NetworkxEntityGraph.write_to_gml">
 <span class="sig-name descname"><span class="pre">write_to_gml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/langchain_community/graphs/networkx_graph.html#NetworkxEntityGraph.write_to_gml"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.graphs.networkx_graph.NetworkxEntityGraph.write_to_gml" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
@@ -298,7 +419,7 @@ limit the permissions granted to the credentials used with this tool.</p>
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 14, 2024.
+          Last updated on Feb 22, 2024.
           <a href="../_sources/graphs/langchain_community.graphs.networkx_graph.NetworkxEntityGraph.rst.txt" rel="nofollow">Show this page source</a>
       </footer>
     </div>

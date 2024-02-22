@@ -32,6 +32,7 @@
       ~Graph.next_id
       ~Graph.print_ascii
       ~Graph.remove_node
+      ~Graph.to_json
       ~Graph.trim_first_node
       ~Graph.trim_last_node
 
@@ -46,6 +47,7 @@
    .. automethod:: Graph.next_id
    .. automethod:: Graph.print_ascii
    .. automethod:: Graph.remove_node
+   .. automethod:: Graph.to_json
    .. automethod:: Graph.trim_first_node
    .. automethod:: Graph.trim_last_node
 

@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>langchain_experimental.data_anonymizer.presidio.PresidioAnonymizerBase &mdash; 🦜🔗 LangChain 0.1.7</title>
+  <title>langchain_experimental.data_anonymizer.presidio.PresidioAnonymizerBase &mdash; 🦜🔗 LangChain 0.1.8</title>
   
   <link rel="canonical" href="https://api.python.langchain.com/en/latest/data_anonymizer/langchain_experimental.data_anonymizer.presidio.PresidioAnonymizerBase.html" />
 
@@ -61,7 +61,13 @@
           <a class="sk-nav-link nav-link" href="../experimental_api_reference.html">Experimental</a>
         </li>
         <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ai21_api_reference.html">ai21</a>
+        </li>
+        <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../anthropic_api_reference.html">anthropic</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../astradb_api_reference.html">astradb</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../exa_api_reference.html">exa</a>
@@ -71,6 +77,9 @@
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../google_vertexai_api_reference.html">google-vertexai</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ibm_api_reference.html">ibm</a>
         </li>
         <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../mistralai_api_reference.html">mistralai</a>
@@ -99,10 +108,13 @@
         <li class="nav-item dropdown nav-more-item-dropdown">
           <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Partner libs</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ai21_api_reference.html">ai21</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../anthropic_api_reference.html">anthropic</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../astradb_api_reference.html">astradb</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../exa_api_reference.html">exa</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_genai_api_reference.html">google-genai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../ibm_api_reference.html">ibm</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../mistralai_api_reference.html">mistralai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nomic_api_reference.html">nomic</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nvidia_ai_endpoints_api_reference.html">nvidia-ai-endpoints</a>
@@ -166,20 +178,21 @@
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>analyzed_fields</strong> – List of fields to detect and then anonymize.
+<li><p><strong>analyzed_fields</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em>) – List of fields to detect and then anonymize.
 Defaults to all entities supported by Microsoft Presidio.</p></li>
-<li><p><strong>operators</strong> – Operators to use for anonymization.
+<li><p><strong>operators</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>OperatorConfig</em><em>]</em><em>]</em>) – Operators to use for anonymization.
 Operators allow for custom anonymization of detected PII.
 Learn more:
 <a class="reference external" href="https://microsoft.github.io/presidio/tutorial/10_simple_anonymization/">https://microsoft.github.io/presidio/tutorial/10_simple_anonymization/</a></p></li>
-<li><p><strong>languages_config</strong> – Configuration for the NLP engine.
+<li><p><strong>languages_config</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>]</em>) – Configuration for the NLP engine.
 First language in the list will be used as the main language
 in self.anonymize(…) when no language is specified.
 Learn more:
 <a class="reference external" href="https://microsoft.github.io/presidio/analyzer/customizing_nlp_models/">https://microsoft.github.io/presidio/analyzer/customizing_nlp_models/</a></p></li>
-<li><p><strong>faker_seed</strong> – Seed used to initialize faker.
+<li><p><strong>faker_seed</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – Seed used to initialize faker.
 Defaults to None, in which case faker will be seeded randomly
 and provide random values.</p></li>
+<li><p><strong>add_default_faker_operators</strong> (<em>bool</em>) – </p></li>
 </ul>
 </dd>
 </dl>
@@ -215,20 +228,21 @@ and provide random values.</p></li>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>analyzed_fields</strong> – List of fields to detect and then anonymize.
+<li><p><strong>analyzed_fields</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em>) – List of fields to detect and then anonymize.
 Defaults to all entities supported by Microsoft Presidio.</p></li>
-<li><p><strong>operators</strong> – Operators to use for anonymization.
+<li><p><strong>operators</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>OperatorConfig</em><em>]</em><em>]</em>) – Operators to use for anonymization.
 Operators allow for custom anonymization of detected PII.
 Learn more:
 <a class="reference external" href="https://microsoft.github.io/presidio/tutorial/10_simple_anonymization/">https://microsoft.github.io/presidio/tutorial/10_simple_anonymization/</a></p></li>
-<li><p><strong>languages_config</strong> – Configuration for the NLP engine.
+<li><p><strong>languages_config</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>]</em>) – Configuration for the NLP engine.
 First language in the list will be used as the main language
 in self.anonymize(…) when no language is specified.
 Learn more:
 <a class="reference external" href="https://microsoft.github.io/presidio/analyzer/customizing_nlp_models/">https://microsoft.github.io/presidio/analyzer/customizing_nlp_models/</a></p></li>
-<li><p><strong>faker_seed</strong> – Seed used to initialize faker.
+<li><p><strong>faker_seed</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – Seed used to initialize faker.
 Defaults to None, in which case faker will be seeded randomly
 and provide random values.</p></li>
+<li><p><strong>add_default_faker_operators</strong> (<em>bool</em>) – </p></li>
 </ul>
 </dd>
 </dl>
@@ -240,7 +254,10 @@ and provide random values.</p></li>
 <dd><p>Add operators to the anonymizer</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>operators</strong> – Operators to add to the anonymizer.</p>
+<dd class="field-odd"><p><strong>operators</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>OperatorConfig</em><em>]</em>) – Operators to add to the anonymizer.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -251,7 +268,10 @@ and provide random values.</p></li>
 <dd><p>Add a recognizer to the analyzer</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>recognizer</strong> – Recognizer to add to the analyzer.</p>
+<dd class="field-odd"><p><strong>recognizer</strong> (<em>EntityRecognizer</em>) – Recognizer to add to the analyzer.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -260,6 +280,18 @@ and provide random values.</p></li>
 <dt class="sig sig-object py" id="langchain_experimental.data_anonymizer.presidio.PresidioAnonymizerBase.anonymize">
 <span class="sig-name descname"><span class="pre">anonymize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#langchain_experimental.data_anonymizer.presidio.PresidioAnonymizerBase.anonymize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Anonymize text</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>text</strong> (<em>str</em>) – </p></li>
+<li><p><strong>language</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – </p></li>
+<li><p><strong>allow_list</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -273,7 +305,7 @@ and provide random values.</p></li>
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 14, 2024.
+          Last updated on Feb 22, 2024.
           <a href="../_sources/data_anonymizer/langchain_experimental.data_anonymizer.presidio.PresidioAnonymizerBase.rst.txt" rel="nofollow">Show this page source</a>
       </footer>
     </div>
