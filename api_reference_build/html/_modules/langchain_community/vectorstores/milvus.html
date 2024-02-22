@@ -898,8 +898,8 @@
         <span class="k">if</span> <span class="n">param</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">param</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">search_params</span>
 
-        <span class="c1"># Determine result metadata fields.</span>
-        <span class="n">output_fields</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">fields</span> <span class="k">if</span> <span class="n">x</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_primary_field</span><span class="p">]</span>
+        <span class="c1"># Determine result metadata fields with PK.</span>
+        <span class="n">output_fields</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="p">[:]</span>
         <span class="n">output_fields</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_vector_field</span><span class="p">)</span>
 
         <span class="c1"># Perform the search.</span>

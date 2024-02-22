@@ -1915,6 +1915,10 @@ Classes
     
     :template: class.rst
     
+    document_loaders.tidb.TiDBLoader
+    
+    :template: class.rst
+    
     document_loaders.tomarkdown.ToMarkdownLoader
     
     :template: class.rst

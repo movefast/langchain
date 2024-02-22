@@ -16,6 +16,7 @@
    .. autosummary::
    
       ~NetworkxEntityGraph.__init__
+      ~NetworkxEntityGraph.add_node
       ~NetworkxEntityGraph.add_triple
       ~NetworkxEntityGraph.clear
       ~NetworkxEntityGraph.clear_edges
@@ -23,13 +24,19 @@
       ~NetworkxEntityGraph.draw_graphviz
       ~NetworkxEntityGraph.from_gml
       ~NetworkxEntityGraph.get_entity_knowledge
+      ~NetworkxEntityGraph.get_neighbors
       ~NetworkxEntityGraph.get_number_of_nodes
       ~NetworkxEntityGraph.get_topological_sort
       ~NetworkxEntityGraph.get_triples
+      ~NetworkxEntityGraph.has_edge
+      ~NetworkxEntityGraph.has_node
+      ~NetworkxEntityGraph.remove_edge
+      ~NetworkxEntityGraph.remove_node
       ~NetworkxEntityGraph.write_to_gml
 
    
    .. automethod:: NetworkxEntityGraph.__init__
+   .. automethod:: NetworkxEntityGraph.add_node
    .. automethod:: NetworkxEntityGraph.add_triple
    .. automethod:: NetworkxEntityGraph.clear
    .. automethod:: NetworkxEntityGraph.clear_edges
@@ -37,9 +44,14 @@
    .. automethod:: NetworkxEntityGraph.draw_graphviz
    .. automethod:: NetworkxEntityGraph.from_gml
    .. automethod:: NetworkxEntityGraph.get_entity_knowledge
+   .. automethod:: NetworkxEntityGraph.get_neighbors
    .. automethod:: NetworkxEntityGraph.get_number_of_nodes
    .. automethod:: NetworkxEntityGraph.get_topological_sort
    .. automethod:: NetworkxEntityGraph.get_triples
+   .. automethod:: NetworkxEntityGraph.has_edge
+   .. automethod:: NetworkxEntityGraph.has_node
+   .. automethod:: NetworkxEntityGraph.remove_edge
+   .. automethod:: NetworkxEntityGraph.remove_node
    .. automethod:: NetworkxEntityGraph.write_to_gml
 
    

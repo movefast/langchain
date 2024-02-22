@@ -1,0 +1,35 @@
+﻿:mod:`langchain_community.document_loaders.tidb`.TiDBLoader
+==================================================================
+
+.. currentmodule:: langchain_community.document_loaders.tidb
+
+.. autoclass:: TiDBLoader
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~TiDBLoader.__init__
+      ~TiDBLoader.alazy_load
+      ~TiDBLoader.lazy_load
+      ~TiDBLoader.load
+      ~TiDBLoader.load_and_split
+
+   
+   .. automethod:: TiDBLoader.__init__
+   .. automethod:: TiDBLoader.alazy_load
+   .. automethod:: TiDBLoader.lazy_load
+   .. automethod:: TiDBLoader.load
+   .. automethod:: TiDBLoader.load_and_split
+
+   
+   
+
+
+.. example_links:: TiDBLoader

@@ -271,6 +271,33 @@ spark_api_secret=”&lt;api_secret&gt;”</p>
 </dd>
 </dl>
 <p>)</p>
+<dl class="simple">
+<dt>Extra infos:</dt><dd><ol class="arabic simple">
+<li><dl class="simple">
+<dt>Get app_id, api_key, api_secret from the iFlyTek Open Platform Console:</dt><dd><p><a class="reference external" href="https://console.xfyun.cn/services/bm35">https://console.xfyun.cn/services/bm35</a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>By default, iFlyTek Spark LLM V3.0 is invoked.</dt><dd><p>If you need to invoke other versions, please configure the corresponding
+parameters(spark_api_url and spark_llm_domain) according to the document:
+<a class="reference external" href="https://www.xfyun.cn/doc/spark/Web.html">https://www.xfyun.cn/doc/spark/Web.html</a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>It is necessary to ensure that the app_id used has a license for</dt><dd><p>the corresponding model version.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>If you encounter problems during use, try getting help at:</dt><dd><p><a class="reference external" href="https://console.xfyun.cn/workorder/commit">https://console.xfyun.cn/workorder/commit</a></p>
+</dd>
+</dl>
+</li>
+</ol>
+</dd>
+</dl>
 <p>Create a new model by parsing and validating input data from keyword arguments.</p>
 <p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p>
 <dl class="py attribute pydantic_field">
