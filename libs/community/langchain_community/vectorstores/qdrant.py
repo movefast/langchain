@@ -131,7 +131,7 @@ class Qdrant(VectorStore):
                 "Use `embeddings` only."
             )
 
-        self._embeddings = embeddings
+        self.embeddings = embeddings
         self._embeddings_function = embedding_function
         self.client: qdrant_client.QdrantClient = client
         self.async_client: Optional[qdrant_client.AsyncQdrantClient] = async_client
@@ -152,7 +152,7 @@ class Qdrant(VectorStore):
                 "Using `embeddings` as `embedding_function` which is deprecated"
             )
             self._embeddings_function = embeddings
-            self._embeddings = None
+            self.embeddings = None
 
         self.distance_strategy = distance_strategy.upper()
 
