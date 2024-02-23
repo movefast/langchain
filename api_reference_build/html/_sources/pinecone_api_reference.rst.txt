@@ -1,7 +1,7 @@
 .. pinecone_api_reference:
 
 =======================
-``langchain_pinecone`` 0.0.2
+``langchain_pinecone`` 0.0.3
 =======================
 
 :mod:`langchain_pinecone.vectorstores`
@@ -20,4 +20,8 @@ Classes
     :template: class.rst
     
     vectorstores.Pinecone
+    
+    :template: class.rst
+    
+    vectorstores.PineconeVectorStore
     

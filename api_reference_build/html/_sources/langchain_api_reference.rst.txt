@@ -1,7 +1,7 @@
 .. langchain_api_reference:
 
 =======================
-``langchain`` 0.1.8
+``langchain`` 0.1.9
 =======================
 
 :mod:`langchain.agents`
@@ -1143,10 +1143,6 @@ Classes
     :template: pydantic.rst
     
     output_parsers.pandas_dataframe.PandasDataFrameOutputParser
-    
-    :template: pydantic.rst
-    
-    output_parsers.pydantic.PydanticOutputParser
     
     :template: pydantic.rst
     

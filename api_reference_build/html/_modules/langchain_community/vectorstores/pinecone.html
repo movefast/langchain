@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>langchain_community.vectorstores.pinecone &mdash; 🦜🔗 LangChain 0.1.8</title>
+  <title>langchain_community.vectorstores.pinecone &mdash; 🦜🔗 LangChain 0.1.9</title>
   
   <link rel="canonical" href="https://api.python.langchain.com/en/latest/_modules/langchain_community/vectorstores/pinecone.html" />
 
@@ -78,6 +78,9 @@
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../google_vertexai_api_reference.html">google-vertexai</a>
         </li>
         <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../groq_api_reference.html">groq</a>
+        </li>
+        <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../ibm_api_reference.html">ibm</a>
         </li>
         <li class="nav-item">
@@ -113,6 +116,7 @@
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../exa_api_reference.html">exa</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../google_genai_api_reference.html">google-genai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../groq_api_reference.html">groq</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../ibm_api_reference.html">ibm</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../mistralai_api_reference.html">mistralai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../nomic_api_reference.html">nomic</a>
@@ -561,7 +565,9 @@
         <span class="n">embeddings_chunk_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Pinecone</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Construct Pinecone wrapper from raw documents.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        DEPRECATED: use langchain_pinecone.PineconeVectorStore.from_texts instead:</span>
+<span class="sd">        Construct Pinecone wrapper from raw documents.</span>
 
 <span class="sd">        This is a user friendly interface that:</span>
 <span class="sd">            1. Embeds documents.</span>
@@ -570,21 +576,20 @@
 <span class="sd">        This is intended to be a quick way to get started.</span>
 
 <span class="sd">        The `pool_threads` affects the speed of the upsert operations.</span>
+
 <span class="sd">        Example:</span>
 <span class="sd">            .. code-block:: python</span>
 
-<span class="sd">                from langchain_community.vectorstores import Pinecone</span>
-<span class="sd">                from langchain_community.embeddings import OpenAIEmbeddings</span>
-<span class="sd">                import pinecone</span>
+<span class="sd">                from langchain_pinecone import PineconeVectorStore</span>
+<span class="sd">                from langchain_openai import OpenAIEmbeddings</span>
 
-<span class="sd">                # The environment should be the one specified next to the API key</span>
-<span class="sd">                # in your Pinecone console</span>
-<span class="sd">                pinecone.init(api_key=&quot;***&quot;, environment=&quot;...&quot;)</span>
 <span class="sd">                embeddings = OpenAIEmbeddings()</span>
-<span class="sd">                pinecone = Pinecone.from_texts(</span>
-<span class="sd">                    texts,</span>
-<span class="sd">                    embeddings,</span>
-<span class="sd">                    index_name=&quot;langchain-demo&quot;</span>
+<span class="sd">                index_name = &quot;my-index&quot;</span>
+<span class="sd">                namespace = &quot;my-namespace&quot;</span>
+<span class="sd">                vectorstore = Pinecone(</span>
+<span class="sd">                    index_name=index_name,</span>
+<span class="sd">                    embedding=embedding,</span>
+<span class="sd">                    namespace=namespace,</span>
 <span class="sd">                )</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">pinecone_index</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">get_pinecone_index</span><span class="p">(</span><span class="n">index_name</span><span class="p">,</span> <span class="n">pool_threads</span><span class="p">)</span>
@@ -650,7 +655,7 @@
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 22, 2024.
+          Last updated on Feb 23, 2024.
       </footer>
     </div>
   </div>

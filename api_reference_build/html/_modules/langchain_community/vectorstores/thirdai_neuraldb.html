@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>langchain_community.vectorstores.thirdai_neuraldb &mdash; 🦜🔗 LangChain 0.1.8</title>
+  <title>langchain_community.vectorstores.thirdai_neuraldb &mdash; 🦜🔗 LangChain 0.1.9</title>
   
   <link rel="canonical" href="https://api.python.langchain.com/en/latest/_modules/langchain_community/vectorstores/thirdai_neuraldb.html" />
 
@@ -78,6 +78,9 @@
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../google_vertexai_api_reference.html">google-vertexai</a>
         </li>
         <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../groq_api_reference.html">groq</a>
+        </li>
+        <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../ibm_api_reference.html">ibm</a>
         </li>
         <li class="nav-item">
@@ -113,6 +116,7 @@
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../exa_api_reference.html">exa</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../google_genai_api_reference.html">google-genai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../groq_api_reference.html">groq</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../ibm_api_reference.html">ibm</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../mistralai_api_reference.html">mistralai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../nomic_api_reference.html">nomic</a>
@@ -171,7 +175,22 @@
 
 
 <div class="viewcode-block" id="NeuralDBVectorStore"><a class="viewcode-back" href="../../../vectorstores/langchain_community.vectorstores.thirdai_neuraldb.NeuralDBVectorStore.html#langchain_community.vectorstores.thirdai_neuraldb.NeuralDBVectorStore">[docs]</a><span class="k">class</span> <span class="nc">NeuralDBVectorStore</span><span class="p">(</span><span class="n">VectorStore</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Vectorstore that uses ThirdAI&#39;s NeuralDB.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Vectorstore that uses ThirdAI&#39;s NeuralDB.</span>
+
+<span class="sd">    To use, you should have the ``thirdai[neural_db]`` python package installed.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        .. code-block:: python</span>
+
+<span class="sd">            from langchain_community.vectorstores import NeuralDBVectorStore</span>
+<span class="sd">            from thirdai import neural_db as ndb</span>
+
+<span class="sd">            db = ndb.NeuralDB()</span>
+<span class="sd">            vectorstore = NeuralDBVectorStore(db=db)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="NeuralDBVectorStore.__init__"><a class="viewcode-back" href="../../../vectorstores/langchain_community.vectorstores.thirdai_neuraldb.NeuralDBVectorStore.html#langchain_community.vectorstores.thirdai_neuraldb.NeuralDBVectorStore.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">db</span> <span class="o">=</span> <span class="n">db</span></div>
 
     <span class="n">db</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1">#: :meta private:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;NeuralDB instance&quot;&quot;&quot;</span>
@@ -481,7 +500,6 @@
                     <span class="n">metadata</span><span class="o">=</span><span class="p">{</span>
                         <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">ref</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
                         <span class="s2">&quot;upvote_ids&quot;</span><span class="p">:</span> <span class="n">ref</span><span class="o">.</span><span class="n">upvote_ids</span><span class="p">,</span>
-                        <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="n">ref</span><span class="o">.</span><span class="n">text</span><span class="p">,</span>
                         <span class="s2">&quot;source&quot;</span><span class="p">:</span> <span class="n">ref</span><span class="o">.</span><span class="n">source</span><span class="p">,</span>
                         <span class="s2">&quot;metadata&quot;</span><span class="p">:</span> <span class="n">ref</span><span class="o">.</span><span class="n">metadata</span><span class="p">,</span>
                         <span class="s2">&quot;score&quot;</span><span class="p">:</span> <span class="n">ref</span><span class="o">.</span><span class="n">score</span><span class="p">,</span>
@@ -507,7 +525,7 @@
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 22, 2024.
+          Last updated on Feb 23, 2024.
       </footer>
     </div>
   </div>

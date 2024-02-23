@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>langchain_robocorp.toolkits &mdash; 🦜🔗 LangChain 0.1.8</title>
+  <title>langchain_robocorp.toolkits &mdash; 🦜🔗 LangChain 0.1.9</title>
   
   <link rel="canonical" href="https://api.python.langchain.com/en/latest/_modules/langchain_robocorp/toolkits.html" />
 
@@ -78,6 +78,9 @@
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../google_vertexai_api_reference.html">google-vertexai</a>
         </li>
         <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../groq_api_reference.html">groq</a>
+        </li>
+        <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../ibm_api_reference.html">ibm</a>
         </li>
         <li class="nav-item">
@@ -113,6 +116,7 @@
               <a class="sk-nav-dropdown-item dropdown-item" href="../../exa_api_reference.html">exa</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../google_genai_api_reference.html">google-genai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../groq_api_reference.html">groq</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../ibm_api_reference.html">ibm</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../mistralai_api_reference.html">mistralai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../nomic_api_reference.html">nomic</a>
@@ -192,7 +196,14 @@
 
 
 <div class="viewcode-block" id="RunDetailsCallbackHandler"><a class="viewcode-back" href="../../toolkits/langchain_robocorp.toolkits.RunDetailsCallbackHandler.html#langchain_robocorp.toolkits.RunDetailsCallbackHandler">[docs]</a><span class="k">class</span> <span class="nc">RunDetailsCallbackHandler</span><span class="p">(</span><span class="n">BaseCallbackHandler</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Callback handler to add run details to the run.&quot;&quot;&quot;</span>
+
 <div class="viewcode-block" id="RunDetailsCallbackHandler.__init__"><a class="viewcode-back" href="../../toolkits/langchain_robocorp.toolkits.RunDetailsCallbackHandler.html#langchain_robocorp.toolkits.RunDetailsCallbackHandler.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">run_details</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize the callback handler.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            run_details (dict): Run details.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">run_details</span> <span class="o">=</span> <span class="n">run_details</span></div>
 
 <div class="viewcode-block" id="RunDetailsCallbackHandler.on_tool_start"><a class="viewcode-back" href="../../toolkits/langchain_robocorp.toolkits.RunDetailsCallbackHandler.html#langchain_robocorp.toolkits.RunDetailsCallbackHandler.on_tool_start">[docs]</a>    <span class="k">def</span> <span class="nf">on_tool_start</span><span class="p">(</span>
@@ -209,10 +220,14 @@
 
 
 <div class="viewcode-block" id="ToolInputSchema"><a class="viewcode-back" href="../../toolkits/langchain_robocorp.toolkits.ToolInputSchema.html#langchain_robocorp.toolkits.ToolInputSchema">[docs]</a><span class="k">class</span> <span class="nc">ToolInputSchema</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Tool input schema.&quot;&quot;&quot;</span>
+
     <span class="n">question</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="ToolArgs"><a class="viewcode-back" href="../../toolkits/langchain_robocorp.toolkits.ToolArgs.html#langchain_robocorp.toolkits.ToolArgs">[docs]</a><span class="k">class</span> <span class="nc">ToolArgs</span><span class="p">(</span><span class="n">TypedDict</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Tool arguments.&quot;&quot;&quot;</span>
+
     <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
     <span class="n">description</span><span class="p">:</span> <span class="nb">str</span>
     <span class="n">callback_manager</span><span class="p">:</span> <span class="n">CallbackManager</span></div>
@@ -406,7 +421,7 @@
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 22, 2024.
+          Last updated on Feb 23, 2024.
       </footer>
     </div>
   </div>

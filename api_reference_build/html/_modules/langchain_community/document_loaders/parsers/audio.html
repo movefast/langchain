@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>langchain_community.document_loaders.parsers.audio &mdash; 🦜🔗 LangChain 0.1.8</title>
+  <title>langchain_community.document_loaders.parsers.audio &mdash; 🦜🔗 LangChain 0.1.9</title>
   
   <link rel="canonical" href="https://api.python.langchain.com/en/latest/_modules/langchain_community/document_loaders/parsers/audio.html" />
 
@@ -78,6 +78,9 @@
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../../google_vertexai_api_reference.html">google-vertexai</a>
         </li>
         <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../../groq_api_reference.html">groq</a>
+        </li>
+        <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../../ibm_api_reference.html">ibm</a>
         </li>
         <li class="nav-item">
@@ -113,6 +116,7 @@
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../../exa_api_reference.html">exa</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../../google_genai_api_reference.html">google-genai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../../google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../../groq_api_reference.html">groq</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../../ibm_api_reference.html">ibm</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../../mistralai_api_reference.html">mistralai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../../nomic_api_reference.html">nomic</a>
@@ -172,10 +176,22 @@
 
 <div class="viewcode-block" id="OpenAIWhisperParser"><a class="viewcode-back" href="../../../../document_loaders/langchain_community.document_loaders.parsers.audio.OpenAIWhisperParser.html#langchain_community.document_loaders.parsers.audio.OpenAIWhisperParser">[docs]</a><span class="k">class</span> <span class="nc">OpenAIWhisperParser</span><span class="p">(</span><span class="n">BaseBlobParser</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Transcribe and parse audio files.</span>
-<span class="sd">    Audio transcription is with OpenAI Whisper model.&quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="OpenAIWhisperParser.__init__"><a class="viewcode-back" href="../../../../document_loaders/langchain_community.document_loaders.parsers.audio.OpenAIWhisperParser.html#langchain_community.document_loaders.parsers.audio.OpenAIWhisperParser.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">api_key</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="n">api_key</span></div>
+<span class="sd">    Audio transcription is with OpenAI Whisper model.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        api_key: OpenAI API key</span>
+<span class="sd">        chunk_duration_threshold: minimum duration of a chunk in seconds</span>
+<span class="sd">            NOTE: According to the OpenAI API, the chunk duration should be at least 0.1</span>
+<span class="sd">            seconds. If the chunk duration is less or equal than the threshold,</span>
+<span class="sd">            it will be skipped.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="OpenAIWhisperParser.__init__"><a class="viewcode-back" href="../../../../document_loaders/langchain_community.document_loaders.parsers.audio.OpenAIWhisperParser.html#langchain_community.document_loaders.parsers.audio.OpenAIWhisperParser.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">api_key</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">chunk_duration_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.1</span>
+    <span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="n">api_key</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">chunk_duration_threshold</span> <span class="o">=</span> <span class="n">chunk_duration_threshold</span></div>
 
 <div class="viewcode-block" id="OpenAIWhisperParser.lazy_parse"><a class="viewcode-back" href="../../../../document_loaders/langchain_community.document_loaders.parsers.audio.OpenAIWhisperParser.html#langchain_community.document_loaders.parsers.audio.OpenAIWhisperParser.lazy_parse">[docs]</a>    <span class="k">def</span> <span class="nf">lazy_parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">blob</span><span class="p">:</span> <span class="n">Blob</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="n">Document</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Lazily parse the blob.&quot;&quot;&quot;</span>
@@ -216,6 +232,9 @@
         <span class="k">for</span> <span class="n">split_number</span><span class="p">,</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">audio</span><span class="p">),</span> <span class="n">chunk_duration_ms</span><span class="p">)):</span>
             <span class="c1"># Audio chunk</span>
             <span class="n">chunk</span> <span class="o">=</span> <span class="n">audio</span><span class="p">[</span><span class="n">i</span> <span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="n">chunk_duration_ms</span><span class="p">]</span>
+            <span class="c1"># Skip chunks that are too short to transcribe</span>
+            <span class="k">if</span> <span class="n">chunk</span><span class="o">.</span><span class="n">duration_seconds</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">chunk_duration_threshold</span><span class="p">:</span>
+                <span class="k">continue</span>
             <span class="n">file_obj</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">chunk</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">&quot;mp3&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
             <span class="k">if</span> <span class="n">blob</span><span class="o">.</span><span class="n">source</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="n">file_obj</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">blob</span><span class="o">.</span><span class="n">source</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;_part_</span><span class="si">{</span><span class="n">split_number</span><span class="si">}</span><span class="s2">.mp3&quot;</span>
@@ -469,7 +488,7 @@
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 22, 2024.
+          Last updated on Feb 23, 2024.
       </footer>
     </div>
   </div>

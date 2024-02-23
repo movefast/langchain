@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>langchain_core 0.1.25 &mdash; 🦜🔗 LangChain 0.1.8</title>
+  <title>langchain_core 0.1.26 &mdash; 🦜🔗 LangChain 0.1.9</title>
   
   <link rel="canonical" href="https://api.python.langchain.com/en/latest/core_api_reference.html" />
 
@@ -79,6 +79,9 @@
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="google_vertexai_api_reference.html">google-vertexai</a>
         </li>
         <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="groq_api_reference.html">groq</a>
+        </li>
+        <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="ibm_api_reference.html">ibm</a>
         </li>
         <li class="nav-item">
@@ -114,6 +117,7 @@
               <a class="sk-nav-dropdown-item dropdown-item" href="exa_api_reference.html">exa</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="google_genai_api_reference.html">google-genai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="groq_api_reference.html">groq</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="ibm_api_reference.html">ibm</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="mistralai_api_reference.html">mistralai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="nomic_api_reference.html">nomic</a>
@@ -152,7 +156,7 @@
         </div>
             <div class="sk-sidebar-toc">
               <ul>
-<li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">langchain_core</span></code> 0.1.25</a><ul>
+<li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">langchain_core</span></code> 0.1.26</a><ul>
 <li><a class="reference internal" href="#module-langchain_core.agents"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.agents</span></code></a><ul>
 <li><a class="reference internal" href="#classes">Classes</a></li>
 </ul>
@@ -279,8 +283,8 @@
     <div id="sk-page-content-wrapper">
       <div class="sk-page-content container-fluid body px-md-3" role="main">
         
-  <section id="langchain-core-0-1-25">
-<h1><code class="docutils literal notranslate"><span class="pre">langchain_core</span></code> 0.1.25<a class="headerlink" href="#langchain-core-0-1-25" title="Permalink to this heading">¶</a></h1>
+  <section id="langchain-core-0-1-26">
+<h1><code class="docutils literal notranslate"><span class="pre">langchain_core</span></code> 0.1.26<a class="headerlink" href="#langchain-core-0-1-26" title="Permalink to this heading">¶</a></h1>
 <section id="module-langchain_core.agents">
 <span id="langchain-core-agents"></span><h2><a class="reference internal" href="#module-langchain_core.agents" title="langchain_core.agents"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_core.agents</span></code></a><a class="headerlink" href="#module-langchain_core.agents" title="Permalink to this heading">¶</a></h2>
 <p><strong>Agent</strong> is a class that uses an LLM to choose a sequence of actions to take.</p>
@@ -985,16 +989,19 @@ text prompts.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="output_parsers/langchain_core.output_parsers.list.NumberedListOutputParser.html#langchain_core.output_parsers.list.NumberedListOutputParser" title="langchain_core.output_parsers.list.NumberedListOutputParser"><code class="xref py py-obj docutils literal notranslate"><span class="pre">output_parsers.list.NumberedListOutputParser</span></code></a></p></td>
 <td><p>Parse a numbered list.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="output_parsers/langchain_core.output_parsers.string.StrOutputParser.html#langchain_core.output_parsers.string.StrOutputParser" title="langchain_core.output_parsers.string.StrOutputParser"><code class="xref py py-obj docutils literal notranslate"><span class="pre">output_parsers.string.StrOutputParser</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="output_parsers/langchain_core.output_parsers.pydantic.PydanticOutputParser.html#langchain_core.output_parsers.pydantic.PydanticOutputParser" title="langchain_core.output_parsers.pydantic.PydanticOutputParser"><code class="xref py py-obj docutils literal notranslate"><span class="pre">output_parsers.pydantic.PydanticOutputParser</span></code></a></p></td>
+<td><p>Parse an output using a pydantic model.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="output_parsers/langchain_core.output_parsers.string.StrOutputParser.html#langchain_core.output_parsers.string.StrOutputParser" title="langchain_core.output_parsers.string.StrOutputParser"><code class="xref py py-obj docutils literal notranslate"><span class="pre">output_parsers.string.StrOutputParser</span></code></a></p></td>
 <td><p>OutputParser that parses LLMResult into the top likely string.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="output_parsers/langchain_core.output_parsers.transform.BaseCumulativeTransformOutputParser.html#langchain_core.output_parsers.transform.BaseCumulativeTransformOutputParser" title="langchain_core.output_parsers.transform.BaseCumulativeTransformOutputParser"><code class="xref py py-obj docutils literal notranslate"><span class="pre">output_parsers.transform.BaseCumulativeTransformOutputParser</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="output_parsers/langchain_core.output_parsers.transform.BaseCumulativeTransformOutputParser.html#langchain_core.output_parsers.transform.BaseCumulativeTransformOutputParser" title="langchain_core.output_parsers.transform.BaseCumulativeTransformOutputParser"><code class="xref py py-obj docutils literal notranslate"><span class="pre">output_parsers.transform.BaseCumulativeTransformOutputParser</span></code></a></p></td>
 <td><p>Base class for an output parser that can handle streaming input.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="output_parsers/langchain_core.output_parsers.transform.BaseTransformOutputParser.html#langchain_core.output_parsers.transform.BaseTransformOutputParser" title="langchain_core.output_parsers.transform.BaseTransformOutputParser"><code class="xref py py-obj docutils literal notranslate"><span class="pre">output_parsers.transform.BaseTransformOutputParser</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="output_parsers/langchain_core.output_parsers.transform.BaseTransformOutputParser.html#langchain_core.output_parsers.transform.BaseTransformOutputParser" title="langchain_core.output_parsers.transform.BaseTransformOutputParser"><code class="xref py py-obj docutils literal notranslate"><span class="pre">output_parsers.transform.BaseTransformOutputParser</span></code></a></p></td>
 <td><p>Base class for an output parser that can handle streaming input.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="output_parsers/langchain_core.output_parsers.xml.XMLOutputParser.html#langchain_core.output_parsers.xml.XMLOutputParser" title="langchain_core.output_parsers.xml.XMLOutputParser"><code class="xref py py-obj docutils literal notranslate"><span class="pre">output_parsers.xml.XMLOutputParser</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="output_parsers/langchain_core.output_parsers.xml.XMLOutputParser.html#langchain_core.output_parsers.xml.XMLOutputParser" title="langchain_core.output_parsers.xml.XMLOutputParser"><code class="xref py py-obj docutils literal notranslate"><span class="pre">output_parsers.xml.XMLOutputParser</span></code></a></p></td>
 <td><p>Parse an output using xml format.</p></td>
 </tr>
 </tbody>
@@ -1959,7 +1966,7 @@ and retrieve the data that are ‘most similar’ to the embedded query.</p>
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 22, 2024.
+          Last updated on Feb 23, 2024.
           <a href="_sources/core_api_reference.rst.txt" rel="nofollow">Show this page source</a>
       </footer>
     </div>

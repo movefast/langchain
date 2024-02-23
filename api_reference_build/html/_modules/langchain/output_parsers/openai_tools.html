@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>langchain.output_parsers.openai_tools &mdash; 🦜🔗 LangChain 0.1.8</title>
+  <title>langchain.output_parsers.openai_tools &mdash; 🦜🔗 LangChain 0.1.9</title>
   
   <link rel="canonical" href="https://api.python.langchain.com/en/latest/_modules/langchain/output_parsers/openai_tools.html" />
 
@@ -78,6 +78,9 @@
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../google_vertexai_api_reference.html">google-vertexai</a>
         </li>
         <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../groq_api_reference.html">groq</a>
+        </li>
+        <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../ibm_api_reference.html">ibm</a>
         </li>
         <li class="nav-item">
@@ -113,6 +116,7 @@
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../exa_api_reference.html">exa</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../google_genai_api_reference.html">google-genai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../groq_api_reference.html">groq</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../ibm_api_reference.html">ibm</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../mistralai_api_reference.html">mistralai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../nomic_api_reference.html">nomic</a>
@@ -181,6 +185,16 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">return_id</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Whether to return the tool call id.&quot;&quot;&quot;</span>
+    <span class="n">first_tool_only</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Whether to return only the first tool call.</span>
+<span class="sd">    </span>
+<span class="sd">    If False, the result will be a list of tool calls, or an empty list </span>
+<span class="sd">    if no tool calls are found.</span>
+<span class="sd">    </span>
+<span class="sd">    If true, and multiple tool calls are found, only the first one will be returned,</span>
+<span class="sd">    and the other tool calls will be ignored. </span>
+<span class="sd">    If no tool calls are found, None will be returned. </span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="JsonOutputToolsParser.parse_result"><a class="viewcode-back" href="../../../output_parsers/langchain.output_parsers.openai_tools.JsonOutputToolsParser.html#langchain.output_parsers.openai_tools.JsonOutputToolsParser.parse_result">[docs]</a>    <span class="k">def</span> <span class="nf">parse_result</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Generation</span><span class="p">],</span> <span class="o">*</span><span class="p">,</span> <span class="n">partial</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
         <span class="n">generation</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -224,6 +238,8 @@
             <span class="n">final_tools</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">parsed</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">exceptions</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">OutputParserException</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">exceptions</span><span class="p">))</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">first_tool_only</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">final_tools</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">final_tools</span> <span class="k">else</span> <span class="kc">None</span>
         <span class="k">return</span> <span class="n">final_tools</span></div></div>
 
 
@@ -232,21 +248,37 @@
 
     <span class="n">key_name</span><span class="p">:</span> <span class="nb">str</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;The type of tools to return.&quot;&quot;&quot;</span>
-    <span class="n">return_single</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Whether to return only the first tool call.&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Allow init with positional args.&quot;&quot;&quot;</span>
+        <span class="c1"># Backwards compatibility for old argument name.</span>
+        <span class="k">if</span> <span class="s2">&quot;return_single&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;first_tool_only&quot;</span><span class="p">):</span>
+                <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;first_tool_only&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;return_single&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="s2">&quot;Cannot use both &#39;return_single&#39; and &#39;first_tool_only&#39; arguments.&quot;</span>
+                <span class="p">)</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">key_name</span><span class="o">=</span><span class="n">key_name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
 <div class="viewcode-block" id="JsonOutputKeyToolsParser.parse_result"><a class="viewcode-back" href="../../../output_parsers/langchain.output_parsers.openai_tools.JsonOutputKeyToolsParser.html#langchain.output_parsers.openai_tools.JsonOutputKeyToolsParser.parse_result">[docs]</a>    <span class="k">def</span> <span class="nf">parse_result</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Generation</span><span class="p">],</span> <span class="o">*</span><span class="p">,</span> <span class="n">partial</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
-        <span class="n">results</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">parse_result</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">partial</span><span class="o">=</span><span class="n">partial</span><span class="p">)</span>
-        <span class="n">results</span> <span class="o">=</span> <span class="p">[</span><span class="n">res</span> <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">results</span> <span class="k">if</span> <span class="n">res</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">key_name</span><span class="p">]</span>
+        <span class="n">parsed_result</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">parse_result</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">partial</span><span class="o">=</span><span class="n">partial</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">first_tool_only</span><span class="p">:</span>
+            <span class="n">single_result</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">parsed_result</span>
+                <span class="k">if</span> <span class="n">parsed_result</span> <span class="ow">and</span> <span class="n">parsed_result</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">key_name</span>
+                <span class="k">else</span> <span class="kc">None</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">return_id</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">single_result</span>
+            <span class="k">elif</span> <span class="n">single_result</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">single_result</span><span class="p">[</span><span class="s2">&quot;args&quot;</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">None</span>
+        <span class="n">parsed_result</span> <span class="o">=</span> <span class="p">[</span><span class="n">res</span> <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">parsed_result</span> <span class="k">if</span> <span class="n">res</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">key_name</span><span class="p">]</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">return_id</span><span class="p">:</span>
-            <span class="n">results</span> <span class="o">=</span> <span class="p">[</span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;args&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">results</span><span class="p">]</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">return_single</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">results</span> <span class="k">else</span> <span class="kc">None</span>
-        <span class="k">return</span> <span class="n">results</span></div></div>
+            <span class="n">parsed_result</span> <span class="o">=</span> <span class="p">[</span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;args&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">parsed_result</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">parsed_result</span></div></div>
 
 
 <div class="viewcode-block" id="PydanticToolsParser"><a class="viewcode-back" href="../../../output_parsers/langchain.output_parsers.openai_tools.PydanticToolsParser.html#langchain.output_parsers.openai_tools.PydanticToolsParser">[docs]</a><span class="k">class</span> <span class="nc">PydanticToolsParser</span><span class="p">(</span><span class="n">JsonOutputToolsParser</span><span class="p">):</span>
@@ -255,16 +287,22 @@
     <span class="n">tools</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="n">BaseModel</span><span class="p">]]</span>
 
 <div class="viewcode-block" id="PydanticToolsParser.parse_result"><a class="viewcode-back" href="../../../output_parsers/langchain.output_parsers.openai_tools.PydanticToolsParser.html#langchain.output_parsers.openai_tools.PydanticToolsParser.parse_result">[docs]</a>    <span class="k">def</span> <span class="nf">parse_result</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Generation</span><span class="p">],</span> <span class="o">*</span><span class="p">,</span> <span class="n">partial</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
-        <span class="n">results</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">parse_result</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">partial</span><span class="o">=</span><span class="n">partial</span><span class="p">)</span>
+        <span class="n">parsed_result</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">parse_result</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">partial</span><span class="o">=</span><span class="n">partial</span><span class="p">)</span>
         <span class="n">name_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">tool</span><span class="o">.</span><span class="vm">__name__</span><span class="p">:</span> <span class="n">tool</span> <span class="k">for</span> <span class="n">tool</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">tools</span><span class="p">}</span>
-        <span class="k">return</span> <span class="p">[</span><span class="n">name_dict</span><span class="p">[</span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]](</span><span class="o">**</span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;args&quot;</span><span class="p">])</span> <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">results</span><span class="p">]</span></div></div>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">first_tool_only</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span>
+                <span class="n">name_dict</span><span class="p">[</span><span class="n">parsed_result</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]](</span><span class="o">**</span><span class="n">parsed_result</span><span class="p">[</span><span class="s2">&quot;args&quot;</span><span class="p">])</span>
+                <span class="k">if</span> <span class="n">parsed_result</span>
+                <span class="k">else</span> <span class="kc">None</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">name_dict</span><span class="p">[</span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]](</span><span class="o">**</span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;args&quot;</span><span class="p">])</span> <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">parsed_result</span><span class="p">]</span></div></div>
 </pre></div>
 
       </div>
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 22, 2024.
+          Last updated on Feb 23, 2024.
       </footer>
     </div>
   </div>

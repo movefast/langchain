@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>langchain_google_vertexai.llms &mdash; 🦜🔗 LangChain 0.1.8</title>
+  <title>langchain_google_vertexai.llms &mdash; 🦜🔗 LangChain 0.1.9</title>
   
   <link rel="canonical" href="https://api.python.langchain.com/en/latest/_modules/langchain_google_vertexai/llms.html" />
 
@@ -78,6 +78,9 @@
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../google_vertexai_api_reference.html">google-vertexai</a>
         </li>
         <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../groq_api_reference.html">groq</a>
+        </li>
+        <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../ibm_api_reference.html">ibm</a>
         </li>
         <li class="nav-item">
@@ -113,6 +116,7 @@
               <a class="sk-nav-dropdown-item dropdown-item" href="../../exa_api_reference.html">exa</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../google_genai_api_reference.html">google-genai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../groq_api_reference.html">groq</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../ibm_api_reference.html">ibm</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../mistralai_api_reference.html">mistralai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../nomic_api_reference.html">nomic</a>
@@ -426,7 +430,7 @@
         <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">total_tokens</span>
 
 
-<div class="viewcode-block" id="VertexAI"><a class="viewcode-back" href="../../llms/langchain_google_vertexai.llms.VertexAI.html#langchain_google_vertexai.llms.VertexAI">[docs]</a><span class="k">class</span> <span class="nc">VertexAI</span><span class="p">(</span><span class="n">_VertexAICommon</span><span class="p">,</span> <span class="n">BaseLLM</span><span class="p">):</span>
+<div class="viewcode-block" id="VertexAI"><a class="viewcode-back" href="../../llms/langchain_google_vertexai.llms.VertexAI.html#langchain_google_vertexai.embeddings.VertexAI">[docs]</a><span class="k">class</span> <span class="nc">VertexAI</span><span class="p">(</span><span class="n">_VertexAICommon</span><span class="p">,</span> <span class="n">BaseLLM</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Google Vertex AI large language models.&quot;&quot;&quot;</span>
 
     <span class="n">model_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;text-bison&quot;</span>
@@ -434,11 +438,11 @@
     <span class="n">tuned_model_name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="s2">&quot;The name of a tuned model. If provided, model_name is ignored.&quot;</span>
 
-<div class="viewcode-block" id="VertexAI.is_lc_serializable"><a class="viewcode-back" href="../../llms/langchain_google_vertexai.llms.VertexAI.html#langchain_google_vertexai.llms.VertexAI.is_lc_serializable">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="VertexAI.is_lc_serializable"><a class="viewcode-back" href="../../llms/langchain_google_vertexai.llms.VertexAI.html#langchain_google_vertexai.embeddings.VertexAI.is_lc_serializable">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">is_lc_serializable</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">True</span></div>
 
-<div class="viewcode-block" id="VertexAI.get_lc_namespace"><a class="viewcode-back" href="../../llms/langchain_google_vertexai.llms.VertexAI.html#langchain_google_vertexai.llms.VertexAI.get_lc_namespace">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="VertexAI.get_lc_namespace"><a class="viewcode-back" href="../../llms/langchain_google_vertexai.llms.VertexAI.html#langchain_google_vertexai.embeddings.VertexAI.get_lc_namespace">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_lc_namespace</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the namespace of the langchain object.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">[</span><span class="s2">&quot;langchain&quot;</span><span class="p">,</span> <span class="s2">&quot;llms&quot;</span><span class="p">,</span> <span class="s2">&quot;vertexai&quot;</span><span class="p">]</span></div>
@@ -592,7 +596,7 @@
                 <span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="VertexAIModelGarden"><a class="viewcode-back" href="../../llms/langchain_google_vertexai.llms.VertexAIModelGarden.html#langchain_google_vertexai.llms.VertexAIModelGarden">[docs]</a><span class="k">class</span> <span class="nc">VertexAIModelGarden</span><span class="p">(</span><span class="n">_VertexAIBase</span><span class="p">,</span> <span class="n">BaseLLM</span><span class="p">):</span>
+<div class="viewcode-block" id="VertexAIModelGarden"><a class="viewcode-back" href="../../llms/langchain_google_vertexai.llms.VertexAIModelGarden.html#langchain_google_vertexai.embeddings.VertexAIModelGarden">[docs]</a><span class="k">class</span> <span class="nc">VertexAIModelGarden</span><span class="p">(</span><span class="n">_VertexAIBase</span><span class="p">,</span> <span class="n">BaseLLM</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Large language models served from Vertex AI Model Garden.&quot;&quot;&quot;</span>
 
     <span class="n">client</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1">#: :meta private:</span>
@@ -718,7 +722,7 @@
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 22, 2024.
+          Last updated on Feb 23, 2024.
       </footer>
     </div>
   </div>

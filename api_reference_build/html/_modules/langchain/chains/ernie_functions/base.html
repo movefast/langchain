@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>langchain.chains.ernie_functions.base &mdash; 🦜🔗 LangChain 0.1.8</title>
+  <title>langchain.chains.ernie_functions.base &mdash; 🦜🔗 LangChain 0.1.9</title>
   
   <link rel="canonical" href="https://api.python.langchain.com/en/latest/_modules/langchain/chains/ernie_functions/base.html" />
 
@@ -78,6 +78,9 @@
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../../google_vertexai_api_reference.html">google-vertexai</a>
         </li>
         <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../../groq_api_reference.html">groq</a>
+        </li>
+        <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../../ibm_api_reference.html">ibm</a>
         </li>
         <li class="nav-item">
@@ -113,6 +116,7 @@
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../../exa_api_reference.html">exa</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../../google_genai_api_reference.html">google-genai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../../google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../../groq_api_reference.html">groq</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../../ibm_api_reference.html">ibm</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../../mistralai_api_reference.html">mistralai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../../nomic_api_reference.html">nomic</a>
@@ -469,31 +473,31 @@
 <span class="sd">    Example:</span>
 <span class="sd">        .. code-block:: python</span>
 
-<span class="sd">                from typing import Optional</span>
+<span class="sd">            from typing import Optional</span>
 
-<span class="sd">                from langchain.chains.ernie_functions import create_structured_output_chain</span>
-<span class="sd">                from langchain_community.chat_models import ErnieBotChat</span>
-<span class="sd">                from langchain.prompts import ChatPromptTemplate</span>
-<span class="sd">                from langchain.pydantic_v1 import BaseModel, Field</span>
+<span class="sd">            from langchain.chains.ernie_functions import create_structured_output_chain</span>
+<span class="sd">            from langchain_community.chat_models import ErnieBotChat</span>
+<span class="sd">            from langchain.prompts import ChatPromptTemplate</span>
+<span class="sd">            from langchain.pydantic_v1 import BaseModel, Field</span>
 
-<span class="sd">                class Dog(BaseModel):</span>
-<span class="sd">                    \&quot;\&quot;\&quot;Identifying information about a dog.\&quot;\&quot;\&quot;</span>
+<span class="sd">            class Dog(BaseModel):</span>
+<span class="sd">                \&quot;\&quot;\&quot;Identifying information about a dog.\&quot;\&quot;\&quot;</span>
 
-<span class="sd">                    name: str = Field(..., description=&quot;The dog&#39;s name&quot;)</span>
-<span class="sd">                    color: str = Field(..., description=&quot;The dog&#39;s color&quot;)</span>
-<span class="sd">                    fav_food: Optional[str] = Field(None, description=&quot;The dog&#39;s favorite food&quot;)</span>
+<span class="sd">                name: str = Field(..., description=&quot;The dog&#39;s name&quot;)</span>
+<span class="sd">                color: str = Field(..., description=&quot;The dog&#39;s color&quot;)</span>
+<span class="sd">                fav_food: Optional[str] = Field(None, description=&quot;The dog&#39;s favorite food&quot;)</span>
 
-<span class="sd">                llm = ErnieBotChat(model_name=&quot;ERNIE-Bot-4&quot;)</span>
-<span class="sd">                prompt = ChatPromptTemplate.from_messages(</span>
-<span class="sd">                    [</span>
-<span class="sd">                        (&quot;user&quot;, &quot;Use the given format to extract information from the following input: {input}&quot;),</span>
-<span class="sd">                        (&quot;assistant&quot;, &quot;OK!&quot;),</span>
-<span class="sd">                        (&quot;user&quot;, &quot;Tip: Make sure to answer in the correct format&quot;),</span>
-<span class="sd">                    ]</span>
-<span class="sd">                )</span>
-<span class="sd">                chain = create_structured_output_chain(Dog, llm, prompt)</span>
-<span class="sd">                chain.invoke({&quot;input&quot;: &quot;Harry was a chubby brown beagle who loved chicken&quot;})</span>
-<span class="sd">                # -&gt; Dog(name=&quot;Harry&quot;, color=&quot;brown&quot;, fav_food=&quot;chicken&quot;)</span>
+<span class="sd">            llm = ErnieBotChat(model_name=&quot;ERNIE-Bot-4&quot;)</span>
+<span class="sd">            prompt = ChatPromptTemplate.from_messages(</span>
+<span class="sd">                [</span>
+<span class="sd">                    (&quot;user&quot;, &quot;Use the given format to extract information from the following input: {input}&quot;),</span>
+<span class="sd">                    (&quot;assistant&quot;, &quot;OK!&quot;),</span>
+<span class="sd">                    (&quot;user&quot;, &quot;Tip: Make sure to answer in the correct format&quot;),</span>
+<span class="sd">                ]</span>
+<span class="sd">            )</span>
+<span class="sd">            chain = create_structured_output_chain(Dog, llm, prompt)</span>
+<span class="sd">            chain.invoke({&quot;input&quot;: &quot;Harry was a chubby brown beagle who loved chicken&quot;})</span>
+<span class="sd">            # -&gt; Dog(name=&quot;Harry&quot;, color=&quot;brown&quot;, fav_food=&quot;chicken&quot;)</span>
 <span class="sd">    &quot;&quot;&quot;</span>  <span class="c1"># noqa: E501</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">output_schema</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
         <span class="n">function</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="p">{</span>
@@ -714,7 +718,7 @@
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 22, 2024.
+          Last updated on Feb 23, 2024.
       </footer>
     </div>
   </div>

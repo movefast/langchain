@@ -1,0 +1,89 @@
+﻿:mod:`langchain_pinecone.vectorstores`.PineconeVectorStore
+=================================================================
+
+.. currentmodule:: langchain_pinecone.vectorstores
+
+.. autoclass:: PineconeVectorStore
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~PineconeVectorStore.embeddings
+   
+   
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~PineconeVectorStore.__init__
+      ~PineconeVectorStore.aadd_documents
+      ~PineconeVectorStore.aadd_texts
+      ~PineconeVectorStore.add_documents
+      ~PineconeVectorStore.add_texts
+      ~PineconeVectorStore.adelete
+      ~PineconeVectorStore.afrom_documents
+      ~PineconeVectorStore.afrom_texts
+      ~PineconeVectorStore.amax_marginal_relevance_search
+      ~PineconeVectorStore.amax_marginal_relevance_search_by_vector
+      ~PineconeVectorStore.as_retriever
+      ~PineconeVectorStore.asearch
+      ~PineconeVectorStore.asimilarity_search
+      ~PineconeVectorStore.asimilarity_search_by_vector
+      ~PineconeVectorStore.asimilarity_search_with_relevance_scores
+      ~PineconeVectorStore.asimilarity_search_with_score
+      ~PineconeVectorStore.delete
+      ~PineconeVectorStore.from_documents
+      ~PineconeVectorStore.from_existing_index
+      ~PineconeVectorStore.from_texts
+      ~PineconeVectorStore.get_pinecone_index
+      ~PineconeVectorStore.max_marginal_relevance_search
+      ~PineconeVectorStore.max_marginal_relevance_search_by_vector
+      ~PineconeVectorStore.search
+      ~PineconeVectorStore.similarity_search
+      ~PineconeVectorStore.similarity_search_by_vector
+      ~PineconeVectorStore.similarity_search_by_vector_with_score
+      ~PineconeVectorStore.similarity_search_with_relevance_scores
+      ~PineconeVectorStore.similarity_search_with_score
+
+   
+   .. automethod:: PineconeVectorStore.__init__
+   .. automethod:: PineconeVectorStore.aadd_documents
+   .. automethod:: PineconeVectorStore.aadd_texts
+   .. automethod:: PineconeVectorStore.add_documents
+   .. automethod:: PineconeVectorStore.add_texts
+   .. automethod:: PineconeVectorStore.adelete
+   .. automethod:: PineconeVectorStore.afrom_documents
+   .. automethod:: PineconeVectorStore.afrom_texts
+   .. automethod:: PineconeVectorStore.amax_marginal_relevance_search
+   .. automethod:: PineconeVectorStore.amax_marginal_relevance_search_by_vector
+   .. automethod:: PineconeVectorStore.as_retriever
+   .. automethod:: PineconeVectorStore.asearch
+   .. automethod:: PineconeVectorStore.asimilarity_search
+   .. automethod:: PineconeVectorStore.asimilarity_search_by_vector
+   .. automethod:: PineconeVectorStore.asimilarity_search_with_relevance_scores
+   .. automethod:: PineconeVectorStore.asimilarity_search_with_score
+   .. automethod:: PineconeVectorStore.delete
+   .. automethod:: PineconeVectorStore.from_documents
+   .. automethod:: PineconeVectorStore.from_existing_index
+   .. automethod:: PineconeVectorStore.from_texts
+   .. automethod:: PineconeVectorStore.get_pinecone_index
+   .. automethod:: PineconeVectorStore.max_marginal_relevance_search
+   .. automethod:: PineconeVectorStore.max_marginal_relevance_search_by_vector
+   .. automethod:: PineconeVectorStore.search
+   .. automethod:: PineconeVectorStore.similarity_search
+   .. automethod:: PineconeVectorStore.similarity_search_by_vector
+   .. automethod:: PineconeVectorStore.similarity_search_by_vector_with_score
+   .. automethod:: PineconeVectorStore.similarity_search_with_relevance_scores
+   .. automethod:: PineconeVectorStore.similarity_search_with_score
+
+   
+   
+
+
+.. example_links:: PineconeVectorStore

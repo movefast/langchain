@@ -1,7 +1,7 @@
 .. openai_api_reference:
 
 =======================
-``langchain_openai`` 0.0.6
+``langchain_openai`` 0.0.7
 =======================
 
 :mod:`langchain_openai.chat_models`
@@ -70,4 +70,29 @@ Classes
     :template: pydantic.rst
     
     llms.base.OpenAI
+    
+:mod:`langchain_openai.output_parsers`
+=======================================
+
+.. automodule:: langchain_openai.output_parsers
+    :no-members:
+    :no-inherited-members:
+
+Classes
+--------------
+.. currentmodule:: langchain_openai
+
+.. autosummary::
+    :toctree: output_parsers
+    :template: pydantic.rst
+    
+    output_parsers.tools.JsonOutputKeyToolsParser
+    
+    :template: pydantic.rst
+    
+    output_parsers.tools.JsonOutputToolsParser
+    
+    :template: pydantic.rst
+    
+    output_parsers.tools.PydanticToolsParser
     

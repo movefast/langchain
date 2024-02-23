@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>langchain_community.vectorstores.pinecone.Pinecone &mdash; 🦜🔗 LangChain 0.1.8</title>
+  <title>langchain_community.vectorstores.pinecone.Pinecone &mdash; 🦜🔗 LangChain 0.1.9</title>
   
   <link rel="canonical" href="https://api.python.langchain.com/en/latest/vectorstores/langchain_community.vectorstores.pinecone.Pinecone.html" />
 
@@ -79,6 +79,9 @@
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../google_vertexai_api_reference.html">google-vertexai</a>
         </li>
         <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../groq_api_reference.html">groq</a>
+        </li>
+        <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ibm_api_reference.html">ibm</a>
         </li>
         <li class="nav-item">
@@ -114,6 +117,7 @@
               <a class="sk-nav-dropdown-item dropdown-item" href="../exa_api_reference.html">exa</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_genai_api_reference.html">google-genai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../groq_api_reference.html">groq</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../ibm_api_reference.html">ibm</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../mistralai_api_reference.html">mistralai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nomic_api_reference.html">nomic</a>
@@ -286,7 +290,7 @@ instead.</p>
 <td><p>Load pinecone vectorstore from index name.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#langchain_community.vectorstores.pinecone.Pinecone.from_texts" title="langchain_community.vectorstores.pinecone.Pinecone.from_texts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_texts</span></code></a>(texts, embedding[, metadatas, ...])</p></td>
-<td><p>Construct Pinecone wrapper from raw documents.</p></td>
+<td><p>DEPRECATED: use langchain_pinecone.PineconeVectorStore.from_texts instead: Construct Pinecone wrapper from raw documents.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#langchain_community.vectorstores.pinecone.Pinecone.get_pinecone_index" title="langchain_community.vectorstores.pinecone.Pinecone.get_pinecone_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_pinecone_index</span></code></a>(index_name[, pool_threads])</p></td>
 <td><p>Return a Pinecone Index instance.</p></td>
@@ -769,7 +773,8 @@ score_threshold: Optional, a floating point value between 0 to 1 to</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.vectorstores.pinecone.Pinecone.from_texts">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_texts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">texts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">embedding</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../embeddings/langchain_core.embeddings.Embeddings.html#langchain_core.embeddings.Embeddings" title="langchain_core.embeddings.Embeddings"><span class="pre">Embeddings</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadatas</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'text'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">namespace</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upsert_kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pool_threads</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">embeddings_chunk_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#langchain_community.vectorstores.pinecone.Pinecone" title="langchain_community.vectorstores.pinecone.Pinecone"><span class="pre">Pinecone</span></a></span></span><a class="reference internal" href="../_modules/langchain_community/vectorstores/pinecone.html#Pinecone.from_texts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.vectorstores.pinecone.Pinecone.from_texts" title="Permalink to this definition">¶</a></dt>
-<dd><p>Construct Pinecone wrapper from raw documents.</p>
+<dd><p>DEPRECATED: use langchain_pinecone.PineconeVectorStore.from_texts instead:
+Construct Pinecone wrapper from raw documents.</p>
 <dl class="simple">
 <dt>This is a user friendly interface that:</dt><dd><ol class="arabic simple">
 <li><p>Embeds documents.</p></li>
@@ -778,20 +783,18 @@ score_threshold: Optional, a floating point value between 0 to 1 to</p>
 </dd>
 </dl>
 <p>This is intended to be a quick way to get started.</p>
-<p>The <cite>pool_threads</cite> affects the speed of the upsert operations.
-.. rubric:: Example</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">langchain_community.vectorstores</span> <span class="kn">import</span> <span class="n">Pinecone</span>
-<span class="kn">from</span> <span class="nn">langchain_community.embeddings</span> <span class="kn">import</span> <span class="n">OpenAIEmbeddings</span>
-<span class="kn">import</span> <span class="nn">pinecone</span>
+<p>The <cite>pool_threads</cite> affects the speed of the upsert operations.</p>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">langchain_pinecone</span> <span class="kn">import</span> <span class="n">PineconeVectorStore</span>
+<span class="kn">from</span> <span class="nn">langchain_openai</span> <span class="kn">import</span> <span class="n">OpenAIEmbeddings</span>
 
-<span class="c1"># The environment should be the one specified next to the API key</span>
-<span class="c1"># in your Pinecone console</span>
-<span class="n">pinecone</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;***&quot;</span><span class="p">,</span> <span class="n">environment</span><span class="o">=</span><span class="s2">&quot;...&quot;</span><span class="p">)</span>
 <span class="n">embeddings</span> <span class="o">=</span> <span class="n">OpenAIEmbeddings</span><span class="p">()</span>
-<span class="n">pinecone</span> <span class="o">=</span> <span class="n">Pinecone</span><span class="o">.</span><span class="n">from_texts</span><span class="p">(</span>
-    <span class="n">texts</span><span class="p">,</span>
-    <span class="n">embeddings</span><span class="p">,</span>
-    <span class="n">index_name</span><span class="o">=</span><span class="s2">&quot;langchain-demo&quot;</span>
+<span class="n">index_name</span> <span class="o">=</span> <span class="s2">&quot;my-index&quot;</span>
+<span class="n">namespace</span> <span class="o">=</span> <span class="s2">&quot;my-namespace&quot;</span>
+<span class="n">vectorstore</span> <span class="o">=</span> <span class="n">Pinecone</span><span class="p">(</span>
+    <span class="n">index_name</span><span class="o">=</span><span class="n">index_name</span><span class="p">,</span>
+    <span class="n">embedding</span><span class="o">=</span><span class="n">embedding</span><span class="p">,</span>
+    <span class="n">namespace</span><span class="o">=</span><span class="n">namespace</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -1041,7 +1044,7 @@ score_threshold: Optional, a floating point value between 0 to 1 to</p>
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 22, 2024.
+          Last updated on Feb 23, 2024.
           <a href="../_sources/vectorstores/langchain_community.vectorstores.pinecone.Pinecone.rst.txt" rel="nofollow">Show this page source</a>
       </footer>
     </div>

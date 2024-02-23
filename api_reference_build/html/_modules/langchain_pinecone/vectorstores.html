@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>langchain_pinecone.vectorstores &mdash; 🦜🔗 LangChain 0.1.8</title>
+  <title>langchain_pinecone.vectorstores &mdash; 🦜🔗 LangChain 0.1.9</title>
   
   <link rel="canonical" href="https://api.python.langchain.com/en/latest/_modules/langchain_pinecone/vectorstores.html" />
 
@@ -78,6 +78,9 @@
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../google_vertexai_api_reference.html">google-vertexai</a>
         </li>
         <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../groq_api_reference.html">groq</a>
+        </li>
+        <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../ibm_api_reference.html">ibm</a>
         </li>
         <li class="nav-item">
@@ -113,6 +116,7 @@
               <a class="sk-nav-dropdown-item dropdown-item" href="../../exa_api_reference.html">exa</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../google_genai_api_reference.html">google-genai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../groq_api_reference.html">groq</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../ibm_api_reference.html">ibm</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../mistralai_api_reference.html">mistralai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../nomic_api_reference.html">nomic</a>
@@ -174,6 +178,7 @@
 <span class="p">)</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">langchain_core._api.deprecation</span> <span class="kn">import</span> <span class="n">deprecated</span>
 <span class="kn">from</span> <span class="nn">langchain_core.documents</span> <span class="kn">import</span> <span class="n">Document</span>
 <span class="kn">from</span> <span class="nn">langchain_core.embeddings</span> <span class="kn">import</span> <span class="n">Embeddings</span>
 <span class="kn">from</span> <span class="nn">langchain_core.utils.iter</span> <span class="kn">import</span> <span class="n">batch_iterate</span>
@@ -190,13 +195,15 @@
 <span class="n">VST</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s2">&quot;VST&quot;</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="n">VectorStore</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="Pinecone"><a class="viewcode-back" href="../../vectorstores/langchain_pinecone.vectorstores.Pinecone.html#langchain_pinecone.vectorstores.Pinecone">[docs]</a><span class="k">class</span> <span class="nc">Pinecone</span><span class="p">(</span><span class="n">VectorStore</span><span class="p">):</span>
+<div class="viewcode-block" id="PineconeVectorStore"><a class="viewcode-back" href="../../vectorstores/langchain_pinecone.vectorstores.PineconeVectorStore.html#langchain_pinecone.vectorstores.PineconeVectorStore">[docs]</a><span class="k">class</span> <span class="nc">PineconeVectorStore</span><span class="p">(</span><span class="n">VectorStore</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;`Pinecone` vector store.</span>
+
+<span class="sd">    Setup: set the `PINECONE_API_KEY` environment variable to your Pinecone API key.</span>
 
 <span class="sd">    Example:</span>
 <span class="sd">        .. code-block:: python</span>
 
-<span class="sd">            from langchain_pinecone import Pinecone</span>
+<span class="sd">            from langchain_pinecone import PineconeVectorStore</span>
 <span class="sd">            from langchain_openai import OpenAIEmbeddings</span>
 
 <span class="sd">            embeddings = OpenAIEmbeddings()</span>
@@ -209,7 +216,7 @@
 <span class="sd">            )</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="Pinecone.__init__"><a class="viewcode-back" href="../../vectorstores/langchain_pinecone.vectorstores.Pinecone.html#langchain_pinecone.vectorstores.Pinecone.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<div class="viewcode-block" id="PineconeVectorStore.__init__"><a class="viewcode-back" href="../../vectorstores/langchain_pinecone.vectorstores.PineconeVectorStore.html#langchain_pinecone.vectorstores.PineconeVectorStore.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="c1"># setting default params to bypass having to pass in</span>
         <span class="c1"># the index and embedding objects - manually throw</span>
@@ -264,7 +271,7 @@
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Access the query embedding object if available.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_embedding</span>
 
-<div class="viewcode-block" id="Pinecone.add_texts"><a class="viewcode-back" href="../../vectorstores/langchain_pinecone.vectorstores.Pinecone.html#langchain_pinecone.vectorstores.Pinecone.add_texts">[docs]</a>    <span class="k">def</span> <span class="nf">add_texts</span><span class="p">(</span>
+<div class="viewcode-block" id="PineconeVectorStore.add_texts"><a class="viewcode-back" href="../../vectorstores/langchain_pinecone.vectorstores.PineconeVectorStore.html#langchain_pinecone.vectorstores.PineconeVectorStore.add_texts">[docs]</a>    <span class="k">def</span> <span class="nf">add_texts</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">texts</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
         <span class="n">metadatas</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -326,7 +333,7 @@
 
         <span class="k">return</span> <span class="n">ids</span></div>
 
-<div class="viewcode-block" id="Pinecone.similarity_search_with_score"><a class="viewcode-back" href="../../vectorstores/langchain_pinecone.vectorstores.Pinecone.html#langchain_pinecone.vectorstores.Pinecone.similarity_search_with_score">[docs]</a>    <span class="k">def</span> <span class="nf">similarity_search_with_score</span><span class="p">(</span>
+<div class="viewcode-block" id="PineconeVectorStore.similarity_search_with_score"><a class="viewcode-back" href="../../vectorstores/langchain_pinecone.vectorstores.PineconeVectorStore.html#langchain_pinecone.vectorstores.PineconeVectorStore.similarity_search_with_score">[docs]</a>    <span class="k">def</span> <span class="nf">similarity_search_with_score</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">k</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span>
@@ -348,7 +355,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_embedding</span><span class="o">.</span><span class="n">embed_query</span><span class="p">(</span><span class="n">query</span><span class="p">),</span> <span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="nb">filter</span><span class="o">=</span><span class="nb">filter</span><span class="p">,</span> <span class="n">namespace</span><span class="o">=</span><span class="n">namespace</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="Pinecone.similarity_search_by_vector_with_score"><a class="viewcode-back" href="../../vectorstores/langchain_pinecone.vectorstores.Pinecone.html#langchain_pinecone.vectorstores.Pinecone.similarity_search_by_vector_with_score">[docs]</a>    <span class="k">def</span> <span class="nf">similarity_search_by_vector_with_score</span><span class="p">(</span>
+<div class="viewcode-block" id="PineconeVectorStore.similarity_search_by_vector_with_score"><a class="viewcode-back" href="../../vectorstores/langchain_pinecone.vectorstores.PineconeVectorStore.html#langchain_pinecone.vectorstores.PineconeVectorStore.similarity_search_by_vector_with_score">[docs]</a>    <span class="k">def</span> <span class="nf">similarity_search_by_vector_with_score</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">embedding</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span>
         <span class="o">*</span><span class="p">,</span>
@@ -380,7 +387,7 @@
                 <span class="p">)</span>
         <span class="k">return</span> <span class="n">docs</span></div>
 
-<div class="viewcode-block" id="Pinecone.similarity_search"><a class="viewcode-back" href="../../vectorstores/langchain_pinecone.vectorstores.Pinecone.html#langchain_pinecone.vectorstores.Pinecone.similarity_search">[docs]</a>    <span class="k">def</span> <span class="nf">similarity_search</span><span class="p">(</span>
+<div class="viewcode-block" id="PineconeVectorStore.similarity_search"><a class="viewcode-back" href="../../vectorstores/langchain_pinecone.vectorstores.PineconeVectorStore.html#langchain_pinecone.vectorstores.PineconeVectorStore.similarity_search">[docs]</a>    <span class="k">def</span> <span class="nf">similarity_search</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">k</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span>
@@ -431,7 +438,7 @@
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Pinecone returns cosine similarity scores between [-1,1]&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">(</span><span class="n">score</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
 
-<div class="viewcode-block" id="Pinecone.max_marginal_relevance_search_by_vector"><a class="viewcode-back" href="../../vectorstores/langchain_pinecone.vectorstores.Pinecone.html#langchain_pinecone.vectorstores.Pinecone.max_marginal_relevance_search_by_vector">[docs]</a>    <span class="k">def</span> <span class="nf">max_marginal_relevance_search_by_vector</span><span class="p">(</span>
+<div class="viewcode-block" id="PineconeVectorStore.max_marginal_relevance_search_by_vector"><a class="viewcode-back" href="../../vectorstores/langchain_pinecone.vectorstores.PineconeVectorStore.html#langchain_pinecone.vectorstores.PineconeVectorStore.max_marginal_relevance_search_by_vector">[docs]</a>    <span class="k">def</span> <span class="nf">max_marginal_relevance_search_by_vector</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">embedding</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span>
         <span class="n">k</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span>
@@ -479,7 +486,7 @@
             <span class="k">for</span> <span class="n">metadata</span> <span class="ow">in</span> <span class="n">selected</span>
         <span class="p">]</span></div>
 
-<div class="viewcode-block" id="Pinecone.max_marginal_relevance_search"><a class="viewcode-back" href="../../vectorstores/langchain_pinecone.vectorstores.Pinecone.html#langchain_pinecone.vectorstores.Pinecone.max_marginal_relevance_search">[docs]</a>    <span class="k">def</span> <span class="nf">max_marginal_relevance_search</span><span class="p">(</span>
+<div class="viewcode-block" id="PineconeVectorStore.max_marginal_relevance_search"><a class="viewcode-back" href="../../vectorstores/langchain_pinecone.vectorstores.PineconeVectorStore.html#langchain_pinecone.vectorstores.PineconeVectorStore.max_marginal_relevance_search">[docs]</a>    <span class="k">def</span> <span class="nf">max_marginal_relevance_search</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">k</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span>
@@ -510,7 +517,7 @@
             <span class="n">embedding</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">fetch_k</span><span class="p">,</span> <span class="n">lambda_mult</span><span class="p">,</span> <span class="nb">filter</span><span class="p">,</span> <span class="n">namespace</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="Pinecone.get_pinecone_index"><a class="viewcode-back" href="../../vectorstores/langchain_pinecone.vectorstores.Pinecone.html#langchain_pinecone.vectorstores.Pinecone.get_pinecone_index">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="PineconeVectorStore.get_pinecone_index"><a class="viewcode-back" href="../../vectorstores/langchain_pinecone.vectorstores.PineconeVectorStore.html#langchain_pinecone.vectorstores.PineconeVectorStore.get_pinecone_index">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">get_pinecone_index</span><span class="p">(</span>
         <span class="bp">cls</span><span class="p">,</span>
         <span class="n">index_name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
@@ -545,7 +552,7 @@
             <span class="p">)</span>
         <span class="k">return</span> <span class="n">index</span></div>
 
-<div class="viewcode-block" id="Pinecone.from_texts"><a class="viewcode-back" href="../../vectorstores/langchain_pinecone.vectorstores.Pinecone.html#langchain_pinecone.vectorstores.Pinecone.from_texts">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="PineconeVectorStore.from_texts"><a class="viewcode-back" href="../../vectorstores/langchain_pinecone.vectorstores.PineconeVectorStore.html#langchain_pinecone.vectorstores.PineconeVectorStore.from_texts">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">from_texts</span><span class="p">(</span>
         <span class="bp">cls</span><span class="p">,</span>
         <span class="n">texts</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
@@ -560,7 +567,7 @@
         <span class="n">pool_threads</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span>
         <span class="n">embeddings_chunk_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Pinecone</span><span class="p">:</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PineconeVectorStore</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Construct Pinecone wrapper from raw documents.</span>
 
 <span class="sd">        This is a user friendly interface that:</span>
@@ -570,21 +577,22 @@
 <span class="sd">        This is intended to be a quick way to get started.</span>
 
 <span class="sd">        The `pool_threads` affects the speed of the upsert operations.</span>
+
+<span class="sd">        Setup: set the `PINECONE_API_KEY` environment variable to your Pinecone API key.</span>
+
 <span class="sd">        Example:</span>
 <span class="sd">            .. code-block:: python</span>
 
-<span class="sd">                from langchain_community.vectorstores import Pinecone</span>
-<span class="sd">                from langchain_community.embeddings import OpenAIEmbeddings</span>
-<span class="sd">                import pinecone</span>
+<span class="sd">                from langchain_pinecone import PineconeVectorStore</span>
+<span class="sd">                from langchain_openai import OpenAIEmbeddings</span>
 
-<span class="sd">                # The environment should be the one specified next to the API key</span>
-<span class="sd">                # in your Pinecone console</span>
-<span class="sd">                pinecone.init(api_key=&quot;***&quot;, environment=&quot;...&quot;)</span>
 <span class="sd">                embeddings = OpenAIEmbeddings()</span>
-<span class="sd">                pinecone = Pinecone.from_texts(</span>
+<span class="sd">                index_name = &quot;my-index&quot;</span>
+<span class="sd">                vectorstore = PineconeVectorStore.from_texts(</span>
 <span class="sd">                    texts,</span>
-<span class="sd">                    embeddings,</span>
-<span class="sd">                    index_name=&quot;langchain-demo&quot;</span>
+<span class="sd">                    index_name=index_name,</span>
+<span class="sd">                    embedding=embedding,</span>
+<span class="sd">                    namespace=namespace,</span>
 <span class="sd">                )</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">pinecone_index</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">get_pinecone_index</span><span class="p">(</span><span class="n">index_name</span><span class="p">,</span> <span class="n">pool_threads</span><span class="p">)</span>
@@ -601,7 +609,7 @@
         <span class="p">)</span>
         <span class="k">return</span> <span class="n">pinecone</span></div>
 
-<div class="viewcode-block" id="Pinecone.from_existing_index"><a class="viewcode-back" href="../../vectorstores/langchain_pinecone.vectorstores.Pinecone.html#langchain_pinecone.vectorstores.Pinecone.from_existing_index">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="PineconeVectorStore.from_existing_index"><a class="viewcode-back" href="../../vectorstores/langchain_pinecone.vectorstores.PineconeVectorStore.html#langchain_pinecone.vectorstores.PineconeVectorStore.from_existing_index">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">from_existing_index</span><span class="p">(</span>
         <span class="bp">cls</span><span class="p">,</span>
         <span class="n">index_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -609,12 +617,12 @@
         <span class="n">text_key</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span>
         <span class="n">namespace</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">pool_threads</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Pinecone</span><span class="p">:</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PineconeVectorStore</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Load pinecone vectorstore from index name.&quot;&quot;&quot;</span>
         <span class="n">pinecone_index</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">get_pinecone_index</span><span class="p">(</span><span class="n">index_name</span><span class="p">,</span> <span class="n">pool_threads</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">pinecone_index</span><span class="p">,</span> <span class="n">embedding</span><span class="p">,</span> <span class="n">text_key</span><span class="p">,</span> <span class="n">namespace</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Pinecone.delete"><a class="viewcode-back" href="../../vectorstores/langchain_pinecone.vectorstores.Pinecone.html#langchain_pinecone.vectorstores.Pinecone.delete">[docs]</a>    <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span>
+<div class="viewcode-block" id="PineconeVectorStore.delete"><a class="viewcode-back" href="../../vectorstores/langchain_pinecone.vectorstores.PineconeVectorStore.html#langchain_pinecone.vectorstores.PineconeVectorStore.delete">[docs]</a>    <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">ids</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">delete_all</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -644,13 +652,20 @@
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Either ids, delete_all, or filter must be provided.&quot;</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="kc">None</span></div></div>
+
+
+<div class="viewcode-block" id="Pinecone"><a class="viewcode-back" href="../../vectorstores/langchain_pinecone.vectorstores.Pinecone.html#langchain_pinecone.vectorstores.Pinecone">[docs]</a><span class="nd">@deprecated</span><span class="p">(</span><span class="n">since</span><span class="o">=</span><span class="s2">&quot;0.0.3&quot;</span><span class="p">,</span> <span class="n">removal</span><span class="o">=</span><span class="s2">&quot;0.2.0&quot;</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s2">&quot;PineconeVectorStore&quot;</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">Pinecone</span><span class="p">(</span><span class="n">PineconeVectorStore</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Deprecated. Use PineconeVectorStore instead.&quot;&quot;&quot;</span>
+
+    <span class="k">pass</span></div>
 </pre></div>
 
       </div>
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 22, 2024.
+          Last updated on Feb 23, 2024.
       </footer>
     </div>
   </div>

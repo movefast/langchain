@@ -1,7 +1,7 @@
 .. core_api_reference:
 
 =======================
-``langchain_core`` 0.1.25
+``langchain_core`` 0.1.26
 =======================
 
 :mod:`langchain_core.agents`
@@ -614,6 +614,10 @@ Classes
     :template: pydantic.rst
     
     output_parsers.list.NumberedListOutputParser
+    
+    :template: pydantic.rst
+    
+    output_parsers.pydantic.PydanticOutputParser
     
     :template: pydantic.rst
     

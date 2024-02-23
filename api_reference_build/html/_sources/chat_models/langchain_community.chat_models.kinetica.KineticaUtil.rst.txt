@@ -1,0 +1,29 @@
+﻿:mod:`langchain_community.chat_models.kinetica`.KineticaUtil
+===================================================================
+
+.. currentmodule:: langchain_community.chat_models.kinetica
+
+.. autoclass:: KineticaUtil
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~KineticaUtil.__init__
+      ~KineticaUtil.create_kdbc
+
+   
+   .. automethod:: KineticaUtil.__init__
+   .. automethod:: KineticaUtil.create_kdbc
+
+   
+   
+
+
+.. example_links:: KineticaUtil

@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>langchain_community 0.0.21 &mdash; 🦜🔗 LangChain 0.1.8</title>
+  <title>langchain_community 0.0.22 &mdash; 🦜🔗 LangChain 0.1.9</title>
   
   <link rel="canonical" href="https://api.python.langchain.com/en/latest/community_api_reference.html" />
 
@@ -79,6 +79,9 @@
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="google_vertexai_api_reference.html">google-vertexai</a>
         </li>
         <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="groq_api_reference.html">groq</a>
+        </li>
+        <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="ibm_api_reference.html">ibm</a>
         </li>
         <li class="nav-item">
@@ -114,6 +117,7 @@
               <a class="sk-nav-dropdown-item dropdown-item" href="exa_api_reference.html">exa</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="google_genai_api_reference.html">google-genai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="groq_api_reference.html">groq</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="ibm_api_reference.html">ibm</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="mistralai_api_reference.html">mistralai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="nomic_api_reference.html">nomic</a>
@@ -152,7 +156,7 @@
         </div>
             <div class="sk-sidebar-toc">
               <ul>
-<li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">langchain_community</span></code> 0.0.21</a><ul>
+<li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">langchain_community</span></code> 0.0.22</a><ul>
 <li><a class="reference internal" href="#module-langchain_community.adapters"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_community.adapters</span></code></a><ul>
 <li><a class="reference internal" href="#classes">Classes</a></li>
 <li><a class="reference internal" href="#functions">Functions</a></li>
@@ -268,8 +272,8 @@
     <div id="sk-page-content-wrapper">
       <div class="sk-page-content container-fluid body px-md-3" role="main">
         
-  <section id="langchain-community-0-0-21">
-<h1><code class="docutils literal notranslate"><span class="pre">langchain_community</span></code> 0.0.21<a class="headerlink" href="#langchain-community-0-0-21" title="Permalink to this heading">¶</a></h1>
+  <section id="langchain-community-0-0-22">
+<h1><code class="docutils literal notranslate"><span class="pre">langchain_community</span></code> 0.0.22<a class="headerlink" href="#langchain-community-0-0-22" title="Permalink to this heading">¶</a></h1>
 <section id="module-langchain_community.adapters">
 <span id="langchain-community-adapters"></span><h2><a class="reference internal" href="#module-langchain_community.adapters" title="langchain_community.adapters"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_community.adapters</span></code></a><a class="headerlink" href="#module-langchain_community.adapters" title="Permalink to this heading">¶</a></h2>
 <p><strong>Adapters</strong> are used to adapt LangChain models to other APIs.</p>
@@ -1171,6 +1175,18 @@ an interface where “chat messages” are the inputs and outputs.</p>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="chat_models/langchain_community.chat_models.jinachat.JinaChat.html#langchain_community.chat_models.jinachat.JinaChat" title="langchain_community.chat_models.jinachat.JinaChat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">chat_models.jinachat.JinaChat</span></code></a></p></td>
 <td><p><cite>Jina AI</cite> Chat models API.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="chat_models/langchain_community.chat_models.kinetica.ChatKinetica.html#langchain_community.chat_models.kinetica.ChatKinetica" title="langchain_community.chat_models.kinetica.ChatKinetica"><code class="xref py py-obj docutils literal notranslate"><span class="pre">chat_models.kinetica.ChatKinetica</span></code></a></p></td>
+<td><p>Kinetica LLM Chat Model API.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="chat_models/langchain_community.chat_models.kinetica.KineticaSqlOutputParser.html#langchain_community.chat_models.kinetica.KineticaSqlOutputParser" title="langchain_community.chat_models.kinetica.KineticaSqlOutputParser"><code class="xref py py-obj docutils literal notranslate"><span class="pre">chat_models.kinetica.KineticaSqlOutputParser</span></code></a></p></td>
+<td><p>Fetch and return data from the Kinetica LLM.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="chat_models/langchain_community.chat_models.kinetica.KineticaSqlResponse.html#langchain_community.chat_models.kinetica.KineticaSqlResponse" title="langchain_community.chat_models.kinetica.KineticaSqlResponse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">chat_models.kinetica.KineticaSqlResponse</span></code></a></p></td>
+<td><p>Response containing SQL and the fetched data.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="chat_models/langchain_community.chat_models.kinetica.KineticaUtil.html#langchain_community.chat_models.kinetica.KineticaUtil" title="langchain_community.chat_models.kinetica.KineticaUtil"><code class="xref py py-obj docutils literal notranslate"><span class="pre">chat_models.kinetica.KineticaUtil</span></code></a>()</p></td>
+<td><p>Kinetica utility functions.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="chat_models/langchain_community.chat_models.konko.ChatKonko.html#langchain_community.chat_models.konko.ChatKonko" title="langchain_community.chat_models.konko.ChatKonko"><code class="xref py py-obj docutils literal notranslate"><span class="pre">chat_models.konko.ChatKonko</span></code></a></p></td>
 <td><p><cite>ChatKonko</cite> Chat large language models API.</p></td>
@@ -5095,7 +5111,7 @@ and retrieve the data that are ‘most similar’ to the embedded query.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="vectorstores/langchain_community.vectorstores.tencentvectordb.TencentVectorDB.html#langchain_community.vectorstores.tencentvectordb.TencentVectorDB" title="langchain_community.vectorstores.tencentvectordb.TencentVectorDB"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vectorstores.tencentvectordb.TencentVectorDB</span></code></a>(...)</p></td>
 <td><p>Tencent VectorDB as a vector store.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="vectorstores/langchain_community.vectorstores.thirdai_neuraldb.NeuralDBVectorStore.html#langchain_community.vectorstores.thirdai_neuraldb.NeuralDBVectorStore" title="langchain_community.vectorstores.thirdai_neuraldb.NeuralDBVectorStore"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vectorstores.thirdai_neuraldb.NeuralDBVectorStore</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="vectorstores/langchain_community.vectorstores.thirdai_neuraldb.NeuralDBVectorStore.html#langchain_community.vectorstores.thirdai_neuraldb.NeuralDBVectorStore" title="langchain_community.vectorstores.thirdai_neuraldb.NeuralDBVectorStore"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vectorstores.thirdai_neuraldb.NeuralDBVectorStore</span></code></a>(db)</p></td>
 <td><p>Vectorstore that uses ThirdAI's NeuralDB.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="vectorstores/langchain_community.vectorstores.tigris.Tigris.html#langchain_community.vectorstores.tigris.Tigris" title="langchain_community.vectorstores.tigris.Tigris"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vectorstores.tigris.Tigris</span></code></a>(client, ...)</p></td>
@@ -5264,7 +5280,7 @@ and retrieve the data that are ‘most similar’ to the embedded query.</p>
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 22, 2024.
+          Last updated on Feb 23, 2024.
           <a href="_sources/community_api_reference.rst.txt" rel="nofollow">Show this page source</a>
       </footer>
     </div>

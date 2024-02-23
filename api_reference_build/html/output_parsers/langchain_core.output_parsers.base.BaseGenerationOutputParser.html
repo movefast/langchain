@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>langchain_core.output_parsers.base.BaseGenerationOutputParser &mdash; 🦜🔗 LangChain 0.1.8</title>
+  <title>langchain_core.output_parsers.base.BaseGenerationOutputParser &mdash; 🦜🔗 LangChain 0.1.9</title>
   
   <link rel="canonical" href="https://api.python.langchain.com/en/latest/output_parsers/langchain_core.output_parsers.base.BaseGenerationOutputParser.html" />
 
@@ -79,6 +79,9 @@
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../google_vertexai_api_reference.html">google-vertexai</a>
         </li>
         <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../groq_api_reference.html">groq</a>
+        </li>
+        <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ibm_api_reference.html">ibm</a>
         </li>
         <li class="nav-item">
@@ -114,6 +117,7 @@
               <a class="sk-nav-dropdown-item dropdown-item" href="../exa_api_reference.html">exa</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_genai_api_reference.html">google-genai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../groq_api_reference.html">groq</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../ibm_api_reference.html">ibm</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../mistralai_api_reference.html">mistralai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nomic_api_reference.html">nomic</a>
@@ -226,7 +230,7 @@
 <dl class="py class pydantic_model">
 <dt class="sig sig-object py" id="langchain_core.output_parsers.base.BaseGenerationOutputParser">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">langchain_core.output_parsers.base.</span></span><span class="sig-name descname"><span class="pre">BaseGenerationOutputParser</span></span><a class="reference internal" href="../_modules/langchain_core/output_parsers/base.html#BaseGenerationOutputParser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_core.output_parsers.base.BaseGenerationOutputParser" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="langchain_core.output_parsers.base.BaseLLMOutputParser.html#langchain_core.output_parsers.base.BaseLLMOutputParser" title="langchain_core.output_parsers.base.BaseLLMOutputParser"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseLLMOutputParser</span></code></a>, <a class="reference internal" href="../runnables/langchain_core.runnables.base.RunnableSerializable.html#langchain_core.runnables.base.RunnableSerializable" title="langchain_core.runnables.base.RunnableSerializable"><code class="xref py py-class docutils literal notranslate"><span class="pre">RunnableSerializable</span></code></a>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <a class="reference internal" href="../messages/langchain_core.messages.base.BaseMessage.html#langchain_core.messages.base.BaseMessage" title="langchain_core.messages.base.BaseMessage"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseMessage</span></code></a>], <code class="xref py py-obj docutils literal notranslate"><span class="pre">T</span></code>]</p>
+<dd><p>Bases: <a class="reference internal" href="langchain_core.output_parsers.base.BaseLLMOutputParser.html#langchain_core.output_parsers.base.BaseLLMOutputParser" title="langchain_core.output_parsers.base.BaseLLMOutputParser"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseLLMOutputParser</span></code></a>, <a class="reference internal" href="../runnables/langchain_core.runnables.base.RunnableSerializable.html#langchain_core.runnables.base.RunnableSerializable" title="langchain_core.runnables.base.RunnableSerializable"><code class="xref py py-class docutils literal notranslate"><span class="pre">RunnableSerializable</span></code></a>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">Union</span></code>[<a class="reference internal" href="../messages/langchain_core.messages.base.BaseMessage.html#langchain_core.messages.base.BaseMessage" title="langchain_core.messages.base.BaseMessage"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseMessage</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-obj docutils literal notranslate"><span class="pre">T</span></code>]</p>
 <p>Base class to parse the output of an LLM call.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_core.output_parsers.base.BaseGenerationOutputParser.abatch">
@@ -1271,7 +1275,7 @@ between retries</p></li>
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 22, 2024.
+          Last updated on Feb 23, 2024.
           <a href="../_sources/output_parsers/langchain_core.output_parsers.base.BaseGenerationOutputParser.rst.txt" rel="nofollow">Show this page source</a>
       </footer>
     </div>

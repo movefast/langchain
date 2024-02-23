@@ -1,7 +1,7 @@
 .. community_api_reference:
 
 =======================
-``langchain_community`` 0.0.21
+``langchain_community`` 0.0.22
 =======================
 
 :mod:`langchain_community.adapters`
@@ -903,6 +903,22 @@ Classes
     :template: pydantic.rst
     
     chat_models.jinachat.JinaChat
+    
+    :template: pydantic.rst
+    
+    chat_models.kinetica.ChatKinetica
+    
+    :template: pydantic.rst
+    
+    chat_models.kinetica.KineticaSqlOutputParser
+    
+    :template: pydantic.rst
+    
+    chat_models.kinetica.KineticaSqlResponse
+    
+    :template: class.rst
+    
+    chat_models.kinetica.KineticaUtil
     
     :template: pydantic.rst
     

@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>langchain.output_parsers.openai_tools.JsonOutputToolsParser &mdash; 🦜🔗 LangChain 0.1.8</title>
+  <title>langchain.output_parsers.openai_tools.JsonOutputToolsParser &mdash; 🦜🔗 LangChain 0.1.9</title>
   
   <link rel="canonical" href="https://api.python.langchain.com/en/latest/output_parsers/langchain.output_parsers.openai_tools.JsonOutputToolsParser.html" />
 
@@ -79,6 +79,9 @@
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../google_vertexai_api_reference.html">google-vertexai</a>
         </li>
         <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../groq_api_reference.html">groq</a>
+        </li>
+        <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ibm_api_reference.html">ibm</a>
         </li>
         <li class="nav-item">
@@ -114,6 +117,7 @@
               <a class="sk-nav-dropdown-item dropdown-item" href="../exa_api_reference.html">exa</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_genai_api_reference.html">google-genai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../groq_api_reference.html">groq</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../ibm_api_reference.html">ibm</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../mistralai_api_reference.html">mistralai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nomic_api_reference.html">nomic</a>
@@ -154,6 +158,7 @@
               <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain.output_parsers.openai_tools</span></code>.JsonOutputToolsParser</a><ul>
 <li><a class="reference internal" href="#langchain.output_parsers.openai_tools.JsonOutputToolsParser"><code class="docutils literal notranslate"><span class="pre">JsonOutputToolsParser</span></code></a><ul>
+<li><a class="reference internal" href="#langchain.output_parsers.openai_tools.JsonOutputToolsParser.first_tool_only"><code class="docutils literal notranslate"><span class="pre">JsonOutputToolsParser.first_tool_only</span></code></a></li>
 <li><a class="reference internal" href="#langchain.output_parsers.openai_tools.JsonOutputToolsParser.return_id"><code class="docutils literal notranslate"><span class="pre">JsonOutputToolsParser.return_id</span></code></a></li>
 <li><a class="reference internal" href="#langchain.output_parsers.openai_tools.JsonOutputToolsParser.strict"><code class="docutils literal notranslate"><span class="pre">JsonOutputToolsParser.strict</span></code></a></li>
 <li><a class="reference internal" href="#langchain.output_parsers.openai_tools.JsonOutputToolsParser.abatch"><code class="docutils literal notranslate"><span class="pre">JsonOutputToolsParser.abatch()</span></code></a></li>
@@ -230,6 +235,17 @@
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">langchain.output_parsers.openai_tools.</span></span><span class="sig-name descname"><span class="pre">JsonOutputToolsParser</span></span><a class="reference internal" href="../_modules/langchain/output_parsers/openai_tools.html#JsonOutputToolsParser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain.output_parsers.openai_tools.JsonOutputToolsParser" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="langchain_core.output_parsers.base.BaseGenerationOutputParser.html#langchain_core.output_parsers.base.BaseGenerationOutputParser" title="langchain_core.output_parsers.base.BaseGenerationOutputParser"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseGenerationOutputParser</span></code></a>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">Any</span></code>]</p>
 <p>Parse tools from OpenAI response.</p>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="langchain.output_parsers.openai_tools.JsonOutputToolsParser.first_tool_only">
+<em class="property"><span class="pre">param</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">first_tool_only</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#langchain.output_parsers.openai_tools.JsonOutputToolsParser.first_tool_only" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether to return only the first tool call.</p>
+<p>If False, the result will be a list of tool calls, or an empty list
+if no tool calls are found.</p>
+<p>If true, and multiple tool calls are found, only the first one will be returned,
+and the other tool calls will be ignored.
+If no tool calls are found, None will be returned.</p>
+</dd></dl>
+
 <dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="langchain.output_parsers.openai_tools.JsonOutputToolsParser.return_id">
 <em class="property"><span class="pre">param</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">return_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#langchain.output_parsers.openai_tools.JsonOutputToolsParser.return_id" title="Permalink to this definition">¶</a></dt>
@@ -1287,7 +1303,7 @@ between retries</p></li>
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 22, 2024.
+          Last updated on Feb 23, 2024.
           <a href="../_sources/output_parsers/langchain.output_parsers.openai_tools.JsonOutputToolsParser.rst.txt" rel="nofollow">Show this page source</a>
       </footer>
     </div>

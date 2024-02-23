@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>langchain_core.output_parsers.base &mdash; 🦜🔗 LangChain 0.1.8</title>
+  <title>langchain_core.output_parsers.base &mdash; 🦜🔗 LangChain 0.1.9</title>
   
   <link rel="canonical" href="https://api.python.langchain.com/en/latest/_modules/langchain_core/output_parsers/base.html" />
 
@@ -78,6 +78,9 @@
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../google_vertexai_api_reference.html">google-vertexai</a>
         </li>
         <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../groq_api_reference.html">groq</a>
+        </li>
+        <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../ibm_api_reference.html">ibm</a>
         </li>
         <li class="nav-item">
@@ -113,6 +116,7 @@
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../exa_api_reference.html">exa</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../google_genai_api_reference.html">google-genai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../groq_api_reference.html">groq</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../ibm_api_reference.html">ibm</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../mistralai_api_reference.html">mistralai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../nomic_api_reference.html">nomic</a>
@@ -174,15 +178,17 @@
 
 <span class="kn">from</span> <span class="nn">typing_extensions</span> <span class="kn">import</span> <span class="n">get_args</span>
 
+<span class="kn">from</span> <span class="nn">langchain_core.language_models</span> <span class="kn">import</span> <span class="n">LanguageModelOutput</span>
 <span class="kn">from</span> <span class="nn">langchain_core.messages</span> <span class="kn">import</span> <span class="n">AnyMessage</span><span class="p">,</span> <span class="n">BaseMessage</span>
 <span class="kn">from</span> <span class="nn">langchain_core.outputs</span> <span class="kn">import</span> <span class="n">ChatGeneration</span><span class="p">,</span> <span class="n">Generation</span>
-<span class="kn">from</span> <span class="nn">langchain_core.runnables</span> <span class="kn">import</span> <span class="n">RunnableConfig</span><span class="p">,</span> <span class="n">RunnableSerializable</span>
+<span class="kn">from</span> <span class="nn">langchain_core.runnables</span> <span class="kn">import</span> <span class="n">Runnable</span><span class="p">,</span> <span class="n">RunnableConfig</span><span class="p">,</span> <span class="n">RunnableSerializable</span>
 <span class="kn">from</span> <span class="nn">langchain_core.runnables.config</span> <span class="kn">import</span> <span class="n">run_in_executor</span>
 
 <span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
     <span class="kn">from</span> <span class="nn">langchain_core.prompt_values</span> <span class="kn">import</span> <span class="n">PromptValue</span>
 
 <span class="n">T</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s2">&quot;T&quot;</span><span class="p">)</span>
+<span class="n">OutputParserLike</span> <span class="o">=</span> <span class="n">Runnable</span><span class="p">[</span><span class="n">LanguageModelOutput</span><span class="p">,</span> <span class="n">T</span><span class="p">]</span>
 
 
 <div class="viewcode-block" id="BaseLLMOutputParser"><a class="viewcode-back" href="../../../output_parsers/langchain_core.output_parsers.base.BaseLLMOutputParser.html#langchain.agents.agent.BaseLLMOutputParser">[docs]</a><span class="k">class</span> <span class="nc">BaseLLMOutputParser</span><span class="p">(</span><span class="n">Generic</span><span class="p">[</span><span class="n">T</span><span class="p">],</span> <span class="n">ABC</span><span class="p">):</span>
@@ -216,7 +222,7 @@
 
 
 <div class="viewcode-block" id="BaseGenerationOutputParser"><a class="viewcode-back" href="../../../output_parsers/langchain_core.output_parsers.base.BaseGenerationOutputParser.html#langchain.agents.agent.BaseGenerationOutputParser">[docs]</a><span class="k">class</span> <span class="nc">BaseGenerationOutputParser</span><span class="p">(</span>
-    <span class="n">BaseLLMOutputParser</span><span class="p">,</span> <span class="n">RunnableSerializable</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">BaseMessage</span><span class="p">],</span> <span class="n">T</span><span class="p">]</span>
+    <span class="n">BaseLLMOutputParser</span><span class="p">,</span> <span class="n">RunnableSerializable</span><span class="p">[</span><span class="n">LanguageModelOutput</span><span class="p">,</span> <span class="n">T</span><span class="p">]</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Base class to parse the output of an LLM call.&quot;&quot;&quot;</span>
 
@@ -275,7 +281,7 @@
 
 
 <div class="viewcode-block" id="BaseOutputParser"><a class="viewcode-back" href="../../../output_parsers/langchain_core.output_parsers.base.BaseOutputParser.html#langchain.agents.agent.BaseOutputParser">[docs]</a><span class="k">class</span> <span class="nc">BaseOutputParser</span><span class="p">(</span>
-    <span class="n">BaseLLMOutputParser</span><span class="p">,</span> <span class="n">RunnableSerializable</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">BaseMessage</span><span class="p">],</span> <span class="n">T</span><span class="p">]</span>
+    <span class="n">BaseLLMOutputParser</span><span class="p">,</span> <span class="n">RunnableSerializable</span><span class="p">[</span><span class="n">LanguageModelOutput</span><span class="p">,</span> <span class="n">T</span><span class="p">]</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Base class to parse the output of an LLM call.</span>
 
@@ -459,7 +465,7 @@
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 22, 2024.
+          Last updated on Feb 23, 2024.
       </footer>
     </div>
   </div>

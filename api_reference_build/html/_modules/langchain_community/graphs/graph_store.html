@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>langchain_community.graphs.graph_store &mdash; 🦜🔗 LangChain 0.1.8</title>
+  <title>langchain_community.graphs.graph_store &mdash; 🦜🔗 LangChain 0.1.9</title>
   
   <link rel="canonical" href="https://api.python.langchain.com/en/latest/_modules/langchain_community/graphs/graph_store.html" />
 
@@ -78,6 +78,9 @@
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../google_vertexai_api_reference.html">google-vertexai</a>
         </li>
         <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../groq_api_reference.html">groq</a>
+        </li>
+        <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../../../ibm_api_reference.html">ibm</a>
         </li>
         <li class="nav-item">
@@ -113,6 +116,7 @@
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../exa_api_reference.html">exa</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../google_genai_api_reference.html">google-genai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../../../groq_api_reference.html">groq</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../ibm_api_reference.html">ibm</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../mistralai_api_reference.html">mistralai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../../../nomic_api_reference.html">nomic</a>
@@ -163,7 +167,7 @@
 <span class="kn">from</span> <span class="nn">langchain_community.graphs.graph_document</span> <span class="kn">import</span> <span class="n">GraphDocument</span>
 
 
-<div class="viewcode-block" id="GraphStore"><a class="viewcode-back" href="../../../graphs/langchain_community.graphs.graph_store.GraphStore.html#langchain_community.graphs.tigergraph_graph.GraphStore">[docs]</a><span class="k">class</span> <span class="nc">GraphStore</span><span class="p">:</span>
+<div class="viewcode-block" id="GraphStore"><a class="viewcode-back" href="../../../graphs/langchain_community.graphs.graph_store.GraphStore.html#langchain_community.graphs.graph_store.GraphStore">[docs]</a><span class="k">class</span> <span class="nc">GraphStore</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;An abstract class wrapper for graph operations.&quot;&quot;&quot;</span>
 
     <span class="nd">@property</span>
@@ -178,17 +182,17 @@
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the schema of the Graph database&quot;&quot;&quot;</span>
         <span class="k">pass</span>
 
-<div class="viewcode-block" id="GraphStore.query"><a class="viewcode-back" href="../../../graphs/langchain_community.graphs.graph_store.GraphStore.html#langchain_community.graphs.tigergraph_graph.GraphStore.query">[docs]</a>    <span class="nd">@abstractmethod</span>
+<div class="viewcode-block" id="GraphStore.query"><a class="viewcode-back" href="../../../graphs/langchain_community.graphs.graph_store.GraphStore.html#langchain_community.graphs.graph_store.GraphStore.query">[docs]</a>    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">query</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">params</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{})</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Query the graph.&quot;&quot;&quot;</span>
         <span class="k">pass</span></div>
 
-<div class="viewcode-block" id="GraphStore.refresh_schema"><a class="viewcode-back" href="../../../graphs/langchain_community.graphs.graph_store.GraphStore.html#langchain_community.graphs.tigergraph_graph.GraphStore.refresh_schema">[docs]</a>    <span class="nd">@abstractmethod</span>
+<div class="viewcode-block" id="GraphStore.refresh_schema"><a class="viewcode-back" href="../../../graphs/langchain_community.graphs.graph_store.GraphStore.html#langchain_community.graphs.graph_store.GraphStore.refresh_schema">[docs]</a>    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">refresh_schema</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Refreshes the graph schema information.&quot;&quot;&quot;</span>
         <span class="k">pass</span></div>
 
-<div class="viewcode-block" id="GraphStore.add_graph_documents"><a class="viewcode-back" href="../../../graphs/langchain_community.graphs.graph_store.GraphStore.html#langchain_community.graphs.tigergraph_graph.GraphStore.add_graph_documents">[docs]</a>    <span class="nd">@abstractmethod</span>
+<div class="viewcode-block" id="GraphStore.add_graph_documents"><a class="viewcode-back" href="../../../graphs/langchain_community.graphs.graph_store.GraphStore.html#langchain_community.graphs.graph_store.GraphStore.add_graph_documents">[docs]</a>    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">add_graph_documents</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">graph_documents</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">GraphDocument</span><span class="p">],</span> <span class="n">include_source</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -200,7 +204,7 @@
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 22, 2024.
+          Last updated on Feb 23, 2024.
       </footer>
     </div>
   </div>

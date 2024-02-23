@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>langchain_community.vectorstores.thirdai_neuraldb.NeuralDBVectorStore &mdash; 🦜🔗 LangChain 0.1.8</title>
+  <title>langchain_community.vectorstores.thirdai_neuraldb.NeuralDBVectorStore &mdash; 🦜🔗 LangChain 0.1.9</title>
   
   <link rel="canonical" href="https://api.python.langchain.com/en/latest/vectorstores/langchain_community.vectorstores.thirdai_neuraldb.NeuralDBVectorStore.html" />
 
@@ -79,6 +79,9 @@
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../google_vertexai_api_reference.html">google-vertexai</a>
         </li>
         <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../groq_api_reference.html">groq</a>
+        </li>
+        <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ibm_api_reference.html">ibm</a>
         </li>
         <li class="nav-item">
@@ -114,6 +117,7 @@
               <a class="sk-nav-dropdown-item dropdown-item" href="../exa_api_reference.html">exa</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_genai_api_reference.html">google-genai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../groq_api_reference.html">groq</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../ibm_api_reference.html">ibm</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../mistralai_api_reference.html">mistralai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nomic_api_reference.html">nomic</a>
@@ -206,8 +210,17 @@
 <h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_community.vectorstores.thirdai_neuraldb</span></code>.NeuralDBVectorStore<a class="headerlink" href="#langchain-community-vectorstores-thirdai-neuraldb-neuraldbvectorstore" title="Permalink to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="langchain_community.vectorstores.thirdai_neuraldb.NeuralDBVectorStore">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">langchain_community.vectorstores.thirdai_neuraldb.</span></span><span class="sig-name descname"><span class="pre">NeuralDBVectorStore</span></span><a class="reference internal" href="../_modules/langchain_community/vectorstores/thirdai_neuraldb.html#NeuralDBVectorStore"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.vectorstores.thirdai_neuraldb.NeuralDBVectorStore" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">langchain_community.vectorstores.thirdai_neuraldb.</span></span><span class="sig-name descname"><span class="pre">NeuralDBVectorStore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/langchain_community/vectorstores/thirdai_neuraldb.html#NeuralDBVectorStore"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.vectorstores.thirdai_neuraldb.NeuralDBVectorStore" title="Permalink to this definition">¶</a></dt>
 <dd><p>Vectorstore that uses ThirdAI’s NeuralDB.</p>
+<p>To use, you should have the <code class="docutils literal notranslate"><span class="pre">thirdai[neural_db]</span></code> python package installed.</p>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">langchain_community.vectorstores</span> <span class="kn">import</span> <span class="n">NeuralDBVectorStore</span>
+<span class="kn">from</span> <span class="nn">thirdai</span> <span class="kn">import</span> <span class="n">neural_db</span> <span class="k">as</span> <span class="n">ndb</span>
+
+<span class="n">db</span> <span class="o">=</span> <span class="n">ndb</span><span class="o">.</span><span class="n">NeuralDB</span><span class="p">()</span>
+<span class="n">vectorstore</span> <span class="o">=</span> <span class="n">NeuralDBVectorStore</span><span class="p">(</span><span class="n">db</span><span class="o">=</span><span class="n">db</span><span class="p">)</span>
+</pre></div>
+</div>
 <p class="rubric">Attributes</p>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
@@ -230,7 +243,7 @@
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#langchain_community.vectorstores.thirdai_neuraldb.NeuralDBVectorStore.__init__" title="langchain_community.vectorstores.thirdai_neuraldb.NeuralDBVectorStore.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#langchain_community.vectorstores.thirdai_neuraldb.NeuralDBVectorStore.__init__" title="langchain_community.vectorstores.thirdai_neuraldb.NeuralDBVectorStore.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(db)</p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#langchain_community.vectorstores.thirdai_neuraldb.NeuralDBVectorStore.aadd_documents" title="langchain_community.vectorstores.thirdai_neuraldb.NeuralDBVectorStore.aadd_documents"><code class="xref py py-obj docutils literal notranslate"><span class="pre">aadd_documents</span></code></a>(documents, **kwargs)</p></td>
@@ -340,10 +353,23 @@
 </tr>
 </tbody>
 </table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>db</strong> (<em>Any</em>) – </p>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.vectorstores.thirdai_neuraldb.NeuralDBVectorStore.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#langchain_community.vectorstores.thirdai_neuraldb.NeuralDBVectorStore.__init__" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/langchain_community/vectorstores/thirdai_neuraldb.html#NeuralDBVectorStore.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_community.vectorstores.thirdai_neuraldb.NeuralDBVectorStore.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>db</strong> (<em>Any</em>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_community.vectorstores.thirdai_neuraldb.NeuralDBVectorStore.aadd_documents">
@@ -1123,7 +1149,7 @@ This is useful for fine-tuning the vectorstore to user behavior.</p>
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 22, 2024.
+          Last updated on Feb 23, 2024.
           <a href="../_sources/vectorstores/langchain_community.vectorstores.thirdai_neuraldb.NeuralDBVectorStore.rst.txt" rel="nofollow">Show this page source</a>
       </footer>
     </div>

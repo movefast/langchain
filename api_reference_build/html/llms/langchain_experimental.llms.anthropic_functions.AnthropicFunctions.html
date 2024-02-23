@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>langchain_experimental.llms.anthropic_functions.AnthropicFunctions &mdash; 🦜🔗 LangChain 0.1.8</title>
+  <title>langchain_experimental.llms.anthropic_functions.AnthropicFunctions &mdash; 🦜🔗 LangChain 0.1.9</title>
   
   <link rel="canonical" href="https://api.python.langchain.com/en/latest/llms/langchain_experimental.llms.anthropic_functions.AnthropicFunctions.html" />
 
@@ -79,6 +79,9 @@
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../google_vertexai_api_reference.html">google-vertexai</a>
         </li>
         <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../groq_api_reference.html">groq</a>
+        </li>
+        <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ibm_api_reference.html">ibm</a>
         </li>
         <li class="nav-item">
@@ -114,6 +117,7 @@
               <a class="sk-nav-dropdown-item dropdown-item" href="../exa_api_reference.html">exa</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_genai_api_reference.html">google-genai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../groq_api_reference.html">groq</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../ibm_api_reference.html">ibm</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../mistralai_api_reference.html">mistralai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nomic_api_reference.html">nomic</a>
@@ -218,6 +222,7 @@
 <li><a class="reference internal" href="#langchain_experimental.llms.anthropic_functions.AnthropicFunctions.with_fallbacks"><code class="docutils literal notranslate"><span class="pre">AnthropicFunctions.with_fallbacks()</span></code></a></li>
 <li><a class="reference internal" href="#langchain_experimental.llms.anthropic_functions.AnthropicFunctions.with_listeners"><code class="docutils literal notranslate"><span class="pre">AnthropicFunctions.with_listeners()</span></code></a></li>
 <li><a class="reference internal" href="#langchain_experimental.llms.anthropic_functions.AnthropicFunctions.with_retry"><code class="docutils literal notranslate"><span class="pre">AnthropicFunctions.with_retry()</span></code></a></li>
+<li><a class="reference internal" href="#langchain_experimental.llms.anthropic_functions.AnthropicFunctions.with_structured_output"><code class="docutils literal notranslate"><span class="pre">AnthropicFunctions.with_structured_output()</span></code></a></li>
 <li><a class="reference internal" href="#langchain_experimental.llms.anthropic_functions.AnthropicFunctions.with_types"><code class="docutils literal notranslate"><span class="pre">AnthropicFunctions.with_types()</span></code></a></li>
 <li><a class="reference internal" href="#langchain_experimental.llms.anthropic_functions.AnthropicFunctions.InputType"><code class="docutils literal notranslate"><span class="pre">AnthropicFunctions.InputType</span></code></a></li>
 <li><a class="reference internal" href="#langchain_experimental.llms.anthropic_functions.AnthropicFunctions.OutputType"><code class="docutils literal notranslate"><span class="pre">AnthropicFunctions.OutputType</span></code></a></li>
@@ -1581,6 +1586,24 @@ between retries</p></li>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="langchain_experimental.llms.anthropic_functions.AnthropicFunctions.with_structured_output">
+<span class="sig-name descname"><span class="pre">with_structured_output</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">schema</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><span class="pre">BaseModel</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../runnables/langchain_core.runnables.base.Runnable.html#langchain_core.runnables.base.Runnable" title="langchain_core.runnables.base.Runnable"><span class="pre">Runnable</span></a><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../prompt_values/langchain_core.prompt_values.PromptValue.html#langchain_core.prompt_values.PromptValue" title="langchain_core.prompt_values.PromptValue"><span class="pre">PromptValue</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../messages/langchain_core.messages.base.BaseMessage.html#langchain_core.messages.base.BaseMessage" title="langchain_core.messages.base.BaseMessage"><span class="pre">BaseMessage</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">BaseModel</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#langchain_experimental.llms.anthropic_functions.AnthropicFunctions.with_structured_output" title="Permalink to this definition">¶</a></dt>
+<dd><p>[<em>Beta</em>] Implement this if there is a way of steering the model to generate responses that match a given schema.</p>
+<p class="rubric">Notes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>schema</strong> (<em>Union</em><em>[</em><em>Dict</em><em>, </em><em>Type</em><em>[</em><em>BaseModel</em><em>]</em><em>]</em>) – </p></li>
+<li><p><strong>kwargs</strong> (<em>Any</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="../runnables/langchain_core.runnables.base.Runnable.html#langchain_core.runnables.base.Runnable" title="langchain_core.runnables.base.Runnable"><em>Runnable</em></a>[<em>Union</em>[<a class="reference internal" href="../prompt_values/langchain_core.prompt_values.PromptValue.html#langchain_core.prompt_values.PromptValue" title="langchain_core.prompt_values.PromptValue"><em>PromptValue</em></a>, str, <em>Sequence</em>[<em>Union</em>[<a class="reference internal" href="../messages/langchain_core.messages.base.BaseMessage.html#langchain_core.messages.base.BaseMessage" title="langchain_core.messages.base.BaseMessage"><em>BaseMessage</em></a>, <em>Tuple</em>[str, str], str, <em>Dict</em>[str, <em>Any</em>]]]], <em>Union</em>[<em>Dict</em>, <em>BaseModel</em>]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="langchain_experimental.llms.anthropic_functions.AnthropicFunctions.with_types">
 <span class="sig-name descname"><span class="pre">with_types</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><span class="pre">Input</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><span class="pre">Output</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../runnables/langchain_core.runnables.base.Runnable.html#langchain_core.runnables.base.Runnable" title="langchain_core.runnables.base.Runnable"><span class="pre">Runnable</span></a><span class="p"><span class="pre">[</span></span><span class="pre">Input</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Output</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#langchain_experimental.llms.anthropic_functions.AnthropicFunctions.with_types" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bind input and output types to a Runnable, returning a new Runnable.</p>
@@ -1667,7 +1690,7 @@ between retries</p></li>
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 22, 2024.
+          Last updated on Feb 23, 2024.
           <a href="../_sources/llms/langchain_experimental.llms.anthropic_functions.AnthropicFunctions.rst.txt" rel="nofollow">Show this page source</a>
       </footer>
     </div>

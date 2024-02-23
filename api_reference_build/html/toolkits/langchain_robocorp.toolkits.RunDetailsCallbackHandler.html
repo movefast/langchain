@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>langchain_robocorp.toolkits.RunDetailsCallbackHandler &mdash; 🦜🔗 LangChain 0.1.8</title>
+  <title>langchain_robocorp.toolkits.RunDetailsCallbackHandler &mdash; 🦜🔗 LangChain 0.1.9</title>
   
   <link rel="canonical" href="https://api.python.langchain.com/en/latest/toolkits/langchain_robocorp.toolkits.RunDetailsCallbackHandler.html" />
 
@@ -79,6 +79,9 @@
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../google_vertexai_api_reference.html">google-vertexai</a>
         </li>
         <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../groq_api_reference.html">groq</a>
+        </li>
+        <li class="nav-item">
           <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../ibm_api_reference.html">ibm</a>
         </li>
         <li class="nav-item">
@@ -114,6 +117,7 @@
               <a class="sk-nav-dropdown-item dropdown-item" href="../exa_api_reference.html">exa</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_genai_api_reference.html">google-genai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../google_vertexai_api_reference.html">google-vertexai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../groq_api_reference.html">groq</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../ibm_api_reference.html">ibm</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../mistralai_api_reference.html">mistralai</a>
               <a class="sk-nav-dropdown-item dropdown-item" href="../nomic_api_reference.html">nomic</a>
@@ -190,7 +194,14 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="langchain_robocorp.toolkits.RunDetailsCallbackHandler">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">langchain_robocorp.toolkits.</span></span><span class="sig-name descname"><span class="pre">RunDetailsCallbackHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">run_details</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/langchain_robocorp/toolkits.html#RunDetailsCallbackHandler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_robocorp.toolkits.RunDetailsCallbackHandler" title="Permalink to this definition">¶</a></dt>
-<dd><p class="rubric">Attributes</p>
+<dd><p>Callback handler to add run details to the run.</p>
+<p>Initialize the callback handler.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>run_details</strong> (<em>dict</em>) – Run details.</p>
+</dd>
+</dl>
+<p class="rubric">Attributes</p>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -231,7 +242,7 @@
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#langchain_robocorp.toolkits.RunDetailsCallbackHandler.__init__" title="langchain_robocorp.toolkits.RunDetailsCallbackHandler.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(run_details)</p></td>
-<td><p></p></td>
+<td><p>Initialize the callback handler.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#langchain_robocorp.toolkits.RunDetailsCallbackHandler.on_agent_action" title="langchain_robocorp.toolkits.RunDetailsCallbackHandler.on_agent_action"><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_agent_action</span></code></a>(action, *, run_id[, ...])</p></td>
 <td><p>Run on agent action.</p></td>
@@ -289,17 +300,13 @@
 </tr>
 </tbody>
 </table>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>run_details</strong> (<em>dict</em>) – </p>
-</dd>
-</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="langchain_robocorp.toolkits.RunDetailsCallbackHandler.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">run_details</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/langchain_robocorp/toolkits.html#RunDetailsCallbackHandler.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_robocorp.toolkits.RunDetailsCallbackHandler.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
+<dd><p>Initialize the callback handler.</p>
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>run_details</strong> (<em>dict</em>) – </p>
+<dd class="field-odd"><p><strong>run_details</strong> (<em>dict</em>) – Run details.</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p>None</p>
@@ -694,7 +701,7 @@ you should use on_chat_model_start instead.</p>
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2023, LangChain, Inc..
-          Last updated on Feb 22, 2024.
+          Last updated on Feb 23, 2024.
           <a href="../_sources/toolkits/langchain_robocorp.toolkits.RunDetailsCallbackHandler.rst.txt" rel="nofollow">Show this page source</a>
       </footer>
     </div>

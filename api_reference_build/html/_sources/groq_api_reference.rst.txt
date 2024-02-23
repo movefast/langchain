@@ -1,0 +1,23 @@
+.. groq_api_reference:
+
+=======================
+``langchain_groq`` 0.0.1
+=======================
+
+:mod:`langchain_groq.chat_models`
+==================================
+
+.. automodule:: langchain_groq.chat_models
+    :no-members:
+    :no-inherited-members:
+
+Classes
+--------------
+.. currentmodule:: langchain_groq
+
+.. autosummary::
+    :toctree: chat_models
+    :template: pydantic.rst
+    
+    chat_models.ChatGroq
+    
